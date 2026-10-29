@@ -1,0 +1,29 @@
+<%= link_to t('nav.tickets'), tickets_path, class:'back' %>
+<div class="hero"><span class="pill"><%= @ticket.priority %></span> <span class="pill"><%= @ticket.status %></span><h1><%= @ticket.number %></h1><p class="intro"><%= @ticket.category %> · <%= link_to @ticket.customer.external_key, customer_path(@ticket.customer) %></p></div>
+<div class="two">
+ <section class="panel"><h2><%= t('tickets.conversation') %></h2>
+   <% if @messages.any? %><div class="thread">
+     <% @messages.each do |message| %><article class="message <%= 'internal' if message.visibility == 'internal' %>"><div class="meta"><strong><%= message.actor_type %></strong><span><%= message.visibility == 'internal' ? t('tickets.internal') : t('tickets.public') %></span><span><%= message.sent_at&.in_time_zone('Asia/Ho_Chi_Minh')&.strftime('%Y-%m-%d %H:%M') %></span></div><p><%= message.body %></p></article><% end %>
+   </div><% else %><p class="muted"><%= t('tickets.empty') %></p><% end %>
+ </section>
+ <div class="stack">
+ <% if can_write? %>
+  <section class="panel"><h2><%= t('tickets.reply_title') %></h2><p class="muted small"><%= t('tickets.reply_help') %></p>
+   <%= form_with url: ticket_ticket_messages_path(@ticket), method: :post do |f| %>
+    <%= hidden_field_tag :idempotency_key, @idempotency_key %>
+    <div class="field"><%= label_tag :visibility, t('tickets.visibility') %><%= select_tag :visibility, options_for_select([[t('tickets.internal'),'internal'],[t('tickets.public'),'public']]) %></div>
+    <div class="field"><%= label_tag :body, t('tickets.message') %><%= text_area_tag :body, nil, required:true, maxlength:10000 %></div>
+    <label class="checkbox"><%= check_box_tag :review_confirmed, '1', false %><span><%= t('tickets.confirm') %></span></label>
+    <p class="tiny muted"><%= t('tickets.no_external_send') %></p>
+    <%= f.submit t('tickets.save_reply') %>
+   <% end %>
+  </section>
+  <section class="panel"><h2><%= t('tickets.update_status') %></h2><div class="navlinks">
+   <% TicketsController::TRANSITIONS.fetch(@ticket.status).each do |status| %>
+    <%= button_to status, status_ticket_path(@ticket), method: :patch, params: {status: status}, class:'secondary' %>
+   <% end %>
+   <% if TicketsController::TRANSITIONS.fetch(@ticket.status).empty? %><p class="muted"><%= t('tickets.terminal') %></p><% end %>
+  </div></section>
+ <% end %>
+ </div>
+</div>

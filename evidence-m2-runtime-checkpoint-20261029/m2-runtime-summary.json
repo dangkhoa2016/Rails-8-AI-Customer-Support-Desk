@@ -1,0 +1,20 @@
+{
+  "status": "PASS_RUNTIME_ACCEPTANCE",
+  "captured_utc": "2026-10-29T01:43:56.256509+00:00",
+  "commands": {
+    "07_seed_second": 0,
+    "05_seed_first": 0,
+    "08_db_verify_second": 0,
+    "11_routes": 0,
+    "04_migrate": 0,
+    "02_python_negative_tests": 0,
+    "06_db_verify_first": 0,
+    "10_http_security": 0,
+    "09_test_db_prepare": 0,
+    "03_rails_version": 0,
+    "01_offline_knowledge": 0
+  },
+  "editorial_approval": "PENDING_HUMAN_REVIEW",
+  "embeddings": "NOT_RUN",
+  "modal_inference": "NOT_RUN"
+}

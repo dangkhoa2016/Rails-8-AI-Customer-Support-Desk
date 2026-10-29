@@ -1,0 +1,31 @@
+{
+  "status": "PASS_LOCAL_PASSWORD_FORM_GATE_RAILS_UI",
+  "utc": "2026-10-29T06:55:04.976110+00:00",
+  "results": [
+    {
+      "tenant": "TeamFlow",
+      "locale": "vi",
+      "preview_redirect": 303,
+      "private_preview_login": 200,
+      "private_password_submit": 303,
+      "demo_login": 302,
+      "AI_search_page": 200,
+      "PII_rejected": 422,
+      "model_calls": 0
+    },
+    {
+      "tenant": "NovaMart",
+      "locale": "en",
+      "preview_redirect": 303,
+      "private_preview_login": 200,
+      "private_password_submit": 303,
+      "demo_login": 302,
+      "AI_search_page": 200,
+      "PII_rejected": 422,
+      "model_calls": 0
+    }
+  ],
+  "rails_loopback_only": true,
+  "public_colab_browser": "NOT_VERIFIED_BY_BROWSER",
+  "model_calls": 0
+}

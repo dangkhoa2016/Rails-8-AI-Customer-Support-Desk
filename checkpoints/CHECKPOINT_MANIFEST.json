@@ -1,0 +1,14 @@
+{
+  "captured_utc": "2026-10-29T01:45:18.625024+00:00",
+  "source_files": 156,
+  "source_zip": "RAILS8_AI_SUPPORT_DESK_PATCHED_SOURCE_CHECKPOINT_20261029.zip",
+  "source_zip_sha256": "f8771e93762ecc7634f44d67d6a8e24340be138739c10ccee40bc53864acf602",
+  "evidence_zip": "RAILS8_AI_SUPPORT_DESK_RUNTIME_EVIDENCE_20261029.zip",
+  "evidence_zip_sha256": "d66d27b54bce1343ae18bafc53ae45e8ac15cc761c4ee562f0221732f615a085",
+  "M1_security": "10 tests 106 assertions PASS",
+  "M2_full": "11/11 PASS",
+  "M2_security": "7 tests 66 assertions PASS",
+  "editorial_approved": 0,
+  "modal_embedding": "NOT_RUN",
+  "no_git_commit": true
+}

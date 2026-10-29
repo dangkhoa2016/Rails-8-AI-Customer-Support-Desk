@@ -1,0 +1,734 @@
+{
+  "id": "M2_SCOPE_80_SEALED_CHALLENGE_V1",
+  "status": "FROZEN_BEFORE_GPU_NOT_FOR_TUNING",
+  "description": "80 newly written synthetic English and Vietnamese policy questions, 5 supported and 15 partially or wholly unsupported per tenant/locale stratum; gold means full-question sufficiency, not topical similarity",
+  "calibration_is_forbidden": true,
+  "number_of_cases": 80,
+  "lockbox_rules": {
+    "max_false_positive_for_preview_enable": 0,
+    "min_supported_recall_for_preview_enable": 0.8,
+    "no_adaptive_threshold_changes": true
+  },
+  "cases": [
+    {
+      "id": "M3S-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "Invoice paid nhưng activation event failed, quyền gói hiện tại cần đối chiếu với effective_plan như thế nào?"
+    },
+    {
+      "id": "M3S-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-015",
+      "query": "Yêu cầu refund hóa đơn trả phí đầu tiên vào ngày thứ 7 cần duyệt thủ công hay tự động chấp thuận?"
+    },
+    {
+      "id": "M3S-TF-VI-03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "Gói requested_plan và effective_plan khác nhau khi nâng cấp chưa hoàn thành thì phải nói rõ thế nào?"
+    },
+    {
+      "id": "M3S-TF-VI-04",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-015",
+      "query": "Yêu cầu hoàn tiền ngày thứ 8 kể từ hóa đơn paid đầu tiên được xử lý theo diện nào?"
+    },
+    {
+      "id": "M3S-TF-VI-05",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "Khi subscription past_due, có thể tự suy ra gói hiện tại bị hạ cấp không?"
+    },
+    {
+      "id": "M3S-TF-VI-06",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Tôi đã thanh toán và gói chưa kích hoạt; làm thế nào cấp thêm 50 lượt API mỗi phút trước khi có activation succeeded?"
+    },
+    {
+      "id": "M3S-TF-VI-07",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Activation event đã succeeded, nhưng tôi cần bật SSO bằng SAML và liên kết danh tính nhân viên ngay bây giờ; cấu hình nào?"
+    },
+    {
+      "id": "M3S-TF-VI-08",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Hóa đơn paid nhưng effective_plan cũ; vui lòng cho thời gian xử lý chính xác dưới 30 phút và tiền bồi thường SLA."
+    },
+    {
+      "id": "M3S-TF-VI-09",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Tôi vừa yêu cầu hoàn tiền trong hạn 7 ngày, hãy cho biết số tiền phí cổng thanh toán giữ lại và thời gian tiền về thẻ."
+    },
+    {
+      "id": "M3S-TF-VI-10",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Ngày thứ tám vẫn phải xét ngoại lệ refund; xin hướng dẫn đổi người nhận khoản hoàn từ thẻ sang tài khoản ngân hàng khác."
+    },
+    {
+      "id": "M3S-TF-VI-11",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Subscription past_due vẫn giữ quyền effective hiện tại; có thể mở khóa tài khoản thành viên bị vô hiệu hóa bằng quyền owner không?"
+    },
+    {
+      "id": "M3S-TF-VI-12",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Invoice paid kèm activation failed; tôi muốn hủy toàn bộ dữ liệu workspace và xóa hết file trước khi nâng cấp lại."
+    },
+    {
+      "id": "M3S-TF-VI-13",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Sau khi gói được nâng cấp thành công sẽ bắt đầu chu kỳ mới; mức VAT áp cho hóa đơn mới và mã số thuế lấy ở đâu?"
+    },
+    {
+      "id": "M3S-TF-VI-14",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Yêu cầu hoàn tiền ở ngày thứ bảy phải xét thủ công; tôi có thể lấy ngay chứng từ điều chỉnh thuế và xác nhận hoàn tiền đã thành công không?"
+    },
+    {
+      "id": "M3S-TF-VI-15",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Làm sao tải tệp nhật ký bảo mật toàn workspace sau khi gói được kích hoạt?"
+    },
+    {
+      "id": "M3S-TF-VI-16",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Hóa đơn thanh toán gói TeamFlow có hỗ trợ xuất hóa đơn điện tử ký số không?"
+    },
+    {
+      "id": "M3S-TF-VI-17",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Nếu thêm số lượng người dùng vào workspace thì giá gói doanh nghiệp tăng theo công thức nào?"
+    },
+    {
+      "id": "M3S-TF-VI-18",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Làm sao đổi người quản lý hợp đồng gia hạn định kỳ và tạo báo giá cho công ty?"
+    },
+    {
+      "id": "M3S-TF-VI-19",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Gói dịch vụ có sẵn công cụ sao lưu dữ liệu hằng giờ và khôi phục một thành viên không?"
+    },
+    {
+      "id": "M3S-TF-VI-20",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Có thể thanh toán hóa đơn nâng cấp bằng hai thẻ cùng lúc và áp dụng coupon không?"
+    },
+    {
+      "id": "M3S-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "Should staff verify both the succeeded activation record and effective_plan after a subscription invoice shows paid?"
+    },
+    {
+      "id": "M3S-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-015",
+      "query": "What happens to a refund request filed on day eight after the very first paid subscription invoice?"
+    },
+    {
+      "id": "M3S-TF-EN-03",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "Can the requested plan alone establish that the upgrade is active when the payment succeeded?"
+    },
+    {
+      "id": "M3S-TF-EN-04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-015",
+      "query": "Is the seventh calendar day still within the window for manual refund consideration?"
+    },
+    {
+      "id": "M3S-TF-EN-05",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "TF-KB-012",
+      "query": "What entitlement should an agent trust while a subscription is past_due in this demo?"
+    },
+    {
+      "id": "M3S-TF-EN-06",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The payment posted but the workspace upgrade failed; where do I set a custom monthly API token quota without an admin?"
+    },
+    {
+      "id": "M3S-TF-EN-07",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "I understand that a successful activation event is needed; can you now provision five new SAML identity groups?"
+    },
+    {
+      "id": "M3S-TF-EN-08",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The invoice is paid yet activation has not succeeded. Please give a guaranteed resolution deadline and auto-issue service credits."
+    },
+    {
+      "id": "M3S-TF-EN-09",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Our first payment was refunded within seven days. How can I update the receiving bank routing instructions for that refund?"
+    },
+    {
+      "id": "M3S-TF-EN-10",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "A late refund request needs exception review. Can I instantly reverse the charge and send it to another card?"
+    },
+    {
+      "id": "M3S-TF-EN-11",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The effective plan remains unchanged during a past_due state. How do I enable two-factor login for every team member?"
+    },
+    {
+      "id": "M3S-TF-EN-12",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "A paid upgrade failed to activate. Can you permanently remove the organization and its uploaded files as part of cancellation?"
+    },
+    {
+      "id": "M3S-TF-EN-13",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The new plan starts a new billing cycle after successful upgrade. What exact local VAT rate applies to our purchase?"
+    },
+    {
+      "id": "M3S-TF-EN-14",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "My first paid invoice is eligible for a manual refund review. Please guarantee the exact refund arrival timestamp."
+    },
+    {
+      "id": "M3S-TF-EN-15",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "How do I export all security event logs for a newly activated workspace?"
+    },
+    {
+      "id": "M3S-TF-EN-16",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Does TeamFlow provide signed electronic invoices for corporate subscriptions?"
+    },
+    {
+      "id": "M3S-TF-EN-17",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "What is the per-seat price for adding thirty more members to a paid workspace?"
+    },
+    {
+      "id": "M3S-TF-EN-18",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "How can the contract owner set up consolidated annual invoices for several workspaces?"
+    },
+    {
+      "id": "M3S-TF-EN-19",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Does the active subscription permit hourly backups and one-click file restoration?"
+    },
+    {
+      "id": "M3S-TF-EN-20",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Can the paid invoice be split across two company credit cards and charged separately?"
+    },
+    {
+      "id": "M3S-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-014",
+      "query": "Đơn giá trị hàng hóa sau chiết khấu còn đúng 500.000 VND có phải trả phí giao thường không?"
+    },
+    {
+      "id": "M3S-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-020",
+      "query": "Mục tiêu bàn giao đơn cho hãng vận chuyển tính bao nhiêu ngày làm việc từ lúc paid?"
+    },
+    {
+      "id": "M3S-NM-VI-03",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-029",
+      "query": "Đơn có nhiều kiện, thời điểm bắt đầu tính 7 ngày đổi trả lấy từ ngày delivered của mặt hàng nào?"
+    },
+    {
+      "id": "M3S-NM-VI-04",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-030",
+      "query": "Báo hàng thiếu ở ngày thứ 14 sau delivered có được đưa vào diện kiểm tra không?"
+    },
+    {
+      "id": "M3S-NM-VI-05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-014",
+      "query": "Khi xét ngưỡng miễn phí vận chuyển có được tính 30.000 phí giao vào net merchandise không?"
+    },
+    {
+      "id": "M3S-NM-VI-06",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Đơn sau giảm giá là 499.999 VND phải trả phí thường; hãy dùng điểm hội viên để miễn ngay phí ship giao nhanh."
+    },
+    {
+      "id": "M3S-NM-VI-07",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Đơn paid đã giao hãng chuyển phát; hãy đặt đúng 20 giờ hôm nay và đổi hãng giao cho khách."
+    },
+    {
+      "id": "M3S-NM-VI-08",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Hàng còn hộp và chưa dùng trong ngày thứ bảy; có thể đặt lịch thu hồi tại nhà lúc 17 giờ và hoàn tiền tức thì không?"
+    },
+    {
+      "id": "M3S-NM-VI-09",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Báo lỗi ở ngày thứ 14 được tiếp nhận; cửa hàng có thể tạo mã giảm giá bồi thường tự động và giao máy mới ngay không?"
+    },
+    {
+      "id": "M3S-NM-VI-10",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Giao dự kiến 2 đến 5 ngày làm việc sau handoff; bạn có thể cam kết khách nhận trước 9 giờ sáng mai được chứ?"
+    },
+    {
+      "id": "M3S-NM-VI-11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Đơn dưới ngưỡng miễn ship nên tính 30.000 VND; xin hướng dẫn cộng dồn hai coupon cho đơn này."
+    },
+    {
+      "id": "M3S-NM-VI-12",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Khách mua hàng giảm giá còn đúng 500.000 VND được miễn phí thường; xin báo phí giao trong hai giờ và áp dụng express miễn phí."
+    },
+    {
+      "id": "M3S-NM-VI-13",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Ngày thứ 15 không thuộc cửa sổ báo lỗi 14 ngày, nhưng tôi muốn mua thêm bảo hiểm bảo hành mở rộng cho SKU này."
+    },
+    {
+      "id": "M3S-NM-VI-14",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Đơn tách ba kiện thì cần kiểm tra từng tracking; tôi có thể thay đổi số điện thoại người nhận khi đang vận chuyển không?"
+    },
+    {
+      "id": "M3S-NM-VI-15",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Giá trị đơn đúng 500.000 đồng có thể được đổi sang hình thức giao lạnh trong ngày không?"
+    },
+    {
+      "id": "M3S-NM-VI-16",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Điểm tích lũy khách hàng được quy đổi sang phiếu quà tặng theo tỷ lệ bao nhiêu?"
+    },
+    {
+      "id": "M3S-NM-VI-17",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Có thể sửa số điện thoại người nhận sau khi tạo nhãn vận chuyển bằng API không?"
+    },
+    {
+      "id": "M3S-NM-VI-18",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Chính sách kiểm tra hàng trước khi ký nhận của hãng giao là bao nhiêu phút?"
+    },
+    {
+      "id": "M3S-NM-VI-19",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Đơn đã paid có hỗ trợ trả góp qua cổng thanh toán cho sản phẩm điện tử không?"
+    },
+    {
+      "id": "M3S-NM-VI-20",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Làm thế nào thay đổi địa chỉ và số điện thoại nhận hàng cho đơn đang trên đường?"
+    },
+    {
+      "id": "M3S-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-014",
+      "query": "Will standard shipping be free when the discounted merchandise value equals VND 500,000?"
+    },
+    {
+      "id": "M3S-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-020",
+      "query": "What is the target number of business days for courier handoff after verified payment?"
+    },
+    {
+      "id": "M3S-NM-EN-03",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-029",
+      "query": "Does an unused return request on calendar day seven remain inside the normal return window?"
+    },
+    {
+      "id": "M3S-NM-EN-04",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-030",
+      "query": "Does a defect reported on calendar day fifteen automatically eliminate SKU warranty coverage?"
+    },
+    {
+      "id": "M3S-NM-EN-05",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "supported",
+      "expected_article_key": "NM-KB-014",
+      "query": "Should standard delivery costs be included when checking the post-discount free-shipping threshold?"
+    },
+    {
+      "id": "M3S-NM-EN-06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The after-discount total is VND 499,999; can I redeem customer reward points to waive express shipping tonight?"
+    },
+    {
+      "id": "M3S-NM-EN-07",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The paid parcel has been handed over to the courier; book an exact 8 pm delivery and swap to a different courier."
+    },
+    {
+      "id": "M3S-NM-EN-08",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "My unused item is within the seven-day return window; arrange a scheduled home pickup and approve an instant refund."
+    },
+    {
+      "id": "M3S-NM-EN-09",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "I reported the defect on day fourteen; can you issue an automated compensation voucher and guarantee a new product tomorrow?"
+    },
+    {
+      "id": "M3S-NM-EN-10",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "Delivery should take two to five business days after handoff. Can support guarantee arrival tomorrow before noon?"
+    },
+    {
+      "id": "M3S-NM-EN-11",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "My standard shipping fee is VND 30,000 because of the discounted total; can two promotional codes be stacked?"
+    },
+    {
+      "id": "M3S-NM-EN-12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The net merchandise value equals the standard free-shipping threshold. Will same-day premium delivery also be complimentary?"
+    },
+    {
+      "id": "M3S-NM-EN-13",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "The fourteen-day issue reporting period is over; how do I purchase additional accidental damage warranty coverage?"
+    },
+    {
+      "id": "M3S-NM-EN-14",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "mixed",
+      "expected_article_key": null,
+      "query": "For split shipments staff should review each handoff. Can I change the in-transit parcel destination through the app?"
+    },
+    {
+      "id": "M3S-NM-EN-15",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Can a paid order be switched to refrigerated courier delivery on the same day?"
+    },
+    {
+      "id": "M3S-NM-EN-16",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "What exchange rate converts NovaMart rewards points into gift credit?"
+    },
+    {
+      "id": "M3S-NM-EN-17",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Where is the API for updating a shipment recipient phone number after its label is issued?"
+    },
+    {
+      "id": "M3S-NM-EN-18",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "How many minutes does the carrier permit inspection before signing for a parcel?"
+    },
+    {
+      "id": "M3S-NM-EN-19",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Does NovaMart offer installment payments for electronics purchased online?"
+    },
+    {
+      "id": "M3S-NM-EN-20",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "sealed_challenge_20261029",
+      "kind": "unsupported_close",
+      "expected_article_key": null,
+      "query": "Can an in-transit paid order be rerouted to another building and apartment?"
+    }
+  ]
+}

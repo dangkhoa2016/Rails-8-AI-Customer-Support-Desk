@@ -1,0 +1,114 @@
+{
+  "kind": "M2_SCOPE_SEALED80_ACCEPTANCE",
+  "status": "COMPLETED",
+  "captured_utc": "2026-10-29T09:41:24Z",
+  "sealed_manifest_sha256": "13ab3412404239a6bc3232ca1598cb12b00db1bf29f5d6226ae3a4d9f88ed20a",
+  "model_pins": {
+    "embedding": "Qwen/Qwen3-Embedding-4B",
+    "embedding_revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "reranker": "Qwen/Qwen3-Reranker-4B",
+    "reranker_revision": "22e683669bc0f0bd69640a1354a6d0aebcfeede5"
+  },
+  "policy_sha256": "aec520fe92abd782b922d2d4a362381a729a3e791349b3c0ea16e1878889a5ac",
+  "results_sha256": "df5cd6f88b2b917f675cb26323ac1f1cb39e7126817c63d0c60a6347f6cba8ab",
+  "synthetic_queries": 80,
+  "seed": "NO_RNG_MANUALLY_AUTHORED",
+  "parallel_instances": 1,
+  "baseline": {
+    "tp": 14,
+    "fp": 6,
+    "fn": 6,
+    "tn": 54
+  },
+  "combined": {
+    "tp": 14,
+    "fp": 3,
+    "fn": 6,
+    "tn": 57
+  },
+  "per_tenant_locale": {
+    "teamflow-cloud/vi": {
+      "baseline": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 0,
+        "unsupported_total": 15
+      },
+      "combined": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 0,
+        "unsupported_total": 15
+      }
+    },
+    "teamflow-cloud/en": {
+      "baseline": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 1,
+        "unsupported_total": 15
+      },
+      "combined": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 1,
+        "unsupported_total": 15
+      }
+    },
+    "novamart-store/vi": {
+      "baseline": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 3,
+        "unsupported_total": 15
+      },
+      "combined": {
+        "supported_correct": 3,
+        "supported_total": 5,
+        "unsupported_accepted": 1,
+        "unsupported_total": 15
+      }
+    },
+    "novamart-store/en": {
+      "baseline": {
+        "supported_correct": 5,
+        "supported_total": 5,
+        "unsupported_accepted": 2,
+        "unsupported_total": 15
+      },
+      "combined": {
+        "supported_correct": 5,
+        "supported_total": 5,
+        "unsupported_accepted": 1,
+        "unsupported_total": 15
+      }
+    }
+  },
+  "supported_recall": 0.7,
+  "false_positive_count": 3,
+  "adjudication_rule": {
+    "max_false_positive_for_preview_enable": 0,
+    "min_supported_recall_for_preview_enable": 0.8,
+    "no_adaptive_threshold_changes": true
+  },
+  "decision": "BLOCK_PREVIEW_FLAG",
+  "latency_seconds": {
+    "total": 219.65,
+    "min": 1.224,
+    "max": 103.581,
+    "mean": 2.744
+  },
+  "db_before": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84
+  },
+  "db_after": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84
+  },
+  "caveat": "Only 80 synthetic pre-labeled questions; topical probe contrast is not proof of entailment. No production claims."
+}

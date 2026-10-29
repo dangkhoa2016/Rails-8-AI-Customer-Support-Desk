@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-10-29T02:08:04.938114+00:00",
+  "source_files": 170,
+  "source_zip": "RAILS8_AI_SUPPORT_DESK_M2_EDITORIAL_SEMANTIC_SOURCE_20261029.zip",
+  "source_sha256": "c23868f90e23aee40c7b8ee91c0bf3d6794f7b4c07689fa2fd7a5cdeea4f87dd",
+  "evidence_zip": "RAILS8_AI_SUPPORT_DESK_M2_EDITORIAL_SEMANTIC_EVIDENCE_20261029.zip",
+  "evidence_sha256": "857f07eaa487973fa7a80846a926f37fa91ceb69d00cdc3f5d45710b82730ffc",
+  "m0_m1_source_not_rebuilt": true,
+  "editorial_review": "TRIAGED_200_NOT_HUMAN_APPROVED",
+  "m2_vector": "PGVECTOR_MIGRATED_DEV_TEST_ONLY",
+  "modal": "SOURCE_VALIDATED_NO_DEPLOYMENT",
+  "gpu_metrics": "NOT_RUN",
+  "git_commit": "NONE"
+}

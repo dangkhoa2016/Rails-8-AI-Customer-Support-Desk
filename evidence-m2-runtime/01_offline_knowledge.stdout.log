@@ -1,0 +1,18 @@
+{
+  "status": "PASS_OFFLINE_ONLY",
+  "errors": [],
+  "counts": {
+    "teamflow-cloud:articles": 50,
+    "teamflow-cloud:vi": 50,
+    "versions": 200,
+    "chunks": 1400,
+    "teamflow-cloud:en": 50,
+    "novamart-store:articles": 50,
+    "novamart-store:vi": 50,
+    "novamart-store:en": 50
+  },
+  "validation_scope": "JSON structure + canonical policy links + checksums; no PostgreSQL/Modal inference",
+  "editorial_approval": "NOT_PERFORMED",
+  "postgresql_runtime": "NOT_RUN",
+  "modal_embeddings": "NOT_RUN"
+}

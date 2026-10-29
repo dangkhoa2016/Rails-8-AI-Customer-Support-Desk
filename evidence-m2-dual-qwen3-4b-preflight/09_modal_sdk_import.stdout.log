@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SOURCE_ONLY",
+  "modal_sdk_imports": [
+    {
+      "source": "qwen3_embedding_service",
+      "model_id": "Qwen/Qwen3-Embedding-4B",
+      "revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+      "static_import": "PASS"
+    },
+    {
+      "source": "qwen3_reranker_service",
+      "model_id": "Qwen/Qwen3-Reranker-4B",
+      "revision": "22e683669bc0f0bd69640a1354a6d0aebcfeede5",
+      "static_import": "PASS"
+    }
+  ],
+  "models_downloaded": false,
+  "gpu_executed": false
+}

@@ -1,0 +1,1 @@
+["python3", "script/verify_m2_knowledge.py", "--report", "evidence/m2/knowledge-offline-validation.json"]

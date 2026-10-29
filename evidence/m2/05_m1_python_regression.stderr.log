@@ -1,0 +1,15 @@
+test_determinism (test_m1_dataset.M1OfflineDatasetTests.test_determinism) ... ok
+test_reference_fixtures_and_counts (test_m1_dataset.M1OfflineDatasetTests.test_reference_fixtures_and_counts) ... ok
+test_reject_delivery_without_fulfillment (test_m1_dataset.M1OfflineDatasetTests.test_reject_delivery_without_fulfillment) ... ok
+test_reject_false_activation (test_m1_dataset.M1OfflineDatasetTests.test_reject_false_activation) ... ok
+test_reject_incorrect_discount_money (test_m1_dataset.M1OfflineDatasetTests.test_reject_incorrect_discount_money) ... ok
+test_reject_missing_customer (test_m1_dataset.M1OfflineDatasetTests.test_reject_missing_customer) ... ok
+test_reject_overshipment (test_m1_dataset.M1OfflineDatasetTests.test_reject_overshipment) ... ok
+test_reject_unpaid_fulfillment (test_m1_dataset.M1OfflineDatasetTests.test_reject_unpaid_fulfillment) ... ok
+test_reject_wrong_shipping_boundary (test_m1_dataset.M1OfflineDatasetTests.test_reject_wrong_shipping_boundary) ... ok
+test_reject_wrong_tenant_reference (test_m1_dataset.M1OfflineDatasetTests.test_reject_wrong_tenant_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.122s
+
+OK

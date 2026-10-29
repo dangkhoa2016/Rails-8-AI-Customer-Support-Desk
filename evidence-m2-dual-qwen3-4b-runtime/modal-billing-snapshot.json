@@ -1,0 +1,9 @@
+{
+  "metered_cost": "0.34852788",
+  "metered_cost_breakdown": {
+    "network_egress": "0.00918454",
+    "llm_tokens": "0E-8",
+    "ephemeral_apps": "0.01923633",
+    "deployed_apps": "0.32010702"
+  }
+}

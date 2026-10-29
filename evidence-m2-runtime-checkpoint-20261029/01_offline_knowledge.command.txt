@@ -1,0 +1,1 @@
+python3 script/verify_m2_knowledge.py --report /content/Rails-8-AI-Customer-Support-Desk/evidence-m2-runtime-checkpoint-20261029/offline-knowledge-report.json 

@@ -1,0 +1,29 @@
+{
+  "project": "Rails-8-AI-Customer-Support-Desk",
+  "milestone": "M2_SOURCE_PREPARED_PENDING_RUNTIME_AND_EDITORIAL_APPROVAL",
+  "created_utc": "2026-10-28T16:49:12.184355+00:00",
+  "business_policy_version": "1.0.0",
+  "logical_knowledge_articles": 100,
+  "bilingual_draft_versions": 200,
+  "content_chunks_not_embedded": 1400,
+  "fulltext_generated_offline": true,
+  "editorial_approved_articles": 0,
+  "runtime_status": {
+    "rails_boot": "NOT_RUN",
+    "postgresql": "NOT_RUN",
+    "http_integration_tests": "NOT_RUN",
+    "model_embeddings": "NOT_RUN",
+    "pgvector": "NOT_IMPLEMENTED",
+    "semantic_benchmark": "NOT_RUN"
+  },
+  "checks": {
+    "offline_m2_tests": "PASS",
+    "source_validation": "PASS",
+    "source_regeneration_byte_identical": "PASS",
+    "ruby_syntax": "PASS_SOURCE_ONLY",
+    "erb_syntax": "PASS_SOURCE_ONLY"
+  },
+  "source_blueprint_sha256": "dde7d8c4f1b517e50750620b1e4c60244f408d23da06a0bfa5dcc0380cb9ccf6",
+  "knowledge_data_sha256": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33",
+  "previous_m1_source_preserved": true
+}

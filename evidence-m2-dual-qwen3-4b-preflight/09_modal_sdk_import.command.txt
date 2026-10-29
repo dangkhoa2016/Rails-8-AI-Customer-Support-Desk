@@ -1,0 +1,1 @@
+/tmp/rails8-modal-check-uv/bin/python script/verify_modal_4b_static.py 

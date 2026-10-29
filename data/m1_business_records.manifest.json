@@ -1,0 +1,31 @@
+{
+  "blueprint_sha256": "dde7d8c4f1b517e50750620b1e4c60244f408d23da06a0bfa5dcc0380cb9ccf6",
+  "counts": {
+    "customers": 100,
+    "memberships": 6,
+    "nm_order_items": 180,
+    "nm_orders": 120,
+    "nm_payments": 120,
+    "nm_products": 40,
+    "nm_return_items": 25,
+    "nm_return_requests": 25,
+    "nm_shipment_items": 185,
+    "nm_shipments": 130,
+    "nm_warranty_claims": 12,
+    "organizations": 2,
+    "tf_activation_events": 30,
+    "tf_api_request_events": 50,
+    "tf_export_jobs": 35,
+    "tf_invoices": 80,
+    "tf_service_incidents": 8,
+    "tf_subscriptions": 40,
+    "tf_workspaces": 40,
+    "users": 6
+  },
+  "dataset_sha256": "6a266e42c0099c18d8560ed88e835f8873b62c35811dac28e350667ce3d68680",
+  "note": "The records are a deterministic source artifact, not database rows or evaluation gold.",
+  "policy_version": "1.0.0",
+  "reference_time": "2026-10-28T00:00:00+07:00",
+  "seed": 20261028,
+  "status": "GENERATED_OFFLINE_NOT_SEEDED_IN_DB"
+}

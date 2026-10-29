@@ -1,0 +1,96 @@
+{
+  "status": "PASS_APPROVED_KB_NO_GPU",
+  "articles": 100,
+  "versions_v1_draft": 200,
+  "versions_v2_approved": 12,
+  "approved_chunks": 84,
+  "embeddings": 0,
+  "source_sha256": "b13cde4d250805195e45bee39033e3d903e4e86a6040c5a7479cd7444c918e14",
+  "checks": [
+    {
+      "article_key": "TF-KB-012",
+      "locale": "vi",
+      "content_sha256": "4b83e4eef319880ff6f707df5ba93a13c0a07f24147546a6511f9e30850c9793",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "TF-KB-012",
+      "locale": "en",
+      "content_sha256": "9e136ab659dac3be97beb9b70dcf792896fbc5aab0ff000236c54e08d6dabcd7",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "TF-KB-015",
+      "locale": "vi",
+      "content_sha256": "fc407493a6b5a37a9dc0d3d78789cee2c7aebc5a8a50e04d701918ced9ddc1f0",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "TF-KB-015",
+      "locale": "en",
+      "content_sha256": "4a973f29fa10fab72643866e815d98cb0c9943d0d33fee253a2fb02a977c7509",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-014",
+      "locale": "vi",
+      "content_sha256": "bbafff6fc0a08d061f0daa7236da1f094246b849232d1b691d26331803ba1269",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-014",
+      "locale": "en",
+      "content_sha256": "112f698269cf8ae9f982f914f0c94d2e90ea11b587db8c4a5b1ca145e717ddef",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-020",
+      "locale": "vi",
+      "content_sha256": "ee681fd73e544c9e2f08de00876a74dd4cb30afa7b61fd3bdd93e48c77b061b3",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-020",
+      "locale": "en",
+      "content_sha256": "2b092e23965ea6e4b4e84bf3237b75aa43083bfa2df9e650a94544d6ec26b267",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-029",
+      "locale": "vi",
+      "content_sha256": "1b8785577d903f9843fd4dc0a7bcffd108b5b7176af262a7b0f33cf667f1cd58",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-029",
+      "locale": "en",
+      "content_sha256": "f6fe228abb9ca139eea950e38409fd7c9f33588032b20c6f21e930cac27fc18e",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-030",
+      "locale": "vi",
+      "content_sha256": "f29b4228247f61095fe20ca585eb73cd2fbc06109e1f76875ac777dc337fd8ca",
+      "chunks": 7,
+      "audit_count": 1
+    },
+    {
+      "article_key": "NM-KB-030",
+      "locale": "en",
+      "content_sha256": "780bad3784fe9a91c42da9eef99540aeb7e2eb3930ba6ad2126623a112477679",
+      "chunks": 7,
+      "audit_count": 1
+    }
+  ],
+  "issues": []
+}

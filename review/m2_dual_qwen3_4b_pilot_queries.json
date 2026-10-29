@@ -1,0 +1,97 @@
+{
+  "kind": "EDITORIAL_M2_BILINGUAL_DUAL_QWEN3_4B_PILOT_V1",
+  "status": "BENCHMARK_PREPARED_NOT_RUN",
+  "ground_truth": "expected_article_key curated from approved M0 policies; no model judged yet",
+  "source_sha256": "b13cde4d250805195e45bee39033e3d903e4e86a6040c5a7479cd7444c918e14",
+  "embedding_model": "Qwen/Qwen3-Embedding-4B",
+  "embedding_revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+  "embedding_dimensions": 2560,
+  "reranker_model": "Qwen/Qwen3-Reranker-4B",
+  "reranker_revision": "22e683669bc0f0bd69640a1354a6d0aebcfeede5",
+  "cases": [
+    {
+      "case_id": "M2-4B-01",
+      "tenant": "teamflow-cloud",
+      "expected_article_key": "TF-KB-012",
+      "locale": "vi",
+      "query": "Hóa đơn đã paid nhưng workspace của tôi vẫn chưa có quyền gói mới; kiểm tra gì trước?"
+    },
+    {
+      "case_id": "M2-4B-02",
+      "tenant": "teamflow-cloud",
+      "expected_article_key": "TF-KB-012",
+      "locale": "en",
+      "query": "My invoice says paid, but the upgraded workspace permissions never appeared. What should be verified?"
+    },
+    {
+      "case_id": "M2-4B-03",
+      "tenant": "teamflow-cloud",
+      "expected_article_key": "TF-KB-015",
+      "locale": "vi",
+      "query": "Tôi yêu cầu hoàn tiền vào ngày thứ bảy sau lần thanh toán đầu tiên. Có được hoàn ngay không?"
+    },
+    {
+      "case_id": "M2-4B-04",
+      "tenant": "teamflow-cloud",
+      "expected_article_key": "TF-KB-015",
+      "locale": "en",
+      "query": "Can I request a refund on day eight after my first paid invoice, and is approval automatic?"
+    },
+    {
+      "case_id": "M2-4B-05",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-014",
+      "locale": "vi",
+      "query": "Đơn hàng sau giảm giá 499.999 đồng, phí giao thường là bao nhiêu?"
+    },
+    {
+      "case_id": "M2-4B-06",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-014",
+      "locale": "en",
+      "query": "Does an order with VND 500,000 net merchandise qualify for free standard shipping?"
+    },
+    {
+      "case_id": "M2-4B-07",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-020",
+      "locale": "vi",
+      "query": "Đơn đã thanh toán nhưng chưa bàn giao cho hãng vận chuyển; có thể hứa ngày giao không?"
+    },
+    {
+      "case_id": "M2-4B-08",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-020",
+      "locale": "en",
+      "query": "After carrier handoff, is the estimated two-to-five-business-day delivery window guaranteed?"
+    },
+    {
+      "case_id": "M2-4B-09",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-029",
+      "locale": "vi",
+      "query": "Hàng mới giao được bảy ngày, chưa dùng còn hộp, tôi có thể yêu cầu trả hàng không?"
+    },
+    {
+      "case_id": "M2-4B-10",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-029",
+      "locale": "en",
+      "query": "For an unused item in original packaging, is an ordinary return request on day eight inside the normal window?"
+    },
+    {
+      "case_id": "M2-4B-11",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-030",
+      "locale": "vi",
+      "query": "Đến ngày thứ 15 mới phát hiện lỗi, quyền bảo hành của SKU còn được xét không?"
+    },
+    {
+      "case_id": "M2-4B-12",
+      "tenant": "novamart-store",
+      "expected_article_key": "NM-KB-030",
+      "locale": "en",
+      "query": "A damaged item is reported on day 14 after delivery. Does that mean a refund is automatically approved?"
+    }
+  ]
+}

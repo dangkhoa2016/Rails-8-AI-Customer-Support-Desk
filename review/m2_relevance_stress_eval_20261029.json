@@ -1,0 +1,153 @@
+{
+  "kind": "M2_RELEVANCE_STRESS_INDEPENDENT",
+  "version": 1,
+  "source": "Human curated after initial gate study; independently labeled before inference, no calibration on stress.",
+  "seed": 20261029,
+  "notes": "Twelve unapproved-topic/ambiguous negatives and four positive paraphrases. This set is not used for parameter fitting.",
+  "cases": [
+    {
+      "id": "S01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "Tôi quên mật khẩu đăng nhập TeamFlow Cloud, làm sao đặt lại mật khẩu và mở khóa tài khoản?"
+    },
+    {
+      "id": "S02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "How do I configure a custom domain and DNS records for my TeamFlow workspace?"
+    },
+    {
+      "id": "S03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "Tôi cần xuất hàng loạt hóa đơn ra CSV mỗi tháng, quy trình xuất dữ liệu là gì?"
+    },
+    {
+      "id": "S04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "How many API calls per minute does the current TeamFlow plan allow?"
+    },
+    {
+      "id": "S05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "Tôi quên mật khẩu tài khoản NovaMart, làm sao để khôi phục quyền đăng nhập?"
+    },
+    {
+      "id": "S06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "How can I change the shipping address on an existing NovaMart order?"
+    },
+    {
+      "id": "S07",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "Mã giảm giá của NovaMart hết hạn khi nào và có thể cộng dồn hai mã không?"
+    },
+    {
+      "id": "S08",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_unsupported",
+      "split": "stress",
+      "query": "Can I replace my credit card used for checkout after the order was paid?"
+    },
+    {
+      "id": "S09",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "ambiguous_mixed",
+      "split": "stress",
+      "query": "Hóa đơn đã paid và gói đã kích hoạt; làm sao nâng giới hạn truy cập API của workspace?"
+    },
+    {
+      "id": "S10",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "ambiguous_mixed",
+      "split": "stress",
+      "query": "If a workspace subscription is active, how do I integrate the support chatbot with external email services?"
+    },
+    {
+      "id": "S11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "ambiguous_mixed",
+      "split": "stress",
+      "query": "Sau khi giao hàng đúng hẹn, tôi muốn thay đổi địa chỉ để gửi hóa đơn VAT điện tử thì làm sao?"
+    },
+    {
+      "id": "S12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "ambiguous_mixed",
+      "split": "stress",
+      "query": "My order arrived on time but the loyalty points did not appear in my customer account. What can I do?"
+    },
+    {
+      "id": "S13",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported_paraphrase",
+      "split": "stress",
+      "query": "Biên lai báo giao dịch thành công, nhưng workspace vẫn dùng quyền cũ; cần kiểm tra activation event gì?"
+    },
+    {
+      "id": "S14",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-030",
+      "kind": "supported_paraphrase",
+      "split": "stress",
+      "query": "The product arrived damaged: is the fourteen-day reporting period identical to its warranty period?"
+    },
+    {
+      "id": "S15",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported_paraphrase",
+      "split": "stress",
+      "query": "Does a paid subscription refund request need staff review, or is it automatic?"
+    },
+    {
+      "id": "S16",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-014",
+      "kind": "supported_paraphrase",
+      "split": "stress",
+      "query": "Tổng giá trị hàng hóa sau giảm giá là 500 nghìn thì phí giao thường được tính bao nhiêu?"
+    }
+  ]
+}

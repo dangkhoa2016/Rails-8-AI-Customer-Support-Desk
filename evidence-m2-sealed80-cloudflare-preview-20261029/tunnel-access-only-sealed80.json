@@ -1,0 +1,19 @@
+{
+  "status": "PASS_CLOUDFLARE_PASSWORD_GATE_AND_READ_ONLY_RAILS",
+  "captured_utc": "2026-10-29T09:49:41.805091+00:00",
+  "host": "outlined-nasa-truly-envelope.trycloudflare.com",
+  "tunnel_kind": "CLOUDFLARE_QUICK_TUNNEL",
+  "unauthenticated_redirect": 303,
+  "wrong_password": 200,
+  "valid_preview_password": 303,
+  "demo_sign_in": 302,
+  "ai_search_page": 200,
+  "approve_blocked": 405,
+  "ticket_creation_blocked": 405,
+  "pii_prompt_rejected": 422,
+  "no_credentials_logged": true,
+  "database_business_mutations": 0,
+  "gpu_search": {
+    "status": "NOT_RUN"
+  }
+}

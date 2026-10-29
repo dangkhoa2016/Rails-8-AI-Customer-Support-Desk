@@ -1,0 +1,31 @@
+# LOCAL disposable demo only. No public exposure by default.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: rails8_ai_support_desk_development
+      POSTGRES_USER: support_desk
+      POSTGRES_PASSWORD: synthetic_local_only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U support_desk -d rails8_ai_support_desk_development"]
+      interval: 3s
+      timeout: 3s
+      retries: 25
+    volumes:
+      - postgres_demo_data:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      PGHOST: postgres
+      PGUSER: support_desk
+      PGPASSWORD: synthetic_local_only
+      PGDATABASE: rails8_ai_support_desk_development
+      RAILS_ENV: development
+      M1_SYNTHETIC_DEMO: YES
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:3000:3000'
+volumes:
+  postgres_demo_data:

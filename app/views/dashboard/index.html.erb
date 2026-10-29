@@ -1,0 +1,34 @@
+<section class="hero">
+  <span class="pill"><%= current_organization.vertical == 'b2b_saas' ? 'B2B SaaS' : 'E-commerce' %> · policy <%= current_organization.policy_version %></span>
+  <h1><%= t('dashboard.welcome', organization: current_organization.name) %></h1>
+  <p class="intro"><%= t('dashboard.subtitle') %></p>
+  <% if can_write? %><%= link_to t('tickets.new'), new_ticket_path, class: 'btn' %><% end %>
+</section>
+<div class="cards">
+  <div class="card"><div class="label"><%= t('dashboard.customers') %></div><div class="value"><%= @customer_count %></div></div>
+  <div class="card"><div class="label"><%= t('dashboard.tickets') %></div><div class="value"><%= @ticket_counts.values.sum %></div></div>
+  <div class="card"><div class="label"><%= current_organization.vertical == 'b2b_saas' ? t('dashboard.workspaces') : t('dashboard.orders') %></div><div class="value"><%= @business_counts[:first] %></div></div>
+  <div class="card"><div class="label"><%= current_organization.vertical == 'b2b_saas' ? t('dashboard.invoices') : t('dashboard.shipments') %></div><div class="value"><%= @business_counts[:second] %></div></div>
+</div>
+<div class="two">
+  <section class="panel"><h2><%= t('dashboard.lifecycle') %></h2>
+    <% if @ticket_counts.any? %>
+      <div class="table-wrap"><table><thead><tr><th><%= t('tickets.status') %></th><th><%= t('dashboard.total') %></th></tr></thead><tbody>
+      <% @ticket_counts.sort.each do |status, count| %><tr><td><%= status %></td><td><%= count %></td></tr><% end %>
+      </tbody></table></div>
+    <% else %><p class="muted"><%= t('dashboard.empty_tickets') %></p><% end %>
+  </section>
+  <section class="panel"><h2><%= t('dashboard.read_only') %></h2>
+    <p class="muted"><%= t('dashboard.read_only_explain') %></p>
+    <%= link_to t('nav.customers'), customers_path, class: 'btn secondary' %>
+    <p><%= link_to t('knowledge.nav'), knowledge_articles_path, class: 'btn secondary' %></p>
+    <p class="tiny muted"><%= t('knowledge.no_embeddings') %></p>
+  </section>
+</div>
+<section class="panel"><div class="panel-header"><h2><%= t('dashboard.recent') %></h2><%= link_to t('nav.tickets'), tickets_path %></div>
+<% if @recent_tickets.any? %>
+  <div class="table-wrap"><table><thead><tr><th><%= t('tickets.number') %></th><th><%= t('tickets.customer') %></th><th><%= t('tickets.category') %></th><th><%= t('tickets.status') %></th></tr></thead><tbody>
+    <% @recent_tickets.each do |ticket| %><tr><td><%= link_to ticket.number, ticket_path(ticket) %></td><td><%= ticket.customer.external_key %></td><td><%= ticket.category %></td><td><span class="pill"><%= ticket.status %></span></td></tr><% end %>
+  </tbody></table></div>
+<% else %><div class="badge-empty"><%= t('dashboard.empty_tickets') %></div><% end %>
+</section>

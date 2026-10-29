@@ -1,0 +1,117 @@
+{
+  "kind": "M2_RELEVANCE_LOCKBOX_AFTER_STRESS",
+  "version": 1,
+  "source": "Human-labeled prior to GPU inference; lockbox not used for calibration.",
+  "seed": 20261029,
+  "notes": "Freeze threshold from calibration and stress, then measure this independent lockbox without retuning.",
+  "cases": [
+    {
+      "id": "L01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "Gói workspace đã kích hoạt thành công nhưng hệ thống yêu cầu tăng hạn mức API ngay; muốn thay đổi quota phải làm gì?"
+    },
+    {
+      "id": "L02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "My billing invoice is already paid; where can I change the legal entity and tax ID printed on the invoice?"
+    },
+    {
+      "id": "L03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "Tài khoản quản trị bị khoá khi thanh toán đăng ký gói, làm sao mở lại tài khoản truy cập?"
+    },
+    {
+      "id": "L04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "The plan has been active for a month; how can I add an SSO identity provider to the workspace?"
+    },
+    {
+      "id": "L05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "Đơn đã được bàn giao cho hãng vận chuyển; làm sao hẹn lại thời điểm giao theo giờ mong muốn?"
+    },
+    {
+      "id": "L06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "My package was delivered, but my loyalty points were not updated. How are reward points computed?"
+    },
+    {
+      "id": "L07",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "Tôi muốn đổi cỡ áo sau khi đặt hàng đã thanh toán, có thể chỉnh SKU trước khi hãng vận chuyển nhận không?"
+    },
+    {
+      "id": "L08",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "same_tenant_partial",
+      "split": "lockbox",
+      "query": "The order has a discounted price; can I combine this promotion with a loyalty voucher code?"
+    },
+    {
+      "id": "L09",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported_paraphrase",
+      "split": "lockbox",
+      "query": "Biên nhận cho biết đã thanh toán nhưng các quyền của gói mới chưa hiệu lực trong workspace, có cần xác minh sự kiện kích hoạt không?"
+    },
+    {
+      "id": "L10",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported_paraphrase",
+      "split": "lockbox",
+      "query": "Within seven local days of the first paid invoice, is the request for refund subject to manual consideration?"
+    },
+    {
+      "id": "L11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-014",
+      "kind": "supported_paraphrase",
+      "split": "lockbox",
+      "query": "Đơn mua sau khi giảm còn 499 nghìn đồng, có bị tính 30 nghìn phí vận chuyển tiêu chuẩn không?"
+    },
+    {
+      "id": "L12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-030",
+      "kind": "supported_paraphrase",
+      "split": "lockbox",
+      "query": "Does reporting a damaged item on day fifteen necessarily mean the SKU warranty is expired?"
+    }
+  ]
+}

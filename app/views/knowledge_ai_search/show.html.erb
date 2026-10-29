@@ -1,0 +1,64 @@
+<section class="hero">
+  <span class="pill ok"><%= t('ai_search.pilot') %></span>
+  <h1><%= t('ai_search.title') %></h1>
+  <p class="intro"><%= t('ai_search.intro') %></p>
+  <div class="ai-metrics">
+    <div class="ai-metric"><strong>Qwen3-Embedding-4B</strong><span>2560-D · PostgreSQL cosine</span></div>
+    <div class="ai-metric"><strong>Qwen3-Reranker-4B</strong><span>Raw logits · Top 5</span></div>
+    <div class="ai-metric"><strong><%= current_organization.name %></strong><span><%= current_membership.role %> · <%= @locale.upcase %> · ACL</span></div>
+  </div>
+</section>
+<section class="panel">
+  <div class="panel-header">
+    <h2><%= t('ai_search.search_title') %></h2>
+    <span class="pill <%= @ready ? 'ok' : 'warn' %>"><%= @ready ? t('ai_search.ready') : t('ai_search.disabled') %></span>
+  </div>
+  <p class="muted"><strong><%= t('ai_search.tenant_scope', tenant: current_organization.name) %></strong> <%= t('ai_search.tenant_limit') %> <%= link_to t('ai_search.switch_tenant'), demo_sign_in_path(locale: @locale) %>.</p>
+  <p class="muted"><%= t('ai_search.warning') %></p>
+  <% unless @ready %><p class="alert"><%= t('ai_search.no_proxy_config') %></p><% end %>
+  <% if @validation_error %><p class="alert" role="alert"><%= @validation_error %></p><% end %>
+  <%= form_with url: kb_ai_search_path, method: :post, local: true do |form| %>
+    <div class="field">
+      <%= form.label :query, t('ai_search.prompt') %>
+      <%= form.text_area :query, value: @query_text, maxlength: 300, rows: 2, placeholder: @examples.first || t('ai_search.placeholder_neutral'), required: true, disabled: !@ready, autocomplete: 'off' %>
+    </div>
+    <div class="checkbox">
+      <%= check_box_tag 'privacy_confirmed', '1', false, id: 'privacy_confirmed', disabled: !@ready %>
+      <%= label_tag 'privacy_confirmed', t('ai_search.privacy_attestation') %>
+    </div>
+    <p class="small muted"><%= t('ai_search.example_heading') %></p>
+    <div class="ai-examples">
+      <% @examples.each do |example| %><code><%= example %></code><% end %>
+    </div>
+    <%= form.submit t('ai_search.search_button'), disabled: !@ready %>
+  <% end %>
+</section>
+<% if @results %>
+<section class="panel">
+  <div class="panel-header"><h2><%= t('ai_search.results') %></h2><span class="pill ok"><%= @results.size %> <%= t('ai_search.chunks') %> · <%= @elapsed_ms %> ms</span></div>
+  <p class="muted"><%= t('ai_search.results_notice') %></p>
+  <p class="small muted"><%= t(@scope_probe_enabled ? 'ai_search.scope_probe_active' : 'ai_search.scope_probe_inactive') %></p>
+  <% if @results.empty? %>
+    <p class="alert" role="status"><%= t('ai_search.no_relevant_evidence', tenant: current_organization.name) %></p>
+    <p class="muted"><%= t('ai_search.no_evidence_guidance') %></p>
+  <% end %>
+  <div class="stack">
+    <% @results.each_with_index do |hit, index| %>
+      <article class="ai-hit">
+        <div class="ai-hit-top">
+          <span class="pill"><%= t('ai_search.rank') %> <%= index + 1 %></span>
+          <strong><%= link_to hit.article_key, knowledge_article_path(KnowledgeArticle.find_by!(organization_id: current_organization.id, article_key: hit.article_key), locale: @locale) %></strong>
+          <span class="pill"><%= @locale.upcase %></span>
+        </div>
+        <p class="kb-snippet"><%= hit.content %></p>
+        <div class="ai-source">
+          <span><%= t('ai_search.logit') %>: <%= number_with_precision(hit.rerank_score, precision: 3) %></span>
+          <span><%= t('ai_search.distance') %>: <%= number_with_precision(hit.cosine_distance, precision: 4) %></span>
+          <span><%= t('ai_search.citation') %>: <code><%= hit.citation %></code></span>
+          <span>SHA256: <code><%= hit.sha256.first(16) %>…</code></span>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</section>
+<% end %>

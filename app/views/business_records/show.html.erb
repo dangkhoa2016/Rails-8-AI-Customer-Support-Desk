@@ -1,0 +1,12 @@
+<%= link_to t('nav.customers'), customers_path, class:'back' %>
+<div class="hero"><span class="pill ok"><%= t('records.read_only') %></span><h1><%= @business_type == 'teamflow' ? @evidence[:invoice_number] : @evidence[:order_number] %></h1><p class="intro"><%= t('records.explain') %></p></div>
+<div class="two">
+<section class="panel"><h2><%= t('records.facts') %></h2><div class="table-wrap"><table><tbody>
+<% @evidence.except(:items, :shipments, :evidence_ids).each do |key, value| %><tr><th><%= key.to_s.humanize %></th><td><%= value.nil? ? '—' : value.to_s %></td></tr><% end %>
+</tbody></table></div></section>
+<section class="panel"><h2><%= t('records.evidence') %></h2>
+<% @evidence[:evidence_ids].each do |reference| %><p class="mono"><%= reference %></p><% end %>
+<% if @evidence[:items] %><h3><%= t('records.items') %></h3>
+<% @evidence[:items].each do |item| %><p class="mono"><%= item[:sku] %> · <%= t('records.ordered') %>: <%= item[:ordered] %> · <%= t('records.delivered') %>: <%= item[:delivered] %></p><% end %><% end %>
+<% if @evidence[:shipments] %><h3><%= t('records.shipments') %></h3><% @evidence[:shipments].each do |s| %><p class="mono"><%= s[:reference] %> · <%= s[:status] %></p><% end %><% end %>
+</section></div>

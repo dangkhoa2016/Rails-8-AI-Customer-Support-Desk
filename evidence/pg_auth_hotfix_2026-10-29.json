@@ -1,0 +1,30 @@
+{
+  "issue": "Kaggle/Colab notebook PostgreSQL bootstrap PGUSER inherited by postgres administrator",
+  "fixed_utc": "2026-10-29T00:38:16.748249+00:00",
+  "base_m2_package_sha256": "1bb307352c6ae7d1a9b6b821db9aad6ef171b05fc7a14207e4e78502b645624d",
+  "fix_scope": [
+    "script/notebook_setup.sh",
+    "script/repair_notebook_postgres.sh",
+    "README_VI.md",
+    "README_EN.md",
+    "docs/POSTGRESQL_AUTH_HOTFIX_VI_2026-10-29.md",
+    "docs/POSTGRESQL_AUTH_HOTFIX_EN_2026-10-29.md"
+  ],
+  "postgres_admin_connection": "runuser -u postgres, env -i, Unix socket, -U postgres",
+  "postgres_app_connection": "TCP -h 127.0.0.1, -U support_desk, database postgres",
+  "reuses_env_notebook_password": true,
+  "drops_or_resets_database": false,
+  "regression_tests": {
+    "m1_python": "10 PASS",
+    "m2_python": "14 PASS",
+    "ruby_policy": "8 tests 29 assertions PASS",
+    "blueprint": "PASS_OFFLINE_ONLY",
+    "m1_dataset": "PASS_OFFLINE_ONLY",
+    "m2_knowledge": "PASS_OFFLINE_ONLY",
+    "ruby_and_erb_scaffold": "PASS_SOURCE_ONLY",
+    "shell_syntax": "PASS"
+  },
+  "postgresql_runtime_auth": "NOT_RUN",
+  "rails_migrations": "NOT_RUN",
+  "notes": "This hotfix does not certify Rails/PG runtime success; execute repair on Kaggle/Colab and share sanitized logs."
+}

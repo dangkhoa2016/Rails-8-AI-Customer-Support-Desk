@@ -1,0 +1,14 @@
+<%= link_to t('nav.customers'), customers_path, class:'back' %>
+<div class="hero"><span class="pill"><%= current_organization.name %></span><h1><%= @customer.external_key %></h1><p class="intro"><%= @customer.display_name %> · <%= @customer.locale %></p></div>
+<div class="two"><section class="panel"><h2><%= t('customers.references') %></h2>
+  <% if @references.any? %><div class="table-wrap"><table><thead><tr><th><%= t('customers.reference') %></th><th><%= t('tickets.status') %></th><th><%= t('customers.view') %></th></tr></thead><tbody>
+  <% @references.each do |record| %><tr><td class="mono"><%= current_organization.vertical == 'b2b_saas' ? record.invoice_number : record.order_number %></td><td><%= record.status %></td><td>
+  <% if can_write? %>
+  <% if current_organization.vertical == 'b2b_saas' %><%= link_to t('customers.view'), teamflow_invoice_path(customer_key: @customer.external_key, invoice_number: record.invoice_number) %>
+  <% else %><%= link_to t('customers.view'), novamart_order_path(customer_key: @customer.external_key, order_number: record.order_number) %><% end %>
+  <% else %>—<% end %></td></tr><% end %>
+  </tbody></table></div><% else %><div class="badge-empty"><%= t('customers.no_references') %></div><% end %>
+</section><section class="panel"><h2><%= t('nav.tickets') %></h2>
+<% @tickets.each do |ticket| %><p><%= link_to ticket.number, ticket_path(ticket) %> · <%= ticket.status %></p><% end %>
+<% if @tickets.empty? %><p class="muted"><%= t('tickets.empty') %></p><% end %>
+</section></div>

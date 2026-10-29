@@ -1,0 +1,18 @@
+{
+  "checkpoint": "M2_PROXY_HARDENING_AND_BILINGUAL_RAILS_UI",
+  "created_utc": "2026-10-29T04:22:46.978938+00:00",
+  "modal_environment": "rails-8-ai-customer-support-desk",
+  "modal_proxy_auth": "ON_BOTH_MODELS",
+  "unauthenticated_http": "401_FOR_BOTH",
+  "credentials_in_archive": false,
+  "proxy_token_created": false,
+  "gpu_ui_status": "DISABLED_BY_DEFAULT_PENDING_OPERATOR_PROXY_TOKEN",
+  "post_proxy_authenticated_positive_test": "NOT_RUN",
+  "regression": "40 tests / 475 assertions / 0 failures",
+  "database": "UNCHANGED_PREVIOUS_LIVE_CHECKPOINT_12_APPROVED_84_EMBEDDINGS",
+  "source_file_count": 212,
+  "evidence_file_count": 11,
+  "source_sha256": "3dead798c81761a213e309c1f068682dc19d214d94ef091fedffda2bb3d0a6af",
+  "evidence_sha256": "749c8a956d1c3a42e748c1da3aa30eb849d84f51d4bf00b91842f60901cf849d",
+  "database_sha256": "9b6a218943b81d35ba61e60c92bfea6d171ca9c49517371e6ddedd18e6d0c4ae"
+}

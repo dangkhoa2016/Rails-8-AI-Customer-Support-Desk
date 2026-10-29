@@ -1,0 +1,200 @@
+{
+  "kind": "M2_ANSWERABILITY_MULTI_INTENT_LOCKBOX_V1",
+  "created_before_model_inference": true,
+  "seed": 20261029,
+  "ground_truth": "Human authored strict full-question answerability labels grounded in current approved KB v2. Null means incomplete answer, not just no topical relation.",
+  "cases": [
+    {
+      "id": "AX01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Hóa đơn đã paid nhưng gói chưa kích hoạt; tôi muốn biết chính xác khi nào đội kỹ thuật hoàn tất nâng cấp và có được bồi thường tự động không?"
+    },
+    {
+      "id": "AX02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "My invoice is paid and the plan activation failed. How do I force a new activation event myself and receive a service credit?"
+    },
+    {
+      "id": "AX03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Gói cũ vẫn hiệu lực sau khi thanh toán, và tôi muốn tăng giới hạn API lên gấp đôi ngay hôm nay. Nhân viên làm thế nào?"
+    },
+    {
+      "id": "AX04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "The plan still shows old entitlements after payment. What are the exact steps to enable SAML SSO and reset all users' access?"
+    },
+    {
+      "id": "AX05",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Yêu cầu hoàn tiền ở ngày thứ bảy được xem xét thủ công, vậy bao nhiêu phút tiền về thẻ và ai có quyền duyệt tự động?"
+    },
+    {
+      "id": "AX06",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "My first invoice was paid six days ago. Can support immediately send my refund to a different bank account and guarantee arrival tomorrow?"
+    },
+    {
+      "id": "AX07",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "unsupported_close",
+      "query": "Hóa đơn paid hợp lệ nhưng tôi muốn đổi thông tin pháp nhân trên hóa đơn và xuất lại bản VAT điện tử; thao tác ở đâu?"
+    },
+    {
+      "id": "AX08",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "unsupported_close",
+      "query": "After the subscription renewal, how do I download an account-wide audit export and get a higher API call quota?"
+    },
+    {
+      "id": "AX09",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Đơn sau giảm giá đúng 500.000 đồng được miễn phí giao thường; tôi có thể chọn giao nhanh miễn phí trong hôm nay không?"
+    },
+    {
+      "id": "AX10",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "My merchandise subtotal after discount is VND 499,999. Can I redeem loyalty points so that express shipping is free this evening?"
+    },
+    {
+      "id": "AX11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Đã bàn giao cho hãng vận chuyển và dự kiến giao 2 đến 5 ngày; vui lòng xác nhận chính xác giờ giao tối mai và đổi đơn vị giao hàng?"
+    },
+    {
+      "id": "AX12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "A courier accepted the paid shipment. Can I reschedule the exact delivery to 7 pm and update the address without contacting support?"
+    },
+    {
+      "id": "AX13",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Sản phẩm chưa dùng trong hạn đổi trả 7 ngày; làm sao chọn giờ nhân viên tới nhà lấy và được hoàn tiền ngay?"
+    },
+    {
+      "id": "AX14",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "The unused return qualifies on day seven. Can you give the precise pickup slot and confirm immediate refund to another card?"
+    },
+    {
+      "id": "AX15",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "Báo lỗi ngày thứ 14 vẫn còn hạn, vậy có thể được tự động cấp mã giảm giá và giao sản phẩm thay thế ngay ngày mai không?"
+    },
+    {
+      "id": "AX16",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "mixed_unsupported",
+      "query": "I reported a damaged item within fourteen days; how do I book a home repair technician and extend the warranty automatically?"
+    },
+    {
+      "id": "AX17",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "unsupported_close",
+      "query": "Hàng đã paid nhưng chưa giao đủ kiện, điểm thành viên của khách có được cộng ngay sau lần giao đầu tiên không?"
+    },
+    {
+      "id": "AX18",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "unsupported_close",
+      "query": "The standard shipping fee was charged correctly. Can I add a different recipient phone number once the parcel is in transit?"
+    },
+    {
+      "id": "AX19",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported",
+      "query": "Invoice paid chưa chứng minh quyền gói mới đã bật; cần đối chiếu sự kiện kích hoạt succeeded và effective plan nào?"
+    },
+    {
+      "id": "AX20",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported",
+      "query": "Is a refund requested on day eight after the initial paid invoice eligible for a normal automatic approval, or does it need exception review?"
+    },
+    {
+      "id": "AX21",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-014",
+      "kind": "supported",
+      "query": "Nếu giá trị hàng sau chiết khấu bằng 499.999 VND, phí giao thường được tính là 30.000 hay miễn phí?"
+    },
+    {
+      "id": "AX22",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-020",
+      "kind": "supported",
+      "query": "Does the two-to-five-business-day delivery estimate start before or after verified courier handoff, and is it a guarantee?"
+    },
+    {
+      "id": "AX23",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-029",
+      "kind": "supported",
+      "query": "Ngày giao hàng đã xác minh là ngày 0, vậy ngày thứ bảy hàng còn hộp và chưa sử dụng có thể gửi yêu cầu đổi trả không?"
+    },
+    {
+      "id": "AX24",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-030",
+      "kind": "supported",
+      "query": "If a defective item is reported on day fifteen, must the SKU warranty period be checked separately?"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS_DB_EDITORIAL_DRAFTS_ONLY",
+  "v1_checked": 200,
+  "v2_checked": 12,
+  "articles": 100,
+  "versions": 212,
+  "chunks": 1484,
+  "approved": 0,
+  "embeddings": 0,
+  "canonical_policy_version": "1.0.0",
+  "errors": []
+}

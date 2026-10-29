@@ -1,0 +1,117 @@
+{
+  "kind": "M2_RELEVANCE_FINAL_FROZEN_HOLDOUT",
+  "version": 1,
+  "source": "Human-labelled independently before inference. No tuning on this set.",
+  "seed": 20261029,
+  "notes": "Evaluate frozen conservative threshold 7.421875 from prior 60 observed cases; do not adjust based on these results.",
+  "cases": [
+    {
+      "id": "F01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "Đơn vừa bàn giao cho hãng vận chuyển, tôi muốn đặt lịch giao đúng khung 19 đến 21 giờ vào tối mai được không?"
+    },
+    {
+      "id": "F02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "How can I replace the assigned courier with another company after the paid order has been dispatched?"
+    },
+    {
+      "id": "F03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "Hóa đơn SaaS đã thanh toán và gói đã kích hoạt, tôi muốn bật xác thực hai lớp cho người dùng TeamFlow ở đâu?"
+    },
+    {
+      "id": "F04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "The plan is paid and active; what steps enable SAML single sign-on for my TeamFlow workspace?"
+    },
+    {
+      "id": "F05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "Sản phẩm giao đã đủ số lượng, tôi muốn đổi màu sản phẩm trước khi thanh toán kỳ trả góp tiếp theo thì làm sao?"
+    },
+    {
+      "id": "F06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "The parcel arrived but my reward points did not accrue. Can shipping fees be credited as loyalty points?"
+    },
+    {
+      "id": "F07",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "After payment, where do I download a tax-compliant VAT invoice showing my corporation registration number?"
+    },
+    {
+      "id": "F08",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "hard_negative",
+      "split": "final_holdout",
+      "query": "Tôi đã nhận thông báo hoàn tiền nhưng muốn đổi tài khoản ngân hàng nhận tiền, có quy trình nào không?"
+    },
+    {
+      "id": "F09",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported",
+      "split": "final_holdout",
+      "query": "Tại sao thanh toán hóa đơn thành công chưa đủ chứng minh gói workspace đã được bật quyền?"
+    },
+    {
+      "id": "F10",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported",
+      "split": "final_holdout",
+      "query": "If a first subscription invoice was paid only six days ago, can a refund be automatically granted without staff review?"
+    },
+    {
+      "id": "F11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-020",
+      "kind": "supported",
+      "split": "final_holdout",
+      "query": "Sau khi hãng vận chuyển nhận hàng, khung 2 đến 5 ngày làm việc có phải ngày giao được bảo đảm không?"
+    },
+    {
+      "id": "F12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-029",
+      "kind": "supported",
+      "split": "final_holdout",
+      "query": "Is the ordinary return period counted from the verified delivery date of each unused item?"
+    }
+  ]
+}

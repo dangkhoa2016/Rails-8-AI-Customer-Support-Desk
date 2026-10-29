@@ -1,0 +1,144 @@
+{
+  "milestone": "M2",
+  "source_policy_version": "1.0.0",
+  "result": "PASS_OFFLINE_ONLY",
+  "created_utc": "2026-10-28T16:48:25.669109+00:00",
+  "artifact_scope": {
+    "synthetic_kb_articles_generated": 100,
+    "language_versions_draft": 200,
+    "chunks_unembedded": 1400,
+    "approved_versions": 0
+  },
+  "tests": {
+    "01_blueprint_static": {
+      "command": [
+        "python3",
+        "script/validate_approved_blueprint.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:16.294950+00:00",
+      "ended_utc": "2026-10-28T16:48:17.073378+00:00"
+    },
+    "02_m2_generate": {
+      "command": [
+        "python3",
+        "script/generate_m2_knowledge.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:17.073766+00:00",
+      "ended_utc": "2026-10-28T16:48:17.949682+00:00"
+    },
+    "03_m2_verify": {
+      "command": [
+        "python3",
+        "script/verify_m2_knowledge.py",
+        "--report",
+        "evidence/m2/knowledge-offline-validation.json"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:17.950093+00:00",
+      "ended_utc": "2026-10-28T16:48:18.871273+00:00"
+    },
+    "04_m2_negative_tests": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "test",
+        "-p",
+        "test_m2_knowledge.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:18.871908+00:00",
+      "ended_utc": "2026-10-28T16:48:19.833870+00:00"
+    },
+    "05_m1_python_regression": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "test",
+        "-p",
+        "test_m1_dataset.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:19.834424+00:00",
+      "ended_utc": "2026-10-28T16:48:20.846232+00:00"
+    },
+    "06_m1_ruby_policy_regression": {
+      "command": [
+        "ruby",
+        "test/policy_rules_test.rb"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:20.846846+00:00",
+      "ended_utc": "2026-10-28T16:48:20.951560+00:00"
+    },
+    "07_rails_source_validation": {
+      "command": [
+        "python3",
+        "script/offline_scaffold_check.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:20.952058+00:00",
+      "ended_utc": "2026-10-28T16:48:22.762650+00:00"
+    },
+    "08_erb_syntax": {
+      "command": [
+        "ruby",
+        "script/check_erb_syntax.rb"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:22.763311+00:00",
+      "ended_utc": "2026-10-28T16:48:22.848354+00:00"
+    },
+    "09_preview_render": {
+      "command": [
+        "python3",
+        "script/render_m2_preview.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:22.848810+00:00",
+      "ended_utc": "2026-10-28T16:48:23.865494+00:00"
+    },
+    "10_review_manifest": {
+      "command": [
+        "python3",
+        "script/export_m2_review_manifest.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T16:48:23.866125+00:00",
+      "ended_utc": "2026-10-28T16:48:24.847354+00:00"
+    },
+    "11_byte_identical_regeneration": {
+      "command": [
+        "python3",
+        "script/generate_m2_knowledge.py",
+        "--output",
+        "<temporary>"
+      ],
+      "exit_code": 0,
+      "dataset_sha256": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33"
+    }
+  },
+  "runtime_rails_boot": "NOT_RUN",
+  "postgresql_migrations": "NOT_RUN",
+  "postgresql_seed": "NOT_RUN",
+  "http_integration_tests": "NOT_RUN",
+  "editorial_article_approval": "PENDING_HUMAN_REVIEW",
+  "modal_endpoint": "NOT_CONFIGURED",
+  "modal_embedding_inference": "NOT_RUN",
+  "vector_index": "NOT_CREATED",
+  "semantic_retrieval_benchmark": "NOT_RUN",
+  "lexical_search": "SOURCE_ONLY_NOT_RUNTIME_VERIFIED",
+  "source_blueprint_sha256": "dde7d8c4f1b517e50750620b1e4c60244f408d23da06a0bfa5dcc0380cb9ccf6",
+  "author_notes_sha256": "97fe54b4e14bfeaefd6ec4653dcb8c581f85cbc5cbf744ee86a031f5f61887be",
+  "kb_dataset_sha256": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33",
+  "warning": "This does not establish Rails DB or Modal acceptance. All articles are unapproved editorial drafts."
+}

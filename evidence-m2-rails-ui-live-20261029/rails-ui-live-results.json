@@ -1,0 +1,51 @@
+{
+  "status": "PASS_LIVE_RAILS_UI_VI_EN",
+  "captured_utc": "2026-10-29T04:42:57.426631+00:00",
+  "origin": "http://127.0.0.1:3068",
+  "mode": "LOCAL_ONLY_SYNTHETIC_TEST",
+  "model": [
+    "Qwen/Qwen3-Embedding-4B",
+    "Qwen/Qwen3-Reranker-4B"
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "tenant": "teamflow",
+      "locale": "vi",
+      "status": "PASS_LIVE_RAILS_HTML_MODAL_4B_4B",
+      "expected_article": "TF-KB-012",
+      "top1": "TF-KB-012",
+      "hit_count": 5,
+      "citation_ids": [
+        "TF-KB-012@vi:v2#chunk-3",
+        "TF-KB-012@vi:v2#chunk-5",
+        "TF-KB-012@vi:v2#chunk-4",
+        "TF-KB-015@vi:v2#chunk-3",
+        "TF-KB-012@vi:v2#chunk-1"
+      ],
+      "request_elapsed_ms": 43692.44,
+      "question_sha256": "159ebf32b26cdd722215d667cce2ba506f370982917ed76a8f031ddb57f2289c"
+    },
+    {
+      "case": 2,
+      "tenant": "novamart",
+      "locale": "en",
+      "status": "PASS_LIVE_RAILS_HTML_MODAL_4B_4B",
+      "expected_article": "NM-KB-014",
+      "top1": "NM-KB-014",
+      "hit_count": 5,
+      "citation_ids": [
+        "NM-KB-014@en:v2#chunk-5",
+        "NM-KB-014@en:v2#chunk-2",
+        "NM-KB-014@en:v2#chunk-4",
+        "NM-KB-014@en:v2#chunk-3",
+        "NM-KB-014@en:v2#chunk-1"
+      ],
+      "request_elapsed_ms": 1578.16,
+      "question_sha256": "2c5c5ded81d597276c6062fd4bc10ba6d42acd9c4bf50ac13c70ea8ef2ff0211"
+    }
+  ],
+  "real_model_calls": 4,
+  "database_writes": "NONE_BUSINESS",
+  "public_tunnel": "NOT_OPENED"
+}

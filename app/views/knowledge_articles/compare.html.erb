@@ -1,0 +1,98 @@
+<%= link_to "← #{t('knowledge.nav')}", knowledge_articles_path, class: 'back' %>
+<section class="hero">
+  <span class="pill warn">M2 · HUMAN EDITORIAL APPROVAL ONLY</span>
+  <h1><%= t('knowledge.compare_title') %></h1>
+  <p class="intro"><%= t('knowledge.compare_intro') %></p>
+  <p class="small"><strong><%= @article.article_key %></strong> · <%= @article.category %> · <%= @article.audience %> · <%= current_organization.name %></p>
+</section>
+
+<section class="panel">
+  <h2><%= t('knowledge.compare_policy_source') %></h2>
+  <p class="muted small">Policy version <%= current_organization.policy_version %></p>
+  <% if @canonical_policies.empty? %>
+    <p class="alert"><%= t('knowledge.policies') %>: —</p>
+  <% else %>
+    <% @canonical_policies.each do |policy| %>
+      <article class="message" style="margin-bottom:10px">
+        <strong><%= policy.fetch('id') %></strong>
+        <div class="two">
+          <p lang="vi">VI: <%= policy.fetch('vi') %></p>
+          <p lang="en">EN: <%= policy.fetch('en') %></p>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+  <% @canonical_clarifications.each do |clar| %>
+    <details class="message" style="margin-bottom:10px">
+      <summary><strong><%= clar.fetch('id') %></strong></summary>
+      <div class="two">
+        <p lang="vi">VI: <%= clar.fetch('vi') %></p>
+        <p lang="en">EN: <%= clar.fetch('en') %></p>
+      </div>
+    </details>
+  <% end %>
+</section>
+
+<style>
+  .editorial-compare {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px;align-items:start}
+  .editorial-column {min-width:0;border:1px solid #354b70;border-radius:16px;padding:20px;background:#121e34}
+  .editorial-column h2 {font-size:20px;margin:0}
+  .editorial-column .kb-body {max-height:520px;overflow-y:auto;border:1px solid #344560;border-radius:10px;padding:16px;background:#0b1729;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}
+  .editorial-column .review-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .editorial-column .revision-links {display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+  .editorial-column .revision-links a {border:1px solid #3b567a;padding:5px 10px;border-radius:999px}
+  .editorial-column .checkbox-confirm {display:flex;align-items:flex-start;gap:8px}
+  .editorial-column .checkbox-confirm input {width:auto;margin-top:4px}
+  .editorial-column .hash {font-family:ui-monospace,monospace;font-size:11px;overflow-wrap:anywhere;color:#a4b5ce}
+  @media(max-width:930px){.editorial-compare{grid-template-columns:1fr}}
+</style>
+
+<section class="editorial-compare" aria-label="<%= t('knowledge.compare_title') %>">
+  <% %w[vi en].each do |lang| %>
+    <% versions = @language_versions.fetch(lang) %>
+    <% version = versions.first %>
+    <div class="editorial-column" lang="<%= lang %>">
+      <div class="review-heading">
+        <h2><%= lang == 'vi' ? 'Tiếng Việt' : 'English' %></h2>
+        <% if version %><span class="pill <%= version.status == 'approved' ? 'ok' : 'warn' %>"><%= version.status %> · v<%= version.version_number %></span><% end %>
+      </div>
+      <% if version.nil? %>
+        <p class="alert"><%= t('knowledge.compare_no_version') %></p>
+      <% else %>
+        <h3><%= version.title %></h3>
+        <p class="small muted"><%= t('knowledge.compare_active') %></p>
+        <p class="hash">SHA256: <%= version.sha256 %></p>
+        <p class="small"><strong><%= t('knowledge.compare_versions') %>:</strong></p>
+        <div class="revision-links">
+          <% versions.each do |historical| %>
+            <%= link_to "v#{historical.version_number} · #{historical.status}",
+              knowledge_article_path(@article, locale: lang, version_id: historical.id) %>
+          <% end %>
+        </div>
+        <div class="kb-body kb-rendered" role="region" aria-label="<%= version.title %>"><%= render_editorial_kb_body(version.body) %></div>
+        <% if version.status == 'draft' %>
+          <div class="panel" style="margin:16px 0 0;padding:16px">
+            <p class="muted small"><%= t('knowledge.manual') %></p>
+            <%= form_with url: approve_knowledge_article_path(@article), method: :post, local: true do %>
+              <%= hidden_field_tag :version_id, version.id %>
+              <%= hidden_field_tag :review_compare, '1' %>
+              <div class="field">
+                <%= label_tag "reviewer_notes_#{lang}", t('knowledge.reviewer_notes') %>
+                <%= text_area_tag :reviewer_notes, nil, id: "reviewer_notes_#{lang}",
+                  required: true, minlength: 15, maxlength: 2000, rows: 4 %>
+              </div>
+              <label class="checkbox-confirm">
+                <%= check_box_tag :review_attested, '1', false, required: true,
+                  id: "review_attested_#{lang}" %>
+                <span><%= t('knowledge.review_attestation') %></span>
+              </label>
+              <div style="margin-top:12px">
+                <%= submit_tag t('knowledge.approve'), class: 'btn' %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</section>

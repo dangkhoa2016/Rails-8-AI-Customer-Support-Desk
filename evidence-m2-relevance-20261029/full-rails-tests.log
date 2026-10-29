@@ -1,0 +1,10 @@
+
+Run options: --seed 49544
+
+# Running:
+
+...................unknown OID 19267: failed to recognize type of 'embedding'. It will be treated as String.
+...............................................
+
+Finished in 12.760411s, 5.1722 runs/s, 342.9357 assertions/s.
+66 runs, 4376 assertions, 0 failures, 0 errors, 0 skips

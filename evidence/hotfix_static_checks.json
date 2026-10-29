@@ -1,0 +1,27 @@
+{
+  "kind": "M1_SEED_TIMESTAMP_HOTFIX",
+  "date_utc": "2026-10-29T00:47:44.674899+00:00",
+  "root_cause": "String-keyed parsed JSON accessed with symbol keys for historical timestamps",
+  "changed_files": [
+    "db/seeds/m1_full_business_records.rb",
+    "script/m1_seed_timestamp.rb",
+    "test/m1_seed_timestamp_test.rb"
+  ],
+  "offline_regression": {
+    "ruby_timestamp_tests": 5,
+    "ruby_timestamp_assertions": 2474,
+    "failures": 0,
+    "errors": 0,
+    "status": "PASS"
+  },
+  "m1_offline_dataset_tests": {
+    "cases": 10,
+    "status": "PASS"
+  },
+  "m2_offline_knowledge_tests": {
+    "cases": 14,
+    "status": "PASS"
+  },
+  "postgresql_runtime": "NOT_RUN",
+  "notebook_exception": "UNCONFIRMED_WITHOUT_STDERR"
+}

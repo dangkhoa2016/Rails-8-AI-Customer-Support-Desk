@@ -1,0 +1,29 @@
+{
+  "status": "PASS_OFFLINE_AND_RAILS_TESTS_ONLY",
+  "created_utc": "2026-10-29T02:07:26.644067+00:00",
+  "command_exit_codes": {
+    "01_editorial_triage": 0,
+    "02_m1_regression": 0,
+    "03_m2_editorial_security": 0,
+    "04_m2_semantic_security": 0,
+    "05_modal_source_compile": 0,
+    "06_dry_run": 0
+  },
+  "source_sha256": {
+    "app/services/knowledge_semantic_retrieval.rb": "95bdf47d7fd3804c4a727eb48817a9f5472e46336b7b369c715f5f0a4e8b6e8f",
+    "app/services/knowledge_embedding_ingestion.rb": "6f257150e64d919a74232e3a67d92b5eeadcb58634dae505c795822c3aa5991b",
+    "app/services/modal_embedding_client.rb": "5c599a1673f9cb2405b0f6adee6f6bb25e7379ee048ca188cedb8a38698711a4",
+    "app/services/knowledge_publication.rb": "0ae8345237fe5bb58172bbbe75316a474c50903de1a78a60cae8fd0f2a6f8f82",
+    "app/models/knowledge_chunk_embedding.rb": "24de2cbd08aafb8a9d67ff19052421f64197a333b4677fffbafc5c0761cc16ca",
+    "db/migrate/20261029010000_create_knowledge_chunk_embeddings.rb": "674e64c89cdac804e91cf5c5cee4835b962815e6834930409bab3d69f569445f",
+    "modal_app/qwen3_embedding_service.py": "15b3385b5b6cee2a35c66c32d13d0cb840a01c3a002c47553fce8358280764f6",
+    "script/m2_editorial_triage.py": "24d4f09946ef30b941fb280f2e2224d8963c0aee284a1b441d3b6cbc104cc268",
+    "script/m2_embed_approved.rb": "d3afb8eff68e016c2c9b6bbb9d654f9ecbf1807a5a348cf67da90b98cae054be",
+    "data/m2/knowledge_drafts.json": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33"
+  },
+  "human_editorial_approved": 0,
+  "actual_model_embeddings": 0,
+  "modal_gpu_benchmark": "NOT_RUN",
+  "pgvector_semantic_tests": "SYNTHETIC_VECTORS_ONLY",
+  "m3": "NOT_STARTED"
+}

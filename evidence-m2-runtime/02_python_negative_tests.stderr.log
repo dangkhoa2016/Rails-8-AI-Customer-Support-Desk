@@ -1,0 +1,19 @@
+test_novamart_defect_and_warranty_not_conflated (test_m2_knowledge.CriticalBoundaryContentTest.test_novamart_defect_and_warranty_not_conflated) ... ok
+test_novamart_return_boundary (test_m2_knowledge.CriticalBoundaryContentTest.test_novamart_return_boundary) ... ok
+test_novamart_shipping_boundary (test_m2_knowledge.CriticalBoundaryContentTest.test_novamart_shipping_boundary) ... ok
+test_teamflow_refund_boundary (test_m2_knowledge.CriticalBoundaryContentTest.test_teamflow_refund_boundary) ... ok
+test_100_bilingual_fulltext (test_m2_knowledge.KnowledgeOfflineTest.test_100_bilingual_fulltext) ... ok
+test_draft_not_published (test_m2_knowledge.KnowledgeOfflineTest.test_draft_not_published) ... ok
+test_forged_approval_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_forged_approval_rejected) ... ok
+test_forged_embedding_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_forged_embedding_rejected) ... ok
+test_identical_deterministic_regeneration (test_m2_knowledge.KnowledgeOfflineTest.test_identical_deterministic_regeneration) ... ok
+test_invalid_chunk_hash_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_invalid_chunk_hash_rejected) ... ok
+test_missing_locale_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_missing_locale_rejected) ... ok
+test_wrong_content_digest_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_wrong_content_digest_rejected) ... ok
+test_wrong_policy_link_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_wrong_policy_link_rejected) ... ok
+test_wrong_tenant_rejected (test_m2_knowledge.KnowledgeOfflineTest.test_wrong_tenant_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.179s
+
+OK

@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-29",
+  "scope": "Rails test environment exception dispatch only",
+  "source_archive": "RAILS8_AI_CUSTOMER_SUPPORT_DESK_M2_PG_AUTH_FIXED_2026-10-29.zip",
+  "source_sha256": "3eab3ca171e1ac9c80de98a978623dd293efe41ee7e6e74c888a5d74f50ef66e",
+  "logic_test_count": 6,
+  "offline_status": "PASS",
+  "rails_postgresql_runtime": "NOT_RUN",
+  "description": "Patch test.rb :none -> :rescuable; leave M1 and M2 code and data unchanged"
+}

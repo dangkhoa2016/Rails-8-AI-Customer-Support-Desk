@@ -1,0 +1,160 @@
+{
+  "kind": "RAILS8_M2_ANSWERABILITY_SCOPE_PILOT_DELTA",
+  "status": "PILOT_PASS_NOT_PRODUCTION",
+  "created_utc": "2026-10-29T09:11:11.712856+00:00",
+  "source_note": "delta source/evidence only, use earlier full M2 checkpoint for restore",
+  "security_note": "No local private env, credentials, DB dump, session cookies, or production user data",
+  "file_count": 30,
+  "files": [
+    {
+      "path": "app/controllers/knowledge_ai_search_controller.rb",
+      "sha256": "81aa20f8bf2fddfc15948cb0f358172050a7fddba82689a39bca4c7a6ee5eb8d",
+      "bytes": 3919
+    },
+    {
+      "path": "app/services/knowledge_answerability_scope_verifier.rb",
+      "sha256": "0f951e791f877dcd5389c9c50b04a47eeb231cc26782f12e26dbe18da81c0da4",
+      "bytes": 4833
+    },
+    {
+      "path": "app/services/knowledge_reranked_retrieval.rb",
+      "sha256": "e236709e03885dd8df3cf0dc859abd85a0ae52ee79c604de6d699a4a05ec0d3f",
+      "bytes": 4701
+    },
+    {
+      "path": "app/views/knowledge_ai_search/show.html.erb",
+      "sha256": "33f8a07484cc827ee6e339ec47fbcde1d716d5db3eeaaeb9b7f333e66181c8ae",
+      "bytes": 3830
+    },
+    {
+      "path": "config/locales/en.yml",
+      "sha256": "0f00c1aa07d845ea9c4271523018a016eca5ff0b3f093358955e5c3755bb3d11",
+      "bytes": 9239
+    },
+    {
+      "path": "config/locales/vi.yml",
+      "sha256": "a31477120619fcc87a38bc7e14ef3d2244f5630964047190338f2db754246f5f",
+      "bytes": 11162
+    },
+    {
+      "path": "docs/M2_ANSWERABILITY_SCOPE_PILOT_EN.md",
+      "sha256": "3e19f23b2d470cf528048fbc567812451b4ee2ce1d9737cadf50a43880b3b2c0",
+      "bytes": 6070
+    },
+    {
+      "path": "docs/M2_ANSWERABILITY_SCOPE_PILOT_VI.md",
+      "sha256": "2a91215130c77ad82bcb10074c60eb539ce51fdab845e8d7588800cb7cb89e1e",
+      "bytes": 6944
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/acceptance-metrics.json",
+      "sha256": "6fae23753006c5b0aae10ba8bfb7f3e664bf4f493ef4f025a46ae9700f52bab5",
+      "bytes": 2230
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/full-rails-tests.log",
+      "sha256": "1839a885d644259b2c4b523d01027590ccf6b36401847395b0fba2be402a02bf",
+      "bytes": 324
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/initial-multi-intent-run-error.log",
+      "sha256": "e71185cfa4720f9750a7a8f8285594e86312aa48135cbf995e6f0428ef373af9",
+      "bytes": 3543
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/live-scope-acceptance.json",
+      "sha256": "d46625896c4efa97351dc29327167364ca2edda32015d13d4d00ae56de456e54",
+      "bytes": 3280
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/multi-intent-retrieval-v2.jsonl",
+      "sha256": "6039391cd0e0fc65455898a85c844e657c03df88ff4700e16decb0049cc564d4",
+      "bytes": 29596
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/multi-intent-retrieval.jsonl",
+      "sha256": "203d276c2d780f6f0001cb6286b6ac2ea8c59172314e688704d1775494f9f5e5",
+      "bytes": 1232
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/multi-intent-scope-probe.jsonl",
+      "sha256": "2f31091f3a0680f3a47e593284645251b0c6f0a5df4726d8637caf495473fcfc",
+      "bytes": 10547
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/scope-policy-calibration.json",
+      "sha256": "aec520fe92abd782b922d2d4a362381a729a3e791349b3c0ea16e1878889a5ac",
+      "bytes": 2186
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/scope-probe-pilot.jsonl",
+      "sha256": "7f732dcebf7f314036af71ab8234751399aaab57b49d4178efbab148b4e5fefc",
+      "bytes": 16657
+    },
+    {
+      "path": "evidence-m2-answerability-20261029/scope-unit-tests.log",
+      "sha256": "96dccd8ea2854da6bec3b405e467090046dd30857be6d4ff35d07446fbb51854",
+      "bytes": 161
+    },
+    {
+      "path": "review/m2_answerability_multi_intent_lockbox_20261029.json",
+      "sha256": "28afe60b84250df99d2c9e94e9aa621009ff19017970600fc4e059ba3ea108ea",
+      "bytes": 7901
+    },
+    {
+      "path": "review/m2_answerability_scope_policy_pilot_20261029.json",
+      "sha256": "aec520fe92abd782b922d2d4a362381a729a3e791349b3c0ea16e1878889a5ac",
+      "bytes": 2186
+    },
+    {
+      "path": "review/m2_answerability_scope_probes_20261029.json",
+      "sha256": "4baff3e9ee551eb5ebfdcd61b770357e54ad53bbed4632f2b34ebcc64c6693e1",
+      "bytes": 10621
+    },
+    {
+      "path": "review/m2_relevance_gate_pilot_20261029.json",
+      "sha256": "3653ebf7f968ce2b8b63a38b65e948398f8cd323bd0cec5f97e38489cb7e644e",
+      "bytes": 2512
+    },
+    {
+      "path": "script/build_m2_answerability_scope_policy.py",
+      "sha256": "35767d08c1f59d5db098eaaec4752ef9ccb4f89466b0043c91bcf573a78fe7f7",
+      "bytes": 3913
+    },
+    {
+      "path": "script/m2_answerability_scope_lockbox.rb",
+      "sha256": "dfbb10407e6887be6943caee98b354f5e9093c60c7d5c4d2e6e2da5d36b39b75",
+      "bytes": 3099
+    },
+    {
+      "path": "script/m2_answerability_scope_probe_pilot.rb",
+      "sha256": "726d3795220e1099c52bd22e66d0251a0f8698e201ac84a3c86c814933bade29",
+      "bytes": 3642
+    },
+    {
+      "path": "script/m2_relevance_live_evaluate.rb",
+      "sha256": "ec9e9e34fadd251e157f88077d67a6faf7ab9692cddd43e1c681d82c307e14a9",
+      "bytes": 2929
+    },
+    {
+      "path": "script/verify_m2_answerability_live_scope.rb",
+      "sha256": "0907febb24a2292b8020e76e5f4e329f1d7f52045dff092f2d332aec5b51ee9f",
+      "bytes": 3314
+    },
+    {
+      "path": "test/integration/knowledge_ai_search_ui_test.rb",
+      "sha256": "f9596347f1e61c2d8aab41948b1ae1b391391652be17068dcf8743a6d1c4c474",
+      "bytes": 8392
+    },
+    {
+      "path": "test/integration/semantic_kb_security_test.rb",
+      "sha256": "d92c0015775cf537c22e8846b156d447378e0cc1ff0b9e5606f30c2af7cfe833",
+      "bytes": 10249
+    },
+    {
+      "path": "test/services/knowledge_answerability_scope_verifier_test.rb",
+      "sha256": "05d87fa8e285ee8dc002599cd776eaaab16abd7820d37cf00dd0a3b163af4932",
+      "bytes": 3488
+    }
+  ]
+}

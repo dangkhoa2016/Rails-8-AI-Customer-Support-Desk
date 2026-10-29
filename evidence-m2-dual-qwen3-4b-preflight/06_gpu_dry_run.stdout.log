@@ -1,0 +1,21 @@
+{
+  "mode": "DRY_RUN",
+  "models": [
+    "Qwen/Qwen3-Embedding-4B",
+    "Qwen/Qwen3-Reranker-4B"
+  ],
+  "embedding_dimensions": 2560,
+  "tenants": {
+    "teamflow-cloud": {
+      "approved_chunks": 28,
+      "stored_vectors": 0
+    },
+    "novamart-store": {
+      "approved_chunks": 56,
+      "stored_vectors": 0
+    }
+  },
+  "test_cases": 12,
+  "outbound_requests": 0,
+  "note": "No Modal credentials used, no GPU calls or database writes."
+}

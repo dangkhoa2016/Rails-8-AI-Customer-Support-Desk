@@ -1,0 +1,6 @@
+<div class="panel-header"><div><h1><%= t('tickets.heading') %></h1><p class="muted"><%= t('tickets.index_help') %></p></div><% if can_write? %><%= link_to t('tickets.new'), new_ticket_path, class: 'btn' %><% end %></div>
+<div class="panel"><div class="navlinks" style="margin-bottom:14px"><%= link_to t('tickets.all'), tickets_path, class:'pill' %><% TicketsController::TRANSITIONS.keys.each do |status| %><%= link_to status, tickets_path(status: status), class:'pill' %><% end %></div>
+<% if @tickets.any? %><div class="table-wrap"><table><thead><tr><th><%= t('tickets.number') %></th><th><%= t('tickets.customer') %></th><th><%= t('tickets.category') %></th><th><%= t('tickets.priority') %></th><th><%= t('tickets.status') %></th></tr></thead><tbody>
+  <% @tickets.each do |ticket| %><tr><td><%= link_to ticket.number, ticket_path(ticket) %></td><td><%= ticket.customer.external_key %></td><td><%= ticket.category %></td><td><span class="pill"><%= ticket.priority %></span></td><td><%= ticket.status %></td></tr><% end %>
+</tbody></table></div><% else %><div class="badge-empty"><%= t('tickets.empty') %></div><% end %>
+</div>

@@ -1,0 +1,61 @@
+<section class="hero">
+  <span class="pill warn">M2 · EDITORIAL REVIEW · Modal NOT_RUN</span>
+  <h1><%= t('knowledge.title') %></h1>
+  <p class="intro"><%= t('knowledge.subtitle') %></p>
+  <span class="pill"><%= t('knowledge.published') %>: <%= @published_count %> · <%= t('knowledge.records') %>: <%= @versions.length %></span>
+</section>
+<% if @priority_review_articles.any? %>
+<section class="panel">
+  <div class="panel-header">
+    <h2><%= t('knowledge.priority_review') %></h2>
+    <span class="pill warn"><%= @priority_review_articles.size %> <%= t('knowledge.records') %></span>
+  </div>
+  <p class="muted"><%= t('knowledge.priority_explain') %></p>
+  <div class="table-wrap"><table>
+    <thead><tr><th><%= t('knowledge.article') %></th><th><%= t('knowledge.category') %></th><th><%= t('knowledge.compare_link') %></th></tr></thead>
+    <tbody>
+      <% @priority_review_articles.each do |article| %>
+      <tr>
+        <td><strong><%= article.article_key %></strong></td>
+        <td><%= article.category %></td>
+        <td><%= link_to t('knowledge.compare_link'), compare_knowledge_article_path(article), class: 'btn secondary' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table></div>
+</section>
+<% end %>
+<section class="panel">
+  <h2><%= t('knowledge.search') %></h2>
+  <form action="<%= knowledge_articles_path %>" method="get">
+    <div class="field"><%= text_field_tag :q, @query, maxlength: 300, placeholder: t('knowledge.search') %></div>
+    <button type="submit"><%= t('knowledge.search_btn') %></button>
+  </form>
+  <% if @query.present? %>
+    <% if @search_results.empty? %><p class="muted"><%= t('knowledge.no_results') %></p><% end %>
+    <% @search_results.each do |hit| %>
+      <article class="message">
+        <div class="meta"><%= hit.citation %> · SHA256 <%= hit.sha256[0, 16] %>…</div>
+        <p><%= hit.content.truncate(380) %></p>
+      </article>
+    <% end %>
+  <% end %>
+</section>
+<section class="panel">
+  <h2><%= t('knowledge.records') %></h2>
+  <% if @versions.empty? %><div class="badge-empty"><%= t('knowledge.zero') %></div><% else %>
+    <div class="table-wrap"><table>
+      <thead><tr><th><%= t('knowledge.article') %></th><th><%= t('knowledge.category') %></th><th><%= t('knowledge.audience') %></th><th><%= t('knowledge.state') %></th></tr></thead>
+      <tbody>
+        <% @versions.each do |version| %>
+          <tr>
+            <td><%= link_to version.knowledge_article.article_key, knowledge_article_path(version.knowledge_article) %><div class="small"><%= version.title %></div><% if %w[owner admin].include?(current_membership.role) %><div class="small"><%= link_to t('knowledge.compare_link'), compare_knowledge_article_path(version.knowledge_article) %></div><% end %></td>
+            <td><%= version.knowledge_article.category %></td>
+            <td><%= version.knowledge_article.audience %></td>
+            <td><span class="pill <%= version.status == 'approved' ? 'ok' : 'warn' %>"><%= version.status %></span></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table></div>
+  <% end %>
+</section>

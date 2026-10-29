@@ -1,0 +1,8 @@
+<%= link_to t('nav.tickets'), tickets_path, class:'back' %>
+<div class="hero"><h1><%= t('tickets.new') %></h1><p class="intro"><%= t('tickets.intake_help') %></p></div>
+<div class="panel" style="max-width:800px"><%= form_with url: tickets_path, method: :post do |f| %>
+  <div class="field"><%= label_tag :customer_id, t('tickets.customer') %><%= select_tag :customer_id, options_from_collection_for_select(@customers, :id, :external_key), required:true %></div>
+  <div class="two"><div class="field"><%= label_tag :category, t('tickets.category') %><%= select_tag :category, options_for_select(@categories), required:true %></div><div class="field"><%= label_tag :priority, t('tickets.priority') %><%= select_tag :priority, options_for_select(%w[P1 P2 P3 P4], 'P3') %></div></div>
+  <div class="field"><%= label_tag :initial_message, t('tickets.initial') %><%= text_area_tag :initial_message, nil, required:true, maxlength:10000 %></div>
+  <%= f.submit t('tickets.create') %>
+<% end %></div>

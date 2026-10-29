@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "captured_utc": "2026-10-29T09:07:37Z",
+  "model_ids": [
+    "Qwen/Qwen3-Embedding-4B",
+    "Qwen/Qwen3-Reranker-4B"
+  ],
+  "model_revisions": [
+    "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "22e683669bc0f0bd69640a1354a6d0aebcfeede5"
+  ],
+  "policy_sha256": "aec520fe92abd782b922d2d4a362381a729a3e791349b3c0ea16e1878889a5ac",
+  "fixture_sha256": "28afe60b84250df99d2c9e94e9aa621009ff19017970600fc4e059ba3ea108ea",
+  "queries": 5,
+  "parallel_instances": 1,
+  "random_sampling": false,
+  "before": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84
+  },
+  "after": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84
+  },
+  "results": [
+    {
+      "id": "AX10",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "query_sha256": "c0abcd0829b60e7e5289df85217ab435ef50b67377635993f97986185360ddf2",
+      "expected_article": null,
+      "pass": true,
+      "qualified_count": 0,
+      "top1": null,
+      "citations": [],
+      "content_sha256": [],
+      "elapsed_seconds": 39.717
+    },
+    {
+      "id": "AX11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "query_sha256": "f498ef03f580b69955abb32e72db17dddb53c45797ad88d40947a3f67432c72c",
+      "expected_article": null,
+      "pass": true,
+      "qualified_count": 0,
+      "top1": null,
+      "citations": [],
+      "content_sha256": [],
+      "elapsed_seconds": 2.365
+    },
+    {
+      "id": "AX19",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "query_sha256": "815454c44acd29c6e736246d82a9b7e730d694a9ff933d6d14aa32299a2aa016",
+      "expected_article": "TF-KB-012",
+      "pass": true,
+      "qualified_count": 3,
+      "top1": "TF-KB-012",
+      "citations": [
+        "TF-KB-012@vi:v2#chunk-4",
+        "TF-KB-012@vi:v2#chunk-2",
+        "TF-KB-012@vi:v2#chunk-3"
+      ],
+      "content_sha256": [
+        "a8e4daaba86e26ec28b8fad9d60d178abfa8e244732a299974fb2ae449370088",
+        "5164ca50b489fb529271f5100b88e5ff58a3781ce7b5ddccb19a3846ae51d176",
+        "b162bfa663d66bff5a3f2deee8de11c83dc28818a41e641c4f2d186aa2824009"
+      ],
+      "elapsed_seconds": 2.181
+    },
+    {
+      "id": "AX21",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "query_sha256": "440e661bc2fda7452097e8e66e3005603b1c823ac2b38cb0cbb1530ada97b8e8",
+      "expected_article": "NM-KB-014",
+      "pass": true,
+      "qualified_count": 3,
+      "top1": "NM-KB-014",
+      "citations": [
+        "NM-KB-014@vi:v2#chunk-2",
+        "NM-KB-014@vi:v2#chunk-5",
+        "NM-KB-014@vi:v2#chunk-4"
+      ],
+      "content_sha256": [
+        "ef6377edbd63c78445fb94ae1bd115b4d07818b8dd470e372fe41575caf679fe",
+        "87c4291891b5be23f9733a306edaaeb27db61cd546b2dfc29d070a3cb6f4d1d9",
+        "ebb53a3685f185a6a4de83b2ef6040dc95fc9b3c8cbf54e20d2aa99bcfd05dd2"
+      ],
+      "elapsed_seconds": 2.3
+    },
+    {
+      "id": "ORIGINAL-NM-WRONG-TENANT",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "query_sha256": "8c067d5c961753cfd91531665b0fcc339b08d799a6ef32c41bff5db363bccbc3",
+      "expected_article": null,
+      "pass": true,
+      "qualified_count": 0,
+      "top1": null,
+      "citations": [],
+      "content_sha256": [],
+      "elapsed_seconds": 1.474
+    }
+  ]
+}

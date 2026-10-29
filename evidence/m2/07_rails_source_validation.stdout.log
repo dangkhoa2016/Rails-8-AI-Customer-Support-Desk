@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SOURCE_ONLY",
+  "verified": "files Ruby syntax translation keys and expected scaffolding",
+  "rails_boot": "NOT_RUN",
+  "postgresql": "NOT_RUN",
+  "views": 11,
+  "ruby_files": 71,
+  "translated_keys": 104,
+  "migrations": 5
+}

@@ -1,0 +1,1 @@
+env RAILS_ENV=test bin/rails test test/integration/support_desk_security_test.rb test/integration/knowledge_base_security_test.rb test/integration/semantic_kb_security_test.rb 

@@ -1,0 +1,685 @@
+{
+  "id": "M2_CLAIM_LEVEL_MANUAL_32x2_V1",
+  "status": "FROZEN_BEFORE_GPU_NO_AUTOMATIC_DECOMPOSITION",
+  "policy": "A human authored the 2 atomic claims for each question. The system does NOT possess autonomous claim extraction or entailment verification.",
+  "synthetic_only": true,
+  "seed": "NONE_MANUALLY_AUTHORED",
+  "number_of_questions": 32,
+  "number_of_claims": 64,
+  "expected_distribution": "Each tenant-locale has 2 fully supported questions, 4 mixed questions, and 2 fully unsupported questions (32 supported and 32 unsupported atomic claims).",
+  "release_gate": "RESEARCH_ONLY_NEVER_AUTO_ENABLE_PREVIEW",
+  "cases": [
+    {
+      "id": "CL-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Hóa đơn paid nhưng gói chưa kích hoạt: cần kiểm tra activation event nào?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-01-1",
+          "text": "Cần đối chiếu event succeeded với invoice đã paid không?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-01-2",
+          "text": "Khi event failed có thể tự chuyển gói khách sang gói mới không?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Yêu cầu hoàn tiền ở ngày thứ bảy: có nằm trong diện xem xét? Hóa đơn paid đầu tiên làm ngày 0? ",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-02-1",
+          "text": "Ngày thứ 7 có còn trong cửa sổ xem xét thủ công không?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-02-2",
+          "text": "Có tính cửa sổ từ ngày paid đầu tiên theo lịch địa phương không?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Hóa đơn đã paid nhưng chưa kích hoạt: cần chứng cứ nào và có chắc xử lý xong trong 15 phút?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-03-1",
+          "text": "Invoice paid phải đối chiếu activation succeeded và effective_plan không?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-03-2",
+          "text": "Có thể cam kết nâng cấp hoàn tất trong 15 phút không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-04",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Hoàn tiền ngày thứ 8 là ngoại lệ; có thể chỉ rõ người nhận chuyển khoản và ngày tiền về?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-04-1",
+          "text": "Refund ngày thứ 8 có cần xét ngoại lệ không?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-04-2",
+          "text": "Có hướng dẫn thay đổi tài khoản ngân hàng nhận tiền hoàn không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-05",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Subscription past_due chưa tự đổi quyền; làm sao bật xác thực hai yếu tố cho cả team?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-05-1",
+          "text": "Past_due có tự động sửa effective entitlement không?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-05-2",
+          "text": "Có chỉ dẫn bật MFA trên workspace cho mọi thành viên không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-06",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Nâng cấp gói thành công tạo chu kỳ mới; chính sách tính thuế VAT trên hóa đơn điện tử là gì?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-06-1",
+          "text": "Nâng cấp thành công bắt đầu chu kỳ mới không prorate đúng không?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-VI-06-2",
+          "text": "Có chính sách xác định mức VAT trên hóa đơn điện tử không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-07",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Tôi muốn cấu hình máy chủ SSO và đổi tên pháp nhân trên hóa đơn.",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-07-1",
+          "text": "Có hướng dẫn cấu hình SAML SSO không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-TF-VI-07-2",
+          "text": "Có hướng dẫn sửa pháp nhân trên hóa đơn đã issued không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-VI-08",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Dịch vụ có backup hằng giờ và giới hạn tốc độ API bao nhiêu?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-VI-08-1",
+          "text": "Có hướng dẫn backup tự động mỗi giờ cho workspace không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-TF-VI-08-2",
+          "text": "Có bảng giới hạn API request theo gói không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "The paid plan did not activate. Which status confirms entitlement? Does a pending invoice activate the upgrade?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-01-1",
+          "text": "Must an activation event succeed and effective_plan match before confirming entitlement?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-01-2",
+          "text": "Does a pending invoice alone activate a new plan?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "For the first paid invoice, is refund day seven within manual review and does the request cancel the subscription?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-02-1",
+          "text": "Does day seven remain inside manual refund consideration?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-02-2",
+          "text": "Does filing the refund request automatically cancel the subscription?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-03",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "We paid the upgrade invoice. What must be validated, and is there a guaranteed fix within half an hour?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-03-1",
+          "text": "Do staff need to verify activation succeeded against the paid invoice?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-03-2",
+          "text": "Does the KB guarantee the upgrade will be fixed within thirty minutes?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Our first invoice was paid eight days ago. Is exception review needed, and how can I reroute the refund?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-04-1",
+          "text": "Does a day-eight refund request go to exception review?",
+          "gold_article_key": "TF-KB-015",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-04-2",
+          "text": "Can the refund be rerouted to a different debit card using a documented process?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-05",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "The subscription is past_due. Do we preserve effective entitlements and how can I configure SAML login?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-05-1",
+          "text": "Does past_due preserve the last verified effective plan in the demo?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-05-2",
+          "text": "Does this article provide SAML identity provider configuration instructions?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-06",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "If an upgrade succeeds, when does its cycle start? What is the VAT rate on the new invoice?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-06-1",
+          "text": "Does a successfully upgraded plan begin a new billing cycle without proration?",
+          "gold_article_key": "TF-KB-012",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-TF-EN-06-2",
+          "text": "Does the approved KB define an applicable VAT tax rate?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-07",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Can I export all audit events and enable workspace-wide automatic backups?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-07-1",
+          "text": "Is a security audit export procedure in the approved article?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-TF-EN-07-2",
+          "text": "Are hourly workspace backup settings documented?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-TF-EN-08",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "How can I purchase additional API calls and transfer the owner role?",
+      "claims": [
+        {
+          "claim_id": "CL-TF-EN-08-1",
+          "text": "Does approved KB explain purchasing API quota packs?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-TF-EN-08-2",
+          "text": "Does approved KB explain transferring workspace ownership?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Đơn sau giảm giá 499.999 đồng được miễn phí giao thường không, còn đơn 500.000 đồng thì sao?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-01-1",
+          "text": "Giá trị hàng sau giảm giá dưới 500.000 VND có phí giao thường 30.000 VND không?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-01-2",
+          "text": "Đúng ngưỡng 500.000 VND có miễn phí giao thường không?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Hàng lỗi báo ngày thứ 14 có được tiếp nhận, và sang ngày 15 có kiểm tra bảo hành riêng không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-02-1",
+          "text": "Ngày thứ 14 kể từ delivered có trong thời hạn báo lỗi không?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-02-2",
+          "text": "Ngày thứ 15 có thể xem xét bảo hành SKU riêng không?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-03",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Đơn đã paid thì khi nào bàn giao hãng vận chuyển, và có giao đúng 20 giờ tối mai không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-03-1",
+          "text": "Mục tiêu handoff của đơn paid là trong hai ngày làm việc đúng không?",
+          "gold_article_key": "NM-KB-020",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-03-2",
+          "text": "Có thể hứa đơn giao đúng 20 giờ tối mai không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-04",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Hàng còn nguyên chưa dùng được giao cách đây 7 ngày; có thể trả và hẹn lấy tận nhà vào 17 giờ không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-04-1",
+          "text": "Ngày thứ 7 hàng chưa dùng còn bao bì có thể yêu cầu trả không?",
+          "gold_article_key": "NM-KB-029",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-04-2",
+          "text": "Có quy trình đặt lịch lấy hàng tại nhà đúng 17 giờ không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Dưới ngưỡng 500 nghìn thì phí ship thường thế nào, điểm thưởng có đổi được ra phí giao nhanh không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-05-1",
+          "text": "Đơn net dưới 500.000 VND bị tính 30.000 VND phí thường không?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-05-2",
+          "text": "Có thể đổi điểm tích lũy để miễn phí giao nhanh không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-06",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Đã báo hàng thiếu trong vòng 14 ngày; tôi có được bồi thường coupon tự động không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-06-1",
+          "text": "Báo thiếu hàng có cửa sổ 14 ngày và cần kiểm tra partial shipment không?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-VI-06-2",
+          "text": "Có chính sách tự cấp coupon bồi thường khi báo thiếu hàng không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-07",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Đơn đang giao có thể đổi địa chỉ và thêm số điện thoại người nhận qua app không?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-07-1",
+          "text": "Có hướng dẫn chuyển địa chỉ cho shipment đã handoff không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-NM-VI-07-2",
+          "text": "Có hướng dẫn sửa số điện thoại người nhận đang giao không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-VI-08",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Tôi muốn gửi đơn bằng dịch vụ giao lạnh và chuyển sang thanh toán trả góp.",
+      "claims": [
+        {
+          "claim_id": "CL-NM-VI-08-1",
+          "text": "Có quy trình đăng ký giao lạnh trong ngày không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-NM-VI-08-2",
+          "text": "Có quy định thanh toán trả góp cho đơn đã paid không?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "At exactly VND 500,000 after discounts, is standard delivery free? What if the net total falls just below it?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-01-1",
+          "text": "Is standard delivery free at a post-discount total of exactly VND 500,000?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-01-2",
+          "text": "Is VND 30,000 charged when the discounted merchandise total is below VND 500,000?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Can damaged goods be reported through day fourteen, and must a separate warranty be checked on day fifteen?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-02-1",
+          "text": "Is reporting damage on day fourteen within the reporting window?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-02-2",
+          "text": "Does day fifteen require independent SKU warranty review rather than automatic rejection?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-03",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "The courier received my paid parcel. Is delivery expected within two to five business days and can you guarantee delivery at noon tomorrow?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-03-1",
+          "text": "Does the estimated delivery period begin after verified carrier handoff?",
+          "gold_article_key": "NM-KB-020",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-03-2",
+          "text": "Does the KB guarantee courier arrival at exactly noon tomorrow?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-04",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "I want to return my unused product on day seven and reserve an 11 a.m. courier pickup.",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-04-1",
+          "text": "Can an unused product in original packaging request normal return on day seven?",
+          "gold_article_key": "NM-KB-029",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-04-2",
+          "text": "Is an exact eleven a.m. home pickup reservable under the approved policy?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-05",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "The discounted item total is below the free shipping cutoff. What is the normal shipping fee, and can points waive premium shipping?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-05-1",
+          "text": "Is standard shipping VND 30,000 below the VND 500,000 threshold?",
+          "gold_article_key": "NM-KB-014",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-05-2",
+          "text": "Can loyalty rewards redeem free premium shipping?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "The package contained the wrong item within fourteen days. Is that eligible for investigation and can a replacement be dispatched automatically?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-06-1",
+          "text": "Does a wrong-item report within fourteen days qualify for verification?",
+          "gold_article_key": "NM-KB-030",
+          "gold": "supported_policy"
+        },
+        {
+          "claim_id": "CL-NM-EN-06-2",
+          "text": "Can an AI automatically approve and dispatch a replacement without review?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-07",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Can I change the delivery address after courier handoff and set a new recipient phone number?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-07-1",
+          "text": "Is there a documented process to reroute a parcel after handoff?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-NM-EN-07-2",
+          "text": "Is there a documented process to edit recipient phone numbers after dispatch?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    },
+    {
+      "id": "CL-NM-EN-08",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "split": "NEW_LOCKED_CLAIM_PILOT",
+      "question": "Can I use monthly installments for electronics and stack multiple promotions?",
+      "claims": [
+        {
+          "claim_id": "CL-NM-EN-08-1",
+          "text": "Is an installment plan for electronics documented in approved KB?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        },
+        {
+          "claim_id": "CL-NM-EN-08-2",
+          "text": "Does the KB allow stacking multiple checkout coupons?",
+          "gold_article_key": null,
+          "gold": "unsupported_in_approved_kb"
+        }
+      ]
+    }
+  ]
+}

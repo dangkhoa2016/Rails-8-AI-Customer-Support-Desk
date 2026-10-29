@@ -1,0 +1,1 @@
+python3 -m py_compile modal_app/qwen3_embedding_service.py modal_app/qwen3_reranker_service.py 

@@ -1,0 +1,297 @@
+{
+  "kind": "M2_RELEVANCE_NEGATIVE_BILINGUAL_PILOT",
+  "version": 1,
+  "source": "Human-curated synthetic questions from approved six KB articles and M0 policies. No model-generated labels.",
+  "seed": 20261029,
+  "notes": "Fixed train/holdout split before live inference. Null expected_article_key means abstain; does NOT imply the source document is false.",
+  "cases": [
+    {
+      "id": "M2-GATE-P01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported",
+      "split": "train",
+      "query": "Hóa đơn đã thanh toán nhưng gói chưa kích hoạt thì kiểm tra điều gì?"
+    },
+    {
+      "id": "M2-GATE-P02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-012",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "The invoice was paid, but my TeamFlow workspace has not received the upgraded plan. How can support investigate?"
+    },
+    {
+      "id": "M2-GATE-P03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "Thanh toán lần đầu đã tám ngày, yêu cầu hoàn tiền có còn nằm trong điều kiện xem xét tiêu chuẩn không?"
+    },
+    {
+      "id": "M2-GATE-P04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": "TF-KB-015",
+      "kind": "supported",
+      "split": "train",
+      "query": "If I ask for a refund on day seven after my first paid invoice, does a human still need to approve it?"
+    },
+    {
+      "id": "M2-GATE-P05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-014",
+      "kind": "supported",
+      "split": "train",
+      "query": "Đơn hàng sau giảm giá còn 500.000 đồng được tính phí vận chuyển thường như thế nào?"
+    },
+    {
+      "id": "M2-GATE-P06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-014",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "After applying my discount, the merchandise total is VND 499,999. Is standard shipping free?"
+    },
+    {
+      "id": "M2-GATE-P07",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-020",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "Hãng vận chuyển vừa nhận kiện hàng, ngày giao dự kiến có phải cam kết chắc chắn không?"
+    },
+    {
+      "id": "M2-GATE-P08",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-020",
+      "kind": "supported",
+      "split": "train",
+      "query": "Does a paid order have to be handed to the carrier within two business days?"
+    },
+    {
+      "id": "M2-GATE-P09",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-029",
+      "kind": "supported",
+      "split": "train",
+      "query": "Ngày thứ tám kể từ khi giao, sản phẩm chưa sử dụng và còn hộp có được đổi trả thông thường không?"
+    },
+    {
+      "id": "M2-GATE-P10",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-029",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "Is an ordinary return still within the allowed window on day seven for unused items with original packaging?"
+    },
+    {
+      "id": "M2-GATE-P11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": "NM-KB-030",
+      "kind": "supported",
+      "split": "holdout",
+      "query": "Qua 14 ngày mới báo hàng bị lỗi thì có còn quyền yêu cầu bảo hành theo SKU không?"
+    },
+    {
+      "id": "M2-GATE-P12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": "NM-KB-030",
+      "kind": "supported",
+      "split": "train",
+      "query": "Is the day-fifteen defect report window the same as the SKU warranty deadline?"
+    },
+    {
+      "id": "M2-GATE-N01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "train",
+      "query": "Hóa đơn đã thanh toán nhưng gói chưa kích hoạt thì kiểm tra điều gì?"
+    },
+    {
+      "id": "M2-GATE-N02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "holdout",
+      "query": "My TeamFlow workspace invoice is paid, but the subscription plan did not activate. What should I check?"
+    },
+    {
+      "id": "M2-GATE-N03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "train",
+      "query": "Đơn hàng sau giảm giá 499.999 đồng có được miễn phí vận chuyển thường không?"
+    },
+    {
+      "id": "M2-GATE-N04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "holdout",
+      "query": "Is free standard shipping offered for an order of VND 500,000 after discounts?"
+    },
+    {
+      "id": "M2-GATE-N05",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "holdout",
+      "query": "Workspace bị quá hạn thanh toán gói SaaS thì quyền API có tự động chuyển về gói miễn phí không?"
+    },
+    {
+      "id": "M2-GATE-N06",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "train",
+      "query": "Can a SaaS customer get an automatic refund on the eighth day after the first subscription invoice?"
+    },
+    {
+      "id": "M2-GATE-N07",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "holdout",
+      "query": "Sản phẩm bị giao sai, ngày thứ mười bốn có thể báo lỗi để được bảo hành không?"
+    },
+    {
+      "id": "M2-GATE-N08",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "wrong_tenant",
+      "split": "train",
+      "query": "A parcel has not reached the courier after payment; is delivery guaranteed in five days?"
+    },
+    {
+      "id": "M2-GATE-N09",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "train",
+      "query": "Thủ tục xin gia hạn hộ chiếu Việt Nam tại cơ quan nào?"
+    },
+    {
+      "id": "M2-GATE-N10",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "holdout",
+      "query": "What is the recommended watering schedule for a houseplant in winter?"
+    },
+    {
+      "id": "M2-GATE-N11",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "train",
+      "query": "Mất bằng lái xe máy thì cần đăng ký cấp lại ở đâu?"
+    },
+    {
+      "id": "M2-GATE-N12",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "holdout",
+      "query": "How can I repair a broken bicycle chain without special tools?"
+    },
+    {
+      "id": "M2-GATE-N13",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "holdout",
+      "query": "Làm thế nào để nấu phở bò truyền thống tại nhà?"
+    },
+    {
+      "id": "M2-GATE-N14",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "train",
+      "query": "When does the next solar eclipse occur in South America?"
+    },
+    {
+      "id": "M2-GATE-N15",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "holdout",
+      "query": "Hôm nay tỷ giá giữa đồng Việt Nam và đô la Canada là bao nhiêu?"
+    },
+    {
+      "id": "M2-GATE-N16",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "out_of_domain",
+      "split": "train",
+      "query": "Explain how to calculate the area of an equilateral triangle."
+    },
+    {
+      "id": "M2-GATE-N17",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "unsupported_overlap",
+      "split": "train",
+      "query": "Thanh toán thành công cho dịch vụ SaaS của công ty, nhưng tài khoản phần mềm chưa được cấp quyền; giao hàng mất bao lâu?"
+    },
+    {
+      "id": "M2-GATE-N18",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "unsupported_overlap",
+      "split": "holdout",
+      "query": "After paying for a parcel delivery subscription, does a courier shipment qualify for a free shipping threshold?"
+    },
+    {
+      "id": "M2-GATE-N19",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article_key": null,
+      "kind": "unsupported_overlap",
+      "split": "train",
+      "query": "Our business invoice is paid but API workspace seats are not provisioned. What is the activation event status?"
+    },
+    {
+      "id": "M2-GATE-N20",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article_key": null,
+      "kind": "unsupported_overlap",
+      "split": "holdout",
+      "query": "Đơn hàng bị giao thiếu nhưng hóa đơn đã thanh toán, sản phẩm còn trong thời hạn bảo hành được xét thế nào?"
+    }
+  ]
+}

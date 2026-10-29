@@ -1,0 +1,166 @@
+{
+  "status": "PILOT_BLOCKED",
+  "sealed_input_sha256": "13ab3412404239a6bc3232ca1598cb12b00db1bf29f5d6226ae3a4d9f88ed20a",
+  "results_sha256": "df5cd6f88b2b917f675cb26323ac1f1cb39e7126817c63d0c60a6347f6cba8ab",
+  "created_utc": "2026-10-29T09:44:27.772148+00:00",
+  "baseline_confusion": {
+    "tp": 14,
+    "fp": 6,
+    "fn": 6,
+    "tn": 54
+  },
+  "combined_confusion": {
+    "tp": 14,
+    "fp": 3,
+    "fn": 6,
+    "tn": 57
+  },
+  "error_case_count": 12,
+  "error_cases": [
+    {
+      "case_id": "M3S-TF-VI-03",
+      "kind": "false_abstention",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article": "TF-KB-012",
+      "candidate_article": "TF-KB-012",
+      "candidate_raw_logit": 7.0,
+      "scope_checked": false,
+      "query_sha256": "77b3585a2e41daec8ef6e92d1ddb557f6211ddd026fedcd029a0aaca2cb5940d",
+      "query": "Gói requested_plan và effective_plan khác nhau khi nâng cấp chưa hoàn thành thì phải nói rõ thế nào?"
+    },
+    {
+      "case_id": "M3S-TF-VI-05",
+      "kind": "false_abstention",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "expected_article": "TF-KB-012",
+      "candidate_article": "TF-KB-012",
+      "candidate_raw_logit": 6.125,
+      "scope_checked": false,
+      "query_sha256": "aa1db54a1a3e0d682209faad07529b7ac333f613c3de217cbbc84a91cc0e5506",
+      "query": "Khi subscription past_due, có thể tự suy ra gói hiện tại bị hạ cấp không?"
+    },
+    {
+      "case_id": "M3S-TF-EN-03",
+      "kind": "false_abstention",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article": "TF-KB-012",
+      "candidate_article": "TF-KB-012",
+      "candidate_raw_logit": 6.609375,
+      "scope_checked": false,
+      "query_sha256": "a8881ed37c00f1ccb62aaaac2db7c008d88d8353e9590dda4b87484d0bd8a331",
+      "query": "Can the requested plan alone establish that the upgrade is active when the payment succeeded?"
+    },
+    {
+      "case_id": "M3S-TF-EN-05",
+      "kind": "false_abstention",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article": "TF-KB-012",
+      "candidate_article": "TF-KB-012",
+      "candidate_raw_logit": 5.2734375,
+      "scope_checked": false,
+      "query_sha256": "5a01e3570aba438749d728dff16acd5771c29648eb99171981183351b6fecb3d",
+      "query": "What entitlement should an agent trust while a subscription is past_due in this demo?"
+    },
+    {
+      "case_id": "M3S-TF-EN-08",
+      "kind": "false_positive",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "expected_article": null,
+      "candidate_article": "TF-KB-012",
+      "candidate_raw_logit": 7.53125,
+      "scope_checked": true,
+      "query_sha256": "5c574c210abb4b58783acea2c4c365e54c6f1db63ebed2c5f1ea3aee9a9b3f3b",
+      "query": "The invoice is paid yet activation has not succeeded. Please give a guaranteed resolution deadline and auto-issue service credits."
+    },
+    {
+      "case_id": "M3S-NM-VI-03",
+      "kind": "false_abstention",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article": "NM-KB-029",
+      "candidate_article": "NM-KB-029",
+      "candidate_raw_logit": 5.3125,
+      "scope_checked": false,
+      "query_sha256": "1f3edbc991ad0fb868dad342574a2fcdca4800779c3d6f47a93dea65852be8a8",
+      "query": "Đơn có nhiều kiện, thời điểm bắt đầu tính 7 ngày đổi trả lấy từ ngày delivered của mặt hàng nào?"
+    },
+    {
+      "case_id": "M3S-NM-VI-05",
+      "kind": "false_abstention",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article": "NM-KB-014",
+      "candidate_article": "NM-KB-014",
+      "candidate_raw_logit": 6.2734375,
+      "scope_checked": false,
+      "query_sha256": "32a38c1cae4192e88db99e64cf1752a6f5636ca8e73252b7a4be16dfe7148b0c",
+      "query": "Khi xét ngưỡng miễn phí vận chuyển có được tính 30.000 phí giao vào net merchandise không?"
+    },
+    {
+      "case_id": "M3S-NM-VI-10",
+      "kind": "false_positive",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article": null,
+      "candidate_article": "NM-KB-020",
+      "candidate_raw_logit": 7.875,
+      "scope_checked": true,
+      "query_sha256": "f08fd1a9671e06d6d19e8ca575f4895a4cd68d5c5adb9e080184e71f7eb0c23a",
+      "query": "Giao dự kiến 2 đến 5 ngày làm việc sau handoff; bạn có thể cam kết khách nhận trước 9 giờ sáng mai được chứ?"
+    },
+    {
+      "case_id": "M3S-NM-VI-11",
+      "kind": "scope_prevented_false_positive",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article": null,
+      "candidate_article": "NM-KB-014",
+      "candidate_raw_logit": 7.453125,
+      "scope_checked": true,
+      "query_sha256": "428c4270c37aa6c5d5b4986663bf77d5e2774562439e20505a7e49294875353e",
+      "query": "Đơn dưới ngưỡng miễn ship nên tính 30.000 VND; xin hướng dẫn cộng dồn hai coupon cho đơn này."
+    },
+    {
+      "case_id": "M3S-NM-VI-13",
+      "kind": "scope_prevented_false_positive",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "expected_article": null,
+      "candidate_article": "NM-KB-030",
+      "candidate_raw_logit": 9.0625,
+      "scope_checked": true,
+      "query_sha256": "d62afeaf405dbec4ef7d32338ab17ae8f8b738315ea868c56d6695affd9d3601",
+      "query": "Ngày thứ 15 không thuộc cửa sổ báo lỗi 14 ngày, nhưng tôi muốn mua thêm bảo hiểm bảo hành mở rộng cho SKU này."
+    },
+    {
+      "case_id": "M3S-NM-EN-09",
+      "kind": "scope_prevented_false_positive",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article": null,
+      "candidate_article": "NM-KB-030",
+      "candidate_raw_logit": 7.796875,
+      "scope_checked": true,
+      "query_sha256": "bdaecdf159331343628748f48162ae8a910932e46ad91931d2d492a5cf2c9f3a",
+      "query": "I reported the defect on day fourteen; can you issue an automated compensation voucher and guarantee a new product tomorrow?"
+    },
+    {
+      "case_id": "M3S-NM-EN-10",
+      "kind": "false_positive",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "expected_article": null,
+      "candidate_article": "NM-KB-020",
+      "candidate_raw_logit": 8.78125,
+      "scope_checked": true,
+      "query_sha256": "7944871c7057e43216777f88c14894a93038c2c7e985fa831774ab28f1ab1257",
+      "query": "Delivery should take two to five business days after handoff. Can support guarantee arrival tomorrow before noon?"
+    }
+  ],
+  "warning": "Synthetic hand-authored lockbox. No future threshold tuning on this data; approved KB unchanged."
+}

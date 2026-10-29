@@ -1,0 +1,16 @@
+{
+  "status": "PASS_REAL_RERANKER",
+  "model": "Qwen/Qwen3-Reranker-4B",
+  "revision": "22e683669bc0f0bd69640a1354a6d0aebcfeede5",
+  "scores": [
+    6.4375,
+    -4.0859375
+  ],
+  "elapsed_ms": 28442.3,
+  "query_sha256": "2a7078b7032e1cb4968f8d7888ca2fcc2015ce2530952cdba8f8ed275f6f8545",
+  "document_sha256": [
+    "2d826e2c13cf74f713a108f9f57b315a8ca6e8339db10dfee51c6b6fa4617cc7",
+    "bd1a70b1cc6b0fc004d1bd0d2b95552dc8f9be8f34fb9abab2e29a98813a0b4a"
+  ],
+  "runtime": "Modal GPU actual"
+}

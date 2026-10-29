@@ -1,0 +1,14 @@
+{
+  "status": "TRIAGE_ONLY_NO_EDITORIAL_APPROVAL",
+  "captured_utc": "2026-10-29T01:44:52.428342+00:00",
+  "reviewed_versions": 200,
+  "draft_versions": 200,
+  "without_policy_ref": 130,
+  "flags_count": {
+    "NO_DIRECT_POLICY_REF": 130,
+    "STANDARD_AI_DISCLAIMER": 100,
+    "SHORT_BODY_REVIEW": 20
+  },
+  "human_approvals": 0,
+  "source_sha256": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33"
+}

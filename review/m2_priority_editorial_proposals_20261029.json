@@ -1,0 +1,717 @@
+{
+  "kind": "M2_HIGH_PRIORITY_EDITORIAL_PROPOSALS_NOT_APPROVED",
+  "seed": 20261028,
+  "policy_version": "1.0.0",
+  "canonical_sha256": "dde7d8c4f1b517e50750620b1e4c60244f408d23da06a0bfa5dcc0380cb9ccf6",
+  "source_m2_sha256": "1207fc8aa4cc421febcc893838daf6b9c291fb4ac8724aeec1bb79794e906c33",
+  "revisions": [
+    {
+      "organization_slug": "teamflow-cloud",
+      "article_key": "TF-KB-012",
+      "locale": "vi",
+      "version": 2,
+      "title": "Đã thanh toán nhưng gói chưa kích hoạt",
+      "body": "# Đã thanh toán nhưng gói chưa kích hoạt\n\n## Phạm vi\nÁp dụng khi khách hàng nói đã thanh toán để mở gói trả phí nhưng workspace vẫn hiển thị quyền của gói cũ. Không suy ra tình trạng kích hoạt chỉ từ ảnh biên nhận hoặc lời khách.\n\n## Chính sách có hiệu lực\n- **TF-POL-002** — Gói trả phí chỉ kích hoạt khi hóa đơn đã paid và có bản ghi kích hoạt thành công; pending/failed không kích hoạt.\n- **M0-CLAR-001** — Hóa đơn paid chưa đủ để kích hoạt gói nâng cấp nếu activation event tương ứng chưa succeeded. Tách requested_plan và effective_plan. Nâng cấp thành công bắt đầu chu kỳ mới, không prorate; hạ gói có hiệu lực ở kỳ gia hạn tiếp theo.\n- **M0-CLAR-002** — Subscription past_due giữ gói effective đã xác minh gần nhất để hỗ trợ tra cứu trong demo. Không tự đổi entitlement chỉ từ past_due; thay đổi cần rule/workflow đã phân quyền.\n\n## Chứng cứ cần xác minh\nXác minh đúng tổ chức, khách hàng và workspace; lấy invoice liên quan, trạng thái paid, activation event khớp invoice và effective_plan từ read-only records. requested_plan chỉ phản ánh gói đã yêu cầu. Ghi nhận thông tin còn thiếu thay vì suy diễn.\n\n## Các bước xử lý\n1. Nếu invoice chưa paid, không xác nhận quyền gói trả phí. 2. Nếu paid nhưng activation failed/chưa có succeeded event khớp, giữ nguyên effective_plan đã xác minh và chuyển xử lý kích hoạt. 3. Chỉ mô tả gói mới đã có hiệu lực khi có đồng thời invoice paid, activation succeeded và effective_plan phù hợp. 4. Không tự sửa subscription hay kích hoạt lại bằng AI.\n\n## Câu trả lời mẫu có điều kiện\n“Chúng tôi đã ghi nhận trạng thái thanh toán của hóa đơn được xác minh, nhưng chưa có bằng chứng gói mới đã kích hoạt thành công. Quyền truy cập hiện tại được xác định theo gói có hiệu lực trong hệ thống. Tôi sẽ chuyển trường hợp này cho nhân viên xử lý; chưa thể xác nhận thời điểm hoàn tất.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên có quyền khi event thất bại, không khớp invoice, dữ liệu xung đột hoặc khách yêu cầu khắc phục quyền truy cập. Không công bố hóa đơn/workspace của tenant khác; không hứa hoàn tiền hoặc ngày xử lý khi chưa có quyết định.\n\n",
+      "sha256": "4b83e4eef319880ff6f707df5ba93a13c0a07f24147546a6511f9e30850c9793",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Đã thanh toán nhưng gói chưa kích hoạt\n\n",
+          "sha256": "1f4550e38b4b4f15269f55a4e3a18eb62bca43d845bd76ed31da44f059f016c5"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nÁp dụng khi khách hàng nói đã thanh toán để mở gói trả phí nhưng workspace vẫn hiển thị quyền của gói cũ. Không suy ra tình trạng kích hoạt chỉ từ ảnh biên nhận hoặc lời khách.\n\n",
+          "sha256": "9514cc7a929ec1c8bee15ed9465cfbaa7092fb8fc80caece9e8b999c01964e7a"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **TF-POL-002** — Gói trả phí chỉ kích hoạt khi hóa đơn đã paid và có bản ghi kích hoạt thành công; pending/failed không kích hoạt.\n- **M0-CLAR-001** — Hóa đơn paid chưa đủ để kích hoạt gói nâng cấp nếu activation event tương ứng chưa succeeded. Tách requested_plan và effective_plan. Nâng cấp thành công bắt đầu chu kỳ mới, không prorate; hạ gói có hiệu lực ở kỳ gia hạn tiếp theo.\n- **M0-CLAR-002** — Subscription past_due giữ gói effective đã xác minh gần nhất để hỗ trợ tra cứu trong demo. Không tự đổi entitlement chỉ từ past_due; thay đổi cần rule/workflow đã phân quyền.\n\n",
+          "sha256": "5164ca50b489fb529271f5100b88e5ff58a3781ce7b5ddccb19a3846ae51d176"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nXác minh đúng tổ chức, khách hàng và workspace; lấy invoice liên quan, trạng thái paid, activation event khớp invoice và effective_plan từ read-only records. requested_plan chỉ phản ánh gói đã yêu cầu. Ghi nhận thông tin còn thiếu thay vì suy diễn.\n\n",
+          "sha256": "b162bfa663d66bff5a3f2deee8de11c83dc28818a41e641c4f2d186aa2824009"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. Nếu invoice chưa paid, không xác nhận quyền gói trả phí. 2. Nếu paid nhưng activation failed/chưa có succeeded event khớp, giữ nguyên effective_plan đã xác minh và chuyển xử lý kích hoạt. 3. Chỉ mô tả gói mới đã có hiệu lực khi có đồng thời invoice paid, activation succeeded và effective_plan phù hợp. 4. Không tự sửa subscription hay kích hoạt lại bằng AI.\n\n",
+          "sha256": "a8e4daaba86e26ec28b8fad9d60d178abfa8e244732a299974fb2ae449370088"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Chúng tôi đã ghi nhận trạng thái thanh toán của hóa đơn được xác minh, nhưng chưa có bằng chứng gói mới đã kích hoạt thành công. Quyền truy cập hiện tại được xác định theo gói có hiệu lực trong hệ thống. Tôi sẽ chuyển trường hợp này cho nhân viên xử lý; chưa thể xác nhận thời điểm hoàn tất.”\n\n",
+          "sha256": "ff7d43b525797e725dd21b29025c7e444df8895389d276316de8b6f1d44e7f58"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển nhân viên có quyền khi event thất bại, không khớp invoice, dữ liệu xung đột hoặc khách yêu cầu khắc phục quyền truy cập. Không công bố hóa đơn/workspace của tenant khác; không hứa hoàn tiền hoặc ngày xử lý khi chưa có quyết định.\n\n",
+          "sha256": "13e17301d2c6863bc9c26f522165f48c3f1c44291730db1c2c23757bae11d119"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "3012f609194d90aa6f3e96435e3b8050ba55221347c60c9ce8d81df881be6ebe",
+      "policy_refs": [
+        "TF-POL-002"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-001",
+        "M0-CLAR-002"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "teamflow-cloud",
+      "article_key": "TF-KB-012",
+      "locale": "en",
+      "version": 2,
+      "title": "Paid invoice but plan not active",
+      "body": "# Paid invoice but plan not active\n\n## Scope\nUse this article when a customer reports paying for a paid plan while the workspace still shows older entitlements. A receipt screenshot or customer assertion does not establish activation.\n\n## Authoritative policy\n- **TF-POL-002** — Paid plan activation requires a paid invoice and a successful activation record; a pending or failed payment does not activate a plan.\n- **M0-CLAR-001** — An invoice marked paid does not activate an upgrade unless its matching activation event succeeded. Keep requested_plan and effective_plan separate. On success, upgrades start a new billing cycle without proration; downgrades take effect at the next renewal.\n- **M0-CLAR-002** — A past_due subscription retains its last verified effective plan in the demo for read-only support lookup. Past_due alone must not trigger entitlement changes; only an authorized rule/workflow may change them.\n\n## Evidence to verify\nVerify the authorized organization, customer and workspace; check the relevant invoice and its paid state, the matching activation event, and the read-only effective_plan. requested_plan indicates only the requested change. Record missing evidence rather than guessing.\n\n## Handling steps\n1. If the invoice is not paid, do not confirm paid entitlements. 2. If paid but activation failed or no matching succeeded event exists, retain the verified effective_plan and escalate activation. 3. Say the new plan is live only when invoice paid, matching activation succeeded, and effective_plan agree. 4. AI must not change subscriptions or retry activation.\n\n## Conditional response example\n“We can confirm the verified invoice payment, but we cannot yet verify that the new plan was activated successfully. The current access level follows the effective plan recorded by the system. I will escalate this for an authorized agent to investigate, without promising a completion time.”\n\n## When to escalate\nEscalate failed, missing or conflicting activation events and requests to restore entitlements. Do not expose another tenant's invoices/workspaces, promise refunds, or commit to a resolution deadline without authorization.\n\n",
+      "sha256": "9e136ab659dac3be97beb9b70dcf792896fbc5aab0ff000236c54e08d6dabcd7",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Paid invoice but plan not active\n\n",
+          "sha256": "3a608aefdb4a3f1130295ac0d2389ce1134e66b364b0717ee7130738885e7e63"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nUse this article when a customer reports paying for a paid plan while the workspace still shows older entitlements. A receipt screenshot or customer assertion does not establish activation.\n\n",
+          "sha256": "820d54169fb86a02d8273d8247c24e758e526398aa10043819589bf3ba5f48ea"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **TF-POL-002** — Paid plan activation requires a paid invoice and a successful activation record; a pending or failed payment does not activate a plan.\n- **M0-CLAR-001** — An invoice marked paid does not activate an upgrade unless its matching activation event succeeded. Keep requested_plan and effective_plan separate. On success, upgrades start a new billing cycle without proration; downgrades take effect at the next renewal.\n- **M0-CLAR-002** — A past_due subscription retains its last verified effective plan in the demo for read-only support lookup. Past_due alone must not trigger entitlement changes; only an authorized rule/workflow may change them.\n\n",
+          "sha256": "43152a45118dc761349ca4682e2a31de10e81fa71650435a57d5fee8c614ee02"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nVerify the authorized organization, customer and workspace; check the relevant invoice and its paid state, the matching activation event, and the read-only effective_plan. requested_plan indicates only the requested change. Record missing evidence rather than guessing.\n\n",
+          "sha256": "885289b974007f88391a3936c12ef81ba481aa6cc5de908de1e73d222befdc57"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. If the invoice is not paid, do not confirm paid entitlements. 2. If paid but activation failed or no matching succeeded event exists, retain the verified effective_plan and escalate activation. 3. Say the new plan is live only when invoice paid, matching activation succeeded, and effective_plan agree. 4. AI must not change subscriptions or retry activation.\n\n",
+          "sha256": "426a3c751ac370623a5d29e81a2c00becece8dad66a72b6d074d745c6617fd12"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“We can confirm the verified invoice payment, but we cannot yet verify that the new plan was activated successfully. The current access level follows the effective plan recorded by the system. I will escalate this for an authorized agent to investigate, without promising a completion time.”\n\n",
+          "sha256": "b0b367ce2f43c789cdc5b7a916c541b4af975f8a692ad4377aa3f60a78fe1126"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nEscalate failed, missing or conflicting activation events and requests to restore entitlements. Do not expose another tenant's invoices/workspaces, promise refunds, or commit to a resolution deadline without authorization.\n\n",
+          "sha256": "e375fb139d76916a2c876f7728b43be0084f2800d34afeb5047c8a7e112b31c1"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "e9f0aabde2c50de82f2e3f0ebe5cc8334008b2b4b9cb08e8ccdb27cda64ec0f3",
+      "policy_refs": [
+        "TF-POL-002"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-001",
+        "M0-CLAR-002"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "teamflow-cloud",
+      "article_key": "TF-KB-015",
+      "locale": "vi",
+      "version": 2,
+      "title": "Điều kiện yêu cầu hoàn tiền",
+      "body": "# Điều kiện yêu cầu hoàn tiền\n\n## Phạm vi\nÁp dụng cho yêu cầu hoàn tiền liên quan hóa đơn paid đầu tiên của TeamFlow Cloud. Đây là điều kiện được đưa vào xem xét thủ công, không phải quyền được hoàn tiền tự động.\n\n## Chính sách có hiệu lực\n- **TF-POL-008** — Yêu cầu hoàn tiền trong 7 ngày lịch từ hóa đơn trả phí đầu tiên được đưa vào diện xem xét thủ công, không tự động chấp thuận.\n- **M0-CLAR-003** — Yêu cầu refund trong 7 ngày lịch địa phương (bao gồm ngày thứ 7, ngày paid là ngày 0) từ hóa đơn paid đầu tiên được xem xét thủ công, không tự phê duyệt. Quá hạn chuyển xét ngoại lệ, không hứa chấp thuận. Yêu cầu refund không tự thay đổi subscription.\n\n## Chứng cứ cần xác minh\nXác minh workspace và khách hàng đúng tenant, tìm hóa đơn paid đầu tiên và ngày paid theo múi giờ Asia/Ho_Chi_Minh, ngày tiếp nhận yêu cầu và tình trạng thanh toán. Không tính từ invoice pending/failed hoặc từ ngày ticket được tạo nếu khác ngày yêu cầu.\n\n## Các bước xử lý\n1. Lấy ngày paid đầu tiên làm ngày 0 theo lịch địa phương. 2. Ngày 0 đến hết ngày 7: chuyển xem xét thủ công theo chính sách. 3. Từ ngày 8: chuyển xét ngoại lệ, không nói chắc sẽ được duyệt. 4. Việc gửi yêu cầu không thay đổi subscription; AI không hoàn tiền hoặc hủy gói.\n\n## Câu trả lời mẫu có điều kiện\n“Theo ngày thanh toán đầu tiên và ngày gửi yêu cầu đã được xác minh, yêu cầu của bạn thuộc diện [xem xét thủ công trong hạn / chuyển xét ngoại lệ]. Kết quả hoàn tiền chưa được phê duyệt; nhân viên có thẩm quyền sẽ đánh giá và phản hồi.”\n\n## Khi cần chuyển cấp\nChuyển owner/admin hoặc nhân viên được phân quyền xử lý billing. Không nêu thời gian hoàn tiền, số tiền được hoàn hoặc kết quả chấp thuận khi chưa có quyết định và bản ghi hợp lệ.\n\n",
+      "sha256": "fc407493a6b5a37a9dc0d3d78789cee2c7aebc5a8a50e04d701918ced9ddc1f0",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Điều kiện yêu cầu hoàn tiền\n\n",
+          "sha256": "f48e8abdb8840cd167001f113981bca6579fa05bdce6908a0e4934218f0bbee3"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nÁp dụng cho yêu cầu hoàn tiền liên quan hóa đơn paid đầu tiên của TeamFlow Cloud. Đây là điều kiện được đưa vào xem xét thủ công, không phải quyền được hoàn tiền tự động.\n\n",
+          "sha256": "e66216d9bff6121dae6355f6fd094764290aea6038fec106042a31fbc37398b2"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **TF-POL-008** — Yêu cầu hoàn tiền trong 7 ngày lịch từ hóa đơn trả phí đầu tiên được đưa vào diện xem xét thủ công, không tự động chấp thuận.\n- **M0-CLAR-003** — Yêu cầu refund trong 7 ngày lịch địa phương (bao gồm ngày thứ 7, ngày paid là ngày 0) từ hóa đơn paid đầu tiên được xem xét thủ công, không tự phê duyệt. Quá hạn chuyển xét ngoại lệ, không hứa chấp thuận. Yêu cầu refund không tự thay đổi subscription.\n\n",
+          "sha256": "7e2f664e7eb5c666736af0a8a010cfa8156ae5417d9550dbc6362b856b050f35"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nXác minh workspace và khách hàng đúng tenant, tìm hóa đơn paid đầu tiên và ngày paid theo múi giờ Asia/Ho_Chi_Minh, ngày tiếp nhận yêu cầu và tình trạng thanh toán. Không tính từ invoice pending/failed hoặc từ ngày ticket được tạo nếu khác ngày yêu cầu.\n\n",
+          "sha256": "8e97c02d4a2000ea5e5265ef2b105c4a377b02c8ba5bd088cc0e897729249c5c"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. Lấy ngày paid đầu tiên làm ngày 0 theo lịch địa phương. 2. Ngày 0 đến hết ngày 7: chuyển xem xét thủ công theo chính sách. 3. Từ ngày 8: chuyển xét ngoại lệ, không nói chắc sẽ được duyệt. 4. Việc gửi yêu cầu không thay đổi subscription; AI không hoàn tiền hoặc hủy gói.\n\n",
+          "sha256": "5046e8e0bffe1c98856750fdcf00b64c4ce1d567c0181a34b24535e2c2a12a77"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Theo ngày thanh toán đầu tiên và ngày gửi yêu cầu đã được xác minh, yêu cầu của bạn thuộc diện [xem xét thủ công trong hạn / chuyển xét ngoại lệ]. Kết quả hoàn tiền chưa được phê duyệt; nhân viên có thẩm quyền sẽ đánh giá và phản hồi.”\n\n",
+          "sha256": "298bd0a84d4ec83421577b953a031a110dc898e06d3165f695655eca493727cc"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển owner/admin hoặc nhân viên được phân quyền xử lý billing. Không nêu thời gian hoàn tiền, số tiền được hoàn hoặc kết quả chấp thuận khi chưa có quyết định và bản ghi hợp lệ.\n\n",
+          "sha256": "a74ca8af503b1093e6d6d9c9279117fbf0783a565fb4804dd1fc0b7e69d03970"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "6c4d207663fea830e99a683e48e9099c408a20f9495dcbbde70441e2c46106b5",
+      "policy_refs": [
+        "TF-POL-008"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-003"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "teamflow-cloud",
+      "article_key": "TF-KB-015",
+      "locale": "en",
+      "version": 2,
+      "title": "Refund request eligibility",
+      "body": "# Refund request eligibility\n\n## Scope\nUse this article for a refund request tied to the first paid TeamFlow Cloud invoice. The policy establishes eligibility for human consideration, not an automatic refund entitlement.\n\n## Authoritative policy\n- **TF-POL-008** — Refund requests submitted within 7 calendar days of the first paid invoice are eligible for human review, not automatic approval.\n- **M0-CLAR-003** — Refund requests within 7 local calendar days (inclusive, counting the paid date as day zero) of the first paid invoice are eligible for human review, never automatic approval. Later requests are routed for exception review without a promise. A refund request alone does not change the subscription state.\n\n## Evidence to verify\nVerify the tenant, customer and workspace; locate the first paid invoice and its payment date in Asia/Ho_Chi_Minh local calendar time; confirm the request submission date. Do not count pending/failed invoices or substitute ticket creation dates for the actual request date.\n\n## Handling steps\n1. Count the first paid date as calendar day 0. 2. Days 0–7 inclusive: route for manual review. 3. From day 8: route for exception consideration without promising approval. 4. Filing a request does not change the subscription; AI never executes refunds or cancellation.\n\n## Conditional response example\n“Based on the verified first payment and request dates, this request is [within the manual-review window / outside the standard window and requires exception review]. A refund has not been approved. An authorized team member will assess the request.”\n\n## When to escalate\nRefer billing decisions to authorized staff. Never promise the refunded amount, processing time, subscription change, or approval outcome without a corresponding authorized decision.\n\n",
+      "sha256": "4a973f29fa10fab72643866e815d98cb0c9943d0d33fee253a2fb02a977c7509",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Refund request eligibility\n\n",
+          "sha256": "2a2c88047f1a80b482130bfe755e6ad99d5e55b448968947fd15e3635ea371f4"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nUse this article for a refund request tied to the first paid TeamFlow Cloud invoice. The policy establishes eligibility for human consideration, not an automatic refund entitlement.\n\n",
+          "sha256": "b72e28dfeeebfcd0552f2724d139cd48652a0b50fa61a225124966804c702083"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **TF-POL-008** — Refund requests submitted within 7 calendar days of the first paid invoice are eligible for human review, not automatic approval.\n- **M0-CLAR-003** — Refund requests within 7 local calendar days (inclusive, counting the paid date as day zero) of the first paid invoice are eligible for human review, never automatic approval. Later requests are routed for exception review without a promise. A refund request alone does not change the subscription state.\n\n",
+          "sha256": "ae9c5accf73cde09018ab0b4c05814d6fbf0fcf645aec1f0bee10e07072be0de"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nVerify the tenant, customer and workspace; locate the first paid invoice and its payment date in Asia/Ho_Chi_Minh local calendar time; confirm the request submission date. Do not count pending/failed invoices or substitute ticket creation dates for the actual request date.\n\n",
+          "sha256": "9da38083dad450aca10d05e41b9b4852af179e8ef231d3b9fc698bed4ad1686c"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. Count the first paid date as calendar day 0. 2. Days 0–7 inclusive: route for manual review. 3. From day 8: route for exception consideration without promising approval. 4. Filing a request does not change the subscription; AI never executes refunds or cancellation.\n\n",
+          "sha256": "6c2b53f1496c31b68d6d8eee4e269428f9a849d72bbb9953b50980036e7ae919"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“Based on the verified first payment and request dates, this request is [within the manual-review window / outside the standard window and requires exception review]. A refund has not been approved. An authorized team member will assess the request.”\n\n",
+          "sha256": "14324070ff9845dea817f7ff55f50352e1465434c1eab782c8893b30b73aa74b"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nRefer billing decisions to authorized staff. Never promise the refunded amount, processing time, subscription change, or approval outcome without a corresponding authorized decision.\n\n",
+          "sha256": "e02aff89a9bc7eb41bed45439e3fcf1d93350e4f5519255c255b435c40a0787d"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "3f10fe19d852aa8c1e06bddea63a984bddd068244e7d923833f4072f0f860cd8",
+      "policy_refs": [
+        "TF-POL-008"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-003"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-014",
+      "locale": "vi",
+      "version": 2,
+      "title": "Cách tính phí vận chuyển",
+      "body": "# Cách tính phí vận chuyển\n\n## Phạm vi\nDùng khi khách hỏi vì sao đơn NovaMart Store có hoặc không có phí vận chuyển thường. Ngưỡng miễn phí dựa trên giá trị hàng hóa sau giảm giá, không bao gồm phí giao hàng.\n\n## Chính sách có hiệu lực\n- **NM-POL-002** — Phí vận chuyển thường 30.000 VND khi giá trị hàng sau giảm giá dưới 500.000 VND; từ 500.000 VND được miễn phí (không tính phí ship trong ngưỡng).\n- **M0-CLAR-008** — Dùng snapshot bất biến của order items tính tổng hàng sau discount; phí thường là 30.000 VND khi dưới 500.000 VND, ngược lại 0 VND; không cộng phí ship vào ngưỡng.\n\n## Chứng cứ cần xác minh\nChỉ đọc các order items đúng đơn hàng/khách hàng và lấy quantity, unit_price_snapshot_vnd, discount_snapshot_vnd đã lưu. Kiểm tra loại phí vận chuyển; chính sách này áp dụng cho phí vận chuyển thường trong demo, không mặc định cho dịch vụ khác.\n\n## Các bước xử lý\n1. subtotal_vnd = tổng quantity × unit_price_snapshot_vnd. 2. discount_vnd = tổng discount_snapshot_vnd. 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. Nếu net_merchandise_vnd < 500.000 VND, standard_shipping_vnd = 30.000 VND; nếu >= 500.000 thì bằng 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Tính bằng số nguyên VND, không cộng shipping vào phép so ngưỡng.\n\n## Câu trả lời mẫu có điều kiện\n“Nếu tổng hàng sau giảm giá là 499.999 VND, phí giao thường là 30.000 VND, tổng 529.999 VND. Nếu đúng 500.000 VND thì phí giao thường là 0 VND, tổng 500.000 VND.” Đây là ví dụ chính sách, không phải báo giá của đơn khách nếu chưa tra cứu.\n\n## Khi cần chuyển cấp\nChuyển nhân viên nếu snapshot đơn hoặc phí ghi nhận không khớp công thức, thiếu dữ liệu hoặc có yêu cầu miễn/hoàn phí ngoại lệ. Không tự sửa giá, snapshot hoặc phí vận chuyển.\n\n",
+      "sha256": "bbafff6fc0a08d061f0daa7236da1f094246b849232d1b691d26331803ba1269",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Cách tính phí vận chuyển\n\n",
+          "sha256": "3184396606ab12bdd6ae41d5be89a7621c15728f42b3525d101656afe061a848"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nDùng khi khách hỏi vì sao đơn NovaMart Store có hoặc không có phí vận chuyển thường. Ngưỡng miễn phí dựa trên giá trị hàng hóa sau giảm giá, không bao gồm phí giao hàng.\n\n",
+          "sha256": "e4e75ec9132551ccf3a2036c2deb9db544d3bcd2120c96e9218216894496ac1c"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **NM-POL-002** — Phí vận chuyển thường 30.000 VND khi giá trị hàng sau giảm giá dưới 500.000 VND; từ 500.000 VND được miễn phí (không tính phí ship trong ngưỡng).\n- **M0-CLAR-008** — Dùng snapshot bất biến của order items tính tổng hàng sau discount; phí thường là 30.000 VND khi dưới 500.000 VND, ngược lại 0 VND; không cộng phí ship vào ngưỡng.\n\n",
+          "sha256": "ef6377edbd63c78445fb94ae1bd115b4d07818b8dd470e372fe41575caf679fe"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nChỉ đọc các order items đúng đơn hàng/khách hàng và lấy quantity, unit_price_snapshot_vnd, discount_snapshot_vnd đã lưu. Kiểm tra loại phí vận chuyển; chính sách này áp dụng cho phí vận chuyển thường trong demo, không mặc định cho dịch vụ khác.\n\n",
+          "sha256": "59010b6d32c242b7fa8bb6ac94a9949b0cdf274cd000c75336100a3567fddadc"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. subtotal_vnd = tổng quantity × unit_price_snapshot_vnd. 2. discount_vnd = tổng discount_snapshot_vnd. 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. Nếu net_merchandise_vnd < 500.000 VND, standard_shipping_vnd = 30.000 VND; nếu >= 500.000 thì bằng 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Tính bằng số nguyên VND, không cộng shipping vào phép so ngưỡng.\n\n",
+          "sha256": "ebb53a3685f185a6a4de83b2ef6040dc95fc9b3c8cbf54e20d2aa99bcfd05dd2"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Nếu tổng hàng sau giảm giá là 499.999 VND, phí giao thường là 30.000 VND, tổng 529.999 VND. Nếu đúng 500.000 VND thì phí giao thường là 0 VND, tổng 500.000 VND.” Đây là ví dụ chính sách, không phải báo giá của đơn khách nếu chưa tra cứu.\n\n",
+          "sha256": "87c4291891b5be23f9733a306edaaeb27db61cd546b2dfc29d070a3cb6f4d1d9"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển nhân viên nếu snapshot đơn hoặc phí ghi nhận không khớp công thức, thiếu dữ liệu hoặc có yêu cầu miễn/hoàn phí ngoại lệ. Không tự sửa giá, snapshot hoặc phí vận chuyển.\n\n",
+          "sha256": "bfd9213b213a7cb4d5a231200726e50e37b3456c9abb967bf5c6debde410a150"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "d4d33751765425c64d5286fa32aa0436d01be2e5ce6c42b03ca3baa50ce8302d",
+      "policy_refs": [
+        "NM-POL-002"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-008"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-014",
+      "locale": "en",
+      "version": 2,
+      "title": "How shipping charges are calculated",
+      "body": "# How shipping charges are calculated\n\n## Scope\nUse this article to explain NovaMart Store standard shipping fees. The free-shipping threshold is based on merchandise value after discounts; shipping itself does not count toward the threshold.\n\n## Authoritative policy\n- **NM-POL-002** — Standard shipping is VND 30,000 below VND 500,000; free at or above VND 500,000 based on merchandise subtotal after discounts, excluding shipping.\n- **M0-CLAR-008** — Use immutable order-item snapshots to calculate net merchandise total. Standard shipping is 30000 VND when net merchandise < 500000, otherwise 0 VND, without including shipping in the threshold.\n\n## Evidence to verify\nRead only authorized order item records and their stored quantity, unit_price_snapshot_vnd and discount_snapshot_vnd. Check whether the charge is standard shipping; these rules do not establish prices for unlisted delivery services.\n\n## Handling steps\n1. subtotal_vnd = sum(quantity × unit_price_snapshot_vnd). 2. discount_vnd = sum(discount_snapshot_vnd). 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. If net_merchandise_vnd is below VND 500,000, standard shipping is VND 30,000; at or above the threshold it is VND 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Use integer VND, excluding shipping from threshold tests.\n\n## Conditional response example\n“At VND 499,999 after discounts, standard shipping is VND 30,000 and the total is VND 529,999. At exactly VND 500,000, standard shipping is VND 0 and the total is VND 500,000.” This illustrates policy, not a verified customer's order amount.\n\n## When to escalate\nEscalate mismatched snapshots/fees, missing records, or requests for fee waivers/refunds. AI must not change item snapshots, prices, or shipping charges.\n\n",
+      "sha256": "112f698269cf8ae9f982f914f0c94d2e90ea11b587db8c4a5b1ca145e717ddef",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# How shipping charges are calculated\n\n",
+          "sha256": "17d5446aa338ec4be7373d2bd876b29ac187364b42acada7014880d949c7bd50"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nUse this article to explain NovaMart Store standard shipping fees. The free-shipping threshold is based on merchandise value after discounts; shipping itself does not count toward the threshold.\n\n",
+          "sha256": "dc65a8de17cef7965ba45816a78013a9287efa80a06af6473ea93ff57ddf110b"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **NM-POL-002** — Standard shipping is VND 30,000 below VND 500,000; free at or above VND 500,000 based on merchandise subtotal after discounts, excluding shipping.\n- **M0-CLAR-008** — Use immutable order-item snapshots to calculate net merchandise total. Standard shipping is 30000 VND when net merchandise < 500000, otherwise 0 VND, without including shipping in the threshold.\n\n",
+          "sha256": "4ce4b69fc86298787e812301a6ab5d63910d958ab98260d35f8ab3cd29acd9fd"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nRead only authorized order item records and their stored quantity, unit_price_snapshot_vnd and discount_snapshot_vnd. Check whether the charge is standard shipping; these rules do not establish prices for unlisted delivery services.\n\n",
+          "sha256": "d0c8b2878ca7edaaf35e7a740333cb9e6bdeb316989480cd94ddd079e91e84f1"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. subtotal_vnd = sum(quantity × unit_price_snapshot_vnd). 2. discount_vnd = sum(discount_snapshot_vnd). 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. If net_merchandise_vnd is below VND 500,000, standard shipping is VND 30,000; at or above the threshold it is VND 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Use integer VND, excluding shipping from threshold tests.\n\n",
+          "sha256": "52c94c89de373dad352c2e933ecc5693e650f4391d34a97ae3cec2c665a196c2"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“At VND 499,999 after discounts, standard shipping is VND 30,000 and the total is VND 529,999. At exactly VND 500,000, standard shipping is VND 0 and the total is VND 500,000.” This illustrates policy, not a verified customer's order amount.\n\n",
+          "sha256": "af6fa03524d0d131cb41b0db50743d733a4c7b9a471d59adc653ff7c0715338e"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nEscalate mismatched snapshots/fees, missing records, or requests for fee waivers/refunds. AI must not change item snapshots, prices, or shipping charges.\n\n",
+          "sha256": "cd5e62b34c15a29f1ea729a813e8d1b6a4540d9cf21822efa4815373a8990cf9"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "f06ea72f7489d34d2c893bacf38eb52c8dd09061afcd47a52e734368421112ba",
+      "policy_refs": [
+        "NM-POL-002"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-008"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-020",
+      "locale": "vi",
+      "version": 2,
+      "title": "Thời gian giao hàng dự kiến",
+      "body": "# Thời gian giao hàng dự kiến\n\n## Phạm vi\nÁp dụng khi khách hỏi ngày dự kiến nhận đơn đã thanh toán. Cần phân biệt thời gian mục tiêu bàn giao hãng vận chuyển và thời gian dự kiến giao sau bàn giao; cả hai không phải cam kết chắc chắn.\n\n## Chính sách có hiệu lực\n- **NM-POL-003** — Mục tiêu bàn giao hãng vận chuyển là 2 ngày làm việc sau khi paid; thời gian giao dự kiến 2–5 ngày làm việc sau bàn giao, không bảo đảm tuyệt đối.\n\n## Chứng cứ cần xác minh\nKiểm tra payment paid, ngày giờ carrier handoff đã được xác minh và trạng thái shipment trong đúng đơn/tenant. Nếu đơn tách nhiều kiện, xem từng shipment; không coi label_created là đã bàn giao. Không lấy lời khách thay thế tracking có thẩm quyền.\n\n## Các bước xử lý\n1. Sau paid, mục tiêu bàn giao carrier là trong 2 ngày làm việc (không tính ngày nghỉ cuối tuần; demo chưa xét ngày lễ). 2. Khi đã có bằng chứng bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc sau thời điểm bàn giao. 3. Nếu chưa bàn giao thì không được tự suy ra một ngày giao chính xác. 4. Nếu tracking exception hoặc thiếu cập nhật, chuyển nhân viên kiểm tra với đối tác vận chuyển.\n\n## Câu trả lời mẫu có điều kiện\n“Theo chính sách, cửa hàng đặt mục tiêu bàn giao đơn cho hãng vận chuyển trong 2 ngày làm việc sau khi thanh toán. Sau khi bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc; đây không phải ngày giao bảo đảm. Tôi cần kiểm tra bản ghi vận chuyển của đơn để báo tình trạng cụ thể.”\n\n## Khi cần chuyển cấp\nChuyển khi thiếu bàn giao quá mục tiêu, tracking exception, giao thiếu kiện hoặc khách yêu cầu cam kết thời điểm giao. Không tự tạo tracking, hứa bồi thường hay tái gửi hàng.\n\n",
+      "sha256": "ee681fd73e544c9e2f08de00876a74dd4cb30afa7b61fd3bdd93e48c77b061b3",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Thời gian giao hàng dự kiến\n\n",
+          "sha256": "ce2a2694f9ed610fd7936d5b014bd251bc8cd076a8d1e67fba9c4e5c48e18284"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nÁp dụng khi khách hỏi ngày dự kiến nhận đơn đã thanh toán. Cần phân biệt thời gian mục tiêu bàn giao hãng vận chuyển và thời gian dự kiến giao sau bàn giao; cả hai không phải cam kết chắc chắn.\n\n",
+          "sha256": "4ec57c7de50ec9b640dd9fd3309cbb9049a4137663fed4cb89ad21dc73899c0f"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **NM-POL-003** — Mục tiêu bàn giao hãng vận chuyển là 2 ngày làm việc sau khi paid; thời gian giao dự kiến 2–5 ngày làm việc sau bàn giao, không bảo đảm tuyệt đối.\n\n",
+          "sha256": "4b56f3c0edd86ca0e7c85a0250a9060d99127bcbbd4456a027ede6e9f41ce271"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nKiểm tra payment paid, ngày giờ carrier handoff đã được xác minh và trạng thái shipment trong đúng đơn/tenant. Nếu đơn tách nhiều kiện, xem từng shipment; không coi label_created là đã bàn giao. Không lấy lời khách thay thế tracking có thẩm quyền.\n\n",
+          "sha256": "828fe35c2a1d2e0ae30665f2db5a9ec34eb19ac689072e507a5b330a2613d98e"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. Sau paid, mục tiêu bàn giao carrier là trong 2 ngày làm việc (không tính ngày nghỉ cuối tuần; demo chưa xét ngày lễ). 2. Khi đã có bằng chứng bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc sau thời điểm bàn giao. 3. Nếu chưa bàn giao thì không được tự suy ra một ngày giao chính xác. 4. Nếu tracking exception hoặc thiếu cập nhật, chuyển nhân viên kiểm tra với đối tác vận chuyển.\n\n",
+          "sha256": "acac9c352cf98aa6376b475d008b517750f37cc9803546c77b540889619bdb69"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Theo chính sách, cửa hàng đặt mục tiêu bàn giao đơn cho hãng vận chuyển trong 2 ngày làm việc sau khi thanh toán. Sau khi bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc; đây không phải ngày giao bảo đảm. Tôi cần kiểm tra bản ghi vận chuyển của đơn để báo tình trạng cụ thể.”\n\n",
+          "sha256": "890ed5da51ef9b21e01dcb7bda43e5a96ea3eaae742fc9d76d593795a2ea7f20"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển khi thiếu bàn giao quá mục tiêu, tracking exception, giao thiếu kiện hoặc khách yêu cầu cam kết thời điểm giao. Không tự tạo tracking, hứa bồi thường hay tái gửi hàng.\n\n",
+          "sha256": "de41bea7eaebdb01146ca006f6d5d115a6d656bce7cbd1f8fa87955fc87f0f36"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "04f5e66c5ccb612c99c30e8b4548acd00e6c920f93a1b2241086e2de4b699d91",
+      "policy_refs": [
+        "NM-POL-003"
+      ],
+      "clarification_refs": [],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-020",
+      "locale": "en",
+      "version": 2,
+      "title": "Estimated delivery windows",
+      "body": "# Estimated delivery windows\n\n## Scope\nUse this article for questions about expected delivery of a paid NovaMart Store order. Distinguish the carrier handoff target from the subsequent delivery estimate; neither is a guaranteed delivery date.\n\n## Authoritative policy\n- **NM-POL-003** — Dispatch target is 2 business days after payment; estimated delivery is 2–5 business days after dispatch, not a guarantee.\n\n## Evidence to verify\nVerify payment marked paid, confirmed carrier handoff time, and tenant-scoped shipment records. For partial shipments, inspect each shipment individually; label_created alone does not prove handoff. Customer text is not authoritative tracking data.\n\n## Handling steps\n1. After paid status, the carrier handoff target is within 2 business days (weekdays for the demo; holidays are not modeled). 2. Once handoff is evidenced, the delivery estimate is 2–5 business days afterward. 3. Before handoff, do not invent a precise delivery date. 4. Escalate shipment exceptions or missing tracking updates for human investigation.\n\n## Conditional response example\n“Our policy targets carrier handoff within two business days after payment. Once handed over, delivery is estimated at two to five business days, not guaranteed. We need to verify your order's shipment record before giving a case-specific update.”\n\n## When to escalate\nEscalate missed handoff targets, tracking exceptions, partial deliveries and requests for guaranteed arrival. AI must not fabricate tracking, compensation, or replacement shipments.\n\n",
+      "sha256": "2b092e23965ea6e4b4e84bf3237b75aa43083bfa2df9e650a94544d6ec26b267",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Estimated delivery windows\n\n",
+          "sha256": "a7e640bcba77c63814ecc24b6db31ea2a14a692a91f343864294503ebf95b293"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nUse this article for questions about expected delivery of a paid NovaMart Store order. Distinguish the carrier handoff target from the subsequent delivery estimate; neither is a guaranteed delivery date.\n\n",
+          "sha256": "2c37ee7dfe204f07cc1fbd5da1746940d64b61f85abd20c7ccd88667a21a91ee"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **NM-POL-003** — Dispatch target is 2 business days after payment; estimated delivery is 2–5 business days after dispatch, not a guarantee.\n\n",
+          "sha256": "8e82ed90f3737a4ea024b02cb614ba38bba8d1db337887b57f7e485bbdde4ecd"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nVerify payment marked paid, confirmed carrier handoff time, and tenant-scoped shipment records. For partial shipments, inspect each shipment individually; label_created alone does not prove handoff. Customer text is not authoritative tracking data.\n\n",
+          "sha256": "a50317fc5358b0030ef9f0c4d183528e2d11acb5fbd61ddba08545164ec44fda"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. After paid status, the carrier handoff target is within 2 business days (weekdays for the demo; holidays are not modeled). 2. Once handoff is evidenced, the delivery estimate is 2–5 business days afterward. 3. Before handoff, do not invent a precise delivery date. 4. Escalate shipment exceptions or missing tracking updates for human investigation.\n\n",
+          "sha256": "db08e66b3ac40d82402a15755d4054d9bacafb2cfb6b2efee27504854252849c"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“Our policy targets carrier handoff within two business days after payment. Once handed over, delivery is estimated at two to five business days, not guaranteed. We need to verify your order's shipment record before giving a case-specific update.”\n\n",
+          "sha256": "55ddb3acf4c131add794d4def7fe8c0e917500a9e9444d78ffa8b12aa4f6518a"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nEscalate missed handoff targets, tracking exceptions, partial deliveries and requests for guaranteed arrival. AI must not fabricate tracking, compensation, or replacement shipments.\n\n",
+          "sha256": "942e2413402b139058ac88cd7ffd85c3bfdb7dd3973f28865c6c79cf5a6d467b"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "8940874616b6df691f84edb5670873144f7074294e1203a59c2e2c76ea335e3e",
+      "policy_refs": [
+        "NM-POL-003"
+      ],
+      "clarification_refs": [],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-029",
+      "locale": "vi",
+      "version": 2,
+      "title": "Thời hạn đổi trả hàng chưa sử dụng",
+      "body": "# Thời hạn đổi trả hàng chưa sử dụng\n\n## Phạm vi\nQuy trình tiếp nhận yêu cầu đổi/trả thông thường cho hàng chưa sử dụng, còn bao bì gốc. Không dùng cửa sổ này để từ chối báo thiếu/sai/hỏng/lỗi trong 14 ngày hoặc yêu cầu bảo hành.\n\n## Chính sách có hiệu lực\n- **NM-POL-004** — Hàng chưa sử dụng, còn bao bì gốc có thể yêu cầu đổi/trả trong 7 ngày lịch từ ngày giao.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n\n## Chứng cứ cần xác minh\nXác minh order/item, đúng khách hàng, ngày delivered của chính item đó, tình trạng chưa dùng và bao bì gốc. Với giao nhiều kiện, không lấy ngày giao kiện khác hoặc ngày shipped để tính hạn.\n\n## Các bước xử lý\n1. Xác định ngày delivered đã xác nhận theo lịch Asia/Ho_Chi_Minh (ngày giao là ngày 0). 2. Ngày 0–7: có thể tiếp nhận và chuyển người có thẩm quyền đánh giá điều kiện hàng. 3. Từ ngày 8: ngoài cửa sổ tiêu chuẩn, chuyển xem xét riêng, không tự từ chối mọi quyền lợi khác. 4. Yêu cầu không đồng nghĩa đổi/trả hoặc hoàn tiền đã được duyệt.\n\n## Câu trả lời mẫu có điều kiện\n“Nếu mặt hàng được xác nhận giao ngày 1, yêu cầu đổi/trả thông thường gửi đến hết ngày 8 (ngày thứ 7) vẫn trong cửa sổ xem xét; gửi ngày 9 (ngày thứ 8) nằm ngoài cửa sổ tiêu chuẩn. Việc chấp thuận vẫn cần kiểm tra tình trạng hàng và phê duyệt.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên khi ngày giao chưa xác minh, hàng đã dùng/thiếu bao bì, yêu cầu quá hạn hoặc liên quan hàng lỗi/thiếu/sai. AI không quyết định hoàn tiền, thay hàng hay cập nhật đơn.\n\n",
+      "sha256": "1b8785577d903f9843fd4dc0a7bcffd108b5b7176af262a7b0f33cf667f1cd58",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Thời hạn đổi trả hàng chưa sử dụng\n\n",
+          "sha256": "acf6602755e738a5bd08cd6f36fccce09aa15c7fd10843cb6c4c1c86016bf6d3"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nQuy trình tiếp nhận yêu cầu đổi/trả thông thường cho hàng chưa sử dụng, còn bao bì gốc. Không dùng cửa sổ này để từ chối báo thiếu/sai/hỏng/lỗi trong 14 ngày hoặc yêu cầu bảo hành.\n\n",
+          "sha256": "c0d5efbce3df945e2557415dbd1d306cd548d2d1a4882c31325e28c6f4fcdb7e"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **NM-POL-004** — Hàng chưa sử dụng, còn bao bì gốc có thể yêu cầu đổi/trả trong 7 ngày lịch từ ngày giao.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n\n",
+          "sha256": "c22100fbc6edf7f459bfdbaad4bf7efacc13428ffe9eea5cf3452b9832f7a49b"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nXác minh order/item, đúng khách hàng, ngày delivered của chính item đó, tình trạng chưa dùng và bao bì gốc. Với giao nhiều kiện, không lấy ngày giao kiện khác hoặc ngày shipped để tính hạn.\n\n",
+          "sha256": "25ed1e7db906dccb247bf6a55153ecbf3532968fd8a677818ea19beac25002ec"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. Xác định ngày delivered đã xác nhận theo lịch Asia/Ho_Chi_Minh (ngày giao là ngày 0). 2. Ngày 0–7: có thể tiếp nhận và chuyển người có thẩm quyền đánh giá điều kiện hàng. 3. Từ ngày 8: ngoài cửa sổ tiêu chuẩn, chuyển xem xét riêng, không tự từ chối mọi quyền lợi khác. 4. Yêu cầu không đồng nghĩa đổi/trả hoặc hoàn tiền đã được duyệt.\n\n",
+          "sha256": "e8c66e57c236d67f03d716f370c39a38f9a0f4c77eaaea392bd2e302fe14d30c"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Nếu mặt hàng được xác nhận giao ngày 1, yêu cầu đổi/trả thông thường gửi đến hết ngày 8 (ngày thứ 7) vẫn trong cửa sổ xem xét; gửi ngày 9 (ngày thứ 8) nằm ngoài cửa sổ tiêu chuẩn. Việc chấp thuận vẫn cần kiểm tra tình trạng hàng và phê duyệt.”\n\n",
+          "sha256": "6a20d3471e4a07116d4499f60319f5d289e2288054053ca77b45ed860be33a4b"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển nhân viên khi ngày giao chưa xác minh, hàng đã dùng/thiếu bao bì, yêu cầu quá hạn hoặc liên quan hàng lỗi/thiếu/sai. AI không quyết định hoàn tiền, thay hàng hay cập nhật đơn.\n\n",
+          "sha256": "a14e520049634bd3ffad669e8f9178ed684dbbb634812603f819770e05f570c1"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "8b7374a7f85e488f00e7385ae4563c3cbd0320c63d5a85d784681029e219a4dc",
+      "policy_refs": [
+        "NM-POL-004"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-004"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-029",
+      "locale": "en",
+      "version": 2,
+      "title": "Return window for unused goods",
+      "body": "# Return window for unused goods\n\n## Scope\nThis describes ordinary return requests for unused goods with original packaging. The seven-day window must not be used to reject separate defect, damage, missing or wrong-item reports or warranty inquiries.\n\n## Authoritative policy\n- **NM-POL-004** — Unused items with original packaging may be requested for return within 7 calendar days of delivery.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n\n## Evidence to verify\nVerify the authorized order/customer, the confirmed delivered date of the relevant item, unused condition and original packaging. For split shipments, do not use the date of a different package or the shipped date.\n\n## Handling steps\n1. Use the item's confirmed delivery date in the Asia/Ho_Chi_Minh local calendar (delivery day is day 0). 2. Days 0–7 inclusive: request may be considered after condition checks and human review. 3. From day 8: outside the standard ordinary-return window, route for separate assessment rather than rejecting every other possible remedy. 4. A request is not an approved return or refund.\n\n## Conditional response example\n“If an item was confirmed delivered on the 1st, an ordinary return request made by the 8th (day 7) falls within the review window. A request on the 9th (day 8) is outside the standard window. Approval still depends on condition verification and human authorization.”\n\n## When to escalate\nEscalate missing delivery evidence, used goods, missing original packaging, out-of-window requests or reports of defective/missing/wrong goods. AI never authorizes returns, replacements or refunds.\n\n",
+      "sha256": "f6fe228abb9ca139eea950e38409fd7c9f33588032b20c6f21e930cac27fc18e",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Return window for unused goods\n\n",
+          "sha256": "3be75d1b529e9ed758a2d2395ccd0f565f3d50cb74a7509742f2028805926cd5"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nThis describes ordinary return requests for unused goods with original packaging. The seven-day window must not be used to reject separate defect, damage, missing or wrong-item reports or warranty inquiries.\n\n",
+          "sha256": "9f09b6cdb13e5ee05e83112b8f33ae7981b78625e95077c7fa45c6fcf26bd5b0"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **NM-POL-004** — Unused items with original packaging may be requested for return within 7 calendar days of delivery.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n\n",
+          "sha256": "06b5811eb80f0b78733a03781eb69d95c0494f0edbd757c97cdf66933d627691"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nVerify the authorized order/customer, the confirmed delivered date of the relevant item, unused condition and original packaging. For split shipments, do not use the date of a different package or the shipped date.\n\n",
+          "sha256": "e180e23f1c810e41edcfad5932a40baadf67a789a2d5f85cad172a0dc21361c5"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. Use the item's confirmed delivery date in the Asia/Ho_Chi_Minh local calendar (delivery day is day 0). 2. Days 0–7 inclusive: request may be considered after condition checks and human review. 3. From day 8: outside the standard ordinary-return window, route for separate assessment rather than rejecting every other possible remedy. 4. A request is not an approved return or refund.\n\n",
+          "sha256": "98c203443b3e3e5986acf987d564d362913c52832d9c8e740e9c6774b75de825"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“If an item was confirmed delivered on the 1st, an ordinary return request made by the 8th (day 7) falls within the review window. A request on the 9th (day 8) is outside the standard window. Approval still depends on condition verification and human authorization.”\n\n",
+          "sha256": "3dd859ae9adafe88e37802cacf5efb484e076997bf88927dda710328b5c78755"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nEscalate missing delivery evidence, used goods, missing original packaging, out-of-window requests or reports of defective/missing/wrong goods. AI never authorizes returns, replacements or refunds.\n\n",
+          "sha256": "ceb98c37793da73ec203f92df796a7b4b5c674e591c5c9751f5708ed96135743"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "2c82a9746e2c783c4f6f83fba21b1f263d04897b2d7f1ee56386c10038d81245",
+      "policy_refs": [
+        "NM-POL-004"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-004"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-030",
+      "locale": "vi",
+      "version": 2,
+      "title": "Thời hạn báo sản phẩm lỗi",
+      "body": "# Thời hạn báo sản phẩm lỗi\n\n## Phạm vi\nDành cho việc báo hàng lỗi, hỏng, thiếu hoặc giao sai trong vòng 14 ngày lịch từ ngày item được xác nhận giao. Cửa sổ này độc lập với đổi/trả thông thường 7 ngày và thời hạn bảo hành theo SKU.\n\n## Chính sách có hiệu lực\n- **NM-POL-005** — Báo lỗi/hỏng/thiếu/giao sai hàng được mở trong 14 ngày lịch từ ngày giao và cần xác minh.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n- **M0-CLAR-005** — Cửa sổ 14 ngày báo lỗi không đồng nghĩa hết quyền bảo hành. Điều kiện bảo hành xét độc lập theo warranty_months và ngày giao sản phẩm đã được xác nhận trong demo.\n\n## Chứng cứ cần xác minh\nXác minh đơn và item đúng tenant, ngày delivered của từng item, loại vấn đề, ảnh/chứng cứ phù hợp và trạng thái các kiện hàng. Với báo thiếu, kiểm tra partial shipment trước khi kết luận thiếu hàng. Xác minh warranty_months của SKU nếu hỏi bảo hành.\n\n## Các bước xử lý\n1. Đếm ngày lịch địa phương, ngày delivered là ngày 0. 2. Ngày 0–14: tiếp nhận báo lỗi và chuyển xác minh; ngày 14 vẫn trong cửa sổ. 3. Ngày 15: ngoài cửa sổ báo lỗi chuẩn, nhưng có thể kiểm tra bảo hành riêng theo warranty_months và ngày delivered. 4. Không suy ra lỗi được chấp nhận, hoàn tiền hay đổi mới chỉ từ ảnh khách gửi.\n\n## Câu trả lời mẫu có điều kiện\n“Yêu cầu báo lỗi ở ngày thứ 14 kể từ ngày giao đã xác minh vẫn nằm trong thời hạn 14 ngày để được xem xét. Từ ngày thứ 15, cửa sổ báo lỗi tiêu chuẩn kết thúc; chúng tôi cần kiểm tra điều kiện bảo hành của đúng SKU để xác định hướng xử lý khác, không thể hứa kết quả.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên để xác minh hỏng/thiếu/sai hàng, chứng cứ xung đột hoặc bảo hành. AI không tạo quyết định refund, replacement hoặc warranty claim đã được duyệt.\n\n",
+      "sha256": "f29b4228247f61095fe20ca585eb73cd2fbc06109e1f76875ac777dc337fd8ca",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Thời hạn báo sản phẩm lỗi\n\n",
+          "sha256": "2c300a9924a30701659ca520f744354dca27ac293e59e981fa980096085530de"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Phạm vi\nDành cho việc báo hàng lỗi, hỏng, thiếu hoặc giao sai trong vòng 14 ngày lịch từ ngày item được xác nhận giao. Cửa sổ này độc lập với đổi/trả thông thường 7 ngày và thời hạn bảo hành theo SKU.\n\n",
+          "sha256": "125fe67ed9e8b6df679ef03d54c04bdf55f4f82cd4d5c56fd5981c544cf40393"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Chính sách có hiệu lực\n- **NM-POL-005** — Báo lỗi/hỏng/thiếu/giao sai hàng được mở trong 14 ngày lịch từ ngày giao và cần xác minh.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n- **M0-CLAR-005** — Cửa sổ 14 ngày báo lỗi không đồng nghĩa hết quyền bảo hành. Điều kiện bảo hành xét độc lập theo warranty_months và ngày giao sản phẩm đã được xác nhận trong demo.\n\n",
+          "sha256": "b0fb514076257d84537b2da328b1b2d6b3c58714ca19152ea722828645c9dde7"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Chứng cứ cần xác minh\nXác minh đơn và item đúng tenant, ngày delivered của từng item, loại vấn đề, ảnh/chứng cứ phù hợp và trạng thái các kiện hàng. Với báo thiếu, kiểm tra partial shipment trước khi kết luận thiếu hàng. Xác minh warranty_months của SKU nếu hỏi bảo hành.\n\n",
+          "sha256": "c6ba4dfc4f24163b1c4f848ee12bd083d447509e75f24cbb41e1685aece85244"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Các bước xử lý\n1. Đếm ngày lịch địa phương, ngày delivered là ngày 0. 2. Ngày 0–14: tiếp nhận báo lỗi và chuyển xác minh; ngày 14 vẫn trong cửa sổ. 3. Ngày 15: ngoài cửa sổ báo lỗi chuẩn, nhưng có thể kiểm tra bảo hành riêng theo warranty_months và ngày delivered. 4. Không suy ra lỗi được chấp nhận, hoàn tiền hay đổi mới chỉ từ ảnh khách gửi.\n\n",
+          "sha256": "defb632d11f5eb900eeffaa7bcd5d0f98093c970bcd632d1bd9e27ffe7f0ad71"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Câu trả lời mẫu có điều kiện\n“Yêu cầu báo lỗi ở ngày thứ 14 kể từ ngày giao đã xác minh vẫn nằm trong thời hạn 14 ngày để được xem xét. Từ ngày thứ 15, cửa sổ báo lỗi tiêu chuẩn kết thúc; chúng tôi cần kiểm tra điều kiện bảo hành của đúng SKU để xác định hướng xử lý khác, không thể hứa kết quả.”\n\n",
+          "sha256": "5b6a27ec0dc39cd6c8791d061bfb50dd8ac7707ed67a21c35745991cc3293ae0"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## Khi cần chuyển cấp\nChuyển nhân viên để xác minh hỏng/thiếu/sai hàng, chứng cứ xung đột hoặc bảo hành. AI không tạo quyết định refund, replacement hoặc warranty claim đã được duyệt.\n\n",
+          "sha256": "66a9e0640280059d98b0afdf8037270caaef6e54b6eac91de58e55ea6d631ff6"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "94e7e61d49210c7fdd68c938cdb5832468dc7f67db5bee5bd7e955b9f2ec2182",
+      "policy_refs": [
+        "NM-POL-005"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-004",
+        "M0-CLAR-005"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    },
+    {
+      "organization_slug": "novamart-store",
+      "article_key": "NM-KB-030",
+      "locale": "en",
+      "version": 2,
+      "title": "Defective product reporting window",
+      "body": "# Defective product reporting window\n\n## Scope\nUse this article for defective, damaged, missing or wrong-item reports within 14 local calendar days of confirmed item delivery. This window is separate from seven-day ordinary returns and the SKU-specific warranty period.\n\n## Authoritative policy\n- **NM-POL-005** — Defective, damaged, missing or wrong-item reports can be opened within 14 calendar days of delivery and require verification.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n- **M0-CLAR-005** — A 14-day defect-report window is not a blanket warranty expiry. Warranty eligibility must be evaluated independently from the product warranty_months and verified item delivery date in this demo.\n\n## Evidence to verify\nVerify the correct tenant, order and item; each item's confirmed delivered date, issue type, appropriate photos/evidence and split-shipment status. For missing goods, check partial shipments before concluding an item was lost. Verify SKU warranty_months separately if warranty is requested.\n\n## Handling steps\n1. Count local calendar days from the confirmed item delivery date, with delivery as day 0. 2. Days 0–14 inclusive: accept the report for verification; day 14 is still within the window. 3. Day 15 is outside the standard defect-report window, but SKU warranty may still apply independently according to warranty_months and verified delivery date. 4. Customer photos alone do not authorize refund or replacement.\n\n## Conditional response example\n“A defect report submitted on day 14 after verified delivery is within the 14-day reporting window and requires review. From day 15, the standard report window has passed; we can separately check the specific SKU warranty without promising an outcome.”\n\n## When to escalate\nEscalate verification of defective, damaged, missing or wrong items, conflicting evidence, and warranty assessment. AI must not approve refunds, replacements or warranty claims.\n\n",
+      "sha256": "780bad3784fe9a91c42da9eef99540aeb7e2eb3930ba6ad2126623a112477679",
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "body": "# Defective product reporting window\n\n",
+          "sha256": "06151d6b471eddc7483d0f24c17f45d1c45a69cc346e89f688351cc8e7d0e582"
+        },
+        {
+          "chunk_index": 1,
+          "body": "## Scope\nUse this article for defective, damaged, missing or wrong-item reports within 14 local calendar days of confirmed item delivery. This window is separate from seven-day ordinary returns and the SKU-specific warranty period.\n\n",
+          "sha256": "9d00e33c7a7fa832931afa833fd2243fc78ef77d1b86657a3c7b18c7fe86629e"
+        },
+        {
+          "chunk_index": 2,
+          "body": "## Authoritative policy\n- **NM-POL-005** — Defective, damaged, missing or wrong-item reports can be opened within 14 calendar days of delivery and require verification.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n- **M0-CLAR-005** — A 14-day defect-report window is not a blanket warranty expiry. Warranty eligibility must be evaluated independently from the product warranty_months and verified item delivery date in this demo.\n\n",
+          "sha256": "8db0b11111bd03dfd41bf2c163a7fada13a166b88f9ed1eebcae86bbdf10d23d"
+        },
+        {
+          "chunk_index": 3,
+          "body": "## Evidence to verify\nVerify the correct tenant, order and item; each item's confirmed delivered date, issue type, appropriate photos/evidence and split-shipment status. For missing goods, check partial shipments before concluding an item was lost. Verify SKU warranty_months separately if warranty is requested.\n\n",
+          "sha256": "1fee2ee40ddbbf31f654757f0afb622222f984e8f6e40703798c29fd98baec2a"
+        },
+        {
+          "chunk_index": 4,
+          "body": "## Handling steps\n1. Count local calendar days from the confirmed item delivery date, with delivery as day 0. 2. Days 0–14 inclusive: accept the report for verification; day 14 is still within the window. 3. Day 15 is outside the standard defect-report window, but SKU warranty may still apply independently according to warranty_months and verified delivery date. 4. Customer photos alone do not authorize refund or replacement.\n\n",
+          "sha256": "49c75d0095cbfd96ab62b0f0dd602a470147c035556fe7ec8207881ac3eadddd"
+        },
+        {
+          "chunk_index": 5,
+          "body": "## Conditional response example\n“A defect report submitted on day 14 after verified delivery is within the 14-day reporting window and requires review. From day 15, the standard report window has passed; we can separately check the specific SKU warranty without promising an outcome.”\n\n",
+          "sha256": "b85de01c80559fbceaf0345b14670e4ee34617036916b11aba19e8c2ecdbf825"
+        },
+        {
+          "chunk_index": 6,
+          "body": "## When to escalate\nEscalate verification of defective, damaged, missing or wrong items, conflicting evidence, and warranty assessment. AI must not approve refunds, replacements or warranty claims.\n\n",
+          "sha256": "467130a4cb3df2ad23bfd3ca4323e32eadd644a44a6140c3aa91c6ba424c0a68"
+        }
+      ],
+      "status": "draft",
+      "approved_by": null,
+      "approved_at": null,
+      "effective_from": "2026-10-28",
+      "effective_to": null,
+      "based_on_v1_sha256": "b0f5f15fa735d233ca99e96066cf054c2a607616da9929f8d3c16f36b0baf909",
+      "policy_refs": [
+        "NM-POL-005"
+      ],
+      "clarification_refs": [
+        "M0-CLAR-004",
+        "M0-CLAR-005"
+      ],
+      "editorial_decision": "PENDING_HUMAN_REVIEW"
+    }
+  ]
+}

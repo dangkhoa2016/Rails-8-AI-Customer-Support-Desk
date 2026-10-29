@@ -1,0 +1,200 @@
+{
+  "kind": "M2_APPROVED_SCOPE_QUESTION_PROBES_V1",
+  "status": "EXPERIMENTAL_NOT_EDITORIAL_KB",
+  "method": "Human-authored questions representing explicitly supported facts vs plausible unsupported tasks. Not an independent entailment model.",
+  "locale_policy": "same-tenant same-locale only",
+  "items": [
+    {
+      "article_key": "TF-KB-012",
+      "locale": "vi",
+      "supported": [
+        "Hóa đơn đã paid nhưng quyền gói workspace vẫn là gói cũ thì cần xác minh activation event nào?",
+        "Đã thanh toán nâng cấp nhưng gói chưa kích hoạt thì kiểm tra invoice và effective plan ra sao?",
+        "Nếu activation failed dù invoice paid thì gói mới đã có hiệu lực chưa?",
+        "Khi subscription past_due có được tự ý đổi effective entitlement không?"
+      ],
+      "unsupported": [
+        "Đã kích hoạt gói rồi thì làm sao tăng quota API và hạn mức request?",
+        "Làm thế nào bật xác thực hai lớp cho người dùng workspace?",
+        "Cách tích hợp SSO và cấp thêm tài khoản người dùng vào gói đã kích hoạt?",
+        "Thay đổi địa chỉ thuế và tên pháp nhân trên hóa đơn đã thanh toán ở đâu?"
+      ]
+    },
+    {
+      "article_key": "TF-KB-012",
+      "locale": "en",
+      "supported": [
+        "The subscription invoice is paid but the upgrade did not activate; which activation event must be checked?",
+        "What must staff verify before confirming upgraded workspace entitlements?",
+        "Does a failed plan activation event keep the prior effective plan even after payment?",
+        "Should past-due invoices automatically change verified workspace permissions?"
+      ],
+      "unsupported": [
+        "How do I increase the workspace API rate limit after activating my plan?",
+        "Where can I turn on multi-factor authentication for workspace users?",
+        "How do I configure SAML SSO for the active workspace?",
+        "How can I edit the legal company address on my paid invoice?"
+      ]
+    },
+    {
+      "article_key": "TF-KB-015",
+      "locale": "vi",
+      "supported": [
+        "Yêu cầu hoàn tiền lần thanh toán đầu ở ngày thứ bảy có tự động được duyệt không?",
+        "Hóa đơn trả phí đầu tiên đã paid ngày 0, yêu cầu refund ngày thứ tám xử lý thế nào?",
+        "Khoảng bảy ngày xem xét hoàn tiền theo giờ địa phương được tính từ đâu?",
+        "Yêu cầu hoàn tiền có ngay lập tức hủy subscription không?"
+      ],
+      "unsupported": [
+        "Nhân viên hướng dẫn thay đổi tài khoản ngân hàng để nhận khoản hoàn tiền ở đâu?",
+        "Bao lâu tiền được hoàn sẽ về tài khoản ngân hàng và phí chuyển hoàn là bao nhiêu?",
+        "Làm thế nào cấu hình địa chỉ hóa đơn thuế VAT cho gói đã hoàn tiền?",
+        "Quy trình đổi phương thức thanh toán sau khi hoàn tiền thất bại là gì?"
+      ]
+    },
+    {
+      "article_key": "TF-KB-015",
+      "locale": "en",
+      "supported": [
+        "Does a first paid subscription invoice qualify for manual refund consideration on day seven?",
+        "Is a day-eight subscription refund automatically approved?",
+        "Which local date establishes day zero for an initial paid invoice refund request?",
+        "Does requesting a refund automatically cancel the workspace subscription?"
+      ],
+      "unsupported": [
+        "How can I replace the bank account for a pending refund transfer?",
+        "What exact date will my refund reach the card issuer?",
+        "How can I change a tax registration number after receiving a refund?",
+        "What are the payment processor's cross-border refund fees?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-014",
+      "locale": "vi",
+      "supported": [
+        "Sau giảm giá còn 499.999 đồng thì phí vận chuyển tiêu chuẩn là bao nhiêu?",
+        "Nếu net merchandise bằng 500.000 VND thì đơn được miễn phí giao thường không?",
+        "Có được cộng phí ship vào tổng hàng để vượt ngưỡng miễn phí không?",
+        "Tính subtotal và discount từ snapshot đơn hàng để ra shipping fee thế nào?"
+      ],
+      "unsupported": [
+        "Tôi có thể cộng dồn hai voucher giảm giá cùng đơn hàng không?",
+        "Điểm thưởng khách hàng tích lũy có được dùng để trừ phí ship không?",
+        "Tôi muốn đổi địa chỉ giao hàng sau khi đã thanh toán phải làm sao?",
+        "Có dịch vụ giao nhanh trong ngày và tính phí bao nhiêu?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-014",
+      "locale": "en",
+      "supported": [
+        "Is an after-discount merchandise total of VND 499,999 eligible for free standard shipping?",
+        "What standard delivery fee applies at exactly VND 500,000 net merchandise?",
+        "Does shipping count toward the free-shipping threshold?",
+        "How are order item snapshots used to compute the discounted shipping fee?"
+      ],
+      "unsupported": [
+        "Can two promotional vouchers be stacked on one order?",
+        "Can loyalty points be redeemed as a shipping discount?",
+        "How can I change my delivery address after payment?",
+        "Is same-day express delivery available and how much does it cost?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-020",
+      "locale": "vi",
+      "supported": [
+        "Sau khi đơn paid thì thời gian mục tiêu bàn giao hãng vận chuyển bao lâu?",
+        "Dự kiến nhận hàng trong hai đến năm ngày làm việc kể từ carrier handoff có bảo đảm không?",
+        "Nếu đơn tách kiện thì có được xem mỗi tracking riêng không?",
+        "Đơn đã thanh toán nhưng chưa carrier handoff có thể khẳng định ngày giao chính xác chưa?"
+      ],
+      "unsupported": [
+        "Tôi muốn đặt lịch giao chính xác trong khung 19 đến 21 giờ tối mai được không?",
+        "Sau khi hãng vận chuyển nhận hàng tôi có thể chọn đổi sang hãng vận chuyển khác không?",
+        "Cần làm gì để đổi địa chỉ nhận hàng đang trên đường giao?",
+        "Khách muốn thêm số điện thoại của người nhận sau khi gửi hàng phải cập nhật ở đâu?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-020",
+      "locale": "en",
+      "supported": [
+        "How long after a paid order should a courier handoff normally take?",
+        "Is delivery within two to five business days after handoff guaranteed?",
+        "Does creating a shipment label count as carrier handoff?",
+        "How should support check delivery estimates for split shipments?"
+      ],
+      "unsupported": [
+        "Can I schedule the courier for an exact 7–9 pm delivery tomorrow?",
+        "Can I switch to a different courier after shipment handoff?",
+        "How do I reschedule an active parcel to a different delivery address?",
+        "Can I update the recipient's phone number after dispatch?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-029",
+      "locale": "vi",
+      "supported": [
+        "Hàng chưa sử dụng còn hộp được yêu cầu trả trong bảy ngày từ giao không?",
+        "Ngày thứ tám sau giao được xác minh có còn trong cửa sổ đổi trả thông thường không?",
+        "Đơn nhiều kiện thì ngày bắt đầu tính hạn trả của từng item lấy từ đâu?",
+        "Khách gửi yêu cầu đổi trả có nghĩa là đã được phê duyệt hoàn tiền không?"
+      ],
+      "unsupported": [
+        "Đơn đã trả thì điểm thành viên có được tự động hoàn lại không?",
+        "Làm sao chọn lại màu và cỡ của món hàng sau khi đặt mua?",
+        "Cách chuyển khoản hoàn tiền sang một thẻ ngân hàng khác?",
+        "Có thể yêu cầu nhân viên đến nhà lấy hàng vào khung giờ cụ thể không?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-029",
+      "locale": "en",
+      "supported": [
+        "Can unused items with original packaging be returned within seven calendar days of delivery?",
+        "Is day eight still inside the standard return window?",
+        "Which verified shipment delivery date starts the window for each item?",
+        "Does filing a return request immediately authorize a refund?"
+      ],
+      "unsupported": [
+        "Will loyalty rewards automatically be restored when an item is returned?",
+        "Can I exchange a paid item for a different color and size before dispatch?",
+        "Can refund funds be transferred to a different credit card?",
+        "Can a courier pick up a return at a reserved hour?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-030",
+      "locale": "vi",
+      "supported": [
+        "Báo sản phẩm bị hỏng vào ngày thứ 14 sau giao có được tiếp nhận không?",
+        "Ngày thứ 15 quá hạn báo lỗi có làm mất ngay quyền bảo hành theo SKU không?",
+        "Cần kiểm tra từng kiện và ngày giao nếu báo thiếu hàng?",
+        "Ảnh sản phẩm lỗi có phải bằng chứng đủ để tự động hoàn tiền không?"
+      ],
+      "unsupported": [
+        "Tôi có thể đặt lịch kỹ thuật viên đến sửa sản phẩm tại nhà không?",
+        "Mua thêm gói bảo hiểm mở rộng cho sản phẩm đã quá bảo hành như thế nào?",
+        "Tôi muốn đổi kích thước sản phẩm không bị lỗi thì cần thủ tục gì?",
+        "Làm sao gửi coupon đền bù tự động khi báo hàng hỏng?"
+      ]
+    },
+    {
+      "article_key": "NM-KB-030",
+      "locale": "en",
+      "supported": [
+        "Can an item damaged on day fourteen after delivery still be reported?",
+        "Does a report filed on day fifteen automatically end the SKU warranty?",
+        "What shipment evidence is needed when a customer reports missing goods?",
+        "Is a defect photo sufficient to auto-approve a refund?"
+      ],
+      "unsupported": [
+        "How can I schedule a home repair technician for the product?",
+        "Can I purchase extended warranty insurance for an expired item?",
+        "How can I change an undamaged item's size after purchase?",
+        "How do I issue an automatic coupon when a damaged item is reported?"
+      ]
+    }
+  ]
+}

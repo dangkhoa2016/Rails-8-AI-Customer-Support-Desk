@@ -1,0 +1,155 @@
+{
+  "application": "Rails-8-AI-Customer-Support-Desk",
+  "scope": "M1_RAILS_SOURCE_OFFLINE_ONLY",
+  "generated_utc": "2026-10-28T16:29:30.106683+00:00",
+  "source_policy_version": "1.0.0",
+  "dataset_seed": 20261028,
+  "dataset_reference_time": "2026-10-28T00:00:00+07:00",
+  "dataset_sha256": "6a266e42c0099c18d8560ed88e835f8873b62c35811dac28e350667ce3d68680",
+  "blueprint_sha256": "dde7d8c4f1b517e50750620b1e4c60244f408d23da06a0bfa5dcc0380cb9ccf6",
+  "local_python": "3.13.5",
+  "local_ruby": "ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]",
+  "local_host_id": "20e7c07f4bb4",
+  "cpu_count": 5,
+  "instances_executed": 1,
+  "rails_gem_installed": false,
+  "offline_checks": {
+    "01_blueprint": {
+      "command": [
+        "python3",
+        "script/validate_approved_blueprint.py"
+      ],
+      "started_at_utc": "2026-10-28T16:29:25.291537+00:00",
+      "finished_at_utc": "2026-10-28T16:29:26.041098+00:00",
+      "seconds": 0.7501,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "02_relational_graph": {
+      "command": [
+        "python3",
+        "script/verify_m1_dataset.py",
+        "--blueprint",
+        "docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json",
+        "--dataset",
+        "data/m1_business_records.json",
+        "--report",
+        "evidence/offline-relational-report.json"
+      ],
+      "started_at_utc": "2026-10-28T16:29:26.041656+00:00",
+      "finished_at_utc": "2026-10-28T16:29:26.877350+00:00",
+      "seconds": 0.8365,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "03_python_negative_tests": {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "test",
+        "-p",
+        "test_m1_dataset.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T16:29:26.878214+00:00",
+      "finished_at_utc": "2026-10-28T16:29:27.817006+00:00",
+      "seconds": 0.9394,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "04_ruby_policy_tests": {
+      "command": [
+        "ruby",
+        "test/policy_rules_test.rb"
+      ],
+      "started_at_utc": "2026-10-28T16:29:27.817680+00:00",
+      "finished_at_utc": "2026-10-28T16:29:27.903004+00:00",
+      "seconds": 0.086,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "05_scaffold_structure": {
+      "command": [
+        "python3",
+        "script/offline_scaffold_check.py"
+      ],
+      "started_at_utc": "2026-10-28T16:29:27.903730+00:00",
+      "finished_at_utc": "2026-10-28T16:29:29.397326+00:00",
+      "seconds": 1.4938,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "06_erb_syntax": {
+      "command": [
+        "ruby",
+        "script/check_erb_syntax.rb"
+      ],
+      "started_at_utc": "2026-10-28T16:29:29.397591+00:00",
+      "finished_at_utc": "2026-10-28T16:29:29.474642+00:00",
+      "seconds": 0.0776,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "07_shell_syntax": {
+      "command": [
+        "bash",
+        "-n",
+        "script/notebook_setup.sh",
+        "script/use_notebook_env.sh",
+        "script/run_full_m1.sh"
+      ],
+      "started_at_utc": "2026-10-28T16:29:29.475165+00:00",
+      "finished_at_utc": "2026-10-28T16:29:29.477230+00:00",
+      "seconds": 0.0031,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    },
+    "08_ruby_syntax": {
+      "command": [
+        "bash",
+        "-lc",
+        "find app db config script test -type f -name '*.rb' -print0 | xargs -0 -n 1 ruby -c"
+      ],
+      "started_at_utc": "2026-10-28T16:29:29.478259+00:00",
+      "finished_at_utc": "2026-10-28T16:29:30.099308+00:00",
+      "seconds": 0.6215,
+      "exit_code": 0,
+      "status": "PASS_OFFLINE"
+    }
+  },
+  "runtime_status": {
+    "rails_boot": "NOT_RUN",
+    "postgresql_migrations": "NOT_RUN",
+    "postgresql_seed": "NOT_RUN",
+    "rails_integration_tests": "NOT_RUN",
+    "rails_http_pages": "NOT_RUN",
+    "modal_inference": "NOT_RUN",
+    "full_text_kb": "NOT_STARTED"
+  },
+  "counts": {
+    "customers": 100,
+    "memberships": 6,
+    "nm_order_items": 180,
+    "nm_orders": 120,
+    "nm_payments": 120,
+    "nm_products": 40,
+    "nm_return_items": 25,
+    "nm_return_requests": 25,
+    "nm_shipment_items": 185,
+    "nm_shipments": 130,
+    "nm_warranty_claims": 12,
+    "organizations": 2,
+    "tf_activation_events": 30,
+    "tf_api_request_events": 50,
+    "tf_export_jobs": 35,
+    "tf_invoices": 80,
+    "tf_service_incidents": 8,
+    "tf_subscriptions": 40,
+    "tf_workspaces": 40,
+    "users": 6
+  },
+  "limitations": "This is a manually constructed Rails 8 application scaffold; no Rails gem or PostgreSQL available in this workspace. Run full M1 acceptance on a provisioned notebook before deployment."
+}

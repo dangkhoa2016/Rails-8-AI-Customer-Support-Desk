@@ -1,0 +1,12 @@
+PASS_SOURCE_ERB app/views/business_records/show.html.erb
+PASS_SOURCE_ERB app/views/customers/index.html.erb
+PASS_SOURCE_ERB app/views/customers/show.html.erb
+PASS_SOURCE_ERB app/views/dashboard/index.html.erb
+PASS_SOURCE_ERB app/views/demo_sessions/new.html.erb
+PASS_SOURCE_ERB app/views/knowledge_articles/index.html.erb
+PASS_SOURCE_ERB app/views/knowledge_articles/show.html.erb
+PASS_SOURCE_ERB app/views/layouts/application.html.erb
+PASS_SOURCE_ERB app/views/tickets/index.html.erb
+PASS_SOURCE_ERB app/views/tickets/new.html.erb
+PASS_SOURCE_ERB app/views/tickets/show.html.erb
+PASS_SOURCE_ONLY: 11 ERB view templates syntactically checked; not a Rails render test

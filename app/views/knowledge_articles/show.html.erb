@@ -1,0 +1,35 @@
+<%= link_to "← #{t('knowledge.nav')}", knowledge_articles_path, class: 'back' %>
+<% if %w[owner admin].include?(current_membership.role) %><%= link_to t('knowledge.compare_link'), compare_knowledge_article_path(@article), class: 'btn secondary' %><% end %>
+<section class="hero">
+  <span class="pill <%= @version.status == 'approved' ? 'ok' : 'warn' %>"><%= @version.status %> · <%= @version.locale %> · v<%= @version.version_number %></span>
+  <h1><%= @version.title %></h1>
+  <p class="intro"><%= @article.article_key %> · <%= @article.category %> · <%= t('knowledge.audience') %>: <%= @article.audience %></p>
+</section>
+<div class="panel">
+  <% if @version.status != 'approved' %><p class="alert"><%= t('knowledge.draft') %></p><% end %>
+  <p class="small"><%= t('knowledge.policies') %>: <%= @article.policy_refs.any? ? @article.policy_refs.join(', ') : '—' %></p>
+  <div class="kb-body kb-rendered"><%= render_editorial_kb_body(@version.body) %></div>
+</div>
+<section class="panel">
+  <h2><%= t('knowledge.integrity') %></h2>
+  <p class="mono">SHA256: <%= @version.sha256 %></p>
+  <p class="mono">Source: <%= @version.source_blueprint_sha256 %></p>
+  <p class="small muted"><%= t('knowledge.no_embeddings') %></p>
+  <% if %w[owner admin].include?(current_membership.role) && @version.status == 'draft' %>
+    <p class="muted"><%= t('knowledge.manual') %></p>
+    <%= form_with url: approve_knowledge_article_path(@article), method: :post, local: true do %>
+      <%= hidden_field_tag :version_id, @version.id %>
+      <div class="field">
+        <%= label_tag :reviewer_notes, t('knowledge.reviewer_notes') %>
+        <%= text_area_tag :reviewer_notes, nil, required: true, minlength: 15, maxlength: 2000, rows: 4 %>
+      </div>
+      <div class="field">
+        <%= label_tag :review_attested do %>
+          <%= check_box_tag :review_attested, '1', false, required: true %>
+          <%= t('knowledge.review_attestation') %>
+        <% end %>
+      </div>
+      <%= submit_tag t('knowledge.approve'), class: 'btn' %>
+    <% end %>
+  <% end %>
+</section>
