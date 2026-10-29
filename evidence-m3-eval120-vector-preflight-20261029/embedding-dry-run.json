@@ -1,0 +1,12 @@
+{
+  "status": "PASS_M2_RESTORE_PREFLIGHT_NO_WRITES",
+  "historical_dump_sha256": "9b6a218943b81d35ba61e60c92bfea6d171ca9c49517371e6ddedd18e6d0c4ae",
+  "model_id": "Qwen/Qwen3-Embedding-4B",
+  "model_revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+  "source_embeddings": 84,
+  "dimensions": 2560,
+  "mapped_by": "tenant_slug_article_key_locale_chunk_index_and_SHA256",
+  "target_tickets": 240,
+  "target_messages": 440,
+  "current_embeddings": 0
+}

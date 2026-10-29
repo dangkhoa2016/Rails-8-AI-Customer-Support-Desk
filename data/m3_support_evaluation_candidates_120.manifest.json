@@ -1,0 +1,21 @@
+{
+  "by_intent_hint": {
+    "needs_case_evidence": 36,
+    "policy_retrieval": 48,
+    "unsafe_or_unsupported_claim": 36
+  },
+  "by_tenant_locale": {
+    "novamart-store:en": 40,
+    "novamart-store:vi": 40,
+    "teamflow-cloud:en": 20,
+    "teamflow-cloud:vi": 20
+  },
+  "case_count": 120,
+  "dataset_sha256": "d6353a42696b622fa89dbf2254bb61e23277e12aa62acc80020724218c0a4b1c",
+  "independent_review": false,
+  "kind": "M3_EVAL_CANDIDATES_MANIFEST",
+  "m3_original_unchanged": true,
+  "model_inference": "NOT_RUN",
+  "semantic_gold": false,
+  "source_snapshot_sha256": "12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f"
+}
