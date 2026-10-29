@@ -1,0 +1,10 @@
+test_bad_corpus_sha_rejected (__main__.ExternalReviewVerifierTests.test_bad_corpus_sha_rejected) ... ok
+test_cross_tenant_policy_evidence_rejected (__main__.ExternalReviewVerifierTests.test_cross_tenant_policy_evidence_rejected) ... ok
+test_duplicate_id_rejected (__main__.ExternalReviewVerifierTests.test_duplicate_id_rejected) ... ok
+test_unfinished_review_remains_pending (__main__.ExternalReviewVerifierTests.test_unfinished_review_remains_pending) ... ok
+test_unsupported_requires_written_reason (__main__.ExternalReviewVerifierTests.test_unsupported_requires_written_reason) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.013s
+
+OK

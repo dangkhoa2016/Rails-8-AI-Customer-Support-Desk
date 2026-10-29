@@ -1,0 +1,29 @@
+{
+  "kind": "M2_QWEN4B_CPU_CACHE_CACHED_GPU_DEV16_POST_RUN_INVARIANTS",
+  "date_utc": "2026-10-29",
+  "db": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84,
+    "scope_eligible": false
+  },
+  "new_cache_volume": "rails8-support-desk-qwen3-instruct-4b-pinned",
+  "cache_ready_sha256": "ac0aef9c427dc08cbcf1c24eb788044ad10df24ffd499e8b001afac35149fcec",
+  "existing_apps_deployed": 2,
+  "ephemeral_cpu_gpu_apps_stopped": true,
+  "old_scope_gate": "BLOCKED",
+  "test_evidence": {
+    "rails": "78/4424 pass",
+    "python": "6+15+10+5 pass"
+  },
+  "gpu_16": {
+    "json": 16,
+    "source_integrity": 2,
+    "minimum_intents": 1,
+    "no_unresolved": 1
+  },
+  "human_review_64": "PENDING",
+  "release": "NOT_RELEASE",
+  "git_commit_or_push": "NOT_PERFORMED"
+}

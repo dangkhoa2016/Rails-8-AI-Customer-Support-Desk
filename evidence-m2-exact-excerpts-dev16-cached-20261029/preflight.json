@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_GPU_PREFLIGHT_PASS",
+  "manifest_sha256": "380de3f24ddc765cb7e3545b2d03dd8f66535918c79fd85614bcddedcfac5f11",
+  "input_count": 16,
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "seed": 20261029,
+  "gpu_instances": 1,
+  "offline_model_source": "dedicated_read_only_modal_volume",
+  "official_metadata_sha256": "20c5b62b395b966d02d8f1448a0ce04d0d2557b98a0727cc1517934df3d509af"
+}

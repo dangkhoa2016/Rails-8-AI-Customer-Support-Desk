@@ -1,0 +1,35 @@
+{
+  "kind": "M2_CACHED_QWEN4B_DEV16_DIAGNOSTIC",
+  "status": "GPU_FEASIBILITY_PASS_QUALITY_GATE_FAILED_NOT_RELEASE",
+  "original_timed_out_attempt_preserved": true,
+  "new_model_source": "cpu_verified_modal_volume_read_only_offline",
+  "cache_ready_sha256": "ac0aef9c427dc08cbcf1c24eb788044ad10df24ffd499e8b001afac35149fcec",
+  "cache_integrity_seconds": 10.904,
+  "model_load_seconds": 2.181,
+  "a10_remote_invocation_wall_seconds": 99.347,
+  "gpu_peak_allocated_bytes": 8168527360,
+  "case_count": 16,
+  "strict_json_pass": 16,
+  "source_integrity_pass": 2,
+  "minimum_intents_recovered": 1,
+  "full_no_unresolved": 1,
+  "source_failures": {
+    "dropped query content (intent coverage failure)": 3,
+    "PASSED_SOURCE_INTEGRITY": 2,
+    "overlap with existing span": 11
+  },
+  "same_prompt_and_generation_code_as_previous_timeout_attempt": true,
+  "same_frozen_development_manifest_sha256": "380de3f24ddc765cb7e3545b2d03dd8f66535918c79fd85614bcddedcfac5f11",
+  "gpu_raw_sha256": "d79f43493b3d7f32a58c608b94224c1f3c00643e5ef4bc36de6830523cc178e7",
+  "human_gold": "NOT_INDEPENDENTLY_ADJUDICATED",
+  "production_integration": "BLOCKED",
+  "model_outputs_accepted_as_customer_answer": false,
+  "db_expected": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84,
+    "scope_eligible": false
+  },
+  "limitations": "Developer16 is open development data, not a sealed holdout; 1/16 passing structural check does not certify semantic correctness."
+}

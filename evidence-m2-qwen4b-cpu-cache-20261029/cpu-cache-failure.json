@@ -1,0 +1,7 @@
+{
+  "stage": "CPU_CACHE_FAILED",
+  "file": "model-00002-of-00003.safetensors",
+  "type": "ValueError",
+  "message": "official metadata verification FAILED for model-00002-of-00003.safetensors",
+  "invocation_wall_seconds": 31.401
+}

@@ -1,0 +1,92 @@
+test_bad_tenant (__main__.PartitionAwareContractTests.test_bad_tenant) ... ok
+test_conservative_unseparated_two_requests_abstains (__main__.PartitionAwareContractTests.test_conservative_unseparated_two_requests_abstains) ... ok
+test_duplicate_assignment (__main__.PartitionAwareContractTests.test_duplicate_assignment) ... ok
+test_email_privacy_rejected (__main__.PartitionAwareContractTests.test_email_privacy_rejected) ... ok
+test_english_comma_and_boundary (__main__.PartitionAwareContractTests.test_english_comma_and_boundary) ... ok
+test_extra_business_command (__main__.PartitionAwareContractTests.test_extra_business_command) ... ok
+test_four_unit_limit (__main__.PartitionAwareContractTests.test_four_unit_limit) ... ok
+test_json_boolean_strict (__main__.PartitionAwareContractTests.test_json_boolean_strict) ... ok
+test_lossless_source_bytes_and_spans (__main__.PartitionAwareContractTests.test_lossless_source_bytes_and_spans) ... ok
+test_missing_assignment (__main__.PartitionAwareContractTests.test_missing_assignment) ... ok
+test_model_generated_excerpts_not_accepted (__main__.PartitionAwareContractTests.test_model_generated_excerpts_not_accepted) ... ok
+test_non_unresolved_must_not_have_reason (__main__.PartitionAwareContractTests.test_non_unresolved_must_not_have_reason) ... ok
+test_reordered_unit (__main__.PartitionAwareContractTests.test_reordered_unit) ... ok
+test_source_only_ignores_role_semantics (__main__.PartitionAwareContractTests.test_source_only_ignores_role_semantics) ... ok
+test_stale_question_sha (__main__.PartitionAwareContractTests.test_stale_question_sha) ... ok
+test_unicode_split_comma_vietnamese (__main__.PartitionAwareContractTests.test_unicode_split_comma_vietnamese) ... ok
+test_unresolved_must_have_reason (__main__.PartitionAwareContractTests.test_unresolved_must_have_reason) ... ok
+test_valid_classification_never_authorizes_writes (__main__.PartitionAwareContractTests.test_valid_classification_never_authorizes_writes) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.002s
+
+OK
+test_host_owns_all_source_metadata (__main__.HostOwnedEnvelopeTests.test_host_owns_all_source_metadata) ... ok
+test_missing_unit_rejected (__main__.HostOwnedEnvelopeTests.test_missing_unit_rejected) ... ok
+test_model_schema_injection_rejected (__main__.HostOwnedEnvelopeTests.test_model_schema_injection_rejected) ... ok
+test_model_source_sha_injection_rejected (__main__.HostOwnedEnvelopeTests.test_model_source_sha_injection_rejected) ... ok
+test_no_auto_customer_answer (__main__.HostOwnedEnvelopeTests.test_no_auto_customer_answer) ... ok
+test_refund_write_injection_rejected (__main__.HostOwnedEnvelopeTests.test_refund_write_injection_rejected) ... ok
+test_reordered_unit_rejected (__main__.HostOwnedEnvelopeTests.test_reordered_unit_rejected) ... ok
+test_untrusted_span_can_be_exclusively_unresolved (__main__.HostOwnedEnvelopeTests.test_untrusted_span_can_be_exclusively_unresolved) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+test_deterministic_unicode_exact_offsets (__main__.ExactSpanRecoveryTest.test_deterministic_unicode_exact_offsets) ... ok
+test_dropped_intent_fails (__main__.ExactSpanRecoveryTest.test_dropped_intent_fails) ... ok
+test_duplicate_claim_id_rejected (__main__.ExactSpanRecoveryTest.test_duplicate_claim_id_rejected) ... ok
+test_email_like_input_never_sent_forward (__main__.ExactSpanRecoveryTest.test_email_like_input_never_sent_forward) ... ok
+test_extraneous_model_generated_offsets_rejected (__main__.ExactSpanRecoveryTest.test_extraneous_model_generated_offsets_rejected) ... ok
+test_invalid_boolean_type_rejected (__main__.ExactSpanRecoveryTest.test_invalid_boolean_type_rejected) ... ok
+test_invalid_unresolved_reason_fails (__main__.ExactSpanRecoveryTest.test_invalid_unresolved_reason_fails) ... ok
+test_non_verbatim_source_fails (__main__.ExactSpanRecoveryTest.test_non_verbatim_source_fails) ... ok
+test_nonstring_query_rejected (__main__.ExactSpanRecoveryTest.test_nonstring_query_rejected) ... ok
+test_overlapping_span_fails (__main__.ExactSpanRecoveryTest.test_overlapping_span_fails) ... ok
+test_raw_text_or_markdown_not_accepted (__main__.ExactSpanRecoveryTest.test_raw_text_or_markdown_not_accepted) ... ok
+test_repeated_phrase_ambiguous_fail (__main__.ExactSpanRecoveryTest.test_repeated_phrase_ambiguous_fail) ... ok
+test_tenant_locale_mismatch_rejected (__main__.ExactSpanRecoveryTest.test_tenant_locale_mismatch_rejected) ... ok
+test_unexpected_business_action_field_fails (__main__.ExactSpanRecoveryTest.test_unexpected_business_action_field_fails) ... ok
+test_unresolved_span_preserves_unclear_input (__main__.ExactSpanRecoveryTest.test_unresolved_span_preserves_unclear_input) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+OK
+test_absent_file_never_accepted (__main__.LfsAndGitBlobTests.test_absent_file_never_accepted) ... ok
+test_corrupt_lfs_sha256_rejected (__main__.LfsAndGitBlobTests.test_corrupt_lfs_sha256_rejected) ... ok
+test_git_blob_sha1_checked_when_not_lfs (__main__.LfsAndGitBlobTests.test_git_blob_sha1_checked_when_not_lfs) ... ok
+test_lfs_does_not_wrongly_compare_pointer_sha1 (__main__.LfsAndGitBlobTests.test_lfs_does_not_wrongly_compare_pointer_sha1) ... ok
+test_lfs_must_match_sha256 (__main__.LfsAndGitBlobTests.test_lfs_must_match_sha256) ... ok
+test_lfs_wrong_byte_size_rejected (__main__.LfsAndGitBlobTests.test_lfs_wrong_byte_size_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
+test_bad_tenant_and_hash_rejected (__main__.ContractTest.test_bad_tenant_and_hash_rejected) ... ok
+test_fabricated_quote_rejected (__main__.ContractTest.test_fabricated_quote_rejected) ... ok
+test_forged_kb_evidence_rejected (__main__.ContractTest.test_forged_kb_evidence_rejected) ... ok
+test_good_manual_fixtures_are_not_misreported_as_inference (__main__.ContractTest.test_good_manual_fixtures_are_not_misreported_as_inference) ... ok
+test_invalid_probability_triples_rejected (__main__.ContractTest.test_invalid_probability_triples_rejected) ... ok
+test_missing_intent_text_rejected (__main__.ContractTest.test_missing_intent_text_rejected) ... ok
+test_pii_rejected (__main__.ContractTest.test_pii_rejected) ... ok
+test_unexpected_json_field_rejected (__main__.ContractTest.test_unexpected_json_field_rejected) ... ok
+test_wrong_kb_version_or_tenant_rejected (__main__.ContractTest.test_wrong_kb_version_or_tenant_rejected) ... ok
+test_wrong_predicted_label_rejected (__main__.ContractTest.test_wrong_predicted_label_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.006s
+
+OK
+test_bad_corpus_sha_rejected (__main__.ExternalReviewVerifierTests.test_bad_corpus_sha_rejected) ... ok
+test_cross_tenant_policy_evidence_rejected (__main__.ExternalReviewVerifierTests.test_cross_tenant_policy_evidence_rejected) ... ok
+test_duplicate_id_rejected (__main__.ExternalReviewVerifierTests.test_duplicate_id_rejected) ... ok
+test_unfinished_review_remains_pending (__main__.ExternalReviewVerifierTests.test_unfinished_review_remains_pending) ... ok
+test_unsupported_requires_written_reason (__main__.ExternalReviewVerifierTests.test_unsupported_requires_written_reason) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.015s
+
+OK

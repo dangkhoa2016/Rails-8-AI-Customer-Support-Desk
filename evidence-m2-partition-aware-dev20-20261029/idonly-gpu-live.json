@@ -1,0 +1,519 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "gpu": "NVIDIA A10G",
+  "seed": 20261029,
+  "model_source": "pinned_verified_read_only_offline_volume",
+  "cache_ready_sha256": "ac0aef9c427dc08cbcf1c24eb788044ad10df24ffd499e8b001afac35149fcec",
+  "gpu_full_model_hash_seconds": 11.847,
+  "model_load_seconds": 2.649,
+  "cuda_max_allocated_bytes": 8168528384,
+  "results": [
+    {
+      "id": "PA-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "e4d84e89270434eededf951fb4b4f3a75018ae2f592ad39f5bb8cf0f3e324932",
+      "raw_output": "{\n  \"question_sha256\": \"e4d84e89270434eededf951fb4b4f3a75018ae2f592ad39f5bb8cf0f3e324932\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "e4d84e89270434eededf951fb4b4f3a75018ae2f592ad39f5bb8cf0f3e324932",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 435,
+      "generated_tokens": 149,
+      "generation_seconds": 7.036
+    },
+    {
+      "id": "PA-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "9de12b757027e0a461c694a1a52ff8a42831c77d8688aea874a4a419f1394357",
+      "raw_output": "{\n  \"question_sha256\": \"9de12b757027e0a461c694a1a52ff8a42831c77d8688aea874a4a419f1394357\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "9de12b757027e0a461c694a1a52ff8a42831c77d8688aea874a4a419f1394357",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 439,
+      "generated_tokens": 150,
+      "generation_seconds": 6.17
+    },
+    {
+      "id": "PA-TF-VI-03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "8ae07f056fcd196efe6abd595aed31ab909e4552b372bb422eaf46425d19e3f2",
+      "raw_output": "{\n  \"question_sha256\": \"8ae07f056fcd196efe6abd595aed31ab909e4552b372bb422eaf46425d19e3f2\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "8ae07f056fcd196efe6abd595aed31ab909e4552b372bb422eaf46425d19e3f2",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 430,
+      "generated_tokens": 146,
+      "generation_seconds": 5.999
+    },
+    {
+      "id": "PA-TF-VI-04",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "9e4cf35a08d63bdccc8af6f5dcdb23814aded6fcfc44f2dc87348876e30e5965",
+      "raw_output": "{\n  \"question_sha256\": \"9e4cf35a08d63bdccc8af6f5dcdb23814aded6fcfc44f2dc87348876e30e5965\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "9e4cf35a08d63bdccc8af6f5dcdb23814aded6fcfc44f2dc87348876e30e5965",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 420,
+      "generated_tokens": 141,
+      "generation_seconds": 5.787
+    },
+    {
+      "id": "PA-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "74b26dc5bc42af3874e73fcf71b545daf52dc2c88cf4ed18ccb5a0288bdc38e4",
+      "raw_output": "{\n  \"question_sha256\": \"74b26dc5bc42af3874e73fcf71b545daf52dc2c88cf4ed18ccb5a0288bdc38e4\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "74b26dc5bc42af3874e73fcf71b545daf52dc2c88cf4ed18ccb5a0288bdc38e4",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 420,
+      "generated_tokens": 145,
+      "generation_seconds": 5.963
+    },
+    {
+      "id": "PA-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "f064df7d983d9c3135ad820e8148c9dbe958055fafcfa8644787d87e0fc543cd",
+      "raw_output": "{\n  \"question_sha256\": \"f064df7d983d9c3135ad820e8148c9dbe958055fafcfa8644787d87e0fc543cd\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "f064df7d983d9c3135ad820e8148c9dbe958055fafcfa8644787d87e0fc543cd",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 423,
+      "generated_tokens": 145,
+      "generation_seconds": 5.98
+    },
+    {
+      "id": "PA-TF-EN-03",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "bb773386a10af47e5af8ce99a5b309f14921ae7a6087a7b19ecdd676514f2bad",
+      "raw_output": "{\n  \"question_sha256\": \"bb773386a10af47e5af8ce99a5b309f14921ae7a6087a7b19ecdd676514f2bad\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "bb773386a10af47e5af8ce99a5b309f14921ae7a6087a7b19ecdd676514f2bad",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 426,
+      "generated_tokens": 148,
+      "generation_seconds": 6.025
+    },
+    {
+      "id": "PA-TF-EN-04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "883c5e236706e02bb9636b016577acf767be94583a7aa855d77d8415ea06a7ae",
+      "raw_output": "{\n  \"question_sha256\": \"883c5e236706e02bb9636b016577acf767be94583a7aa855d77d8415ea06a7ae\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "883c5e236706e02bb9636b016577acf767be94583a7aa855d77d8415ea06a7ae",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 425,
+      "generated_tokens": 147,
+      "generation_seconds": 5.991
+    },
+    {
+      "id": "PA-TF-EN-05",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "ab5aa192c17d639ccbf6c23415d1a281d403929f7bc7ff2a7ee0ccd97e7600fa",
+      "raw_output": "{\n  \"question_sha256\": \"ab5aa192c17d639ccbf6c23415d1a281d403929f7bc7ff2a7ee0ccd97e7600fa\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "ab5aa192c17d639ccbf6c23415d1a281d403929f7bc7ff2a7ee0ccd97e7600fa",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 427,
+      "generated_tokens": 144,
+      "generation_seconds": 5.91
+    },
+    {
+      "id": "PA-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "3b70a0f9174fd02930d31ec3cbca600a189c3725ce864fc45c78300c6356a6d1",
+      "raw_output": "{\n  \"question_sha256\": \"3b70a0f9174fd02930d31ec3cbca600a189c3725ce864fc45c78300c6356a6d1\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "3b70a0f9174fd02930d31ec3cbca600a189c3725ce864fc45c78300c6356a6d1",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 441,
+      "generated_tokens": 148,
+      "generation_seconds": 6.09
+    },
+    {
+      "id": "PA-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "1a56af6eba54f228fbc6de9937d12efdd088cc48cbbf8ff8e74b0e5109ea0cab",
+      "raw_output": "{\n  \"question_sha256\": \"1a56af6eba54f228fbc6de9937d12efdd088cc48cbbf8ff8e74b0e5109ea0cab\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"case_specific_fact\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "1a56af6eba54f228fbc6de9937d12efdd088cc48cbbf8ff8e74b0e5109ea0cab",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "case_specific_fact",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 427,
+      "generated_tokens": 142,
+      "generation_seconds": 5.863
+    },
+    {
+      "id": "PA-NM-VI-03",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "c614536e11e4cf18c8a99fe9fab9557326512545b40e759376761f67890ec698",
+      "raw_output": "{\n  \"question_sha256\": \"c614536e11e4cf18c8a99fe9fab9557326512545b40e759376761f67890ec698\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "c614536e11e4cf18c8a99fe9fab9557326512545b40e759376761f67890ec698",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 435,
+      "generated_tokens": 152,
+      "generation_seconds": 6.275
+    },
+    {
+      "id": "PA-NM-VI-04",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "1c92cada83f2077d2df79d262556edcc2ba6e91b980e679f60f9ede9f8f21b0b",
+      "raw_output": "{\n  \"question_sha256\": \"1c92cada83f2077d2df79d262556edcc2ba6e91b980e679f60f9ede9f8f21b0b\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "1c92cada83f2077d2df79d262556edcc2ba6e91b980e679f60f9ede9f8f21b0b",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 433,
+      "generated_tokens": 146,
+      "generation_seconds": 6.069
+    },
+    {
+      "id": "PA-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "25f34806cc9ed3e6dab2a231138623164a591266d58b7b0e3f1f904ec5e65df4",
+      "raw_output": "{\n  \"question_sha256\": \"25f34806cc9ed3e6dab2a231138623164a591266d58b7b0e3f1f904ec5e65df4\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "25f34806cc9ed3e6dab2a231138623164a591266d58b7b0e3f1f904ec5e65df4",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 429,
+      "generated_tokens": 149,
+      "generation_seconds": 6.171
+    },
+    {
+      "id": "PA-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "908fc79bef1158f9bdcceac0999b0e62c55a09dff14df41e5c7b5662b4415d5c",
+      "raw_output": "{\n  \"question_sha256\": \"908fc79bef1158f9bdcceac0999b0e62c55a09dff14df41e5c7b5662b4415d5c\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "908fc79bef1158f9bdcceac0999b0e62c55a09dff14df41e5c7b5662b4415d5c",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 427,
+      "generated_tokens": 145,
+      "generation_seconds": 5.975
+    },
+    {
+      "id": "PA-NM-EN-03",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "286ce056681565c26c4f0876be457ff3544c9b9db948144510462de44b2428f4",
+      "raw_output": "{\n  \"question_sha256\": \"286ce056681565c26c4f0876be457ff3544c9b9db948144510462de44b2428f4\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "286ce056681565c26c4f0876be457ff3544c9b9db948144510462de44b2428f4",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 432,
+      "generated_tokens": 152,
+      "generation_seconds": 6.261
+    },
+    {
+      "id": "PA-NM-EN-04",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "f0755050597b56ccbc30b80ee56ea13619194083a7461f05e05305b95919559f",
+      "raw_output": "{\n  \"question_sha256\": \"f0755050597b56ccbc30b80ee56ea13619194083a7461f05e05305b95919559f\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"requested_action\",\n      \"needs_case_data\": true,\n      \"reason\": null\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "f0755050597b56ccbc30b80ee56ea13619194083a7461f05e05305b95919559f",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 428,
+      "generated_tokens": 150,
+      "generation_seconds": 6.184
+    },
+    {
+      "id": "PA-NM-EN-05",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "64d784518e916250ca54a423d7dff13e7f7bfbcd007406ec37544131cf09d58b",
+      "raw_output": "{\n  \"question_sha256\": \"64d784518e916250ca54a423d7dff13e7f7bfbcd007406ec37544131cf09d58b\",\n  \"assignments\": [\n    {\n      \"unit_id\": \"u1\",\n      \"role\": \"policy_question\",\n      \"needs_case_data\": false,\n      \"reason\": null\n    },\n    {\n      \"unit_id\": \"u2\",\n      \"role\": \"unresolved\",\n      \"needs_case_data\": false,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed": {
+        "question_sha256": "64d784518e916250ca54a423d7dff13e7f7bfbcd007406ec37544131cf09d58b",
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 437,
+      "generated_tokens": 150,
+      "generation_seconds": 6.21
+    }
+  ],
+  "source_unit_semantic_gold": "NOT_INDEPENDENTLY_VERIFIED",
+  "remote_invocation_wall_seconds": 136.868
+}

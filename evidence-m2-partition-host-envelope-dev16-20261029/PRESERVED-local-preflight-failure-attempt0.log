@@ -1,0 +1,9 @@
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /content/Rails-8-AI-Customer-Support-Desk/modal_app/m2_partition_host_envelo │
+│ pe_dev16_poc.py:135 in main                                                  │
+│                                                                              │
+│   134 │   assert data["max_gpu_runs"]==1 and len(data["cases"])==16          │
+│ ❱ 135 │   assert data["model"]["revision"]==REV                              │
+│   136 │   evidence=root/"evidence-m2-partition-host-envelope-dev16-20261029" │
+╰──────────────────────────────────────────────────────────────────────────────╯
+KeyError: 'model'

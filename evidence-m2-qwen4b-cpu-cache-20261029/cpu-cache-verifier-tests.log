@@ -1,0 +1,11 @@
+test_absent_file_never_accepted (__main__.LfsAndGitBlobTests.test_absent_file_never_accepted) ... ok
+test_corrupt_lfs_sha256_rejected (__main__.LfsAndGitBlobTests.test_corrupt_lfs_sha256_rejected) ... ok
+test_git_blob_sha1_checked_when_not_lfs (__main__.LfsAndGitBlobTests.test_git_blob_sha1_checked_when_not_lfs) ... ok
+test_lfs_does_not_wrongly_compare_pointer_sha1 (__main__.LfsAndGitBlobTests.test_lfs_does_not_wrongly_compare_pointer_sha1) ... ok
+test_lfs_must_match_sha256 (__main__.LfsAndGitBlobTests.test_lfs_must_match_sha256) ... ok
+test_lfs_wrong_byte_size_rejected (__main__.LfsAndGitBlobTests.test_lfs_wrong_byte_size_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+OK

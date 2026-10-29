@@ -1,0 +1,37 @@
+{
+  "kind": "M2_TWO_CONTRACTS_GPU_CLOSURE",
+  "status": "RESEARCH_ONLY_NO_RELEASE",
+  "dev20": {
+    "total": 20,
+    "pre_gpu_abstain": 2,
+    "gpu_json": 18,
+    "strict_schema": 0,
+    "posthoc_diagnostic_is_not_acceptance": true
+  },
+  "fresh_dev16": {
+    "total": 16,
+    "pre_gpu_abstain": 2,
+    "gpu_json": 14,
+    "strict_host_owned_contract": 14,
+    "full_no_unresolved_with_minimum": 10,
+    "developer_untrusted_units_correctly_unresolved": 4
+  },
+  "postrun_db": {
+    "articles": 100,
+    "versions": 212,
+    "approved": 12,
+    "embeddings": 84,
+    "scope_eligible": false
+  },
+  "old_model_apps_deployed": 2,
+  "one_shot_apps_stopped": true,
+  "tests": {
+    "python": 62,
+    "rails": 78,
+    "rails_assertions": 4424
+  },
+  "semantic_human_review": "NOT_RUN",
+  "business_writes": "NONE",
+  "git_commit": "NONE",
+  "release": "BLOCKED"
+}

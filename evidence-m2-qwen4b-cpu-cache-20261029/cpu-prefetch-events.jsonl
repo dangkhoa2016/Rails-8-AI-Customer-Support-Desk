@@ -1,0 +1,2 @@
+{"stage": "PREFLIGHT", "manifest_sha256": "20c5b62b395b966d02d8f1448a0ce04d0d2557b98a0727cc1517934df3d509af", "model": "Qwen/Qwen3-4B-Instruct-2507", "revision": "cdbee75f17c01a7cc42f958dc650907174af0554", "gpu": "NONE", "files": 12, "bytes": 8060915998}
+{"stage": "CPU_CACHE_FAILED", "file": "model-00002-of-00003.safetensors", "type": "ValueError", "message": "official metadata verification FAILED for model-00002-of-00003.safetensors", "invocation_wall_seconds": 31.401}

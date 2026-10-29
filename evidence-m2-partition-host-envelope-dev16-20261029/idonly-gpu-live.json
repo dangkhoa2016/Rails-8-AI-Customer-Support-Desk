@@ -1,0 +1,394 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "gpu": "NVIDIA A10",
+  "seed": 20261029,
+  "model_source": "pinned_verified_read_only_offline_volume",
+  "cache_ready_sha256": "ac0aef9c427dc08cbcf1c24eb788044ad10df24ffd499e8b001afac35149fcec",
+  "gpu_full_model_hash_seconds": 9.82,
+  "model_load_seconds": 2.564,
+  "cuda_max_allocated_bytes": 8146401280,
+  "results": [
+    {
+      "id": "HE-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "89ac59a951787f9143502fbf9f5646b0a08fc99c5386a9ce32ea23f294fa0674",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 402,
+      "generated_tokens": 59,
+      "generation_seconds": 2.626
+    },
+    {
+      "id": "HE-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "612df743d463a8acb18d58ea3c55e4a4470be76f0ebe00a62c23c74868a0a6a6",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 401,
+      "generated_tokens": 59,
+      "generation_seconds": 1.864
+    },
+    {
+      "id": "HE-TF-VI-03",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "97555cb5c23f9b627d7321a730999f61bb254b7f53af69da909620f1914222e3",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"unresolved\", \"needs_case_data\": false, \"reason\": \"untrusted_text\"}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 406,
+      "generated_tokens": 62,
+      "generation_seconds": 1.972
+    },
+    {
+      "id": "HE-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "88a49e681d814d5a24056cb7d343e29dd7e7d03870cfa0dd4b82830076327e57",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 398,
+      "generated_tokens": 59,
+      "generation_seconds": 1.851
+    },
+    {
+      "id": "HE-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "7a374dbdd499afd2df74dcd805869826c4e38a676cc48793c05bc82f538378c1",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 391,
+      "generated_tokens": 59,
+      "generation_seconds": 1.913
+    },
+    {
+      "id": "HE-TF-EN-03",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "d36ecc731aa58f5c285702fe394b9429f7b54093f8a4e3400c1eb9c5a08390ac",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"unresolved\", \"needs_case_data\": false, \"reason\": \"untrusted_text\"}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 398,
+      "generated_tokens": 62,
+      "generation_seconds": 1.998
+    },
+    {
+      "id": "HE-TF-EN-04",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "926903b1bca98cfb414886b0782cf9bb745bc22812ceedec2e59743bb0d7ccc2",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 400,
+      "generated_tokens": 59,
+      "generation_seconds": 1.996
+    },
+    {
+      "id": "HE-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "b371c882d8f8e93e33e6d7937c48863b51bd024a2fbdd9e64a5eb89b96d1489b",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"case_specific_fact\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "case_specific_fact",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 409,
+      "generated_tokens": 60,
+      "generation_seconds": 1.951
+    },
+    {
+      "id": "HE-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "b23d670e3fa081617fef419f9b57f4105cd079a2e603dc7de52c983afa28e926",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 398,
+      "generated_tokens": 59,
+      "generation_seconds": 1.986
+    },
+    {
+      "id": "HE-NM-VI-03",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "c0f95aec570e3b1f1cf43ba0a8cb40763490e98bcb38a3df7ad8888fe8949b11",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"unresolved\", \"needs_case_data\": false, \"reason\": \"untrusted_text\"}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 406,
+      "generated_tokens": 62,
+      "generation_seconds": 2.054
+    },
+    {
+      "id": "HE-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "2849468234ba170453c2ffaa36dc33afd430745e5ead7d4dfad685de11737406",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 395,
+      "generated_tokens": 59,
+      "generation_seconds": 1.985
+    },
+    {
+      "id": "HE-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "a11e242d76271dffe39daa4ecbce8d6910983b6532c1b97f65a790a3b1363e5c",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 399,
+      "generated_tokens": 59,
+      "generation_seconds": 1.997
+    },
+    {
+      "id": "HE-NM-EN-03",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "cd7b65b40f45fcfa9964d13ff714972fa2d13fcba802b4279df3ddf4679890e3",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"unresolved\", \"needs_case_data\": false, \"reason\": \"untrusted_text\"}, {\"unit_id\": \"u2\", \"role\": \"policy_question\", \"needs_case_data\": true, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "unresolved",
+            "needs_case_data": false,
+            "reason": "untrusted_text"
+          },
+          {
+            "unit_id": "u2",
+            "role": "policy_question",
+            "needs_case_data": true,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 395,
+      "generated_tokens": 62,
+      "generation_seconds": 2.032
+    },
+    {
+      "id": "HE-NM-EN-04",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "f64acfa0492b77bbc4aa703ab06dc7c551298515db6d959fceb1d5bad8309316",
+      "raw_output": "{\"assignments\": [{\"unit_id\": \"u1\", \"role\": \"policy_question\", \"needs_case_data\": false, \"reason\": null}, {\"unit_id\": \"u2\", \"role\": \"requested_action\", \"needs_case_data\": false, \"reason\": null}]}",
+      "parsed": {
+        "assignments": [
+          {
+            "unit_id": "u1",
+            "role": "policy_question",
+            "needs_case_data": false,
+            "reason": null
+          },
+          {
+            "unit_id": "u2",
+            "role": "requested_action",
+            "needs_case_data": false,
+            "reason": null
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "input_tokens": 398,
+      "generated_tokens": 59,
+      "generation_seconds": 1.932
+    }
+  ],
+  "source_unit_semantic_gold": "NOT_INDEPENDENTLY_VERIFIED",
+  "model_payload_contract": "assignments_only_host_owns_schema_and_source_sha",
+  "remote_invocation_wall_seconds": 52.42
+}

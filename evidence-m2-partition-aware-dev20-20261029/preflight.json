@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_SOURCE_PARTITION_PREFLIGHT_PASS",
+  "dev_manifest_sha256": "54c7ff0e45748fa704281c0796aeaeab94df76b8d2f3faee3731a6a30f6da1aa",
+  "partitions_sha256": "92c7417d79fa79aa9a1e76f1be4796ccaba355a40310ee55e65e770fa48bd84e",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "cache_ready_sha256": "ac0aef9c427dc08cbcf1c24eb788044ad10df24ffd499e8b001afac35149fcec",
+  "gpu": "A10",
+  "gpu_instances": 1,
+  "admitted": 18,
+  "abstained_before_gpu": 2
+}
