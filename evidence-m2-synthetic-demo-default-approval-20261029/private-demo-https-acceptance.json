@@ -1,0 +1,42 @@
+{
+  "kind": "M2_OWNER_APPROVED_SYNTHETIC_DEMO_PRIVATE_PREVIEW_ACCEPTANCE",
+  "verified_utc": "2026-10-29T13:15:52.204211+00:00",
+  "status": "PASS_HTTP_AND_BYTE_INTEGRITY",
+  "origin_url_saved": false,
+  "password_saved": false,
+  "unauthenticated_status": 401,
+  "pages": {
+    "/": {
+      "http": 200,
+      "bytes": 38271,
+      "sha256": "ff1f940e6199a42dea9d901b80f926e47ee4f46cf164b9363df1b002b615aa6e"
+    },
+    "/sample-approval.vi.html": {
+      "http": 200,
+      "bytes": 38271,
+      "sha256": "ff1f940e6199a42dea9d901b80f926e47ee4f46cf164b9363df1b002b615aa6e"
+    },
+    "/sample-approval.en.html": {
+      "http": 200,
+      "bytes": 36064,
+      "sha256": "79bd0a64955c8ba8120274c7c3bdbab16b69622dd99dc945d496a14bec99d570"
+    },
+    "/index.vi.html": {
+      "http": 200,
+      "bytes": 182869,
+      "sha256": "f87a1cbdfdd6b1aae4a35a2f5429c08c8db1d56629510b9fc6e96c4a1ab24847"
+    },
+    "/index.en.html": {
+      "http": 200,
+      "bytes": 173611,
+      "sha256": "cda17e1dda16eba0d2921cef5b9d0cf5bd4e6d3fff3c5d9f5ba8591ceb033335"
+    }
+  },
+  "forbidden_paths": 404,
+  "business_write_methods_status": 405,
+  "demo_sample_status": "APPROVED_FOR_SYNTHETIC_DEMO",
+  "all_claims_approved_for_sample_presentation": 64,
+  "independent_human_semantic_signoff": "NOT_PERFORMED_NOT_REQUIRED_FOR_SAMPLE_DISPLAY",
+  "automatic_policy_answerability": "BLOCKED",
+  "ai_business_writes": "PROHIBITED"
+}

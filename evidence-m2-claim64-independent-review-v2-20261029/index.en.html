@@ -1,0 +1,1088 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Independent review of 64 atomic claims</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif}*{box-sizing:border-box}
+body{background:#0c192b;color:#edf4ff;margin:0}main{max-width:1120px;margin:auto;padding:24px 18px}
+h1{font-size:clamp(1.5rem,3vw,2.3rem)}p{line-height:1.52}
+a{color:#afceff}.warning{padding:16px;border:1px solid #b28d4d;background:#33291b;border-radius:10px}
+.controls,.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:18px 0}
+.controls>label{min-width:175px;flex:1}label{display:block;margin:12px 0;font-weight:600}
+input,select,textarea{display:block;width:100%;margin-top:6px;background:#182b45;border:1px solid #6986aa;border-radius:7px;color:#f7fbff;padding:10px;font:inherit}
+button{background:#a6cbff;color:#082139;border:0;border-radius:8px;font:inherit;font-weight:650;padding:11px 15px;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}article{padding:18px;background:#142b45;border:1px solid #456586;border-radius:10px;margin:16px 0}
+article[hidden]{display:none}.atomic{background:#213d5d;border-radius:7px;padding:13px}
+header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+small,.muted{color:#b6cbe4}pre{white-space:pre-wrap;word-break:break-word;line-height:1.5}
+details{border:1px solid #456586;border-radius:8px;padding:12px;margin:13px 0}
+details pre{max-height:360px;overflow:auto}code{overflow-wrap:anywhere}.tick{display:flex;align-items:start;gap:10px;font-weight:500}
+.tick input{width:auto;margin:5px 0}.progress{position:sticky;top:0;background:#19304d;border:1px solid #58799e;padding:12px;border-radius:8px;z-index:3}
+.good{color:#83e3b7}.bad{color:#ffbcb2}
+</style></head><body><main><small>Rails 8 AI Customer Support Desk · 2026-10-29 · <a href="index.vi.html">Bản tiếng Việt</a></small>
+<h1>Independent review of 64 atomic claims</h1><p class="warning">Synthetic data. AI/developer labels are intentionally excluded. Read the approved KB and make independent decisions. The browser does not autosave; export local drafts regularly. This workbook cannot authenticate a reviewer or establish independence.</p><p class="muted">No autosave; download your draft before leaving.</p>
+<div class="controls">
+<label>Organization-assigned reviewer ID (not a secret)<input id="reviewer" autocomplete="off" placeholder="Reviewer ID"></label>
+<label>Tenant<select id="tenant"><option value="">All</option><option value="teamflow-cloud">TeamFlow Cloud</option><option value="novamart-store">NovaMart Store</option></select></label>
+<label>Question language<select id="locale"><option value="">Both</option><option value="vi">Vietnamese</option><option value="en">English</option></select></label>
+<label>Show unfinished / invalid claims only<input id="unfinished" type="checkbox"></label>
+</div>
+<div class="toolbar"><label>Import local draft JSON<input type="file" id="import" accept=".json,application/json"></label>
+<button type="button" id="draft">Export draft JSON locally</button><button type="button" id="next">Jump to next unfinished claim</button></div>
+<label class="tick"><input type="checkbox" id="attest"><span>I assessed all 64 claims myself without consulting model predictions, developer labels, or another reviewer&#x27;s decisions. This is self-attestation, not identity verification.</span></label>
+<div class="toolbar"><button type="button" id="finish" disabled>Export completed self-attested JSON</button></div>
+<p class="progress" id="progress"></p>
+<section><article class="task" data-id="CL-TF-VI-01-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>1/64 · CL-TF-VI-01-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hóa đơn paid nhưng gói chưa kích hoạt: cần kiểm tra activation event nào?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Cần đối chiếu event succeeded với invoice đã paid không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-01-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>2/64 · CL-TF-VI-01-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hóa đơn paid nhưng gói chưa kích hoạt: cần kiểm tra activation event nào?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Khi event failed có thể tự chuyển gói khách sang gói mới không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-02-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>3/64 · CL-TF-VI-02-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Yêu cầu hoàn tiền ở ngày thứ bảy: có nằm trong diện xem xét? Hóa đơn paid đầu tiên làm ngày 0? </p>
+<p class="atomic"><strong>Atomic claim:</strong> Ngày thứ 7 có còn trong cửa sổ xem xét thủ công không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-02-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>4/64 · CL-TF-VI-02-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Yêu cầu hoàn tiền ở ngày thứ bảy: có nằm trong diện xem xét? Hóa đơn paid đầu tiên làm ngày 0? </p>
+<p class="atomic"><strong>Atomic claim:</strong> Có tính cửa sổ từ ngày paid đầu tiên theo lịch địa phương không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-03-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>5/64 · CL-TF-VI-03-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hóa đơn đã paid nhưng chưa kích hoạt: cần chứng cứ nào và có chắc xử lý xong trong 15 phút?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Invoice paid phải đối chiếu activation succeeded và effective_plan không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-03-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>6/64 · CL-TF-VI-03-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hóa đơn đã paid nhưng chưa kích hoạt: cần chứng cứ nào và có chắc xử lý xong trong 15 phút?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có thể cam kết nâng cấp hoàn tất trong 15 phút không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-04-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>7/64 · CL-TF-VI-04-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hoàn tiền ngày thứ 8 là ngoại lệ; có thể chỉ rõ người nhận chuyển khoản và ngày tiền về?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Refund ngày thứ 8 có cần xét ngoại lệ không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-04-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>8/64 · CL-TF-VI-04-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Hoàn tiền ngày thứ 8 là ngoại lệ; có thể chỉ rõ người nhận chuyển khoản và ngày tiền về?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn thay đổi tài khoản ngân hàng nhận tiền hoàn không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-05-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>9/64 · CL-TF-VI-05-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Subscription past_due chưa tự đổi quyền; làm sao bật xác thực hai yếu tố cho cả team?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Past_due có tự động sửa effective entitlement không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-05-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>10/64 · CL-TF-VI-05-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Subscription past_due chưa tự đổi quyền; làm sao bật xác thực hai yếu tố cho cả team?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có chỉ dẫn bật MFA trên workspace cho mọi thành viên không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-06-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>11/64 · CL-TF-VI-06-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Nâng cấp gói thành công tạo chu kỳ mới; chính sách tính thuế VAT trên hóa đơn điện tử là gì?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Nâng cấp thành công bắt đầu chu kỳ mới không prorate đúng không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-06-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>12/64 · CL-TF-VI-06-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Nâng cấp gói thành công tạo chu kỳ mới; chính sách tính thuế VAT trên hóa đơn điện tử là gì?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có chính sách xác định mức VAT trên hóa đơn điện tử không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-07-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>13/64 · CL-TF-VI-07-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Tôi muốn cấu hình máy chủ SSO và đổi tên pháp nhân trên hóa đơn.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn cấu hình SAML SSO không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-07-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>14/64 · CL-TF-VI-07-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Tôi muốn cấu hình máy chủ SSO và đổi tên pháp nhân trên hóa đơn.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn sửa pháp nhân trên hóa đơn đã issued không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-08-1" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>15/64 · CL-TF-VI-08-1</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Dịch vụ có backup hằng giờ và giới hạn tốc độ API bao nhiêu?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn backup tự động mỗi giờ cho workspace không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-VI-08-2" data-tenant="teamflow-cloud" data-locale="vi">
+<header><strong>16/64 · CL-TF-VI-08-2</strong><span>teamflow-cloud · VI</span></header>
+<p><small>Composite question:</small> Dịch vụ có backup hằng giờ và giới hạn tốc độ API bao nhiêu?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có bảng giới hạn API request theo gói không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-01-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>17/64 · CL-TF-EN-01-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> The paid plan did not activate. Which status confirms entitlement? Does a pending invoice activate the upgrade?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Must an activation event succeed and effective_plan match before confirming entitlement?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-01-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>18/64 · CL-TF-EN-01-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> The paid plan did not activate. Which status confirms entitlement? Does a pending invoice activate the upgrade?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does a pending invoice alone activate a new plan?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-02-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>19/64 · CL-TF-EN-02-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> For the first paid invoice, is refund day seven within manual review and does the request cancel the subscription?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does day seven remain inside manual refund consideration?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-02-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>20/64 · CL-TF-EN-02-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> For the first paid invoice, is refund day seven within manual review and does the request cancel the subscription?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does filing the refund request automatically cancel the subscription?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-03-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>21/64 · CL-TF-EN-03-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> We paid the upgrade invoice. What must be validated, and is there a guaranteed fix within half an hour?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Do staff need to verify activation succeeded against the paid invoice?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-03-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>22/64 · CL-TF-EN-03-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> We paid the upgrade invoice. What must be validated, and is there a guaranteed fix within half an hour?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does the KB guarantee the upgrade will be fixed within thirty minutes?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-04-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>23/64 · CL-TF-EN-04-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> Our first invoice was paid eight days ago. Is exception review needed, and how can I reroute the refund?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does a day-eight refund request go to exception review?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-04-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>24/64 · CL-TF-EN-04-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> Our first invoice was paid eight days ago. Is exception review needed, and how can I reroute the refund?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Can the refund be rerouted to a different debit card using a documented process?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-05-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>25/64 · CL-TF-EN-05-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> The subscription is past_due. Do we preserve effective entitlements and how can I configure SAML login?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does past_due preserve the last verified effective plan in the demo?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-05-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>26/64 · CL-TF-EN-05-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> The subscription is past_due. Do we preserve effective entitlements and how can I configure SAML login?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does this article provide SAML identity provider configuration instructions?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-06-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>27/64 · CL-TF-EN-06-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> If an upgrade succeeds, when does its cycle start? What is the VAT rate on the new invoice?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does a successfully upgraded plan begin a new billing cycle without proration?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-06-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>28/64 · CL-TF-EN-06-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> If an upgrade succeeds, when does its cycle start? What is the VAT rate on the new invoice?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does the approved KB define an applicable VAT tax rate?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-07-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>29/64 · CL-TF-EN-07-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> Can I export all audit events and enable workspace-wide automatic backups?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is a security audit export procedure in the approved article?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-07-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>30/64 · CL-TF-EN-07-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> Can I export all audit events and enable workspace-wide automatic backups?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Are hourly workspace backup settings documented?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-08-1" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>31/64 · CL-TF-EN-08-1</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> How can I purchase additional API calls and transfer the owner role?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does approved KB explain purchasing API quota packs?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-TF-EN-08-2" data-tenant="teamflow-cloud" data-locale="en">
+<header><strong>32/64 · CL-TF-EN-08-2</strong><span>teamflow-cloud · EN</span></header>
+<p><small>Composite question:</small> How can I purchase additional API calls and transfer the owner role?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does approved KB explain transferring workspace ownership?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="TF-KB-012">TF-KB-012 · v2</option><option value="TF-KB-015">TF-KB-015 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-01-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>33/64 · CL-NM-VI-01-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn sau giảm giá 499.999 đồng được miễn phí giao thường không, còn đơn 500.000 đồng thì sao?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Giá trị hàng sau giảm giá dưới 500.000 VND có phí giao thường 30.000 VND không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-01-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>34/64 · CL-NM-VI-01-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn sau giảm giá 499.999 đồng được miễn phí giao thường không, còn đơn 500.000 đồng thì sao?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Đúng ngưỡng 500.000 VND có miễn phí giao thường không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-02-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>35/64 · CL-NM-VI-02-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Hàng lỗi báo ngày thứ 14 có được tiếp nhận, và sang ngày 15 có kiểm tra bảo hành riêng không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Ngày thứ 14 kể từ delivered có trong thời hạn báo lỗi không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-02-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>36/64 · CL-NM-VI-02-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Hàng lỗi báo ngày thứ 14 có được tiếp nhận, và sang ngày 15 có kiểm tra bảo hành riêng không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Ngày thứ 15 có thể xem xét bảo hành SKU riêng không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-03-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>37/64 · CL-NM-VI-03-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn đã paid thì khi nào bàn giao hãng vận chuyển, và có giao đúng 20 giờ tối mai không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Mục tiêu handoff của đơn paid là trong hai ngày làm việc đúng không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-03-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>38/64 · CL-NM-VI-03-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn đã paid thì khi nào bàn giao hãng vận chuyển, và có giao đúng 20 giờ tối mai không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có thể hứa đơn giao đúng 20 giờ tối mai không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-04-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>39/64 · CL-NM-VI-04-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Hàng còn nguyên chưa dùng được giao cách đây 7 ngày; có thể trả và hẹn lấy tận nhà vào 17 giờ không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Ngày thứ 7 hàng chưa dùng còn bao bì có thể yêu cầu trả không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-04-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>40/64 · CL-NM-VI-04-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Hàng còn nguyên chưa dùng được giao cách đây 7 ngày; có thể trả và hẹn lấy tận nhà vào 17 giờ không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có quy trình đặt lịch lấy hàng tại nhà đúng 17 giờ không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-05-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>41/64 · CL-NM-VI-05-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Dưới ngưỡng 500 nghìn thì phí ship thường thế nào, điểm thưởng có đổi được ra phí giao nhanh không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Đơn net dưới 500.000 VND bị tính 30.000 VND phí thường không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-05-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>42/64 · CL-NM-VI-05-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Dưới ngưỡng 500 nghìn thì phí ship thường thế nào, điểm thưởng có đổi được ra phí giao nhanh không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có thể đổi điểm tích lũy để miễn phí giao nhanh không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-06-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>43/64 · CL-NM-VI-06-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đã báo hàng thiếu trong vòng 14 ngày; tôi có được bồi thường coupon tự động không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Báo thiếu hàng có cửa sổ 14 ngày và cần kiểm tra partial shipment không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-06-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>44/64 · CL-NM-VI-06-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đã báo hàng thiếu trong vòng 14 ngày; tôi có được bồi thường coupon tự động không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có chính sách tự cấp coupon bồi thường khi báo thiếu hàng không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-07-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>45/64 · CL-NM-VI-07-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn đang giao có thể đổi địa chỉ và thêm số điện thoại người nhận qua app không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn chuyển địa chỉ cho shipment đã handoff không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-07-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>46/64 · CL-NM-VI-07-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Đơn đang giao có thể đổi địa chỉ và thêm số điện thoại người nhận qua app không?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có hướng dẫn sửa số điện thoại người nhận đang giao không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-08-1" data-tenant="novamart-store" data-locale="vi">
+<header><strong>47/64 · CL-NM-VI-08-1</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Tôi muốn gửi đơn bằng dịch vụ giao lạnh và chuyển sang thanh toán trả góp.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có quy trình đăng ký giao lạnh trong ngày không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-VI-08-2" data-tenant="novamart-store" data-locale="vi">
+<header><strong>48/64 · CL-NM-VI-08-2</strong><span>novamart-store · VI</span></header>
+<p><small>Composite question:</small> Tôi muốn gửi đơn bằng dịch vụ giao lạnh và chuyển sang thanh toán trả góp.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Có quy định thanh toán trả góp cho đơn đã paid không?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-01-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>49/64 · CL-NM-EN-01-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> At exactly VND 500,000 after discounts, is standard delivery free? What if the net total falls just below it?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is standard delivery free at a post-discount total of exactly VND 500,000?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-01-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>50/64 · CL-NM-EN-01-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> At exactly VND 500,000 after discounts, is standard delivery free? What if the net total falls just below it?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is VND 30,000 charged when the discounted merchandise total is below VND 500,000?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-02-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>51/64 · CL-NM-EN-02-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can damaged goods be reported through day fourteen, and must a separate warranty be checked on day fifteen?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is reporting damage on day fourteen within the reporting window?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-02-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>52/64 · CL-NM-EN-02-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can damaged goods be reported through day fourteen, and must a separate warranty be checked on day fifteen?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does day fifteen require independent SKU warranty review rather than automatic rejection?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-03-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>53/64 · CL-NM-EN-03-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The courier received my paid parcel. Is delivery expected within two to five business days and can you guarantee delivery at noon tomorrow?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does the estimated delivery period begin after verified carrier handoff?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-03-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>54/64 · CL-NM-EN-03-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The courier received my paid parcel. Is delivery expected within two to five business days and can you guarantee delivery at noon tomorrow?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does the KB guarantee courier arrival at exactly noon tomorrow?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-04-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>55/64 · CL-NM-EN-04-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> I want to return my unused product on day seven and reserve an 11 a.m. courier pickup.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Can an unused product in original packaging request normal return on day seven?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-04-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>56/64 · CL-NM-EN-04-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> I want to return my unused product on day seven and reserve an 11 a.m. courier pickup.</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is an exact eleven a.m. home pickup reservable under the approved policy?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-05-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>57/64 · CL-NM-EN-05-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The discounted item total is below the free shipping cutoff. What is the normal shipping fee, and can points waive premium shipping?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is standard shipping VND 30,000 below the VND 500,000 threshold?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-05-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>58/64 · CL-NM-EN-05-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The discounted item total is below the free shipping cutoff. What is the normal shipping fee, and can points waive premium shipping?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Can loyalty rewards redeem free premium shipping?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-06-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>59/64 · CL-NM-EN-06-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The package contained the wrong item within fourteen days. Is that eligible for investigation and can a replacement be dispatched automatically?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does a wrong-item report within fourteen days qualify for verification?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-06-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>60/64 · CL-NM-EN-06-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> The package contained the wrong item within fourteen days. Is that eligible for investigation and can a replacement be dispatched automatically?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Can an AI automatically approve and dispatch a replacement without review?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-07-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>61/64 · CL-NM-EN-07-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can I change the delivery address after courier handoff and set a new recipient phone number?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is there a documented process to reroute a parcel after handoff?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-07-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>62/64 · CL-NM-EN-07-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can I change the delivery address after courier handoff and set a new recipient phone number?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is there a documented process to edit recipient phone numbers after dispatch?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-08-1" data-tenant="novamart-store" data-locale="en">
+<header><strong>63/64 · CL-NM-EN-08-1</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can I use monthly installments for electronics and stack multiple promotions?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Is an installment plan for electronics documented in approved KB?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article><article class="task" data-id="CL-NM-EN-08-2" data-tenant="novamart-store" data-locale="en">
+<header><strong>64/64 · CL-NM-EN-08-2</strong><span>novamart-store · EN</span></header>
+<p><small>Composite question:</small> Can I use monthly installments for electronics and stack multiple promotions?</p>
+<p class="atomic"><strong>Atomic claim:</strong> Does the KB allow stacking multiple checkout coupons?</p>
+<label>Answerability from the approved KB<select class="verdict"><option value="">Choose only after reading the KB</option>
+<option value="affirmative_policy">Policy allows affirmative/conditional answer</option><option value="explicit_negative_policy">Policy explicitly supports a negative (No) answer</option>
+<option value="not_documented">Not documented; no safe policy answer</option><option value="uncertain_needs_second_reviewer">Uncertain; require independent human arbitration</option></select></label>
+<label>Approved article from the same tenant/language<select class="article"><option value="">None / not selected</option><option value="NM-KB-014">NM-KB-014 · v2</option><option value="NM-KB-020">NM-KB-020 · v2</option><option value="NM-KB-029">NM-KB-029 · v2</option><option value="NM-KB-030">NM-KB-030 · v2</option></select></label>
+<details><summary>Show exact approved-KB article</summary><pre class="source-body"></pre><button type="button" class="quote-selected">Use the highlighted KB text as an exact quotation</button></details>
+<label>Verbatim approved-KB quotation (at least 20 characters)<textarea class="quote" spellcheck="false" rows="2"></textarea></label>
+<label>Rationale / missing case facts / sources examined<textarea class="notes" rows="2"></textarea></label>
+<p class="status"></p></article></section><h2>Approved synthetic KB corpus</h2><details class="kb"><summary>novamart-store · EN · NM-KB-014 · v2</summary><pre># How shipping charges are calculated
+
+## Scope
+Use this article to explain NovaMart Store standard shipping fees. The free-shipping threshold is based on merchandise value after discounts; shipping itself does not count toward the threshold.
+
+## Authoritative policy
+- **NM-POL-002** — Standard shipping is VND 30,000 below VND 500,000; free at or above VND 500,000 based on merchandise subtotal after discounts, excluding shipping.
+- **M0-CLAR-008** — Use immutable order-item snapshots to calculate net merchandise total. Standard shipping is 30000 VND when net merchandise &lt; 500000, otherwise 0 VND, without including shipping in the threshold.
+
+## Evidence to verify
+Read only authorized order item records and their stored quantity, unit_price_snapshot_vnd and discount_snapshot_vnd. Check whether the charge is standard shipping; these rules do not establish prices for unlisted delivery services.
+
+## Handling steps
+1. subtotal_vnd = sum(quantity × unit_price_snapshot_vnd). 2. discount_vnd = sum(discount_snapshot_vnd). 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. If net_merchandise_vnd is below VND 500,000, standard shipping is VND 30,000; at or above the threshold it is VND 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Use integer VND, excluding shipping from threshold tests.
+
+## Conditional response example
+“At VND 499,999 after discounts, standard shipping is VND 30,000 and the total is VND 529,999. At exactly VND 500,000, standard shipping is VND 0 and the total is VND 500,000.” This illustrates policy, not a verified customer&#x27;s order amount.
+
+## When to escalate
+Escalate mismatched snapshots/fees, missing records, or requests for fee waivers/refunds. AI must not change item snapshots, prices, or shipping charges.
+
+</pre><small>SHA256: 112f698269cf8ae9f982f914f0c94d2e90ea11b587db8c4a5b1ca145e717ddef</small></details><details class="kb"><summary>novamart-store · EN · NM-KB-020 · v2</summary><pre># Estimated delivery windows
+
+## Scope
+Use this article for questions about expected delivery of a paid NovaMart Store order. Distinguish the carrier handoff target from the subsequent delivery estimate; neither is a guaranteed delivery date.
+
+## Authoritative policy
+- **NM-POL-003** — Dispatch target is 2 business days after payment; estimated delivery is 2–5 business days after dispatch, not a guarantee.
+
+## Evidence to verify
+Verify payment marked paid, confirmed carrier handoff time, and tenant-scoped shipment records. For partial shipments, inspect each shipment individually; label_created alone does not prove handoff. Customer text is not authoritative tracking data.
+
+## Handling steps
+1. After paid status, the carrier handoff target is within 2 business days (weekdays for the demo; holidays are not modeled). 2. Once handoff is evidenced, the delivery estimate is 2–5 business days afterward. 3. Before handoff, do not invent a precise delivery date. 4. Escalate shipment exceptions or missing tracking updates for human investigation.
+
+## Conditional response example
+“Our policy targets carrier handoff within two business days after payment. Once handed over, delivery is estimated at two to five business days, not guaranteed. We need to verify your order&#x27;s shipment record before giving a case-specific update.”
+
+## When to escalate
+Escalate missed handoff targets, tracking exceptions, partial deliveries and requests for guaranteed arrival. AI must not fabricate tracking, compensation, or replacement shipments.
+
+</pre><small>SHA256: 2b092e23965ea6e4b4e84bf3237b75aa43083bfa2df9e650a94544d6ec26b267</small></details><details class="kb"><summary>novamart-store · EN · NM-KB-029 · v2</summary><pre># Return window for unused goods
+
+## Scope
+This describes ordinary return requests for unused goods with original packaging. The seven-day window must not be used to reject separate defect, damage, missing or wrong-item reports or warranty inquiries.
+
+## Authoritative policy
+- **NM-POL-004** — Unused items with original packaging may be requested for return within 7 calendar days of delivery.
+- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.
+
+## Evidence to verify
+Verify the authorized order/customer, the confirmed delivered date of the relevant item, unused condition and original packaging. For split shipments, do not use the date of a different package or the shipped date.
+
+## Handling steps
+1. Use the item&#x27;s confirmed delivery date in the Asia/Ho_Chi_Minh local calendar (delivery day is day 0). 2. Days 0–7 inclusive: request may be considered after condition checks and human review. 3. From day 8: outside the standard ordinary-return window, route for separate assessment rather than rejecting every other possible remedy. 4. A request is not an approved return or refund.
+
+## Conditional response example
+“If an item was confirmed delivered on the 1st, an ordinary return request made by the 8th (day 7) falls within the review window. A request on the 9th (day 8) is outside the standard window. Approval still depends on condition verification and human authorization.”
+
+## When to escalate
+Escalate missing delivery evidence, used goods, missing original packaging, out-of-window requests or reports of defective/missing/wrong goods. AI never authorizes returns, replacements or refunds.
+
+</pre><small>SHA256: f6fe228abb9ca139eea950e38409fd7c9f33588032b20c6f21e930cac27fc18e</small></details><details class="kb"><summary>novamart-store · EN · NM-KB-030 · v2</summary><pre># Defective product reporting window
+
+## Scope
+Use this article for defective, damaged, missing or wrong-item reports within 14 local calendar days of confirmed item delivery. This window is separate from seven-day ordinary returns and the SKU-specific warranty period.
+
+## Authoritative policy
+- **NM-POL-005** — Defective, damaged, missing or wrong-item reports can be opened within 14 calendar days of delivery and require verification.
+- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.
+- **M0-CLAR-005** — A 14-day defect-report window is not a blanket warranty expiry. Warranty eligibility must be evaluated independently from the product warranty_months and verified item delivery date in this demo.
+
+## Evidence to verify
+Verify the correct tenant, order and item; each item&#x27;s confirmed delivered date, issue type, appropriate photos/evidence and split-shipment status. For missing goods, check partial shipments before concluding an item was lost. Verify SKU warranty_months separately if warranty is requested.
+
+## Handling steps
+1. Count local calendar days from the confirmed item delivery date, with delivery as day 0. 2. Days 0–14 inclusive: accept the report for verification; day 14 is still within the window. 3. Day 15 is outside the standard defect-report window, but SKU warranty may still apply independently according to warranty_months and verified delivery date. 4. Customer photos alone do not authorize refund or replacement.
+
+## Conditional response example
+“A defect report submitted on day 14 after verified delivery is within the 14-day reporting window and requires review. From day 15, the standard report window has passed; we can separately check the specific SKU warranty without promising an outcome.”
+
+## When to escalate
+Escalate verification of defective, damaged, missing or wrong items, conflicting evidence, and warranty assessment. AI must not approve refunds, replacements or warranty claims.
+
+</pre><small>SHA256: 780bad3784fe9a91c42da9eef99540aeb7e2eb3930ba6ad2126623a112477679</small></details><details class="kb"><summary>novamart-store · VI · NM-KB-014 · v2</summary><pre># Cách tính phí vận chuyển
+
+## Phạm vi
+Dùng khi khách hỏi vì sao đơn NovaMart Store có hoặc không có phí vận chuyển thường. Ngưỡng miễn phí dựa trên giá trị hàng hóa sau giảm giá, không bao gồm phí giao hàng.
+
+## Chính sách có hiệu lực
+- **NM-POL-002** — Phí vận chuyển thường 30.000 VND khi giá trị hàng sau giảm giá dưới 500.000 VND; từ 500.000 VND được miễn phí (không tính phí ship trong ngưỡng).
+- **M0-CLAR-008** — Dùng snapshot bất biến của order items tính tổng hàng sau discount; phí thường là 30.000 VND khi dưới 500.000 VND, ngược lại 0 VND; không cộng phí ship vào ngưỡng.
+
+## Chứng cứ cần xác minh
+Chỉ đọc các order items đúng đơn hàng/khách hàng và lấy quantity, unit_price_snapshot_vnd, discount_snapshot_vnd đã lưu. Kiểm tra loại phí vận chuyển; chính sách này áp dụng cho phí vận chuyển thường trong demo, không mặc định cho dịch vụ khác.
+
+## Các bước xử lý
+1. subtotal_vnd = tổng quantity × unit_price_snapshot_vnd. 2. discount_vnd = tổng discount_snapshot_vnd. 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. Nếu net_merchandise_vnd &lt; 500.000 VND, standard_shipping_vnd = 30.000 VND; nếu &gt;= 500.000 thì bằng 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Tính bằng số nguyên VND, không cộng shipping vào phép so ngưỡng.
+
+## Câu trả lời mẫu có điều kiện
+“Nếu tổng hàng sau giảm giá là 499.999 VND, phí giao thường là 30.000 VND, tổng 529.999 VND. Nếu đúng 500.000 VND thì phí giao thường là 0 VND, tổng 500.000 VND.” Đây là ví dụ chính sách, không phải báo giá của đơn khách nếu chưa tra cứu.
+
+## Khi cần chuyển cấp
+Chuyển nhân viên nếu snapshot đơn hoặc phí ghi nhận không khớp công thức, thiếu dữ liệu hoặc có yêu cầu miễn/hoàn phí ngoại lệ. Không tự sửa giá, snapshot hoặc phí vận chuyển.
+
+</pre><small>SHA256: bbafff6fc0a08d061f0daa7236da1f094246b849232d1b691d26331803ba1269</small></details><details class="kb"><summary>novamart-store · VI · NM-KB-020 · v2</summary><pre># Thời gian giao hàng dự kiến
+
+## Phạm vi
+Áp dụng khi khách hỏi ngày dự kiến nhận đơn đã thanh toán. Cần phân biệt thời gian mục tiêu bàn giao hãng vận chuyển và thời gian dự kiến giao sau bàn giao; cả hai không phải cam kết chắc chắn.
+
+## Chính sách có hiệu lực
+- **NM-POL-003** — Mục tiêu bàn giao hãng vận chuyển là 2 ngày làm việc sau khi paid; thời gian giao dự kiến 2–5 ngày làm việc sau bàn giao, không bảo đảm tuyệt đối.
+
+## Chứng cứ cần xác minh
+Kiểm tra payment paid, ngày giờ carrier handoff đã được xác minh và trạng thái shipment trong đúng đơn/tenant. Nếu đơn tách nhiều kiện, xem từng shipment; không coi label_created là đã bàn giao. Không lấy lời khách thay thế tracking có thẩm quyền.
+
+## Các bước xử lý
+1. Sau paid, mục tiêu bàn giao carrier là trong 2 ngày làm việc (không tính ngày nghỉ cuối tuần; demo chưa xét ngày lễ). 2. Khi đã có bằng chứng bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc sau thời điểm bàn giao. 3. Nếu chưa bàn giao thì không được tự suy ra một ngày giao chính xác. 4. Nếu tracking exception hoặc thiếu cập nhật, chuyển nhân viên kiểm tra với đối tác vận chuyển.
+
+## Câu trả lời mẫu có điều kiện
+“Theo chính sách, cửa hàng đặt mục tiêu bàn giao đơn cho hãng vận chuyển trong 2 ngày làm việc sau khi thanh toán. Sau khi bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc; đây không phải ngày giao bảo đảm. Tôi cần kiểm tra bản ghi vận chuyển của đơn để báo tình trạng cụ thể.”
+
+## Khi cần chuyển cấp
+Chuyển khi thiếu bàn giao quá mục tiêu, tracking exception, giao thiếu kiện hoặc khách yêu cầu cam kết thời điểm giao. Không tự tạo tracking, hứa bồi thường hay tái gửi hàng.
+
+</pre><small>SHA256: ee681fd73e544c9e2f08de00876a74dd4cb30afa7b61fd3bdd93e48c77b061b3</small></details><details class="kb"><summary>novamart-store · VI · NM-KB-029 · v2</summary><pre># Thời hạn đổi trả hàng chưa sử dụng
+
+## Phạm vi
+Quy trình tiếp nhận yêu cầu đổi/trả thông thường cho hàng chưa sử dụng, còn bao bì gốc. Không dùng cửa sổ này để từ chối báo thiếu/sai/hỏng/lỗi trong 14 ngày hoặc yêu cầu bảo hành.
+
+## Chính sách có hiệu lực
+- **NM-POL-004** — Hàng chưa sử dụng, còn bao bì gốc có thể yêu cầu đổi/trả trong 7 ngày lịch từ ngày giao.
+- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.
+
+## Chứng cứ cần xác minh
+Xác minh order/item, đúng khách hàng, ngày delivered của chính item đó, tình trạng chưa dùng và bao bì gốc. Với giao nhiều kiện, không lấy ngày giao kiện khác hoặc ngày shipped để tính hạn.
+
+## Các bước xử lý
+1. Xác định ngày delivered đã xác nhận theo lịch Asia/Ho_Chi_Minh (ngày giao là ngày 0). 2. Ngày 0–7: có thể tiếp nhận và chuyển người có thẩm quyền đánh giá điều kiện hàng. 3. Từ ngày 8: ngoài cửa sổ tiêu chuẩn, chuyển xem xét riêng, không tự từ chối mọi quyền lợi khác. 4. Yêu cầu không đồng nghĩa đổi/trả hoặc hoàn tiền đã được duyệt.
+
+## Câu trả lời mẫu có điều kiện
+“Nếu mặt hàng được xác nhận giao ngày 1, yêu cầu đổi/trả thông thường gửi đến hết ngày 8 (ngày thứ 7) vẫn trong cửa sổ xem xét; gửi ngày 9 (ngày thứ 8) nằm ngoài cửa sổ tiêu chuẩn. Việc chấp thuận vẫn cần kiểm tra tình trạng hàng và phê duyệt.”
+
+## Khi cần chuyển cấp
+Chuyển nhân viên khi ngày giao chưa xác minh, hàng đã dùng/thiếu bao bì, yêu cầu quá hạn hoặc liên quan hàng lỗi/thiếu/sai. AI không quyết định hoàn tiền, thay hàng hay cập nhật đơn.
+
+</pre><small>SHA256: 1b8785577d903f9843fd4dc0a7bcffd108b5b7176af262a7b0f33cf667f1cd58</small></details><details class="kb"><summary>novamart-store · VI · NM-KB-030 · v2</summary><pre># Thời hạn báo sản phẩm lỗi
+
+## Phạm vi
+Dành cho việc báo hàng lỗi, hỏng, thiếu hoặc giao sai trong vòng 14 ngày lịch từ ngày item được xác nhận giao. Cửa sổ này độc lập với đổi/trả thông thường 7 ngày và thời hạn bảo hành theo SKU.
+
+## Chính sách có hiệu lực
+- **NM-POL-005** — Báo lỗi/hỏng/thiếu/giao sai hàng được mở trong 14 ngày lịch từ ngày giao và cần xác minh.
+- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.
+- **M0-CLAR-005** — Cửa sổ 14 ngày báo lỗi không đồng nghĩa hết quyền bảo hành. Điều kiện bảo hành xét độc lập theo warranty_months và ngày giao sản phẩm đã được xác nhận trong demo.
+
+## Chứng cứ cần xác minh
+Xác minh đơn và item đúng tenant, ngày delivered của từng item, loại vấn đề, ảnh/chứng cứ phù hợp và trạng thái các kiện hàng. Với báo thiếu, kiểm tra partial shipment trước khi kết luận thiếu hàng. Xác minh warranty_months của SKU nếu hỏi bảo hành.
+
+## Các bước xử lý
+1. Đếm ngày lịch địa phương, ngày delivered là ngày 0. 2. Ngày 0–14: tiếp nhận báo lỗi và chuyển xác minh; ngày 14 vẫn trong cửa sổ. 3. Ngày 15: ngoài cửa sổ báo lỗi chuẩn, nhưng có thể kiểm tra bảo hành riêng theo warranty_months và ngày delivered. 4. Không suy ra lỗi được chấp nhận, hoàn tiền hay đổi mới chỉ từ ảnh khách gửi.
+
+## Câu trả lời mẫu có điều kiện
+“Yêu cầu báo lỗi ở ngày thứ 14 kể từ ngày giao đã xác minh vẫn nằm trong thời hạn 14 ngày để được xem xét. Từ ngày thứ 15, cửa sổ báo lỗi tiêu chuẩn kết thúc; chúng tôi cần kiểm tra điều kiện bảo hành của đúng SKU để xác định hướng xử lý khác, không thể hứa kết quả.”
+
+## Khi cần chuyển cấp
+Chuyển nhân viên để xác minh hỏng/thiếu/sai hàng, chứng cứ xung đột hoặc bảo hành. AI không tạo quyết định refund, replacement hoặc warranty claim đã được duyệt.
+
+</pre><small>SHA256: f29b4228247f61095fe20ca585eb73cd2fbc06109e1f76875ac777dc337fd8ca</small></details><details class="kb"><summary>teamflow-cloud · EN · TF-KB-012 · v2</summary><pre># Paid invoice but plan not active
+
+## Scope
+Use this article when a customer reports paying for a paid plan while the workspace still shows older entitlements. A receipt screenshot or customer assertion does not establish activation.
+
+## Authoritative policy
+- **TF-POL-002** — Paid plan activation requires a paid invoice and a successful activation record; a pending or failed payment does not activate a plan.
+- **M0-CLAR-001** — An invoice marked paid does not activate an upgrade unless its matching activation event succeeded. Keep requested_plan and effective_plan separate. On success, upgrades start a new billing cycle without proration; downgrades take effect at the next renewal.
+- **M0-CLAR-002** — A past_due subscription retains its last verified effective plan in the demo for read-only support lookup. Past_due alone must not trigger entitlement changes; only an authorized rule/workflow may change them.
+
+## Evidence to verify
+Verify the authorized organization, customer and workspace; check the relevant invoice and its paid state, the matching activation event, and the read-only effective_plan. requested_plan indicates only the requested change. Record missing evidence rather than guessing.
+
+## Handling steps
+1. If the invoice is not paid, do not confirm paid entitlements. 2. If paid but activation failed or no matching succeeded event exists, retain the verified effective_plan and escalate activation. 3. Say the new plan is live only when invoice paid, matching activation succeeded, and effective_plan agree. 4. AI must not change subscriptions or retry activation.
+
+## Conditional response example
+“We can confirm the verified invoice payment, but we cannot yet verify that the new plan was activated successfully. The current access level follows the effective plan recorded by the system. I will escalate this for an authorized agent to investigate, without promising a completion time.”
+
+## When to escalate
+Escalate failed, missing or conflicting activation events and requests to restore entitlements. Do not expose another tenant&#x27;s invoices/workspaces, promise refunds, or commit to a resolution deadline without authorization.
+
+</pre><small>SHA256: 9e136ab659dac3be97beb9b70dcf792896fbc5aab0ff000236c54e08d6dabcd7</small></details><details class="kb"><summary>teamflow-cloud · EN · TF-KB-015 · v2</summary><pre># Refund request eligibility
+
+## Scope
+Use this article for a refund request tied to the first paid TeamFlow Cloud invoice. The policy establishes eligibility for human consideration, not an automatic refund entitlement.
+
+## Authoritative policy
+- **TF-POL-008** — Refund requests submitted within 7 calendar days of the first paid invoice are eligible for human review, not automatic approval.
+- **M0-CLAR-003** — Refund requests within 7 local calendar days (inclusive, counting the paid date as day zero) of the first paid invoice are eligible for human review, never automatic approval. Later requests are routed for exception review without a promise. A refund request alone does not change the subscription state.
+
+## Evidence to verify
+Verify the tenant, customer and workspace; locate the first paid invoice and its payment date in Asia/Ho_Chi_Minh local calendar time; confirm the request submission date. Do not count pending/failed invoices or substitute ticket creation dates for the actual request date.
+
+## Handling steps
+1. Count the first paid date as calendar day 0. 2. Days 0–7 inclusive: route for manual review. 3. From day 8: route for exception consideration without promising approval. 4. Filing a request does not change the subscription; AI never executes refunds or cancellation.
+
+## Conditional response example
+“Based on the verified first payment and request dates, this request is [within the manual-review window / outside the standard window and requires exception review]. A refund has not been approved. An authorized team member will assess the request.”
+
+## When to escalate
+Refer billing decisions to authorized staff. Never promise the refunded amount, processing time, subscription change, or approval outcome without a corresponding authorized decision.
+
+</pre><small>SHA256: 4a973f29fa10fab72643866e815d98cb0c9943d0d33fee253a2fb02a977c7509</small></details><details class="kb"><summary>teamflow-cloud · VI · TF-KB-012 · v2</summary><pre># Đã thanh toán nhưng gói chưa kích hoạt
+
+## Phạm vi
+Áp dụng khi khách hàng nói đã thanh toán để mở gói trả phí nhưng workspace vẫn hiển thị quyền của gói cũ. Không suy ra tình trạng kích hoạt chỉ từ ảnh biên nhận hoặc lời khách.
+
+## Chính sách có hiệu lực
+- **TF-POL-002** — Gói trả phí chỉ kích hoạt khi hóa đơn đã paid và có bản ghi kích hoạt thành công; pending/failed không kích hoạt.
+- **M0-CLAR-001** — Hóa đơn paid chưa đủ để kích hoạt gói nâng cấp nếu activation event tương ứng chưa succeeded. Tách requested_plan và effective_plan. Nâng cấp thành công bắt đầu chu kỳ mới, không prorate; hạ gói có hiệu lực ở kỳ gia hạn tiếp theo.
+- **M0-CLAR-002** — Subscription past_due giữ gói effective đã xác minh gần nhất để hỗ trợ tra cứu trong demo. Không tự đổi entitlement chỉ từ past_due; thay đổi cần rule/workflow đã phân quyền.
+
+## Chứng cứ cần xác minh
+Xác minh đúng tổ chức, khách hàng và workspace; lấy invoice liên quan, trạng thái paid, activation event khớp invoice và effective_plan từ read-only records. requested_plan chỉ phản ánh gói đã yêu cầu. Ghi nhận thông tin còn thiếu thay vì suy diễn.
+
+## Các bước xử lý
+1. Nếu invoice chưa paid, không xác nhận quyền gói trả phí. 2. Nếu paid nhưng activation failed/chưa có succeeded event khớp, giữ nguyên effective_plan đã xác minh và chuyển xử lý kích hoạt. 3. Chỉ mô tả gói mới đã có hiệu lực khi có đồng thời invoice paid, activation succeeded và effective_plan phù hợp. 4. Không tự sửa subscription hay kích hoạt lại bằng AI.
+
+## Câu trả lời mẫu có điều kiện
+“Chúng tôi đã ghi nhận trạng thái thanh toán của hóa đơn được xác minh, nhưng chưa có bằng chứng gói mới đã kích hoạt thành công. Quyền truy cập hiện tại được xác định theo gói có hiệu lực trong hệ thống. Tôi sẽ chuyển trường hợp này cho nhân viên xử lý; chưa thể xác nhận thời điểm hoàn tất.”
+
+## Khi cần chuyển cấp
+Chuyển nhân viên có quyền khi event thất bại, không khớp invoice, dữ liệu xung đột hoặc khách yêu cầu khắc phục quyền truy cập. Không công bố hóa đơn/workspace của tenant khác; không hứa hoàn tiền hoặc ngày xử lý khi chưa có quyết định.
+
+</pre><small>SHA256: 4b83e4eef319880ff6f707df5ba93a13c0a07f24147546a6511f9e30850c9793</small></details><details class="kb"><summary>teamflow-cloud · VI · TF-KB-015 · v2</summary><pre># Điều kiện yêu cầu hoàn tiền
+
+## Phạm vi
+Áp dụng cho yêu cầu hoàn tiền liên quan hóa đơn paid đầu tiên của TeamFlow Cloud. Đây là điều kiện được đưa vào xem xét thủ công, không phải quyền được hoàn tiền tự động.
+
+## Chính sách có hiệu lực
+- **TF-POL-008** — Yêu cầu hoàn tiền trong 7 ngày lịch từ hóa đơn trả phí đầu tiên được đưa vào diện xem xét thủ công, không tự động chấp thuận.
+- **M0-CLAR-003** — Yêu cầu refund trong 7 ngày lịch địa phương (bao gồm ngày thứ 7, ngày paid là ngày 0) từ hóa đơn paid đầu tiên được xem xét thủ công, không tự phê duyệt. Quá hạn chuyển xét ngoại lệ, không hứa chấp thuận. Yêu cầu refund không tự thay đổi subscription.
+
+## Chứng cứ cần xác minh
+Xác minh workspace và khách hàng đúng tenant, tìm hóa đơn paid đầu tiên và ngày paid theo múi giờ Asia/Ho_Chi_Minh, ngày tiếp nhận yêu cầu và tình trạng thanh toán. Không tính từ invoice pending/failed hoặc từ ngày ticket được tạo nếu khác ngày yêu cầu.
+
+## Các bước xử lý
+1. Lấy ngày paid đầu tiên làm ngày 0 theo lịch địa phương. 2. Ngày 0 đến hết ngày 7: chuyển xem xét thủ công theo chính sách. 3. Từ ngày 8: chuyển xét ngoại lệ, không nói chắc sẽ được duyệt. 4. Việc gửi yêu cầu không thay đổi subscription; AI không hoàn tiền hoặc hủy gói.
+
+## Câu trả lời mẫu có điều kiện
+“Theo ngày thanh toán đầu tiên và ngày gửi yêu cầu đã được xác minh, yêu cầu của bạn thuộc diện [xem xét thủ công trong hạn / chuyển xét ngoại lệ]. Kết quả hoàn tiền chưa được phê duyệt; nhân viên có thẩm quyền sẽ đánh giá và phản hồi.”
+
+## Khi cần chuyển cấp
+Chuyển owner/admin hoặc nhân viên được phân quyền xử lý billing. Không nêu thời gian hoàn tiền, số tiền được hoàn hoặc kết quả chấp thuận khi chưa có quyết định và bản ghi hợp lệ.
+
+</pre><small>SHA256: fc407493a6b5a37a9dc0d3d78789cee2c7aebc5a8a50e04d701918ced9ddc1f0</small></details>
+<p class="warning">Agreement between reviewers does not prove correctness. Independent identity checks, arbitration, human signoff, and a separate sealed holdout are still required. M2 remains NOT_RELEASE.</p>
+<script>
+"use strict";
+const META={"source_manifest_sha256": "3658b220b04b0cf10ea15ada29a7f734eea16b368574a17a5217c105548bf17f", "candidate_evidence_sha256": "7193ce8d7afb3464045eb868fdff60a7736b1bf70dd0593d4e8cb7c72a490375", "approved_snapshot_sha256": "12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f"}, KB={"novamart-store/en/NM-KB-014": "# How shipping charges are calculated\n\n## Scope\nUse this article to explain NovaMart Store standard shipping fees. The free-shipping threshold is based on merchandise value after discounts; shipping itself does not count toward the threshold.\n\n## Authoritative policy\n- **NM-POL-002** — Standard shipping is VND 30,000 below VND 500,000; free at or above VND 500,000 based on merchandise subtotal after discounts, excluding shipping.\n- **M0-CLAR-008** — Use immutable order-item snapshots to calculate net merchandise total. Standard shipping is 30000 VND when net merchandise \u003c 500000, otherwise 0 VND, without including shipping in the threshold.\n\n## Evidence to verify\nRead only authorized order item records and their stored quantity, unit_price_snapshot_vnd and discount_snapshot_vnd. Check whether the charge is standard shipping; these rules do not establish prices for unlisted delivery services.\n\n## Handling steps\n1. subtotal_vnd = sum(quantity × unit_price_snapshot_vnd). 2. discount_vnd = sum(discount_snapshot_vnd). 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. If net_merchandise_vnd is below VND 500,000, standard shipping is VND 30,000; at or above the threshold it is VND 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Use integer VND, excluding shipping from threshold tests.\n\n## Conditional response example\n“At VND 499,999 after discounts, standard shipping is VND 30,000 and the total is VND 529,999. At exactly VND 500,000, standard shipping is VND 0 and the total is VND 500,000.” This illustrates policy, not a verified customer's order amount.\n\n## When to escalate\nEscalate mismatched snapshots/fees, missing records, or requests for fee waivers/refunds. AI must not change item snapshots, prices, or shipping charges.\n\n", "novamart-store/en/NM-KB-020": "# Estimated delivery windows\n\n## Scope\nUse this article for questions about expected delivery of a paid NovaMart Store order. Distinguish the carrier handoff target from the subsequent delivery estimate; neither is a guaranteed delivery date.\n\n## Authoritative policy\n- **NM-POL-003** — Dispatch target is 2 business days after payment; estimated delivery is 2–5 business days after dispatch, not a guarantee.\n\n## Evidence to verify\nVerify payment marked paid, confirmed carrier handoff time, and tenant-scoped shipment records. For partial shipments, inspect each shipment individually; label_created alone does not prove handoff. Customer text is not authoritative tracking data.\n\n## Handling steps\n1. After paid status, the carrier handoff target is within 2 business days (weekdays for the demo; holidays are not modeled). 2. Once handoff is evidenced, the delivery estimate is 2–5 business days afterward. 3. Before handoff, do not invent a precise delivery date. 4. Escalate shipment exceptions or missing tracking updates for human investigation.\n\n## Conditional response example\n“Our policy targets carrier handoff within two business days after payment. Once handed over, delivery is estimated at two to five business days, not guaranteed. We need to verify your order's shipment record before giving a case-specific update.”\n\n## When to escalate\nEscalate missed handoff targets, tracking exceptions, partial deliveries and requests for guaranteed arrival. AI must not fabricate tracking, compensation, or replacement shipments.\n\n", "novamart-store/en/NM-KB-029": "# Return window for unused goods\n\n## Scope\nThis describes ordinary return requests for unused goods with original packaging. The seven-day window must not be used to reject separate defect, damage, missing or wrong-item reports or warranty inquiries.\n\n## Authoritative policy\n- **NM-POL-004** — Unused items with original packaging may be requested for return within 7 calendar days of delivery.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n\n## Evidence to verify\nVerify the authorized order/customer, the confirmed delivered date of the relevant item, unused condition and original packaging. For split shipments, do not use the date of a different package or the shipped date.\n\n## Handling steps\n1. Use the item's confirmed delivery date in the Asia/Ho_Chi_Minh local calendar (delivery day is day 0). 2. Days 0–7 inclusive: request may be considered after condition checks and human review. 3. From day 8: outside the standard ordinary-return window, route for separate assessment rather than rejecting every other possible remedy. 4. A request is not an approved return or refund.\n\n## Conditional response example\n“If an item was confirmed delivered on the 1st, an ordinary return request made by the 8th (day 7) falls within the review window. A request on the 9th (day 8) is outside the standard window. Approval still depends on condition verification and human authorization.”\n\n## When to escalate\nEscalate missing delivery evidence, used goods, missing original packaging, out-of-window requests or reports of defective/missing/wrong goods. AI never authorizes returns, replacements or refunds.\n\n", "novamart-store/en/NM-KB-030": "# Defective product reporting window\n\n## Scope\nUse this article for defective, damaged, missing or wrong-item reports within 14 local calendar days of confirmed item delivery. This window is separate from seven-day ordinary returns and the SKU-specific warranty period.\n\n## Authoritative policy\n- **NM-POL-005** — Defective, damaged, missing or wrong-item reports can be opened within 14 calendar days of delivery and require verification.\n- **M0-CLAR-004** — Ordinary returns use the 7-calendar-day local-date window after confirmed delivery of the relevant item. Defective/damaged/missing/wrong-item reports use a separate 14-day local-date window. Day 7/day 14 remain eligible, day 8/day 15 are outside those standard windows.\n- **M0-CLAR-005** — A 14-day defect-report window is not a blanket warranty expiry. Warranty eligibility must be evaluated independently from the product warranty_months and verified item delivery date in this demo.\n\n## Evidence to verify\nVerify the correct tenant, order and item; each item's confirmed delivered date, issue type, appropriate photos/evidence and split-shipment status. For missing goods, check partial shipments before concluding an item was lost. Verify SKU warranty_months separately if warranty is requested.\n\n## Handling steps\n1. Count local calendar days from the confirmed item delivery date, with delivery as day 0. 2. Days 0–14 inclusive: accept the report for verification; day 14 is still within the window. 3. Day 15 is outside the standard defect-report window, but SKU warranty may still apply independently according to warranty_months and verified delivery date. 4. Customer photos alone do not authorize refund or replacement.\n\n## Conditional response example\n“A defect report submitted on day 14 after verified delivery is within the 14-day reporting window and requires review. From day 15, the standard report window has passed; we can separately check the specific SKU warranty without promising an outcome.”\n\n## When to escalate\nEscalate verification of defective, damaged, missing or wrong items, conflicting evidence, and warranty assessment. AI must not approve refunds, replacements or warranty claims.\n\n", "novamart-store/vi/NM-KB-014": "# Cách tính phí vận chuyển\n\n## Phạm vi\nDùng khi khách hỏi vì sao đơn NovaMart Store có hoặc không có phí vận chuyển thường. Ngưỡng miễn phí dựa trên giá trị hàng hóa sau giảm giá, không bao gồm phí giao hàng.\n\n## Chính sách có hiệu lực\n- **NM-POL-002** — Phí vận chuyển thường 30.000 VND khi giá trị hàng sau giảm giá dưới 500.000 VND; từ 500.000 VND được miễn phí (không tính phí ship trong ngưỡng).\n- **M0-CLAR-008** — Dùng snapshot bất biến của order items tính tổng hàng sau discount; phí thường là 30.000 VND khi dưới 500.000 VND, ngược lại 0 VND; không cộng phí ship vào ngưỡng.\n\n## Chứng cứ cần xác minh\nChỉ đọc các order items đúng đơn hàng/khách hàng và lấy quantity, unit_price_snapshot_vnd, discount_snapshot_vnd đã lưu. Kiểm tra loại phí vận chuyển; chính sách này áp dụng cho phí vận chuyển thường trong demo, không mặc định cho dịch vụ khác.\n\n## Các bước xử lý\n1. subtotal_vnd = tổng quantity × unit_price_snapshot_vnd. 2. discount_vnd = tổng discount_snapshot_vnd. 3. net_merchandise_vnd = subtotal_vnd − discount_vnd. 4. Nếu net_merchandise_vnd \u003c 500.000 VND, standard_shipping_vnd = 30.000 VND; nếu \u003e= 500.000 thì bằng 0. 5. grand_total_vnd = net_merchandise_vnd + shipping_vnd. Tính bằng số nguyên VND, không cộng shipping vào phép so ngưỡng.\n\n## Câu trả lời mẫu có điều kiện\n“Nếu tổng hàng sau giảm giá là 499.999 VND, phí giao thường là 30.000 VND, tổng 529.999 VND. Nếu đúng 500.000 VND thì phí giao thường là 0 VND, tổng 500.000 VND.” Đây là ví dụ chính sách, không phải báo giá của đơn khách nếu chưa tra cứu.\n\n## Khi cần chuyển cấp\nChuyển nhân viên nếu snapshot đơn hoặc phí ghi nhận không khớp công thức, thiếu dữ liệu hoặc có yêu cầu miễn/hoàn phí ngoại lệ. Không tự sửa giá, snapshot hoặc phí vận chuyển.\n\n", "novamart-store/vi/NM-KB-020": "# Thời gian giao hàng dự kiến\n\n## Phạm vi\nÁp dụng khi khách hỏi ngày dự kiến nhận đơn đã thanh toán. Cần phân biệt thời gian mục tiêu bàn giao hãng vận chuyển và thời gian dự kiến giao sau bàn giao; cả hai không phải cam kết chắc chắn.\n\n## Chính sách có hiệu lực\n- **NM-POL-003** — Mục tiêu bàn giao hãng vận chuyển là 2 ngày làm việc sau khi paid; thời gian giao dự kiến 2–5 ngày làm việc sau bàn giao, không bảo đảm tuyệt đối.\n\n## Chứng cứ cần xác minh\nKiểm tra payment paid, ngày giờ carrier handoff đã được xác minh và trạng thái shipment trong đúng đơn/tenant. Nếu đơn tách nhiều kiện, xem từng shipment; không coi label_created là đã bàn giao. Không lấy lời khách thay thế tracking có thẩm quyền.\n\n## Các bước xử lý\n1. Sau paid, mục tiêu bàn giao carrier là trong 2 ngày làm việc (không tính ngày nghỉ cuối tuần; demo chưa xét ngày lễ). 2. Khi đã có bằng chứng bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc sau thời điểm bàn giao. 3. Nếu chưa bàn giao thì không được tự suy ra một ngày giao chính xác. 4. Nếu tracking exception hoặc thiếu cập nhật, chuyển nhân viên kiểm tra với đối tác vận chuyển.\n\n## Câu trả lời mẫu có điều kiện\n“Theo chính sách, cửa hàng đặt mục tiêu bàn giao đơn cho hãng vận chuyển trong 2 ngày làm việc sau khi thanh toán. Sau khi bàn giao, thời gian giao dự kiến là 2–5 ngày làm việc; đây không phải ngày giao bảo đảm. Tôi cần kiểm tra bản ghi vận chuyển của đơn để báo tình trạng cụ thể.”\n\n## Khi cần chuyển cấp\nChuyển khi thiếu bàn giao quá mục tiêu, tracking exception, giao thiếu kiện hoặc khách yêu cầu cam kết thời điểm giao. Không tự tạo tracking, hứa bồi thường hay tái gửi hàng.\n\n", "novamart-store/vi/NM-KB-029": "# Thời hạn đổi trả hàng chưa sử dụng\n\n## Phạm vi\nQuy trình tiếp nhận yêu cầu đổi/trả thông thường cho hàng chưa sử dụng, còn bao bì gốc. Không dùng cửa sổ này để từ chối báo thiếu/sai/hỏng/lỗi trong 14 ngày hoặc yêu cầu bảo hành.\n\n## Chính sách có hiệu lực\n- **NM-POL-004** — Hàng chưa sử dụng, còn bao bì gốc có thể yêu cầu đổi/trả trong 7 ngày lịch từ ngày giao.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n\n## Chứng cứ cần xác minh\nXác minh order/item, đúng khách hàng, ngày delivered của chính item đó, tình trạng chưa dùng và bao bì gốc. Với giao nhiều kiện, không lấy ngày giao kiện khác hoặc ngày shipped để tính hạn.\n\n## Các bước xử lý\n1. Xác định ngày delivered đã xác nhận theo lịch Asia/Ho_Chi_Minh (ngày giao là ngày 0). 2. Ngày 0–7: có thể tiếp nhận và chuyển người có thẩm quyền đánh giá điều kiện hàng. 3. Từ ngày 8: ngoài cửa sổ tiêu chuẩn, chuyển xem xét riêng, không tự từ chối mọi quyền lợi khác. 4. Yêu cầu không đồng nghĩa đổi/trả hoặc hoàn tiền đã được duyệt.\n\n## Câu trả lời mẫu có điều kiện\n“Nếu mặt hàng được xác nhận giao ngày 1, yêu cầu đổi/trả thông thường gửi đến hết ngày 8 (ngày thứ 7) vẫn trong cửa sổ xem xét; gửi ngày 9 (ngày thứ 8) nằm ngoài cửa sổ tiêu chuẩn. Việc chấp thuận vẫn cần kiểm tra tình trạng hàng và phê duyệt.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên khi ngày giao chưa xác minh, hàng đã dùng/thiếu bao bì, yêu cầu quá hạn hoặc liên quan hàng lỗi/thiếu/sai. AI không quyết định hoàn tiền, thay hàng hay cập nhật đơn.\n\n", "novamart-store/vi/NM-KB-030": "# Thời hạn báo sản phẩm lỗi\n\n## Phạm vi\nDành cho việc báo hàng lỗi, hỏng, thiếu hoặc giao sai trong vòng 14 ngày lịch từ ngày item được xác nhận giao. Cửa sổ này độc lập với đổi/trả thông thường 7 ngày và thời hạn bảo hành theo SKU.\n\n## Chính sách có hiệu lực\n- **NM-POL-005** — Báo lỗi/hỏng/thiếu/giao sai hàng được mở trong 14 ngày lịch từ ngày giao và cần xác minh.\n- **M0-CLAR-004** — Đổi/trả thông thường tính 7 ngày lịch theo ngày địa phương từ ngày giao xác nhận của item tương ứng; báo lỗi/hỏng/thiếu/sai là cửa sổ riêng 14 ngày lịch. Ngày 7/14 còn trong hạn; ngày 8/15 quá hạn tiêu chuẩn.\n- **M0-CLAR-005** — Cửa sổ 14 ngày báo lỗi không đồng nghĩa hết quyền bảo hành. Điều kiện bảo hành xét độc lập theo warranty_months và ngày giao sản phẩm đã được xác nhận trong demo.\n\n## Chứng cứ cần xác minh\nXác minh đơn và item đúng tenant, ngày delivered của từng item, loại vấn đề, ảnh/chứng cứ phù hợp và trạng thái các kiện hàng. Với báo thiếu, kiểm tra partial shipment trước khi kết luận thiếu hàng. Xác minh warranty_months của SKU nếu hỏi bảo hành.\n\n## Các bước xử lý\n1. Đếm ngày lịch địa phương, ngày delivered là ngày 0. 2. Ngày 0–14: tiếp nhận báo lỗi và chuyển xác minh; ngày 14 vẫn trong cửa sổ. 3. Ngày 15: ngoài cửa sổ báo lỗi chuẩn, nhưng có thể kiểm tra bảo hành riêng theo warranty_months và ngày delivered. 4. Không suy ra lỗi được chấp nhận, hoàn tiền hay đổi mới chỉ từ ảnh khách gửi.\n\n## Câu trả lời mẫu có điều kiện\n“Yêu cầu báo lỗi ở ngày thứ 14 kể từ ngày giao đã xác minh vẫn nằm trong thời hạn 14 ngày để được xem xét. Từ ngày thứ 15, cửa sổ báo lỗi tiêu chuẩn kết thúc; chúng tôi cần kiểm tra điều kiện bảo hành của đúng SKU để xác định hướng xử lý khác, không thể hứa kết quả.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên để xác minh hỏng/thiếu/sai hàng, chứng cứ xung đột hoặc bảo hành. AI không tạo quyết định refund, replacement hoặc warranty claim đã được duyệt.\n\n", "teamflow-cloud/en/TF-KB-012": "# Paid invoice but plan not active\n\n## Scope\nUse this article when a customer reports paying for a paid plan while the workspace still shows older entitlements. A receipt screenshot or customer assertion does not establish activation.\n\n## Authoritative policy\n- **TF-POL-002** — Paid plan activation requires a paid invoice and a successful activation record; a pending or failed payment does not activate a plan.\n- **M0-CLAR-001** — An invoice marked paid does not activate an upgrade unless its matching activation event succeeded. Keep requested_plan and effective_plan separate. On success, upgrades start a new billing cycle without proration; downgrades take effect at the next renewal.\n- **M0-CLAR-002** — A past_due subscription retains its last verified effective plan in the demo for read-only support lookup. Past_due alone must not trigger entitlement changes; only an authorized rule/workflow may change them.\n\n## Evidence to verify\nVerify the authorized organization, customer and workspace; check the relevant invoice and its paid state, the matching activation event, and the read-only effective_plan. requested_plan indicates only the requested change. Record missing evidence rather than guessing.\n\n## Handling steps\n1. If the invoice is not paid, do not confirm paid entitlements. 2. If paid but activation failed or no matching succeeded event exists, retain the verified effective_plan and escalate activation. 3. Say the new plan is live only when invoice paid, matching activation succeeded, and effective_plan agree. 4. AI must not change subscriptions or retry activation.\n\n## Conditional response example\n“We can confirm the verified invoice payment, but we cannot yet verify that the new plan was activated successfully. The current access level follows the effective plan recorded by the system. I will escalate this for an authorized agent to investigate, without promising a completion time.”\n\n## When to escalate\nEscalate failed, missing or conflicting activation events and requests to restore entitlements. Do not expose another tenant's invoices/workspaces, promise refunds, or commit to a resolution deadline without authorization.\n\n", "teamflow-cloud/en/TF-KB-015": "# Refund request eligibility\n\n## Scope\nUse this article for a refund request tied to the first paid TeamFlow Cloud invoice. The policy establishes eligibility for human consideration, not an automatic refund entitlement.\n\n## Authoritative policy\n- **TF-POL-008** — Refund requests submitted within 7 calendar days of the first paid invoice are eligible for human review, not automatic approval.\n- **M0-CLAR-003** — Refund requests within 7 local calendar days (inclusive, counting the paid date as day zero) of the first paid invoice are eligible for human review, never automatic approval. Later requests are routed for exception review without a promise. A refund request alone does not change the subscription state.\n\n## Evidence to verify\nVerify the tenant, customer and workspace; locate the first paid invoice and its payment date in Asia/Ho_Chi_Minh local calendar time; confirm the request submission date. Do not count pending/failed invoices or substitute ticket creation dates for the actual request date.\n\n## Handling steps\n1. Count the first paid date as calendar day 0. 2. Days 0–7 inclusive: route for manual review. 3. From day 8: route for exception consideration without promising approval. 4. Filing a request does not change the subscription; AI never executes refunds or cancellation.\n\n## Conditional response example\n“Based on the verified first payment and request dates, this request is [within the manual-review window / outside the standard window and requires exception review]. A refund has not been approved. An authorized team member will assess the request.”\n\n## When to escalate\nRefer billing decisions to authorized staff. Never promise the refunded amount, processing time, subscription change, or approval outcome without a corresponding authorized decision.\n\n", "teamflow-cloud/vi/TF-KB-012": "# Đã thanh toán nhưng gói chưa kích hoạt\n\n## Phạm vi\nÁp dụng khi khách hàng nói đã thanh toán để mở gói trả phí nhưng workspace vẫn hiển thị quyền của gói cũ. Không suy ra tình trạng kích hoạt chỉ từ ảnh biên nhận hoặc lời khách.\n\n## Chính sách có hiệu lực\n- **TF-POL-002** — Gói trả phí chỉ kích hoạt khi hóa đơn đã paid và có bản ghi kích hoạt thành công; pending/failed không kích hoạt.\n- **M0-CLAR-001** — Hóa đơn paid chưa đủ để kích hoạt gói nâng cấp nếu activation event tương ứng chưa succeeded. Tách requested_plan và effective_plan. Nâng cấp thành công bắt đầu chu kỳ mới, không prorate; hạ gói có hiệu lực ở kỳ gia hạn tiếp theo.\n- **M0-CLAR-002** — Subscription past_due giữ gói effective đã xác minh gần nhất để hỗ trợ tra cứu trong demo. Không tự đổi entitlement chỉ từ past_due; thay đổi cần rule/workflow đã phân quyền.\n\n## Chứng cứ cần xác minh\nXác minh đúng tổ chức, khách hàng và workspace; lấy invoice liên quan, trạng thái paid, activation event khớp invoice và effective_plan từ read-only records. requested_plan chỉ phản ánh gói đã yêu cầu. Ghi nhận thông tin còn thiếu thay vì suy diễn.\n\n## Các bước xử lý\n1. Nếu invoice chưa paid, không xác nhận quyền gói trả phí. 2. Nếu paid nhưng activation failed/chưa có succeeded event khớp, giữ nguyên effective_plan đã xác minh và chuyển xử lý kích hoạt. 3. Chỉ mô tả gói mới đã có hiệu lực khi có đồng thời invoice paid, activation succeeded và effective_plan phù hợp. 4. Không tự sửa subscription hay kích hoạt lại bằng AI.\n\n## Câu trả lời mẫu có điều kiện\n“Chúng tôi đã ghi nhận trạng thái thanh toán của hóa đơn được xác minh, nhưng chưa có bằng chứng gói mới đã kích hoạt thành công. Quyền truy cập hiện tại được xác định theo gói có hiệu lực trong hệ thống. Tôi sẽ chuyển trường hợp này cho nhân viên xử lý; chưa thể xác nhận thời điểm hoàn tất.”\n\n## Khi cần chuyển cấp\nChuyển nhân viên có quyền khi event thất bại, không khớp invoice, dữ liệu xung đột hoặc khách yêu cầu khắc phục quyền truy cập. Không công bố hóa đơn/workspace của tenant khác; không hứa hoàn tiền hoặc ngày xử lý khi chưa có quyết định.\n\n", "teamflow-cloud/vi/TF-KB-015": "# Điều kiện yêu cầu hoàn tiền\n\n## Phạm vi\nÁp dụng cho yêu cầu hoàn tiền liên quan hóa đơn paid đầu tiên của TeamFlow Cloud. Đây là điều kiện được đưa vào xem xét thủ công, không phải quyền được hoàn tiền tự động.\n\n## Chính sách có hiệu lực\n- **TF-POL-008** — Yêu cầu hoàn tiền trong 7 ngày lịch từ hóa đơn trả phí đầu tiên được đưa vào diện xem xét thủ công, không tự động chấp thuận.\n- **M0-CLAR-003** — Yêu cầu refund trong 7 ngày lịch địa phương (bao gồm ngày thứ 7, ngày paid là ngày 0) từ hóa đơn paid đầu tiên được xem xét thủ công, không tự phê duyệt. Quá hạn chuyển xét ngoại lệ, không hứa chấp thuận. Yêu cầu refund không tự thay đổi subscription.\n\n## Chứng cứ cần xác minh\nXác minh workspace và khách hàng đúng tenant, tìm hóa đơn paid đầu tiên và ngày paid theo múi giờ Asia/Ho_Chi_Minh, ngày tiếp nhận yêu cầu và tình trạng thanh toán. Không tính từ invoice pending/failed hoặc từ ngày ticket được tạo nếu khác ngày yêu cầu.\n\n## Các bước xử lý\n1. Lấy ngày paid đầu tiên làm ngày 0 theo lịch địa phương. 2. Ngày 0 đến hết ngày 7: chuyển xem xét thủ công theo chính sách. 3. Từ ngày 8: chuyển xét ngoại lệ, không nói chắc sẽ được duyệt. 4. Việc gửi yêu cầu không thay đổi subscription; AI không hoàn tiền hoặc hủy gói.\n\n## Câu trả lời mẫu có điều kiện\n“Theo ngày thanh toán đầu tiên và ngày gửi yêu cầu đã được xác minh, yêu cầu của bạn thuộc diện [xem xét thủ công trong hạn / chuyển xét ngoại lệ]. Kết quả hoàn tiền chưa được phê duyệt; nhân viên có thẩm quyền sẽ đánh giá và phản hồi.”\n\n## Khi cần chuyển cấp\nChuyển owner/admin hoặc nhân viên được phân quyền xử lý billing. Không nêu thời gian hoàn tiền, số tiền được hoàn hoặc kết quả chấp thuận khi chưa có quyết định và bản ghi hợp lệ.\n\n"};
+const cards=[...document.querySelectorAll("article.task")];
+const $=s=>document.querySelector(s);
+const labels=new Set(["affirmative_policy","explicit_negative_policy","not_documented","uncertain_needs_second_reviewer"]);
+const field=(c,cls)=>c.querySelector("."+cls);
+function getDecision(c){return {claim_id:c.dataset.id,tenant:c.dataset.tenant,locale:c.dataset.locale,
+ reviewer_decision:field(c,"verdict").value||null,
+ evidence_article:field(c,"article").value||null,
+ evidence_quote_or_section:field(c,"quote").value,
+ reviewer_notes:field(c,"notes").value};}
+function check(c){
+ const d=getDecision(c),v=d.reviewer_decision,n=d.reviewer_notes.trim(),q=d.evidence_quote_or_section.trim();
+ if(!v||!labels.has(v))return "PENDING";
+ if(v==="uncertain_needs_second_reviewer")return n.length>=20?"UNCERTAIN":"NEEDS_REASON";
+ if(v==="not_documented")return !d.evidence_article&&n.length>=20?"VALID":"NEEDS_REASON_AND_NO_CITATION";
+ if(!d.evidence_article)return "NEEDS_APPROVED_SOURCE";
+ const body=KB[c.dataset.tenant+"/"+c.dataset.locale+"/"+d.evidence_article];
+ if(!body||q.length<20||!body.includes(q))return "NEEDS_EXACT_KB_QUOTE";
+ return "VALID";
+}
+function update(){
+ let valid=0,uncertain=0,visible=0;
+ for(const c of cards){
+  const st=check(c);valid+=st==="VALID";uncertain+=st==="UNCERTAIN";
+  field(c,"status").textContent=st;field(c,"status").className="status "+(st==="VALID"?"good":"bad");
+  const show=(!$("select#tenant").value||$("select#tenant").value===c.dataset.tenant)
+   &&(!$("select#locale").value||$("select#locale").value===c.dataset.locale)
+   &&(!$("input#unfinished").checked||st!=="VALID");
+  c.hidden=!show;visible+=show;
+ }
+ const canFinish=valid===64&&$("#reviewer").value.trim().length>=3&&$("#attest").checked;
+ $("#finish").disabled=!canFinish;
+ $("#progress").textContent="Progress: "+valid+"/64; "+uncertain+" uncertain; "+visible+" visible; final export "+(canFinish?"enabled":"blocked");
+}
+for(const c of cards){
+ field(c,"article").addEventListener("change",()=>{
+  const key=c.dataset.tenant+"/"+c.dataset.locale+"/"+field(c,"article").value;
+  field(c,"source-body").textContent=KB[key]||"";update();
+ });
+ field(c,"quote-selected").addEventListener("click",()=>{
+  const key=c.dataset.tenant+"/"+c.dataset.locale+"/"+field(c,"article").value;
+  const selected=window.getSelection().toString().trim();
+  if(selected.length>=20&&(KB[key]||"").includes(selected)){
+    field(c,"quote").value=selected;update();
+  }else alert("Select an exact quotation of at least 20 characters inside the chosen approved article.");
+ });
+ c.querySelectorAll("select,textarea").forEach(el=>el.addEventListener("input",update));
+}
+["#reviewer","#tenant","#locale","#attest","#unfinished"].forEach(s=>$(s).addEventListener("input",update));
+$("#next").addEventListener("click",()=>{
+ const target=cards.find(c=>check(c)!=="VALID");
+ if(target){$("#tenant").value="";$("#locale").value="";$("#unfinished").checked=false;update();target.scrollIntoView();}
+});
+function exportLocal(final){
+ if($("#reviewer").value.trim().length<3)return alert("Reviewer ID is required (3+ characters).");
+ if(final&&$("#finish").disabled)return alert("Complete all claims and self-attest before final export.");
+ const ds=cards.map(getDecision);
+ const payload={...META,review_status:final?"COMPLETE_SELF_ATTESTED_UNVERIFIED":"DRAFT_UNVERIFIED_REQUIRES_EXTERNAL_HUMAN_SIGNOFF",
+ self_attested_independent_review:Boolean(final&&$("#attest").checked),
+ reviewer_id:$("#reviewer").value.trim(),created_utc:new Date().toISOString(),
+ completion:ds.filter(d=>labels.has(d.reviewer_decision)).length,total:64,decisions:ds};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const u=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=u;a.download=final?"m2-claim64-human-self-attested-UNVERIFIED.json":"m2-claim64-human-DRAFT.json";
+ a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);
+}
+$("#draft").addEventListener("click",()=>exportLocal(false));
+$("#finish").addEventListener("click",()=>exportLocal(true));
+$("#import").addEventListener("change",async ev=>{
+ const file=ev.target.files?.[0];if(!file)return;
+ try{
+  if(file.size>3000000)throw Error("Too large");
+  const data=JSON.parse(await file.text());
+  if(!["source_manifest_sha256","candidate_evidence_sha256","approved_snapshot_sha256"].every(k=>data[k]===META[k]))
+   throw Error("Source/KB checksum mismatch");
+  if(data.total!==64||!Array.isArray(data.decisions)||data.decisions.length!==64)throw Error("Wrong decision count");
+  const map=new Map();
+  for(const d of data.decisions){if(!d||map.has(d.claim_id))throw Error("Duplicate/invalid ID");map.set(d.claim_id,d);}
+  for(const c of cards){const d=map.get(c.dataset.id);
+    if(!d||d.tenant!==c.dataset.tenant||d.locale!==c.dataset.locale)throw Error("Missing or cross-tenant claim");}
+  $("#reviewer").value=typeof data.reviewer_id==="string"?data.reviewer_id:"";
+  for(const c of cards){
+   const d=map.get(c.dataset.id);
+   field(c,"verdict").value=labels.has(d.reviewer_decision)?d.reviewer_decision:"";
+   field(c,"article").value=typeof d.evidence_article==="string"?d.evidence_article:"";
+   field(c,"quote").value=typeof d.evidence_quote_or_section==="string"?d.evidence_quote_or_section:"";
+   field(c,"notes").value=typeof d.reviewer_notes==="string"?d.reviewer_notes:"";
+   field(c,"source-body").textContent=KB[c.dataset.tenant+"/"+c.dataset.locale+"/"+field(c,"article").value]||"";
+  }
+  $("#attest").checked=false;update();alert("Draft imported locally. Review source citations before final self-attestation.");
+ }catch(err){alert("Import rejected: "+String(err.message||err));}
+ ev.target.value="";
+});
+update();
+</script></main></body></html>

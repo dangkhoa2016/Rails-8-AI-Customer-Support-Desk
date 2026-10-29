@@ -1,0 +1,3 @@
+SAMPLE_DEMO_BROWSER_PASS vi 64 claims 12 KB filters 32/16/16/64 no_external_network
+SAMPLE_DEMO_BROWSER_PASS en 64 claims 12 KB filters 32/16/16/64 no_external_network
+SAMPLE_APPROVAL_BILINGUAL_BROWSER_PASS

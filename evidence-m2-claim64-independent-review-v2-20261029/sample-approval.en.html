@@ -1,0 +1,249 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthetic sample data — accepted for demo</title><style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:#0d1828;color:#edf4ff}
+main{max-width:1180px;margin:0 auto;padding:24px 18px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-size:clamp(1.7rem,3vw,2.6rem);margin:12px 0}small,.muted{color:#b7c9e1}a{color:#aacdff}
+.notice{padding:16px;background:#302618;border:1px solid #b18b4d;border-radius:10px;line-height:1.6}
+.metrics{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}.metric{min-width:190px;flex:1;border:1px solid #476585;border-radius:10px;background:#162a43;padding:16px}
+.metric b{display:block;font-size:2rem}.metric small{line-height:1.6}
+.filters{display:flex;flex-wrap:wrap;gap:16px;margin:22px 0}.filters label{flex:1;min-width:190px}
+select{display:block;width:100%;margin-top:8px;padding:10px;color:#edf4ff;border:1px solid #6785a7;border-radius:8px;background:#152e47;font:inherit}
+.card{padding:16px 20px;border:1px solid #476585;background:#152940;border-radius:10px;margin:14px 0}
+.card[hidden]{display:none}.card h3{font-size:1rem;margin:5px 0}.card p{line-height:1.6}
+.tag{font-size:.8rem;color:#92e6bd;letter-spacing:.03em}.question{color:#d1dff1}
+.kb article{padding:15px;border:1px solid #476585;border-radius:9px;margin:12px 0}
+pre{white-space:pre-wrap;word-break:break-word}code{overflow-wrap:anywhere}
+</style></head><body><main>
+<header><small>Rails 8 AI Customer Support Desk</small><a href="sample-approval.vi.html">Bản tiếng Việt</a></header>
+<h1>Synthetic sample data — accepted for demo</h1><p class="muted">TeamFlow Cloud + NovaMart Store · Fictional businesses · October 29, 2026</p><p class="notice">The project owner accepts these synthetic samples by default for demonstration. Their real-world accuracy has NOT been verified. This does not authorize AI answers, refunds, account changes, or business writes. The 64 claims are test questions, not 64 validated correct answers.</p>
+<section class="metrics">
+<div class="metric"><b>64 / 64</b><small>Sample claims accepted</small></div>
+<div class="metric"><b>12 / 12</b><small>Approved v2 KB articles in the research subset</small></div>
+<div class="metric"><b>4 × 16</b><small>Tenant/language strata</small></div>
+</section>
+<p><strong>No dual-human review required to display sample data</strong> · No real-world policy accuracy claim · AI answerability / writes remain blocked</p>
+<div class="filters"><label>Tenant filter<select id="tenant"><option value="">All</option>
+<option value="teamflow-cloud">TeamFlow Cloud</option><option value="novamart-store">NovaMart Store</option></select></label>
+<label>Language<select id="locale"><option value="">Both</option>
+<option value="vi">Vietnamese</option><option value="en">English</option></select></label></div>
+<p id="count" class="muted"></p>
+<section id="claims"><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>01 · CL-TF-VI-01-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hóa đơn paid nhưng gói chưa kích hoạt: cần kiểm tra activation event nào?</p>
+<p><strong>Test claim:</strong> Cần đối chiếu event succeeded với invoice đã paid không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>02 · CL-TF-VI-01-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hóa đơn paid nhưng gói chưa kích hoạt: cần kiểm tra activation event nào?</p>
+<p><strong>Test claim:</strong> Khi event failed có thể tự chuyển gói khách sang gói mới không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>03 · CL-TF-VI-02-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Yêu cầu hoàn tiền ở ngày thứ bảy: có nằm trong diện xem xét? Hóa đơn paid đầu tiên làm ngày 0? </p>
+<p><strong>Test claim:</strong> Ngày thứ 7 có còn trong cửa sổ xem xét thủ công không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>04 · CL-TF-VI-02-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Yêu cầu hoàn tiền ở ngày thứ bảy: có nằm trong diện xem xét? Hóa đơn paid đầu tiên làm ngày 0? </p>
+<p><strong>Test claim:</strong> Có tính cửa sổ từ ngày paid đầu tiên theo lịch địa phương không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>05 · CL-TF-VI-03-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hóa đơn đã paid nhưng chưa kích hoạt: cần chứng cứ nào và có chắc xử lý xong trong 15 phút?</p>
+<p><strong>Test claim:</strong> Invoice paid phải đối chiếu activation succeeded và effective_plan không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>06 · CL-TF-VI-03-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hóa đơn đã paid nhưng chưa kích hoạt: cần chứng cứ nào và có chắc xử lý xong trong 15 phút?</p>
+<p><strong>Test claim:</strong> Có thể cam kết nâng cấp hoàn tất trong 15 phút không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>07 · CL-TF-VI-04-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hoàn tiền ngày thứ 8 là ngoại lệ; có thể chỉ rõ người nhận chuyển khoản và ngày tiền về?</p>
+<p><strong>Test claim:</strong> Refund ngày thứ 8 có cần xét ngoại lệ không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>08 · CL-TF-VI-04-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hoàn tiền ngày thứ 8 là ngoại lệ; có thể chỉ rõ người nhận chuyển khoản và ngày tiền về?</p>
+<p><strong>Test claim:</strong> Có hướng dẫn thay đổi tài khoản ngân hàng nhận tiền hoàn không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>09 · CL-TF-VI-05-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Subscription past_due chưa tự đổi quyền; làm sao bật xác thực hai yếu tố cho cả team?</p>
+<p><strong>Test claim:</strong> Past_due có tự động sửa effective entitlement không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>10 · CL-TF-VI-05-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Subscription past_due chưa tự đổi quyền; làm sao bật xác thực hai yếu tố cho cả team?</p>
+<p><strong>Test claim:</strong> Có chỉ dẫn bật MFA trên workspace cho mọi thành viên không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>11 · CL-TF-VI-06-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Nâng cấp gói thành công tạo chu kỳ mới; chính sách tính thuế VAT trên hóa đơn điện tử là gì?</p>
+<p><strong>Test claim:</strong> Nâng cấp thành công bắt đầu chu kỳ mới không prorate đúng không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>12 · CL-TF-VI-06-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Nâng cấp gói thành công tạo chu kỳ mới; chính sách tính thuế VAT trên hóa đơn điện tử là gì?</p>
+<p><strong>Test claim:</strong> Có chính sách xác định mức VAT trên hóa đơn điện tử không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>13 · CL-TF-VI-07-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Tôi muốn cấu hình máy chủ SSO và đổi tên pháp nhân trên hóa đơn.</p>
+<p><strong>Test claim:</strong> Có hướng dẫn cấu hình SAML SSO không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>14 · CL-TF-VI-07-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Tôi muốn cấu hình máy chủ SSO và đổi tên pháp nhân trên hóa đơn.</p>
+<p><strong>Test claim:</strong> Có hướng dẫn sửa pháp nhân trên hóa đơn đã issued không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>15 · CL-TF-VI-08-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Dịch vụ có backup hằng giờ và giới hạn tốc độ API bao nhiêu?</p>
+<p><strong>Test claim:</strong> Có hướng dẫn backup tự động mỗi giờ cho workspace không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="vi">
+<header><h3>16 · CL-TF-VI-08-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Dịch vụ có backup hằng giờ và giới hạn tốc độ API bao nhiêu?</p>
+<p><strong>Test claim:</strong> Có bảng giới hạn API request theo gói không?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>17 · CL-TF-EN-01-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The paid plan did not activate. Which status confirms entitlement? Does a pending invoice activate the upgrade?</p>
+<p><strong>Test claim:</strong> Must an activation event succeed and effective_plan match before confirming entitlement?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>18 · CL-TF-EN-01-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The paid plan did not activate. Which status confirms entitlement? Does a pending invoice activate the upgrade?</p>
+<p><strong>Test claim:</strong> Does a pending invoice alone activate a new plan?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>19 · CL-TF-EN-02-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> For the first paid invoice, is refund day seven within manual review and does the request cancel the subscription?</p>
+<p><strong>Test claim:</strong> Does day seven remain inside manual refund consideration?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>20 · CL-TF-EN-02-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> For the first paid invoice, is refund day seven within manual review and does the request cancel the subscription?</p>
+<p><strong>Test claim:</strong> Does filing the refund request automatically cancel the subscription?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>21 · CL-TF-EN-03-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> We paid the upgrade invoice. What must be validated, and is there a guaranteed fix within half an hour?</p>
+<p><strong>Test claim:</strong> Do staff need to verify activation succeeded against the paid invoice?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>22 · CL-TF-EN-03-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> We paid the upgrade invoice. What must be validated, and is there a guaranteed fix within half an hour?</p>
+<p><strong>Test claim:</strong> Does the KB guarantee the upgrade will be fixed within thirty minutes?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>23 · CL-TF-EN-04-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Our first invoice was paid eight days ago. Is exception review needed, and how can I reroute the refund?</p>
+<p><strong>Test claim:</strong> Does a day-eight refund request go to exception review?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>24 · CL-TF-EN-04-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Our first invoice was paid eight days ago. Is exception review needed, and how can I reroute the refund?</p>
+<p><strong>Test claim:</strong> Can the refund be rerouted to a different debit card using a documented process?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>25 · CL-TF-EN-05-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The subscription is past_due. Do we preserve effective entitlements and how can I configure SAML login?</p>
+<p><strong>Test claim:</strong> Does past_due preserve the last verified effective plan in the demo?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>26 · CL-TF-EN-05-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The subscription is past_due. Do we preserve effective entitlements and how can I configure SAML login?</p>
+<p><strong>Test claim:</strong> Does this article provide SAML identity provider configuration instructions?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>27 · CL-TF-EN-06-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> If an upgrade succeeds, when does its cycle start? What is the VAT rate on the new invoice?</p>
+<p><strong>Test claim:</strong> Does a successfully upgraded plan begin a new billing cycle without proration?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>28 · CL-TF-EN-06-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> If an upgrade succeeds, when does its cycle start? What is the VAT rate on the new invoice?</p>
+<p><strong>Test claim:</strong> Does the approved KB define an applicable VAT tax rate?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>29 · CL-TF-EN-07-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I export all audit events and enable workspace-wide automatic backups?</p>
+<p><strong>Test claim:</strong> Is a security audit export procedure in the approved article?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>30 · CL-TF-EN-07-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I export all audit events and enable workspace-wide automatic backups?</p>
+<p><strong>Test claim:</strong> Are hourly workspace backup settings documented?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>31 · CL-TF-EN-08-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> How can I purchase additional API calls and transfer the owner role?</p>
+<p><strong>Test claim:</strong> Does approved KB explain purchasing API quota packs?</p></article><article class="card sample-claim" data-tenant="teamflow-cloud" data-locale="en">
+<header><h3>32 · CL-TF-EN-08-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> How can I purchase additional API calls and transfer the owner role?</p>
+<p><strong>Test claim:</strong> Does approved KB explain transferring workspace ownership?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>33 · CL-NM-VI-01-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn sau giảm giá 499.999 đồng được miễn phí giao thường không, còn đơn 500.000 đồng thì sao?</p>
+<p><strong>Test claim:</strong> Giá trị hàng sau giảm giá dưới 500.000 VND có phí giao thường 30.000 VND không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>34 · CL-NM-VI-01-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn sau giảm giá 499.999 đồng được miễn phí giao thường không, còn đơn 500.000 đồng thì sao?</p>
+<p><strong>Test claim:</strong> Đúng ngưỡng 500.000 VND có miễn phí giao thường không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>35 · CL-NM-VI-02-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hàng lỗi báo ngày thứ 14 có được tiếp nhận, và sang ngày 15 có kiểm tra bảo hành riêng không?</p>
+<p><strong>Test claim:</strong> Ngày thứ 14 kể từ delivered có trong thời hạn báo lỗi không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>36 · CL-NM-VI-02-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hàng lỗi báo ngày thứ 14 có được tiếp nhận, và sang ngày 15 có kiểm tra bảo hành riêng không?</p>
+<p><strong>Test claim:</strong> Ngày thứ 15 có thể xem xét bảo hành SKU riêng không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>37 · CL-NM-VI-03-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn đã paid thì khi nào bàn giao hãng vận chuyển, và có giao đúng 20 giờ tối mai không?</p>
+<p><strong>Test claim:</strong> Mục tiêu handoff của đơn paid là trong hai ngày làm việc đúng không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>38 · CL-NM-VI-03-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn đã paid thì khi nào bàn giao hãng vận chuyển, và có giao đúng 20 giờ tối mai không?</p>
+<p><strong>Test claim:</strong> Có thể hứa đơn giao đúng 20 giờ tối mai không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>39 · CL-NM-VI-04-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hàng còn nguyên chưa dùng được giao cách đây 7 ngày; có thể trả và hẹn lấy tận nhà vào 17 giờ không?</p>
+<p><strong>Test claim:</strong> Ngày thứ 7 hàng chưa dùng còn bao bì có thể yêu cầu trả không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>40 · CL-NM-VI-04-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Hàng còn nguyên chưa dùng được giao cách đây 7 ngày; có thể trả và hẹn lấy tận nhà vào 17 giờ không?</p>
+<p><strong>Test claim:</strong> Có quy trình đặt lịch lấy hàng tại nhà đúng 17 giờ không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>41 · CL-NM-VI-05-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Dưới ngưỡng 500 nghìn thì phí ship thường thế nào, điểm thưởng có đổi được ra phí giao nhanh không?</p>
+<p><strong>Test claim:</strong> Đơn net dưới 500.000 VND bị tính 30.000 VND phí thường không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>42 · CL-NM-VI-05-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Dưới ngưỡng 500 nghìn thì phí ship thường thế nào, điểm thưởng có đổi được ra phí giao nhanh không?</p>
+<p><strong>Test claim:</strong> Có thể đổi điểm tích lũy để miễn phí giao nhanh không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>43 · CL-NM-VI-06-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đã báo hàng thiếu trong vòng 14 ngày; tôi có được bồi thường coupon tự động không?</p>
+<p><strong>Test claim:</strong> Báo thiếu hàng có cửa sổ 14 ngày và cần kiểm tra partial shipment không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>44 · CL-NM-VI-06-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đã báo hàng thiếu trong vòng 14 ngày; tôi có được bồi thường coupon tự động không?</p>
+<p><strong>Test claim:</strong> Có chính sách tự cấp coupon bồi thường khi báo thiếu hàng không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>45 · CL-NM-VI-07-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn đang giao có thể đổi địa chỉ và thêm số điện thoại người nhận qua app không?</p>
+<p><strong>Test claim:</strong> Có hướng dẫn chuyển địa chỉ cho shipment đã handoff không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>46 · CL-NM-VI-07-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Đơn đang giao có thể đổi địa chỉ và thêm số điện thoại người nhận qua app không?</p>
+<p><strong>Test claim:</strong> Có hướng dẫn sửa số điện thoại người nhận đang giao không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>47 · CL-NM-VI-08-1</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Tôi muốn gửi đơn bằng dịch vụ giao lạnh và chuyển sang thanh toán trả góp.</p>
+<p><strong>Test claim:</strong> Có quy trình đăng ký giao lạnh trong ngày không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="vi">
+<header><h3>48 · CL-NM-VI-08-2</h3><span class="tag">Sample accepted · VI</span></header>
+<p class="question"><strong>Composite question:</strong> Tôi muốn gửi đơn bằng dịch vụ giao lạnh và chuyển sang thanh toán trả góp.</p>
+<p><strong>Test claim:</strong> Có quy định thanh toán trả góp cho đơn đã paid không?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>49 · CL-NM-EN-01-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> At exactly VND 500,000 after discounts, is standard delivery free? What if the net total falls just below it?</p>
+<p><strong>Test claim:</strong> Is standard delivery free at a post-discount total of exactly VND 500,000?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>50 · CL-NM-EN-01-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> At exactly VND 500,000 after discounts, is standard delivery free? What if the net total falls just below it?</p>
+<p><strong>Test claim:</strong> Is VND 30,000 charged when the discounted merchandise total is below VND 500,000?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>51 · CL-NM-EN-02-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can damaged goods be reported through day fourteen, and must a separate warranty be checked on day fifteen?</p>
+<p><strong>Test claim:</strong> Is reporting damage on day fourteen within the reporting window?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>52 · CL-NM-EN-02-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can damaged goods be reported through day fourteen, and must a separate warranty be checked on day fifteen?</p>
+<p><strong>Test claim:</strong> Does day fifteen require independent SKU warranty review rather than automatic rejection?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>53 · CL-NM-EN-03-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The courier received my paid parcel. Is delivery expected within two to five business days and can you guarantee delivery at noon tomorrow?</p>
+<p><strong>Test claim:</strong> Does the estimated delivery period begin after verified carrier handoff?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>54 · CL-NM-EN-03-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The courier received my paid parcel. Is delivery expected within two to five business days and can you guarantee delivery at noon tomorrow?</p>
+<p><strong>Test claim:</strong> Does the KB guarantee courier arrival at exactly noon tomorrow?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>55 · CL-NM-EN-04-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> I want to return my unused product on day seven and reserve an 11 a.m. courier pickup.</p>
+<p><strong>Test claim:</strong> Can an unused product in original packaging request normal return on day seven?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>56 · CL-NM-EN-04-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> I want to return my unused product on day seven and reserve an 11 a.m. courier pickup.</p>
+<p><strong>Test claim:</strong> Is an exact eleven a.m. home pickup reservable under the approved policy?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>57 · CL-NM-EN-05-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The discounted item total is below the free shipping cutoff. What is the normal shipping fee, and can points waive premium shipping?</p>
+<p><strong>Test claim:</strong> Is standard shipping VND 30,000 below the VND 500,000 threshold?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>58 · CL-NM-EN-05-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The discounted item total is below the free shipping cutoff. What is the normal shipping fee, and can points waive premium shipping?</p>
+<p><strong>Test claim:</strong> Can loyalty rewards redeem free premium shipping?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>59 · CL-NM-EN-06-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The package contained the wrong item within fourteen days. Is that eligible for investigation and can a replacement be dispatched automatically?</p>
+<p><strong>Test claim:</strong> Does a wrong-item report within fourteen days qualify for verification?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>60 · CL-NM-EN-06-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> The package contained the wrong item within fourteen days. Is that eligible for investigation and can a replacement be dispatched automatically?</p>
+<p><strong>Test claim:</strong> Can an AI automatically approve and dispatch a replacement without review?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>61 · CL-NM-EN-07-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I change the delivery address after courier handoff and set a new recipient phone number?</p>
+<p><strong>Test claim:</strong> Is there a documented process to reroute a parcel after handoff?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>62 · CL-NM-EN-07-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I change the delivery address after courier handoff and set a new recipient phone number?</p>
+<p><strong>Test claim:</strong> Is there a documented process to edit recipient phone numbers after dispatch?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>63 · CL-NM-EN-08-1</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I use monthly installments for electronics and stack multiple promotions?</p>
+<p><strong>Test claim:</strong> Is an installment plan for electronics documented in approved KB?</p></article><article class="card sample-claim" data-tenant="novamart-store" data-locale="en">
+<header><h3>64 · CL-NM-EN-08-2</h3><span class="tag">Sample accepted · EN</span></header>
+<p class="question"><strong>Composite question:</strong> Can I use monthly installments for electronics and stack multiple promotions?</p>
+<p><strong>Test claim:</strong> Does the KB allow stacking multiple checkout coupons?</p></article></section>
+<h2>Currently approved KB source for research</h2><p class="muted">SHA256 queue: <code>5562d8a92fbd436b1c1485c820a0615f696c69f8505668b8b71d00fed975219d</code></p>
+<p class="muted">SHA256 KB snapshot: <code>12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f</code></p>
+<div class="kb"><article><strong>NM-KB-014 · novamart-store / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>112f698269cf8ae9f982f914f0c94d2e90ea11b587db8c4a5b1ca145e717ddef</code></p></article><article><strong>NM-KB-020 · novamart-store / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>2b092e23965ea6e4b4e84bf3237b75aa43083bfa2df9e650a94544d6ec26b267</code></p></article><article><strong>NM-KB-029 · novamart-store / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>f6fe228abb9ca139eea950e38409fd7c9f33588032b20c6f21e930cac27fc18e</code></p></article><article><strong>NM-KB-030 · novamart-store / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>780bad3784fe9a91c42da9eef99540aeb7e2eb3930ba6ad2126623a112477679</code></p></article><article><strong>NM-KB-014 · novamart-store / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>bbafff6fc0a08d061f0daa7236da1f094246b849232d1b691d26331803ba1269</code></p></article><article><strong>NM-KB-020 · novamart-store / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>ee681fd73e544c9e2f08de00876a74dd4cb30afa7b61fd3bdd93e48c77b061b3</code></p></article><article><strong>NM-KB-029 · novamart-store / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>1b8785577d903f9843fd4dc0a7bcffd108b5b7176af262a7b0f33cf667f1cd58</code></p></article><article><strong>NM-KB-030 · novamart-store / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>f29b4228247f61095fe20ca585eb73cd2fbc06109e1f76875ac777dc337fd8ca</code></p></article><article><strong>TF-KB-012 · teamflow-cloud / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>9e136ab659dac3be97beb9b70dcf792896fbc5aab0ff000236c54e08d6dabcd7</code></p></article><article><strong>TF-KB-015 · teamflow-cloud / en · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>4a973f29fa10fab72643866e815d98cb0c9943d0d33fee253a2fb02a977c7509</code></p></article><article><strong>TF-KB-012 · teamflow-cloud / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>4b83e4eef319880ff6f707df5ba93a13c0a07f24147546a6511f9e30850c9793</code></p></article><article><strong>TF-KB-015 · teamflow-cloud / vi · v2</strong>
+<p class="muted">Reference KB · synthetic only · SHA256 <code>fc407493a6b5a37a9dc0d3d78789cee2c7aebc5a8a50e04d701918ced9ddc1f0</code></p></article></div>
+<p><a href="index.en.html">Optional human review form</a></p>
+<p class="notice">Existing KB, DB status, sealed80 fail-closed gates and human approval for business writes remain unchanged. Sample approval is not semantic gold or authorization.</p>
+<script>
+"use strict";
+const t=document.getElementById("tenant"),l=document.getElementById("locale");
+const rows=[...document.querySelectorAll("article.sample-claim")],count=document.getElementById("count");
+function update(){let shown=0;for(const c of rows){
+ const visible=(!t.value||c.dataset.tenant===t.value)&&(!l.value||c.dataset.locale===l.value);
+ c.hidden=!visible;if(visible)shown++;
+}count.textContent=shown+" / 64";}
+t.addEventListener("change",update);l.addEventListener("change",update);update();
+</script></main></body></html>

@@ -1,0 +1,36 @@
+{
+  "kind": "M2_CLAIM64_POST_REBOOT_RECOVERY_CLOSURE",
+  "date": "2026-10-29",
+  "new_colab_device_name": "d912002e2a9f",
+  "new_colab_device_id": "d2536713-6975-49cb-8955-969067f3726f",
+  "frozen_queue_sha256": "5562d8a92fbd436b1c1485c820a0615f696c69f8505668b8b71d00fed975219d",
+  "approved_kb_snapshot_sha256": "12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f",
+  "synthetic_claims": 64,
+  "approved_kb_articles": 12,
+  "workbook_v2": {
+    "vi": {
+      "bytes": 182869,
+      "sha256": "f87a1cbdfdd6b1aae4a35a2f5429c08c8db1d56629510b9fc6e96c4a1ab24847",
+      "status": "REBUILT_TESTED"
+    },
+    "en": {
+      "bytes": 173611,
+      "sha256": "cda17e1dda16eba0d2921cef5b9d0cf5bd4e6d3fff3c5d9f5ba8591ceb033335",
+      "status": "REBUILT_TESTED"
+    }
+  },
+  "offline_browser_test": "PASS_VI_AND_EN_IMPORT_RESUME_FINAL_GUARD_NO_NETWORK",
+  "dual_reviewer_comparison_unit_tests": "8_PASS_SYNTHETIC_FIXTURES_ONLY",
+  "real_external_review_a": "NOT_RECEIVED",
+  "real_external_review_b": "NOT_RECEIVED",
+  "human_semantic_gold": "NOT_RUN",
+  "claim_level_release": "NOT_RELEASE",
+  "modal_gpu_calls_after_reboot": 0,
+  "existing_m2_dataset_changed": false,
+  "rails_db_runtime_validation_after_reboot": "NOT_RUN_MISSING_ENV_RUNTIME",
+  "private_cloudflare_workbook_after_reboot": "NOT_STARTED_NO_PRIVATE_CREDENTIALS",
+  "private_server_script": "SOURCE_COMPILE_PASS_NOT_DEPLOYED",
+  "checkpoint_external_modal_backup": "NOT_PERFORMED_NO_MODAL_CLIENT_CREDENTIALS",
+  "no_git_commit_or_push": true,
+  "note": "Public previous Cloudflare tunnel URL is stale after reboot; do not publish an unauthenticated replacement. No forged independent reviewer exports."
+}
