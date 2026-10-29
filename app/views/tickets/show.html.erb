@@ -7,6 +7,23 @@
    </div><% else %><p class="muted"><%= t('tickets.empty') %></p><% end %>
  </section>
  <div class="stack">
+  <section class="panel">
+    <h2><%= t('tickets.case_context') %></h2>
+    <p class="tiny muted"><%= t('tickets.synthetic_notice') %></p>
+    <p><strong><%= t('tickets.customer') %>:</strong> <%= @ticket.customer.external_key %> · <%= @ticket.customer.locale.upcase %></p>
+    <p><strong><%= t('tickets.reference') %>:</strong> <span class="mono"><%= @ticket.business_ref.presence || '—' %></span></p>
+    <% if can_write? && @ticket.business_ref.present? %>
+      <% if current_organization.vertical == 'b2b_saas' && @ticket.business_ref.start_with?('TF-INV-') %>
+        <p><%= link_to t('tickets.inspect_reference'), teamflow_invoice_path(customer_key: @ticket.customer.external_key, invoice_number: @ticket.business_ref), class: 'btn secondary' %></p>
+      <% elsif current_organization.vertical == 'ecommerce' && @ticket.business_ref.start_with?('NM-2026-') %>
+        <p><%= link_to t('tickets.inspect_reference'), novamart_order_path(customer_key: @ticket.customer.external_key, order_number: @ticket.business_ref), class: 'btn secondary' %></p>
+      <% end %>
+    <% end %>
+    <% if can_write? %>
+      <p><%= link_to t('tickets.manual_kb_search'), kb_ai_search_path, class: 'btn secondary' %></p>
+      <p class="tiny muted"><%= t('tickets.relevance_only') %></p>
+    <% end %>
+  </section>
  <% if can_write? %>
   <section class="panel"><h2><%= t('tickets.reply_title') %></h2><p class="muted small"><%= t('tickets.reply_help') %></p>
    <%= form_with url: ticket_ticket_messages_path(@ticket), method: :post do |f| %>

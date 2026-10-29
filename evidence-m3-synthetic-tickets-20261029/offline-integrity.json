@@ -1,0 +1,30 @@
+{
+  "by_category": {
+    "novamart-store:missing_wrong_damaged": 16,
+    "novamart-store:order_status": 24,
+    "novamart-store:payment_issues": 20,
+    "novamart-store:product_warranty": 12,
+    "novamart-store:returns_refunds": 24,
+    "novamart-store:shipping_exceptions": 24,
+    "teamflow-cloud:billing_subscription": 36,
+    "teamflow-cloud:exports_jobs": 20,
+    "teamflow-cloud:general_howto": 12,
+    "teamflow-cloud:incidents_bugs": 12,
+    "teamflow-cloud:integrations_api": 20,
+    "teamflow-cloud:permissions_workspace": 20
+  },
+  "dataset_sha256": "398e3de1fe231eaa6baabded10183502ed8551f33869c188d534e16bfe2c81fd",
+  "linked_references": 216,
+  "messages": 440,
+  "rails_db": "NOT_RUN",
+  "semantic_accuracy": "NOT_VERIFIED",
+  "source_m1_sha256": "6a266e42c0099c18d8560ed88e835f8873b62c35811dac28e350667ce3d68680",
+  "status": "PASS_OFFLINE_M3_INTEGRITY_ONLY",
+  "tenant_locale": {
+    "novamart-store:en": 60,
+    "novamart-store:vi": 60,
+    "teamflow-cloud:en": 60,
+    "teamflow-cloud:vi": 60
+  },
+  "tickets": 240
+}

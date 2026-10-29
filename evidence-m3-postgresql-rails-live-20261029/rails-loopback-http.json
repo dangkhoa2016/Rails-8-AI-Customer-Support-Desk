@@ -1,0 +1,25 @@
+{
+  "status": "PASS_LOCAL_RAILS_M3_HTTP",
+  "gate_without_auth": 303,
+  "origin_type": "loopback",
+  "results": [
+    {
+      "tenant": "teamflow-cloud",
+      "ticket_index_status": 200,
+      "open_vi_filter_tickets": 10,
+      "detail_status": 200,
+      "ai_search_page_status": 200,
+      "cross_tenant_leak": false
+    },
+    {
+      "tenant": "novamart-store",
+      "ticket_index_status": 200,
+      "open_vi_filter_tickets": 10,
+      "detail_status": 200,
+      "ai_search_page_status": 200,
+      "cross_tenant_leak": false
+    }
+  ],
+  "post_requests_other_than_login": "NONE",
+  "credentials_recorded": false
+}

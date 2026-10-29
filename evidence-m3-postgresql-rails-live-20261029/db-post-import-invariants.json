@@ -1,0 +1,45 @@
+{
+  "kind": "M3_POSTGRESQL_READONLY_INVARIANTS",
+  "captured_utc": "2026-10-29T14:16:59Z",
+  "tickets": 240,
+  "messages": 440,
+  "synthetic_seed_audits": 240,
+  "article_versions": 212,
+  "approved_v2": 12,
+  "embeddings": 0,
+  "scope_eligible": false,
+  "tenants": [
+    {
+      "slug": "novamart-store",
+      "tickets": 120,
+      "locale_counts": {
+        "en": 60,
+        "vi": 60
+      },
+      "status_counts": {
+        "pending_internal": 20,
+        "closed": 20,
+        "open": 20,
+        "resolved": 20,
+        "pending_customer": 20,
+        "new": 20
+      }
+    },
+    {
+      "slug": "teamflow-cloud",
+      "tickets": 120,
+      "locale_counts": {
+        "en": 60,
+        "vi": 60
+      },
+      "status_counts": {
+        "pending_internal": 20,
+        "closed": 20,
+        "open": 20,
+        "resolved": 20,
+        "pending_customer": 20,
+        "new": 20
+      }
+    }
+  ]
+}

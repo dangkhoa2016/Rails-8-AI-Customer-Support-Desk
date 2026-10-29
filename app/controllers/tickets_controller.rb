@@ -17,8 +17,20 @@ class TicketsController < ApplicationController
 
   def index
     @status = params[:status].presence_in(TRANSITIONS.keys)
-    @tickets = scoped_tickets.includes(:customer).order(created_at: :desc).limit(200)
-    @tickets = @tickets.where(status: @status) if @status
+    @locale_filter = params[:customer_locale].presence_in(%w[vi en])
+    @category_filter = params[:category].presence_in(CATEGORIES.fetch(current_organization.vertical))
+    @query = params[:q].to_s.strip[0, 80]
+    @total_tickets = scoped_tickets.count
+    relation = scoped_tickets.joins(:customer).includes(:customer)
+    relation = relation.where(status: @status) if @status
+    relation = relation.where(customers: {locale: @locale_filter}) if @locale_filter
+    relation = relation.where(category: @category_filter) if @category_filter
+    if @query.present?
+      pattern = "%#{ActiveRecord::Base.sanitize_sql_like(@query)}%"
+      relation = relation.where('tickets.number ILIKE :q OR tickets.business_ref ILIKE :q OR customers.external_key ILIKE :q', q: pattern)
+    end
+    @filtered_count = relation.count
+    @tickets = relation.order(created_at: :desc).limit(200)
   end
 
   def new

@@ -1,6 +1,71 @@
-<div class="panel-header"><div><h1><%= t('tickets.heading') %></h1><p class="muted"><%= t('tickets.index_help') %></p></div><% if can_write? %><%= link_to t('tickets.new'), new_ticket_path, class: 'btn' %><% end %></div>
-<div class="panel"><div class="navlinks" style="margin-bottom:14px"><%= link_to t('tickets.all'), tickets_path, class:'pill' %><% TicketsController::TRANSITIONS.keys.each do |status| %><%= link_to status, tickets_path(status: status), class:'pill' %><% end %></div>
-<% if @tickets.any? %><div class="table-wrap"><table><thead><tr><th><%= t('tickets.number') %></th><th><%= t('tickets.customer') %></th><th><%= t('tickets.category') %></th><th><%= t('tickets.priority') %></th><th><%= t('tickets.status') %></th></tr></thead><tbody>
-  <% @tickets.each do |ticket| %><tr><td><%= link_to ticket.number, ticket_path(ticket) %></td><td><%= ticket.customer.external_key %></td><td><%= ticket.category %></td><td><span class="pill"><%= ticket.priority %></span></td><td><%= ticket.status %></td></tr><% end %>
-</tbody></table></div><% else %><div class="badge-empty"><%= t('tickets.empty') %></div><% end %>
+<div class="panel-header">
+  <div>
+    <h1><%= t('tickets.heading') %></h1>
+    <p class="muted"><%= t('tickets.index_help') %></p>
+    <p class="tiny muted"><%= t('tickets.synthetic_notice') %></p>
+  </div>
+  <% if can_write? %><%= link_to t('tickets.new'), new_ticket_path, class: 'btn' %><% end %>
 </div>
+<section class="panel" aria-label="<%= t('tickets.filters') %>">
+  <div class="panel-header">
+    <h2><%= t('tickets.filters') %></h2>
+    <span class="pill"><%= t('tickets.filtered_count', count: @filtered_count, total: @total_tickets) %></span>
+  </div>
+  <%= form_with url: tickets_path, method: :get, local: true do %>
+    <div class="two">
+      <div class="field">
+        <%= label_tag :q, t('tickets.search') %>
+        <%= text_field_tag :q, @query, maxlength: 80, placeholder: t('tickets.search_hint') %>
+      </div>
+      <div class="field">
+        <%= label_tag :status, t('tickets.status') %>
+        <%= select_tag :status, options_for_select([[t('tickets.all'), '']] + TicketsController::TRANSITIONS.keys.map { |status| [status, status] }, @status) %>
+      </div>
+      <div class="field">
+        <%= label_tag :customer_locale, t('tickets.locale') %>
+        <%= select_tag :customer_locale, options_for_select([[t('tickets.all'), ''], ['VI', 'vi'], ['EN', 'en']], @locale_filter) %>
+      </div>
+      <div class="field">
+        <%= label_tag :category, t('tickets.category') %>
+        <%= select_tag :category, options_for_select([[t('tickets.all'), '']] + TicketsController::CATEGORIES.fetch(current_organization.vertical).map { |category| [category, category] }, @category_filter) %>
+      </div>
+    </div>
+    <div class="navlinks">
+      <%= submit_tag t('tickets.apply_filters'), class: 'btn' %>
+      <%= link_to t('tickets.clear_filters'), tickets_path, class: 'btn secondary' %>
+    </div>
+  <% end %>
+</section>
+<section class="panel">
+  <% if @tickets.any? %>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th><%= t('tickets.number') %></th>
+        <th><%= t('tickets.customer') %></th>
+        <th><%= t('tickets.locale') %></th>
+        <th><%= t('tickets.category') %></th>
+        <th><%= t('tickets.reference') %></th>
+        <th><%= t('tickets.priority') %></th>
+        <th><%= t('tickets.status') %></th>
+      </tr></thead>
+      <tbody>
+        <% @tickets.each do |ticket| %>
+          <tr>
+            <td><%= link_to ticket.number, ticket_path(ticket) %></td>
+            <td><%= ticket.customer.external_key %></td>
+            <td><span class="pill"><%= ticket.customer.locale.upcase %></span></td>
+            <td><%= ticket.category %></td>
+            <td class="mono"><%= ticket.business_ref.presence || '—' %></td>
+            <td><span class="pill"><%= ticket.priority %></span></td>
+            <td><%= ticket.status %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table></div>
+  <% else %>
+    <div class="badge-empty"><%= t('tickets.empty') %></div>
+  <% end %>
+  <% if @filtered_count > @tickets.length %>
+    <p class="tiny muted"><%= t('tickets.page_limit') %></p>
+  <% end %>
+</section>

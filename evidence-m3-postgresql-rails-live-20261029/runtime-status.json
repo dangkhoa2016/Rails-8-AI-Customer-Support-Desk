@@ -1,0 +1,141 @@
+{
+  "captured_utc": "2026-10-29T14:17:20.223738+00:00",
+  "colab_host": "d912002e2a9f",
+  "credentials_or_ephemeral_url_recorded": false,
+  "db_invariants": {
+    "approved_v2": 12,
+    "article_versions": 212,
+    "captured_utc": "2026-10-29T14:16:59Z",
+    "embeddings": 0,
+    "kind": "M3_POSTGRESQL_READONLY_INVARIANTS",
+    "messages": 440,
+    "scope_eligible": false,
+    "synthetic_seed_audits": 240,
+    "tenants": [
+      {
+        "locale_counts": {
+          "en": 60,
+          "vi": 60
+        },
+        "slug": "novamart-store",
+        "status_counts": {
+          "closed": 20,
+          "new": 20,
+          "open": 20,
+          "pending_customer": 20,
+          "pending_internal": 20,
+          "resolved": 20
+        },
+        "tickets": 120
+      },
+      {
+        "locale_counts": {
+          "en": 60,
+          "vi": 60
+        },
+        "slug": "teamflow-cloud",
+        "status_counts": {
+          "closed": 20,
+          "new": 20,
+          "open": 20,
+          "pending_customer": 20,
+          "pending_internal": 20,
+          "resolved": 20
+        },
+        "tickets": 120
+      }
+    ],
+    "tickets": 240
+  },
+  "desktop_commander_device_id": "d2536713-6975-49cb-8955-969067f3726f",
+  "embeddings_in_fresh_db": 0,
+  "git_commit_push_by_this_stage": false,
+  "git_head": "b4df710",
+  "https_http": {
+    "credentials_recorded": false,
+    "gate_without_auth": 303,
+    "origin_type": "ephemeral_https_quick_tunnel",
+    "post_requests_other_than_login": "NONE",
+    "results": [
+      {
+        "ai_search_page_status": 200,
+        "cross_tenant_leak": false,
+        "detail_status": 200,
+        "open_vi_filter_tickets": 10,
+        "tenant": "teamflow-cloud",
+        "ticket_index_status": 200
+      },
+      {
+        "ai_search_page_status": 200,
+        "cross_tenant_leak": false,
+        "detail_status": 200,
+        "open_vi_filter_tickets": 10,
+        "tenant": "novamart-store",
+        "ticket_index_status": 200
+      }
+    ],
+    "status": "PASS_PUBLIC_RAILS_M3_READONLY_HTTP"
+  },
+  "idempotent_second_import": {
+    "messages_inserted": 0,
+    "seed_audits_inserted": 0,
+    "tickets_inserted": 0
+  },
+  "initial_m3_import": {
+    "messages_inserted": 440,
+    "seed_audits_inserted": 240,
+    "tickets_inserted": 240
+  },
+  "kind": "RAILS8_M3_COLAB_POSTGRESQL_RAILS_LIVE_ACCEPTANCE_V1",
+  "local_http": {
+    "credentials_recorded": false,
+    "gate_without_auth": 303,
+    "origin_type": "loopback",
+    "post_requests_other_than_login": "NONE",
+    "results": [
+      {
+        "ai_search_page_status": 200,
+        "cross_tenant_leak": false,
+        "detail_status": 200,
+        "open_vi_filter_tickets": 10,
+        "tenant": "teamflow-cloud",
+        "ticket_index_status": 200
+      },
+      {
+        "ai_search_page_status": 200,
+        "cross_tenant_leak": false,
+        "detail_status": 200,
+        "open_vi_filter_tickets": 10,
+        "tenant": "novamart-store",
+        "ticket_index_status": 200
+      }
+    ],
+    "status": "PASS_LOCAL_RAILS_M3_HTTP"
+  },
+  "m1_source_sha256": "6a266e42c0099c18d8560ed88e835f8873b62c35811dac28e350667ce3d68680",
+  "m2_approved_v2_snapshot_sha256": "12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f",
+  "m2_claim64_approval_sha256": "f54bdd06b90af59331c4b9165e36a2b9dd19f740512be0fd413b2a0b3746cff9",
+  "m3_dataset_sha256": "398e3de1fe231eaa6baabded10183502ed8551f33869c188d534e16bfe2c81fd",
+  "m3_integration": {
+    "assertions": 56,
+    "errors": 0,
+    "failures": 0,
+    "tests": 6
+  },
+  "modal_db_dump_roundtrip": "PASS_BYTE_IDENTICAL_AND_PG_RESTORE_LIST",
+  "modal_gpu_calls_this_stage": 0,
+  "post_m3_dump_sha256": "8a85bfc16d27fc4cd0fc50d07c1c693c43707ed1a3fd9da743142f6edbb1a4fc",
+  "pre_m3_dump_sha256": "e89b629394ddf684c46b7d5e9d8fc8bf2e932163c1c9dc2a5356a29d563ceb5d",
+  "python_m3_tests": {
+    "status": "PASS",
+    "tests": 10
+  },
+  "rails_full_regression": {
+    "assertions": 4480,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests": 84
+  },
+  "sealed80_answerability_gate": "BLOCKED"
+}
