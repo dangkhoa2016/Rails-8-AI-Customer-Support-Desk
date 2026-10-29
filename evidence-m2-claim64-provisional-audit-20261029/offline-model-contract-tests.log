@@ -1,0 +1,15 @@
+test_bad_tenant_and_hash_rejected (__main__.ContractTest.test_bad_tenant_and_hash_rejected) ... ok
+test_fabricated_quote_rejected (__main__.ContractTest.test_fabricated_quote_rejected) ... ok
+test_forged_kb_evidence_rejected (__main__.ContractTest.test_forged_kb_evidence_rejected) ... ok
+test_good_manual_fixtures_are_not_misreported_as_inference (__main__.ContractTest.test_good_manual_fixtures_are_not_misreported_as_inference) ... ok
+test_invalid_probability_triples_rejected (__main__.ContractTest.test_invalid_probability_triples_rejected) ... ok
+test_missing_intent_text_rejected (__main__.ContractTest.test_missing_intent_text_rejected) ... ok
+test_pii_rejected (__main__.ContractTest.test_pii_rejected) ... ok
+test_unexpected_json_field_rejected (__main__.ContractTest.test_unexpected_json_field_rejected) ... ok
+test_wrong_kb_version_or_tenant_rejected (__main__.ContractTest.test_wrong_kb_version_or_tenant_rejected) ... ok
+test_wrong_predicted_label_rejected (__main__.ContractTest.test_wrong_predicted_label_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK

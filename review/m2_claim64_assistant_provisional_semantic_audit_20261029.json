@@ -1,0 +1,526 @@
+{
+  "kind": "ASSISTANT_PROVISIONAL_SEMANTIC_AUDIT_64",
+  "status": "PROVISIONAL_NOT_INDEPENDENT_HUMAN_APPROVAL",
+  "created_date": "2026-10-29",
+  "method": "Second-pass manual policy reading by assistant; intentionally separate from original developer gold labels; source is approved KB v2 and blind human queue. A/N/U distinctions are question-answerability, not execution eligibility.",
+  "category_definitions": {
+    "policy_supported_affirmative": "KB provides affirmative/conditional policy answer",
+    "policy_supported_explicit_negative": "KB explicitly supports an answer NO / disallows guarantee/action",
+    "not_documented_in_approved_kb": "Neither support nor explicit prohibition documented in approved KB of tenant/locale; cannot infer product/service absence."
+  },
+  "reviewer_attestation": "AI-generated provisional recommendation only. No external or independent human adjudication occurred.",
+  "items": [
+    {
+      "claim_id": "CL-TF-VI-01-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "TF-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-01-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-02-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-02-2",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-03-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-03-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": null,
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "When to escalate / Khi cần chuyển cấp and Conditional response / Câu trả lời mẫu"
+    },
+    {
+      "claim_id": "CL-TF-VI-04-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-04-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-05-1",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-002",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-05-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-06-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-VI-06-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-07-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-07-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-08-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-VI-08-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-01-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-01-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "TF-POL-002",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-02-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-02-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-03-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-03-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": null,
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "When to escalate / Khi cần chuyển cấp and Conditional response / Câu trả lời mẫu"
+    },
+    {
+      "claim_id": "CL-TF-EN-04-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-015",
+      "policy_reference": "M0-CLAR-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-04-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-05-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-05-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-06-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "TF-KB-012",
+      "policy_reference": "M0-CLAR-001",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-TF-EN-06-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-07-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-07-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-08-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-TF-EN-08-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-01-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-01-2",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-02-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "M0-CLAR-004",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-02-2",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "M0-CLAR-005",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-03-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-020",
+      "policy_reference": "NM-POL-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-03-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "NM-KB-020",
+      "policy_reference": "NM-POL-003",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-04-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-029",
+      "policy_reference": "NM-POL-004",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-04-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-05-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-05-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-06-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "NM-POL-005",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-VI-06-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-07-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-07-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-08-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-VI-08-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-01-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-01-2",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-02-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "NM-POL-005",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-02-2",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "M0-CLAR-005",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-03-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-020",
+      "policy_reference": "NM-POL-003",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-03-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "NM-KB-020",
+      "policy_reference": "NM-POL-003",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-04-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-029",
+      "policy_reference": "NM-POL-004",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-04-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-05-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-014",
+      "policy_reference": "NM-POL-002",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-05-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-06-1",
+      "category": "policy_supported_affirmative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "NM-POL-005",
+      "audit_note": "A conditional policy answer is present in the cited approved article; case-specific data and human review still required.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-06-2",
+      "category": "policy_supported_explicit_negative",
+      "supporting_article_key": "NM-KB-030",
+      "policy_reference": "NM-POL-005",
+      "audit_note": "The cited approved policy explicitly disallows or refuses the requested guarantee/action; a grounded 'No' is answerable, but the action must not be performed.",
+      "evidence_locator": "Authoritative policy / Chính sách có hiệu lực and Handling steps / Các bước xử lý"
+    },
+    {
+      "claim_id": "CL-NM-EN-07-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-07-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-08-1",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    },
+    {
+      "claim_id": "CL-NM-EN-08-2",
+      "category": "not_documented_in_approved_kb",
+      "supporting_article_key": null,
+      "policy_reference": null,
+      "audit_note": "No applicable affirmative or explicit-negative policy found within the reviewed approved tenant/locale corpus; do not infer service absence or approval.",
+      "evidence_locator": "Entire approved tenant/locale KB corpus checked; no matching authorization"
+    }
+  ]
+}
