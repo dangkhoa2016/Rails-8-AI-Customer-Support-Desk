@@ -1,0 +1,7 @@
+{
+  "status": "PASS_PRE_GPU",
+  "manifest_sha256": "bab124fdab56ed5b0bc1d36b5208a240d4ddcca0bed6b336914df0158e50508a",
+  "premises_sha256": "419e2e6c7547c579f410c99587a9449d52e259115086cd84b77a9fb4bb73874e",
+  "code_version": "one_time_20261029",
+  "note": "No deployed API. Jobs are ephemeral. Developer-only test labels."
+}

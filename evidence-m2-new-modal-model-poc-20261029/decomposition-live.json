@@ -1,0 +1,330 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "gpu": "NVIDIA A10",
+  "model_loading_seconds": 30.254,
+  "gpu_peak_allocated_bytes": 8168526336,
+  "results": [
+    {
+      "id": "POC-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "10088254dfb7dbfe412bfceebed861072a50e4051430089510babe25b4d12956",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 18,\n      \"source_end\": 30,\n      \"source_excerpt\": \"Tôi cần kiểm tra bằng chứng nào\",\n      \"hypothesis\": \"Người dùng cần kiểm tra bằng chứng để xác minh tình trạng gói chưa kích hoạt\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 31,\n      \"source_end\": 48,\n      \"source_excerpt\": \"và có thể cam kết sửa xong trong 30 phút không?\",\n      \"hypothesis\": \"Người dùng yêu cầu cam kết sửa vấn đề trong vòng 30 phút\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 17,\n      \"reason\": \"ambiguous\"\n    },\n    {\n      \"source_start\": 49,\n      \"source_end\": 54,\n      \"reason\": \"incomplete_context\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 18,
+            "source_end": 30,
+            "source_excerpt": "Tôi cần kiểm tra bằng chứng nào",
+            "hypothesis": "Người dùng cần kiểm tra bằng chứng để xác minh tình trạng gói chưa kích hoạt",
+            "intent": "requested_action",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 31,
+            "source_end": 48,
+            "source_excerpt": "và có thể cam kết sửa xong trong 30 phút không?",
+            "hypothesis": "Người dùng yêu cầu cam kết sửa vấn đề trong vòng 30 phút",
+            "intent": "requested_action",
+            "needs_case_data": false
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 17,
+            "reason": "ambiguous"
+          },
+          {
+            "source_start": 49,
+            "source_end": 54,
+            "reason": "incomplete_context"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 8.072,
+      "generated_tokens": 255,
+      "input_tokens": 288
+    },
+    {
+      "id": "POC-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question_sha256": "974141e8d7d13c9982f9819a663aec9c198f665f3a0439be532d96704b9477ee",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 0,\n      \"source_end\": 28,\n      \"source_excerpt\": \"Tôi gửi yêu cầu hoàn tiền vào ngày thứ 8 sau hóa đơn đầu tiên.\",\n      \"hypothesis\": \"Người gửi đã gửi yêu cầu hoàn tiền vào ngày thứ 8 sau ngày hóa đơn đầu tiên.\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 29,\n      \"source_end\": 53,\n      \"source_excerpt\": \"Chính sách xét ngoại lệ ra sao\",\n      \"hypothesis\": \"Có tồn tại một chính sách về việc xét ngoại lệ, và người hỏi muốn biết chi tiết về chính sách đó.\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c3\",\n      \"source_start\": 54,\n      \"source_end\": 70,\n      \"source_excerpt\": \"và có tự hủy gói không?\",\n      \"hypothesis\": \"Người hỏi muốn biết liệu việc gửi yêu cầu hoàn tiền có dẫn đến việc tự hủy gói không.\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 28,\n      \"reason\": \"ambiguous\"\n    },\n    {\n      \"source_start\": 29,\n      \"source_end\": 53,\n      \"reason\": \"too_many_intents\"\n    },\n    {\n      \"source_start\": 54,\n      \"source_end\": 70,\n      \"reason\": \"incomplete_context\"\n    }",
+      "parsed_model_output": null,
+      "parse_status": "INVALID_JSON_NO_REPAIR",
+      "generation_seconds": 11.472,
+      "generated_tokens": 384,
+      "input_tokens": 284
+    },
+    {
+      "id": "POC-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "d6f4ccf270307628698727d8a59048e446b9aedc87645ef4033f3a7db55285ae",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 21,\n      \"source_end\": 38,\n      \"source_excerpt\": \"What must support check\",\n      \"hypothesis\": \"Support must perform a checklist to verify the upgrade status\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 40,\n      \"source_end\": 60,\n      \"source_excerpt\": \"and can you guarantee a fix today?\",\n      \"hypothesis\": \"A guarantee of a fix being implemented today is requested\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": true\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 20,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 21,
+            "source_end": 38,
+            "source_excerpt": "What must support check",
+            "hypothesis": "Support must perform a checklist to verify the upgrade status",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 40,
+            "source_end": 60,
+            "source_excerpt": "and can you guarantee a fix today?",
+            "hypothesis": "A guarantee of a fix being implemented today is requested",
+            "intent": "requested_action",
+            "needs_case_data": true
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 20,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 5.932,
+      "generated_tokens": 201,
+      "input_tokens": 279
+    },
+    {
+      "id": "POC-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question_sha256": "3ac1fb693a8776275b3a674b112670ed16f766df583e7a4568b3fd928efa6136",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 31,\n      \"source_end\": 43,\n      \"source_excerpt\": \"A refund was requested on day seven after the first paid invoice\",\n      \"hypothesis\": \"A refund was requested seven days after the first paid invoice\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 44,\n      \"source_end\": 68,\n      \"source_excerpt\": \"Is it eligible for review and does requesting it automatically cancel the subscription?\",\n      \"hypothesis\": \"The eligibility of the refund for review and whether requesting it automatically cancels the subscription are questions\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 30,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"source_start\": 68,\n      \"source_end\": 80,\n      \"reason\": \"ambiguous\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 31,
+            "source_end": 43,
+            "source_excerpt": "A refund was requested on day seven after the first paid invoice",
+            "hypothesis": "A refund was requested seven days after the first paid invoice",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 44,
+            "source_end": 68,
+            "source_excerpt": "Is it eligible for review and does requesting it automatically cancel the subscription?",
+            "hypothesis": "The eligibility of the refund for review and whether requesting it automatically cancels the subscription are questions",
+            "intent": "policy_question",
+            "needs_case_data": false
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 30,
+            "reason": "untrusted_text"
+          },
+          {
+            "source_start": 68,
+            "source_end": 80,
+            "reason": "ambiguous"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 7.811,
+      "generated_tokens": 253,
+      "input_tokens": 279
+    },
+    {
+      "id": "POC-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "aa04cd9341924bc718b89cafc6152e688994117eca5cf400d371167b46f15b9d",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 18,\n      \"source_end\": 28,\n      \"source_excerpt\": \"đơn hàng sau giảm giá còn 499.999 đồng\",\n      \"hypothesis\": \"Đơn hàng sau khi giảm giá còn 499.999 đồng\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 30,\n      \"source_end\": 40,\n      \"source_excerpt\": \"phí giao thường bao nhiêu\",\n      \"hypothesis\": \"Phí giao hàng thường là bao nhiêu\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c3\",\n      \"source_start\": 42,\n      \"source_end\": 60,\n      \"source_excerpt\": \"có được miễn phí giao nhanh bằng điểm thưởng không\",\n      \"hypothesis\": \"Có được miễn phí giao nhanh bằng điểm thưởng không\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 17,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 18,
+            "source_end": 28,
+            "source_excerpt": "đơn hàng sau giảm giá còn 499.999 đồng",
+            "hypothesis": "Đơn hàng sau khi giảm giá còn 499.999 đồng",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 30,
+            "source_end": 40,
+            "source_excerpt": "phí giao thường bao nhiêu",
+            "hypothesis": "Phí giao hàng thường là bao nhiêu",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c3",
+            "source_start": 42,
+            "source_end": 60,
+            "source_excerpt": "có được miễn phí giao nhanh bằng điểm thưởng không",
+            "hypothesis": "Có được miễn phí giao nhanh bằng điểm thưởng không",
+            "intent": "policy_question",
+            "needs_case_data": false
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 17,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 9.514,
+      "generated_tokens": 309,
+      "input_tokens": 293
+    },
+    {
+      "id": "POC-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question_sha256": "2a25ec5404dd921d368eaac7938eb64756e409d770b246d8a1670702531439b7",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 18,\n      \"source_end\": 24,\n      \"source_excerpt\": \"được báo ở ngày thứ 14 sau giao\",\n      \"hypothesis\": \"Hàng lỗi được báo sau 14 ngày kể từ ngày giao hàng\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 25,\n      \"source_end\": 34,\n      \"source_excerpt\": \"Còn đủ hạn báo lỗi không\",\n      \"hypothesis\": \"Thời gian báo lỗi cho hàng lỗi vẫn còn đủ hạn sau 14 ngày kể từ ngày giao hàng\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c3\",\n      \"source_start\": 35,\n      \"source_end\": 50,\n      \"source_excerpt\": \"và AI có thể tự duyệt gửi hàng thay thế không?\",\n      \"hypothesis\": \"AI có khả năng tự động duyệt và gửi hàng thay thế cho hàng lỗi\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 17,\n      \"reason\": \"untrusted_text\"\n    },\n    {\n      \"source_start\": 51,\n      \"source_end\": 52,\n      \"reason\": \"incomplete_context\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 18,
+            "source_end": 24,
+            "source_excerpt": "được báo ở ngày thứ 14 sau giao",
+            "hypothesis": "Hàng lỗi được báo sau 14 ngày kể từ ngày giao hàng",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 25,
+            "source_end": 34,
+            "source_excerpt": "Còn đủ hạn báo lỗi không",
+            "hypothesis": "Thời gian báo lỗi cho hàng lỗi vẫn còn đủ hạn sau 14 ngày kể từ ngày giao hàng",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c3",
+            "source_start": 35,
+            "source_end": 50,
+            "source_excerpt": "và AI có thể tự duyệt gửi hàng thay thế không?",
+            "hypothesis": "AI có khả năng tự động duyệt và gửi hàng thay thế cho hàng lỗi",
+            "intent": "requested_action",
+            "needs_case_data": false
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 17,
+            "reason": "untrusted_text"
+          },
+          {
+            "source_start": 51,
+            "source_end": 52,
+            "reason": "incomplete_context"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 10.252,
+      "generated_tokens": 350,
+      "input_tokens": 287
+    },
+    {
+      "id": "POC-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "2887a5c27810a1beb737b5b7c0491c9e674c17f0fa0704bdd559013834a8d6ad",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 23,\n      \"source_end\": 34,\n      \"source_excerpt\": \"What is the delivery estimate\",\n      \"hypothesis\": \"The delivery estimate for the parcel is available and can be provided.\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 35,\n      \"source_end\": 65,\n      \"source_excerpt\": \"can the store guarantee it arrives before noon tomorrow?\",\n      \"hypothesis\": \"The store can guarantee that the parcel will arrive before noon tomorrow.\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": true\n    }\n  ],\n  \"unresolved\": [\n    {\n      \"source_start\": 0,\n      \"source_end\": 22,\n      \"reason\": \"untrusted_text\"\n    }\n  ]\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 23,
+            "source_end": 34,
+            "source_excerpt": "What is the delivery estimate",
+            "hypothesis": "The delivery estimate for the parcel is available and can be provided.",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 35,
+            "source_end": 65,
+            "source_excerpt": "can the store guarantee it arrives before noon tomorrow?",
+            "hypothesis": "The store can guarantee that the parcel will arrive before noon tomorrow.",
+            "intent": "requested_action",
+            "needs_case_data": true
+          }
+        ],
+        "unresolved": [
+          {
+            "source_start": 0,
+            "source_end": 22,
+            "reason": "untrusted_text"
+          }
+        ]
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 6.041,
+      "generated_tokens": 208,
+      "input_tokens": 279
+    },
+    {
+      "id": "POC-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question_sha256": "d80dd2c66a7ac5a67a7bfeaa73bbcdb4fd5470e5b5737511bfa9de694e9bef49",
+      "raw_model_output": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"source_start\": 30,\n      \"source_end\": 44,\n      \"source_excerpt\": \"Can I request a return\",\n      \"hypothesis\": \"The tenant is requesting a return of an unused item.\",\n      \"intent\": \"policy_question\",\n      \"needs_case_data\": false\n    },\n    {\n      \"id\": \"c2\",\n      \"source_start\": 45,\n      \"source_end\": 65,\n      \"source_excerpt\": \"and reserve an exact courier pickup at 11 a.m.\",\n      \"hypothesis\": \"The tenant wants to reserve a courier pickup at exactly 11 a.m.\",\n      \"intent\": \"requested_action\",\n      \"needs_case_data\": false\n    }\n  ],\n  \"unresolved\": []\n}",
+      "parsed_model_output": {
+        "claims": [
+          {
+            "id": "c1",
+            "source_start": 30,
+            "source_end": 44,
+            "source_excerpt": "Can I request a return",
+            "hypothesis": "The tenant is requesting a return of an unused item.",
+            "intent": "policy_question",
+            "needs_case_data": false
+          },
+          {
+            "id": "c2",
+            "source_start": 45,
+            "source_end": 65,
+            "source_excerpt": "and reserve an exact courier pickup at 11 a.m.",
+            "hypothesis": "The tenant wants to reserve a courier pickup at exactly 11 a.m.",
+            "intent": "requested_action",
+            "needs_case_data": false
+          }
+        ],
+        "unresolved": []
+      },
+      "parse_status": "JSON_PARSED",
+      "generation_seconds": 5.413,
+      "generated_tokens": 180,
+      "input_tokens": 284
+    }
+  ],
+  "warning": "Unverified model decomposition; no autonomous use",
+  "remote_invocation_wall_seconds": 105.096
+}

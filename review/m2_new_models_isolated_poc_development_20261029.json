@@ -1,0 +1,178 @@
+{
+  "id": "M2_NEW_MODELS_MODAL_ISOLATED_POC_20261029",
+  "status": "FROZEN_DEVELOPMENT_SMOKE_NOT_INDEPENDENT_NOT_SEALED_HOLDOUT",
+  "seed": "NO_RANDOMNESS_MANUALLY_AUTHORED",
+  "synthetic_only": true,
+  "source_description": "8 previously unused POC composite questions manually written; 12 hypothesis/policy examples manually authored for offline evaluation, not human adjudicated.",
+  "model_pins": {
+    "decomposition": {
+      "id": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "license": "apache-2.0",
+      "gpu": "A10"
+    },
+    "nli": {
+      "id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+      "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+      "license": "mit",
+      "gpu": "T4"
+    }
+  },
+  "budget": {
+    "decomposition_gpu_function_max_seconds": 480,
+    "nli_gpu_function_max_seconds": 300,
+    "container_concurrency": 1,
+    "execution_count_per_model": 1,
+    "allow_public_endpoint": false,
+    "allow_existing_endpoint_modification": false,
+    "allow_business_writes": false
+  },
+  "decomposition_cases": [
+    {
+      "id": "POC-TF-VI-01",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question": "Hóa đơn đã thanh toán nhưng gói chưa kích hoạt. Tôi cần kiểm tra bằng chứng nào, và có thể cam kết sửa xong trong 30 phút không?"
+    },
+    {
+      "id": "POC-TF-VI-02",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "question": "Tôi gửi yêu cầu hoàn tiền vào ngày thứ 8 sau hóa đơn đầu tiên. Chính sách xét ngoại lệ ra sao và có tự hủy gói không?"
+    },
+    {
+      "id": "POC-TF-EN-01",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question": "We paid for an upgrade but the workspace still shows the old plan. What must support check, and can you guarantee a fix today?"
+    },
+    {
+      "id": "POC-TF-EN-02",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "question": "A refund was requested on day seven after the first paid invoice. Is it eligible for review and does requesting it automatically cancel the subscription?"
+    },
+    {
+      "id": "POC-NM-VI-01",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question": "Đơn hàng sau giảm giá còn 499.999 đồng. Phí giao thường bao nhiêu và có được miễn phí giao nhanh bằng điểm thưởng không?"
+    },
+    {
+      "id": "POC-NM-VI-02",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "question": "Hàng lỗi được báo ở ngày thứ 14 sau giao. Còn đủ hạn báo lỗi không và AI có thể tự duyệt gửi hàng thay thế không?"
+    },
+    {
+      "id": "POC-NM-EN-01",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question": "My parcel has been handed to the carrier. What is the delivery estimate, and can the store guarantee it arrives before noon tomorrow?"
+    },
+    {
+      "id": "POC-NM-EN-02",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "question": "The unused item was delivered seven days ago with original packaging. Can I request a return and reserve an exact courier pickup at 11 a.m.?"
+    }
+  ],
+  "nli_cases": [
+    {
+      "id": "NLI-TF-VI-E",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "article_key": "TF-KB-012",
+      "gold_label": "entailment",
+      "hypothesis": "Để xác nhận gói mới đã kích hoạt, cần hóa đơn paid, activation succeeded khớp và effective_plan phù hợp."
+    },
+    {
+      "id": "NLI-TF-VI-C",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "article_key": "TF-KB-012",
+      "gold_label": "contradiction",
+      "hypothesis": "Chỉ cần hóa đơn paid là hệ thống phải tự động xác nhận gói mới đang có hiệu lực."
+    },
+    {
+      "id": "NLI-TF-VI-N",
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "article_key": "TF-KB-015",
+      "gold_label": "neutral",
+      "hypothesis": "TeamFlow Cloud luôn chuyển tiền hoàn vào tài khoản ngân hàng khác trong hai giờ."
+    },
+    {
+      "id": "NLI-TF-EN-E",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "article_key": "TF-KB-015",
+      "gold_label": "entailment",
+      "hypothesis": "A refund request on calendar day seven is eligible for manual review but not automatic approval."
+    },
+    {
+      "id": "NLI-TF-EN-C",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "article_key": "TF-KB-015",
+      "gold_label": "contradiction",
+      "hypothesis": "Submitting a refund request automatically cancels the subscription immediately."
+    },
+    {
+      "id": "NLI-TF-EN-N",
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "article_key": "TF-KB-012",
+      "gold_label": "neutral",
+      "hypothesis": "All TeamFlow Cloud workspaces use a mandatory SAML identity provider."
+    },
+    {
+      "id": "NLI-NM-VI-E",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-014",
+      "gold_label": "entailment",
+      "hypothesis": "Đơn có giá trị hàng sau giảm giá đúng 500.000 VND được miễn phí vận chuyển thường."
+    },
+    {
+      "id": "NLI-NM-VI-C",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-020",
+      "gold_label": "contradiction",
+      "hypothesis": "Thời gian giao dự kiến sau handoff là cam kết bảo đảm khách nhận đúng giờ."
+    },
+    {
+      "id": "NLI-NM-VI-N",
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-029",
+      "gold_label": "neutral",
+      "hypothesis": "NovaMart có dịch vụ hẹn nhân viên tới lấy hàng trả lúc 17 giờ hằng ngày."
+    },
+    {
+      "id": "NLI-NM-EN-E",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-030",
+      "gold_label": "entailment",
+      "hypothesis": "A defective-item report made on day fourteen after verified delivery remains within the reporting window."
+    },
+    {
+      "id": "NLI-NM-EN-C",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-029",
+      "gold_label": "contradiction",
+      "hypothesis": "An ordinary return of an unused product in its original packaging is automatically approved when requested on day seven."
+    },
+    {
+      "id": "NLI-NM-EN-N",
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-014",
+      "gold_label": "neutral",
+      "hypothesis": "NovaMart lets customers redeem reward points for free premium shipping."
+    }
+  ]
+}

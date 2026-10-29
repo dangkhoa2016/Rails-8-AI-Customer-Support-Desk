@@ -1,0 +1,363 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M2 isolated Modal models — GPU evidence</title><style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif}body{margin:0;background:#071526;color:#eef5ff}main{max-width:1120px;margin:auto;padding:30px 20px}
+h1{font-size:clamp(1.6rem,3vw,2.2rem)}h2{margin-top:40px}.sub,small{color:#afc4df}
+.banner{padding:14px 18px;background:#31291d;border:1px solid #c39d55;border-radius:10px}
+.summary{display:flex;gap:15px;flex-wrap:wrap;margin:22px 0}.stat{background:#142940;border:1px solid #476585;padding:16px;border-radius:11px;min-width:150px}
+.stat b{display:block;font-size:1.5rem}article.case{background:#11263e;border:1px solid #385978;border-radius:12px;padding:20px;margin:16px 0}
+.meta{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap}.meta b{color:#ffbcbc}p{line-height:1.6}
+details{margin-top:10px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#07172a;padding:16px;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:.91rem}td,th{padding:12px;border-bottom:1px solid #355574;text-align:left;vertical-align:top}td small{display:block}
+.tablewrap{overflow-x:auto}code{overflow-wrap:anywhere}
+</style></head><body><main>
+<p class="sub">Rails 8 AI Customer Support Desk · October 29, 2026 · synthetic development only</p>
+<h1>Isolated Modal GPU model POC</h1>
+<div class="banner"><strong>NO RELEASE.</strong> Developer-authored inputs. No independent human sign-off, no customer data, no business writes, no model endpoint integration.
+All raw outputs are shown unmodified. Scores are uncalibrated.</div>
+<div class="summary">
+<div class="stat">Qwen JSON parsed<b>7 / 8</b></div>
+<div class="stat">Qwen valid source spans<b>0 / 8</b></div>
+<div class="stat">NLI source integrity<b>12 / 12</b></div>
+<div class="stat">NLI matched dev labels<b>9 / 12</b></div>
+<div class="stat">GPU job wall time<b>123.3 s</b></div>
+</div>
+<h2>Qwen3-4B-Instruct-2507 — manual questions, model-generated claims</h2>
+<p class="sub">Pinned SHA cdbee75f17c01a7cc42f958dc650907174af0554. GPU NVIDIA A10; GPU allocated 7.61 GiB peak. 7/8 parsed JSON but none meets exact source-span integrity; NO silent repair.</p>
+<article class="case"><div class="meta"><code>POC-TF-VI-01</code><span>teamflow-cloud / VI</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> Hóa đơn đã thanh toán nhưng gói chưa kích hoạt. Tôi cần kiểm tra bằng chứng nào, và có thể cam kết sửa xong trong 30 phút không?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 8.072 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 18,
+      &quot;source_end&quot;: 30,
+      &quot;source_excerpt&quot;: &quot;Tôi cần kiểm tra bằng chứng nào&quot;,
+      &quot;hypothesis&quot;: &quot;Người dùng cần kiểm tra bằng chứng để xác minh tình trạng gói chưa kích hoạt&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 31,
+      &quot;source_end&quot;: 48,
+      &quot;source_excerpt&quot;: &quot;và có thể cam kết sửa xong trong 30 phút không?&quot;,
+      &quot;hypothesis&quot;: &quot;Người dùng yêu cầu cam kết sửa vấn đề trong vòng 30 phút&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 17,
+      &quot;reason&quot;: &quot;ambiguous&quot;
+    },
+    {
+      &quot;source_start&quot;: 49,
+      &quot;source_end&quot;: 54,
+      &quot;reason&quot;: &quot;incomplete_context&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-TF-VI-02</code><span>teamflow-cloud / VI</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> Tôi gửi yêu cầu hoàn tiền vào ngày thứ 8 sau hóa đơn đầu tiên. Chính sách xét ngoại lệ ra sao và có tự hủy gói không?</p>
+<p class="sub">JSON: INVALID_JSON_NO_REPAIR · Schema/source: INVALID_JSON_OR_WRONG_ROOT_TYPE_NO_REPAIR · Generation: 11.472 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 28,
+      &quot;source_excerpt&quot;: &quot;Tôi gửi yêu cầu hoàn tiền vào ngày thứ 8 sau hóa đơn đầu tiên.&quot;,
+      &quot;hypothesis&quot;: &quot;Người gửi đã gửi yêu cầu hoàn tiền vào ngày thứ 8 sau ngày hóa đơn đầu tiên.&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 29,
+      &quot;source_end&quot;: 53,
+      &quot;source_excerpt&quot;: &quot;Chính sách xét ngoại lệ ra sao&quot;,
+      &quot;hypothesis&quot;: &quot;Có tồn tại một chính sách về việc xét ngoại lệ, và người hỏi muốn biết chi tiết về chính sách đó.&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c3&quot;,
+      &quot;source_start&quot;: 54,
+      &quot;source_end&quot;: 70,
+      &quot;source_excerpt&quot;: &quot;và có tự hủy gói không?&quot;,
+      &quot;hypothesis&quot;: &quot;Người hỏi muốn biết liệu việc gửi yêu cầu hoàn tiền có dẫn đến việc tự hủy gói không.&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 28,
+      &quot;reason&quot;: &quot;ambiguous&quot;
+    },
+    {
+      &quot;source_start&quot;: 29,
+      &quot;source_end&quot;: 53,
+      &quot;reason&quot;: &quot;too_many_intents&quot;
+    },
+    {
+      &quot;source_start&quot;: 54,
+      &quot;source_end&quot;: 70,
+      &quot;reason&quot;: &quot;incomplete_context&quot;
+    }</pre></details></article><article class="case"><div class="meta"><code>POC-TF-EN-01</code><span>teamflow-cloud / EN</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> We paid for an upgrade but the workspace still shows the old plan. What must support check, and can you guarantee a fix today?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 5.932 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 21,
+      &quot;source_end&quot;: 38,
+      &quot;source_excerpt&quot;: &quot;What must support check&quot;,
+      &quot;hypothesis&quot;: &quot;Support must perform a checklist to verify the upgrade status&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 40,
+      &quot;source_end&quot;: 60,
+      &quot;source_excerpt&quot;: &quot;and can you guarantee a fix today?&quot;,
+      &quot;hypothesis&quot;: &quot;A guarantee of a fix being implemented today is requested&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: true
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 20,
+      &quot;reason&quot;: &quot;untrusted_text&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-TF-EN-02</code><span>teamflow-cloud / EN</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> A refund was requested on day seven after the first paid invoice. Is it eligible for review and does requesting it automatically cancel the subscription?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 7.811 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 31,
+      &quot;source_end&quot;: 43,
+      &quot;source_excerpt&quot;: &quot;A refund was requested on day seven after the first paid invoice&quot;,
+      &quot;hypothesis&quot;: &quot;A refund was requested seven days after the first paid invoice&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 44,
+      &quot;source_end&quot;: 68,
+      &quot;source_excerpt&quot;: &quot;Is it eligible for review and does requesting it automatically cancel the subscription?&quot;,
+      &quot;hypothesis&quot;: &quot;The eligibility of the refund for review and whether requesting it automatically cancels the subscription are questions&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 30,
+      &quot;reason&quot;: &quot;untrusted_text&quot;
+    },
+    {
+      &quot;source_start&quot;: 68,
+      &quot;source_end&quot;: 80,
+      &quot;reason&quot;: &quot;ambiguous&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-NM-VI-01</code><span>novamart-store / VI</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> Đơn hàng sau giảm giá còn 499.999 đồng. Phí giao thường bao nhiêu và có được miễn phí giao nhanh bằng điểm thưởng không?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 9.514 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 18,
+      &quot;source_end&quot;: 28,
+      &quot;source_excerpt&quot;: &quot;đơn hàng sau giảm giá còn 499.999 đồng&quot;,
+      &quot;hypothesis&quot;: &quot;Đơn hàng sau khi giảm giá còn 499.999 đồng&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 30,
+      &quot;source_end&quot;: 40,
+      &quot;source_excerpt&quot;: &quot;phí giao thường bao nhiêu&quot;,
+      &quot;hypothesis&quot;: &quot;Phí giao hàng thường là bao nhiêu&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c3&quot;,
+      &quot;source_start&quot;: 42,
+      &quot;source_end&quot;: 60,
+      &quot;source_excerpt&quot;: &quot;có được miễn phí giao nhanh bằng điểm thưởng không&quot;,
+      &quot;hypothesis&quot;: &quot;Có được miễn phí giao nhanh bằng điểm thưởng không&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 17,
+      &quot;reason&quot;: &quot;untrusted_text&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-NM-VI-02</code><span>novamart-store / VI</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> Hàng lỗi được báo ở ngày thứ 14 sau giao. Còn đủ hạn báo lỗi không và AI có thể tự duyệt gửi hàng thay thế không?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 10.252 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 18,
+      &quot;source_end&quot;: 24,
+      &quot;source_excerpt&quot;: &quot;được báo ở ngày thứ 14 sau giao&quot;,
+      &quot;hypothesis&quot;: &quot;Hàng lỗi được báo sau 14 ngày kể từ ngày giao hàng&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 25,
+      &quot;source_end&quot;: 34,
+      &quot;source_excerpt&quot;: &quot;Còn đủ hạn báo lỗi không&quot;,
+      &quot;hypothesis&quot;: &quot;Thời gian báo lỗi cho hàng lỗi vẫn còn đủ hạn sau 14 ngày kể từ ngày giao hàng&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c3&quot;,
+      &quot;source_start&quot;: 35,
+      &quot;source_end&quot;: 50,
+      &quot;source_excerpt&quot;: &quot;và AI có thể tự duyệt gửi hàng thay thế không?&quot;,
+      &quot;hypothesis&quot;: &quot;AI có khả năng tự động duyệt và gửi hàng thay thế cho hàng lỗi&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 17,
+      &quot;reason&quot;: &quot;untrusted_text&quot;
+    },
+    {
+      &quot;source_start&quot;: 51,
+      &quot;source_end&quot;: 52,
+      &quot;reason&quot;: &quot;incomplete_context&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-NM-EN-01</code><span>novamart-store / EN</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> My parcel has been handed to the carrier. What is the delivery estimate, and can the store guarantee it arrives before noon tomorrow?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 6.041 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 23,
+      &quot;source_end&quot;: 34,
+      &quot;source_excerpt&quot;: &quot;What is the delivery estimate&quot;,
+      &quot;hypothesis&quot;: &quot;The delivery estimate for the parcel is available and can be provided.&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 35,
+      &quot;source_end&quot;: 65,
+      &quot;source_excerpt&quot;: &quot;can the store guarantee it arrives before noon tomorrow?&quot;,
+      &quot;hypothesis&quot;: &quot;The store can guarantee that the parcel will arrive before noon tomorrow.&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: true
+    }
+  ],
+  &quot;unresolved&quot;: [
+    {
+      &quot;source_start&quot;: 0,
+      &quot;source_end&quot;: 22,
+      &quot;reason&quot;: &quot;untrusted_text&quot;
+    }
+  ]
+}</pre></details></article><article class="case"><div class="meta"><code>POC-NM-EN-02</code><span>novamart-store / EN</span><b>BLOCKED</b></div>
+<p><strong>Original question:</strong> The unused item was delivered seven days ago with original packaging. Can I request a return and reserve an exact courier pickup at 11 a.m.?</p>
+<p class="sub">JSON: JSON_PARSED · Schema/source: fabricated excerpt · Generation: 5.413 s</p>
+<details><summary>Exact raw model output (not repaired)</summary><pre>{
+  &quot;claims&quot;: [
+    {
+      &quot;id&quot;: &quot;c1&quot;,
+      &quot;source_start&quot;: 30,
+      &quot;source_end&quot;: 44,
+      &quot;source_excerpt&quot;: &quot;Can I request a return&quot;,
+      &quot;hypothesis&quot;: &quot;The tenant is requesting a return of an unused item.&quot;,
+      &quot;intent&quot;: &quot;policy_question&quot;,
+      &quot;needs_case_data&quot;: false
+    },
+    {
+      &quot;id&quot;: &quot;c2&quot;,
+      &quot;source_start&quot;: 45,
+      &quot;source_end&quot;: 65,
+      &quot;source_excerpt&quot;: &quot;and reserve an exact courier pickup at 11 a.m.&quot;,
+      &quot;hypothesis&quot;: &quot;The tenant wants to reserve a courier pickup at exactly 11 a.m.&quot;,
+      &quot;intent&quot;: &quot;requested_action&quot;,
+      &quot;needs_case_data&quot;: false
+    }
+  ],
+  &quot;unresolved&quot;: []
+}</pre></details></article>
+<h2>mDeBERTa-v3-base-mnli-xnli — policy NLI</h2>
+<p class="sub">Pinned SHA 8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c. GPU Tesla T4, float32; GPU allocated 1.09 GiB peak. Developer labels are not independently verified.</p>
+<div class="tablewrap"><table><thead><tr><th>Case</th><th>Approved KB</th><th>Developer label</th><th>Predicted</th><th>Match</th><th>Raw softmax by label</th></tr></thead><tbody><tr><td><code>NLI-TF-VI-E</code><small>teamflow-cloud/vi</small></td>
+<td>TF-KB-012</td><td>entailment</td>
+<td>entailment</td><td><strong>MATCH</strong></td>
+<td>entailment 0.999 · neutral 0.001 · contradiction 0.000</td></tr><tr><td><code>NLI-TF-VI-C</code><small>teamflow-cloud/vi</small></td>
+<td>TF-KB-012</td><td>contradiction</td>
+<td>contradiction</td><td><strong>MATCH</strong></td>
+<td>entailment 0.014 · neutral 0.004 · contradiction 0.982</td></tr><tr><td><code>NLI-TF-VI-N</code><small>teamflow-cloud/vi</small></td>
+<td>TF-KB-015</td><td>neutral</td>
+<td>contradiction</td><td><strong>MISMATCH</strong></td>
+<td>entailment 0.004 · neutral 0.190 · contradiction 0.806</td></tr><tr><td><code>NLI-TF-EN-E</code><small>teamflow-cloud/en</small></td>
+<td>TF-KB-015</td><td>entailment</td>
+<td>entailment</td><td><strong>MATCH</strong></td>
+<td>entailment 0.707 · neutral 0.246 · contradiction 0.047</td></tr><tr><td><code>NLI-TF-EN-C</code><small>teamflow-cloud/en</small></td>
+<td>TF-KB-015</td><td>contradiction</td>
+<td>contradiction</td><td><strong>MATCH</strong></td>
+<td>entailment 0.000 · neutral 0.006 · contradiction 0.993</td></tr><tr><td><code>NLI-TF-EN-N</code><small>teamflow-cloud/en</small></td>
+<td>TF-KB-012</td><td>neutral</td>
+<td>neutral</td><td><strong>MATCH</strong></td>
+<td>entailment 0.004 · neutral 0.753 · contradiction 0.243</td></tr><tr><td><code>NLI-NM-VI-E</code><small>novamart-store/vi</small></td>
+<td>NM-KB-014</td><td>entailment</td>
+<td>entailment</td><td><strong>MATCH</strong></td>
+<td>entailment 0.995 · neutral 0.003 · contradiction 0.002</td></tr><tr><td><code>NLI-NM-VI-C</code><small>novamart-store/vi</small></td>
+<td>NM-KB-020</td><td>contradiction</td>
+<td>contradiction</td><td><strong>MATCH</strong></td>
+<td>entailment 0.000 · neutral 0.011 · contradiction 0.989</td></tr><tr><td><code>NLI-NM-VI-N</code><small>novamart-store/vi</small></td>
+<td>NM-KB-029</td><td>neutral</td>
+<td>neutral</td><td><strong>MATCH</strong></td>
+<td>entailment 0.000 · neutral 0.999 · contradiction 0.001</td></tr><tr><td><code>NLI-NM-EN-E</code><small>novamart-store/en</small></td>
+<td>NM-KB-030</td><td>entailment</td>
+<td>contradiction</td><td><strong>MISMATCH</strong></td>
+<td>entailment 0.212 · neutral 0.394 · contradiction 0.394</td></tr><tr><td><code>NLI-NM-EN-C</code><small>novamart-store/en</small></td>
+<td>NM-KB-029</td><td>contradiction</td>
+<td>neutral</td><td><strong>MISMATCH</strong></td>
+<td>entailment 0.047 · neutral 0.909 · contradiction 0.044</td></tr><tr><td><code>NLI-NM-EN-N</code><small>novamart-store/en</small></td>
+<td>NM-KB-014</td><td>neutral</td>
+<td>neutral</td><td><strong>MATCH</strong></td>
+<td>entailment 0.011 · neutral 0.968 · contradiction 0.021</td></tr></tbody></table></div>
+<h2>Provenance and constraints</h2><p>Frozen manifest SHA256: <code>bab124fdab56ed5b0bc1d36b5208a240d4ddcca0bed6b336914df0158e50508a</code></p>
+<p>Exact NLI premise SHA256: <code>419e2e6c7547c579f410c99587a9449d52e259115086cd84b77a9fb4bb73874e</code></p>
+<p>Inference evidence Qwen SHA256: <code>7b0a598e210886d9c17d0d78009b534400f4a86ce1e05537b66c544d6b249328</code></p>
+<p>Inference evidence mDeBERTa SHA256: <code>93c84e2615e06d80687c56facdbe84e788da98902fc6d9b626d7082d9ffd4bdb</code></p>
+<p class="sub">Static file with no API calls, external fonts, images, scripts or backend actions. This is a preliminary technical feasibility study, not an entailment acceptance test.</p>
+</main></body></html>
