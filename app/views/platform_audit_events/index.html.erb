@@ -1,0 +1,37 @@
+<section><h1><%= t('platform_mgmt.audit') %></h1>
+<p><%= t('platform_mgmt.audit_scope') %></p></section>
+<section class="platform-panel">
+  <%= form_with url: platform_audit_events_path, method: :get do %>
+    <%= label_tag :action_filter, t('platform_mgmt.event_type') %>
+    <%= select_tag :action_filter, options_for_select([[t('platform_mgmt.all'), '']] +
+      PlatformAuditEventsController::ACTIONS.map { |action| [action, action] }, @action_filter) %>
+    <%= label_tag :organization_id, t('platform_mgmt.tenant') %>
+    <%= select_tag :organization_id, options_for_select([[t('platform_mgmt.all'), '']] +
+      @organizations.map { |org| [org.slug, org.id.to_s] }, @organization_filter) %>
+    <%= submit_tag t('platform_mgmt.filter') %>
+  <% end %>
+  <p><small><%= t('platform_mgmt.total') %>: <%= @total %></small></p>
+  <table style="width:100%;border-spacing:0 16px">
+    <thead><tr><th><%= t('platform_mgmt.timestamp') %></th><th><%= t('platform_mgmt.event_type') %></th><th><%= t('platform_mgmt.tenant') %></th><th><%= t('platform_mgmt.actor') %></th></tr></thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.created_at.utc.strftime('%Y-%m-%d %H:%M UTC') %></td>
+          <td><%= event.action %><div><small><%= event.target_type %> #<%= event.target_id %></small></div></td>
+          <td><%= event.organization&.slug || '—' %></td>
+          <td><%= event.platform_admin.display_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <nav class="platform-links" aria-label="Pagination">
+    <% if @page > 1 %>
+      <%= link_to t('platform_mgmt.previous'),
+        platform_audit_events_path(action_filter: @action_filter, organization_id: @organization_filter, page: @page - 1) %>
+    <% end %>
+    <% if @page * PlatformAuditEventsController::PER_PAGE < @total %>
+      <%= link_to t('platform_mgmt.next'),
+        platform_audit_events_path(action_filter: @action_filter, organization_id: @organization_filter, page: @page + 1) %>
+    <% end %>
+  </nav>
+</section>

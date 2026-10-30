@@ -1,0 +1,14 @@
+<section>
+  <h1><%= t('platform_access.sign_in_title') %></h1>
+  <p><%= t('platform_access.sign_in_description') %></p>
+</section>
+<section class="platform-panel" style="max-width:580px">
+  <%= form_with url: platform_sign_in_path, method: :post, data: { turbo: false } do %>
+    <%= label_tag :email, t('platform_access.email') %>
+    <%= email_field_tag :email, nil, required: true, maxlength: 254, autocomplete: 'username' %>
+    <%= label_tag :password, t('platform_access.password') %>
+    <%= password_field_tag :password, nil, required: true, autocomplete: 'current-password' %>
+    <p><%= t('platform_access.no_public_provisioning') %></p>
+    <%= submit_tag t('platform_access.sign_in') %>
+  <% end %>
+</section>

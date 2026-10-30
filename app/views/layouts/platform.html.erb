@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title><%= t('platform_access.title') %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="turbo-cache-control" content="no-cache">
+  <style>
+    :root {color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    * {box-sizing:border-box}
+    body {background:#0b1020;color:#e8ecf6;margin:0;min-height:100vh}
+    .platform-shell {max-width:960px;margin:auto;padding:28px 24px 70px}
+    .platform-header {display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid #34425a;padding-bottom:20px}
+    .platform-brand {font-weight:800;color:#fff;letter-spacing:-.02em}
+    .platform-brand small {display:block;color:#b6c8e3;font-size:13px;font-weight:500;margin-top:4px}
+    .platform-links {display:flex;gap:14px}
+    a {color:#a9cfff}
+    h1 {font-size:clamp(27px,5vw,38px);margin:22px 0 12px}
+    h2 {font-size:18px;margin:8px 0}
+    p {line-height:1.55;color:#afc0da}
+    .platform-panel {background:#142039;border:1px solid #354966;border-radius:14px;padding:24px;margin-top:25px}
+    .platform-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+    .platform-metric {border:1px solid #405473;padding:20px;border-radius:12px;background:#101b30}
+    .platform-metric strong {font-size:28px}
+    label {display:block;margin:16px 0 7px;font-size:14px}
+    input {background:#0c1529;color:#fff;border:1px solid #4b6384;border-radius:8px;padding:13px;width:100%;font:inherit}
+    input:focus {outline:2px solid #82b2ee}
+    button,input[type=submit] {border:1px solid #5a90db;border-radius:8px;background:#3676ca;color:white;padding:11px 18px;font-weight:700;margin-top:20px;cursor:pointer;width:auto}
+    .platform-alert {margin-top:16px;padding:12px;border-radius:9px;border:1px solid #875353;background:#3d252b}
+    .platform-notice {margin-top:16px;padding:12px;border-radius:9px;border:1px solid #52795e;background:#223d2c}
+    @media(max-width:680px){.platform-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="platform-shell">
+    <header class="platform-header">
+      <div class="platform-brand">
+        <%= t('platform_access.title') %>
+        <small><%= t('platform_access.scope_notice') %></small>
+      </div>
+      <nav class="platform-links" aria-label="Languages">
+        <%= link_to 'VI', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'vi')) %>
+        <%= link_to 'EN', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'en')) %>
+      </nav>
+    </header>
+    <% if platform_auth_mode? && session[:platform_admin_id].present? %>
+      <nav class="platform-links" aria-label="Platform navigation" style="margin-top:18px;flex-wrap:wrap">
+        <%= link_to t('platform_mgmt.dashboard'), platform_dashboard_path %>
+        <%= link_to t('platform_mgmt.organizations'), platform_organizations_path %>
+        <%= link_to t('platform_mgmt.audit'), platform_audit_events_path %>
+      </nav>
+    <% end %>
+    <% if notice.present? %><div class="platform-notice" role="status"><%= notice %></div><% end %>
+    <% if alert.present? %><div class="platform-alert" role="alert"><%= alert %></div><% end %>
+    <%= yield %>
+  </main>
+</body>
+</html>

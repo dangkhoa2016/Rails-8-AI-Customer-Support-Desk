@@ -8,6 +8,18 @@ Rails.application.routes.draw do
   post '/auth/sign_in', to: 'password_sessions#create'
   delete '/auth/sign_out', to: 'password_sessions#destroy', as: :password_sign_out
   get '/platform', to: 'platform_dashboard#index', as: :platform_dashboard
+  get '/platform/sign_in', to: 'platform_sessions#new', as: :platform_sign_in
+  post '/platform/sign_in', to: 'platform_sessions#create'
+  delete '/platform/sign_out', to: 'platform_sessions#destroy', as: :platform_sign_out
+  get '/platform/organizations', to: 'platform_organizations#index', as: :platform_organizations
+  get '/platform/organizations/new', to: 'platform_organizations#new', as: :new_platform_organization
+  post '/platform/organizations', to: 'platform_organizations#create'
+  get '/platform/organizations/:id', to: 'platform_organizations#show', as: :platform_organization
+  patch '/platform/organizations/:id', to: 'platform_organizations#update'
+  patch '/platform/organizations/:id/lifecycle', to: 'platform_organizations#lifecycle', as: :lifecycle_platform_organization
+  post '/platform/organizations/:organization_id/owners', to: 'platform_owners#create', as: :platform_organization_owners
+  patch '/platform/organizations/:organization_id/owners/:id', to: 'platform_owners#update', as: :platform_organization_owner
+  get '/platform/audit', to: 'platform_audit_events#index', as: :platform_audit_events
   get '/settings', to: 'organization_settings#show', as: :organization_settings
   patch '/settings', to: 'organization_settings#update'
   resources :tickets, only: %i[index new create show] do

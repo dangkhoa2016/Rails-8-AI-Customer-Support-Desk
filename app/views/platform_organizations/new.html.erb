@@ -1,0 +1,19 @@
+<section><h1><%= t('platform_mgmt.new_organization') %></h1>
+<p><%= t('platform_mgmt.staging_notice') %></p></section>
+<section class="platform-panel" style="max-width:680px">
+  <%= form_with url: platform_organizations_path, method: :post do %>
+    <%= label_tag 'organization_slug', t('platform_mgmt.slug') %>
+    <%= text_field_tag 'organization[slug]', '', id: 'organization_slug', required: true, maxlength: 63, pattern: '[a-z][a-z0-9-]{2,62}' %>
+    <%= label_tag 'organization_name', t('platform_mgmt.name') %>
+    <%= text_field_tag 'organization[name]', '', id: 'organization_name', required: true, maxlength: 120 %>
+    <%= label_tag 'organization_vertical', t('platform_mgmt.vertical') %>
+    <%= select_tag 'organization[vertical]', options_for_select(PlatformOrganizationsController::VERTICALS), id: 'organization_vertical', style: 'width:100%' %>
+    <%= label_tag 'organization_currency', t('platform_mgmt.currency') %>
+    <%= select_tag 'organization[currency]', options_for_select(%w[USD VND]), id: 'organization_currency', style: 'width:100%' %>
+    <%= label_tag 'organization_timezone', t('platform_mgmt.timezone') %>
+    <%= select_tag 'organization[timezone]', options_for_select(PlatformOrganizationsController::TIMEZONES), id: 'organization_timezone', style: 'width:100%' %>
+    <%= label_tag 'organization_locale', t('platform_mgmt.locale') %>
+    <%= select_tag 'organization[default_locale]', options_for_select(%w[vi en]), id: 'organization_locale', style: 'width:100%' %>
+    <%= submit_tag t('platform_mgmt.create_staging') %>
+  <% end %>
+</section>

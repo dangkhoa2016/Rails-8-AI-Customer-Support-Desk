@@ -21,16 +21,13 @@ class PasswordSessionsController < ApplicationController
       return rejected
     end
 
-    if organization_slug.blank? && user.system_admin?
-      reset_session
-      session[:platform_user_id] = user.id
-      return redirect_to platform_dashboard_path, status: :see_other
-    end
+    # The tenant login NEVER authenticates platform operators.
+    return rejected if organization_slug.blank?
 
     organization = Organization.find_by(slug: organization_slug)
     membership = organization && Membership.find_by(
       organization_id: organization.id, user_id: user.id, active: true)
-    unless membership && SupportDeskAccessPolicy.new(membership).allowed?(:ticket_read)
+    unless membership && organization.active_for_support? && SupportDeskAccessPolicy.new(membership).allowed?(:ticket_read)
       return rejected
     end
     reset_session

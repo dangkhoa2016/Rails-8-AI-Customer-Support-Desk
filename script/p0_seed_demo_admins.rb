@@ -11,9 +11,9 @@ abort 'Development only' unless Rails.env.development? && ENV['P0_DEMO_ADMIN_SEE
   ActiveRecord::Base.transaction do
     user = User.find_or_initialize_by(email: email)
     if user.persisted?
-      abort "Conflicting existing user: #{slug}" if user.system_admin? || user.display_name != display_name
+      abort "Conflicting existing user: #{slug}" if user.display_name != display_name
     else
-      user.assign_attributes(display_name: display_name, active: true, system_admin: false)
+      user.assign_attributes(display_name: display_name, active: true)
       user.save!
     end
     membership = Membership.find_or_initialize_by(organization: org, user: user)

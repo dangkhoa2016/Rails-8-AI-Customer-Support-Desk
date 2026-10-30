@@ -25,6 +25,7 @@ class SupportDeskAccessPolicy
     return false unless membership && membership.user && membership.organization
     return false if membership.respond_to?(:active?) && !membership.active?
     return false if membership.user.respond_to?(:active?) && !membership.user.active?
+    return false unless membership.organization.active_for_support?
     ROLE_PERMISSIONS.fetch(membership.role, []).include?(action.to_sym)
   end
 

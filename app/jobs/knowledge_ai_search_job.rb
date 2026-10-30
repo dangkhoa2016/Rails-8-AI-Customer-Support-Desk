@@ -71,7 +71,7 @@ class KnowledgeAISearchJob < ApplicationJob
 
   def authorized?(run)
     member = Membership.find_by(id: run.membership_id, organization_id: run.organization_id)
-    member && %w[owner admin agent].include?(member.role) &&
+    member && member.organization.active_for_support? && %w[owner admin agent].include?(member.role) &&
       member.role == run.request_role && run.organization.persisted?
   end
 

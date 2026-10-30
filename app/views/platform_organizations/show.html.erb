@@ -1,0 +1,62 @@
+<section><h1><%= @organization.name %></h1>
+<p><%= @organization.slug %> · <%= t("platform_mgmt.#{@organization.lifecycle_state}") %></p>
+<p><%= t('platform_mgmt.policy') %>: <%= @organization.policy_version %> ·
+<%= t('platform_mgmt.approved_kb') %>: <%= @approved_kb_count %></p>
+<p><%= t('platform_mgmt.staging_notice') if @organization.lifecycle_state == 'staging' %></p>
+<%= link_to t('platform_mgmt.organizations'), platform_organizations_path %></section>
+
+<section class="platform-panel">
+  <h2><%= t('platform_mgmt.display_settings') %></h2>
+  <%= form_with url: platform_organization_path(@organization), method: :patch do %>
+    <%= label_tag 'organization_name', t('platform_mgmt.name') %>
+    <%= text_field_tag 'organization[name]', @organization.name, id: 'organization_name', maxlength: 120, required: true %>
+    <%= label_tag 'organization_timezone', t('platform_mgmt.timezone') %>
+    <%= select_tag 'organization[timezone]', options_for_select(PlatformOrganizationsController::TIMEZONES, @organization.timezone), id: 'organization_timezone' %>
+    <%= label_tag 'organization_locale', t('platform_mgmt.locale') %>
+    <%= select_tag 'organization[default_locale]', options_for_select(%w[vi en], @organization.default_locale), id: 'organization_locale' %>
+    <p><small><%= t('platform_mgmt.immutable_notice') %></small></p>
+    <%= submit_tag t('platform_mgmt.save') %>
+  <% end %>
+</section>
+
+<section class="platform-panel">
+  <h2><%= t('platform_mgmt.lifecycle') %></h2>
+  <p><%= t('platform_mgmt.activation_gate') %></p>
+  <% if @organization.lifecycle_state != 'suspended' %>
+    <%= button_to t('platform_mgmt.suspend'), lifecycle_platform_organization_path(@organization),
+      method: :patch, params: {lifecycle_state: 'suspended'},
+      form: {data: {turbo_confirm: t('platform_mgmt.confirm_suspend')}} %>
+  <% else %>
+    <%= button_to t('platform_mgmt.reactivate'), lifecycle_platform_organization_path(@organization),
+      method: :patch, params: {lifecycle_state: 'active'} %>
+  <% end %>
+</section>
+
+<section class="platform-panel">
+  <h2><%= t('platform_mgmt.owners') %></h2>
+  <p><%= t('platform_mgmt.owner_security') %></p>
+  <table style="width:100%;border-spacing:0 14px">
+    <thead><tr><th><%= t('platform_mgmt.name') %></th><th><%= t('platform_mgmt.state') %></th><th><%= t('platform_mgmt.action') %></th></tr></thead>
+    <tbody>
+      <% @owners.each do |member| %>
+        <tr>
+          <td><strong><%= member.user.display_name %></strong><div><small><%= member.user.email %></small></div></td>
+          <td><%= member.active? ? t('platform_mgmt.active') : t('platform_mgmt.inactive') %></td>
+          <td>
+            <%= button_to t(member.active? ? 'platform_mgmt.disable_owner' : 'platform_mgmt.enable_owner'),
+              platform_organization_owner_path(@organization, member), method: :patch,
+              params: {active: member.active? ? '0' : '1'} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <h2><%= t('platform_mgmt.provision_owner') %></h2>
+  <%= form_with url: platform_organization_owners_path(@organization), method: :post do %>
+    <%= label_tag :display_name, t('platform_mgmt.owner_name') %>
+    <%= text_field_tag :display_name, nil, maxlength: 120, required: true %>
+    <%= label_tag :email, t('platform_mgmt.owner_email') %>
+    <%= email_field_tag :email, nil, maxlength: 254, required: true %>
+    <%= submit_tag t('platform_mgmt.create_inactive_owner') %>
+  <% end %>
+</section>

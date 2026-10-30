@@ -44,7 +44,8 @@ class P0StaffAdministrationTest < ActionDispatch::IntegrationTest
     assert_redirected_to staff_members_path
     person = User.find_by!(email: 'new.staff@example.test')
     assert_nil person.password_digest
-    refute person.system_admin?
+    refute User.column_names.include?('system_admin')
+    assert_equal 0, PlatformAdmin.count
     record = Membership.find_by!(organization: @tf, user: person)
     assert_equal 'admin', record.role
     refute record.active?

@@ -1,0 +1,21 @@
+<section><h1><%= t('platform_mgmt.organizations') %></h1>
+<p><%= t('platform_mgmt.organization_scope') %></p>
+<p><%= link_to t('platform_mgmt.new_organization'), new_platform_organization_path %></p></section>
+<section class="platform-panel">
+  <table style="width:100%;border-spacing:0 15px">
+    <thead><tr><th><%= t('platform_mgmt.tenant') %></th>
+    <th><%= t('platform_mgmt.state') %></th>
+    <th><%= t('platform_mgmt.owners') %></th>
+    <th><%= t('platform_mgmt.action') %></th></tr></thead>
+    <tbody>
+      <% @organizations.each do |org| %>
+        <tr>
+          <td><strong><%= org.name %></strong><div><small><%= org.slug %></small></div></td>
+          <td><%= t("platform_mgmt.#{org.lifecycle_state}") %></td>
+          <td><%= @owners_by_org.fetch(org.id, []).count { |member| member.active? } %></td>
+          <td><%= link_to t('platform_mgmt.manage'), platform_organization_path(org) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

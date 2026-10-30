@@ -105,18 +105,24 @@ class P0IdentityRbacSecurityTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'global platform account cannot impersonate tenant by default' do
-    platform = User.create!(email: 'p0-platform@example.test', password: PASS, system_admin: true)
+  test 'separate platform administrator cannot impersonate a tenant' do
+    platform = PlatformAdmin.create!(email: 'p0-platform@example.test',
+      display_name: 'Platform Operator', password: PASS)
     password_mode do
-      post_with_csrf password_sign_in_path, csrf_page: password_sign_in_path,
-        params: {email: platform.email, password: PASS, organization_slug: ''}
-      assert_redirected_to platform_dashboard_path
-      get platform_dashboard_path
-      assert_response :success
-      assert_select 'body', text: /Platform overview|Tổng quan nền tảng/
-      assert_select 'body', text: /PRIVATE-INTERNAL-TICKET-DETAIL/, count: 0
-      get ticket_path(@ticket)
-      assert_redirected_to password_sign_in_path
+      platform_mode do
+        post_with_csrf password_sign_in_path, csrf_page: password_sign_in_path,
+          params: {email: platform.email, password: PASS, organization_slug: ''}
+        assert_response :unauthorized
+        post_with_csrf platform_sign_in_path, csrf_page: platform_sign_in_path,
+          params: {email: platform.email, password: PASS}
+        assert_redirected_to platform_dashboard_path
+        get platform_dashboard_path
+        assert_response :success
+        assert_select 'body', text: /Platform overview|Tổng quan quản trị nền tảng/
+        assert_select 'body', text: /PRIVATE-INTERNAL-TICKET-DETAIL/, count: 0
+        get ticket_path(@ticket)
+        assert_redirected_to password_sign_in_path
+      end
     end
   end
 
@@ -134,6 +140,14 @@ class P0IdentityRbacSecurityTest < ActionDispatch::IntegrationTest
     post_with_csrf demo_sign_in_path, csrf_page: demo_sign_in_path,
       params: {membership_id: membership.id, locale: 'en'}
     assert_redirected_to root_path
+  end
+
+  def platform_mode
+    prior = ENV['P0_PLATFORM_AUTH_TEST_MODE']
+    ENV['P0_PLATFORM_AUTH_TEST_MODE'] = 'YES'
+    yield
+  ensure
+    prior ? ENV['P0_PLATFORM_AUTH_TEST_MODE'] = prior : ENV.delete('P0_PLATFORM_AUTH_TEST_MODE')
   end
 
   def password_mode

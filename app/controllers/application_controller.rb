@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
       (Rails.env.test? && ENV['P0_PASSWORD_AUTH_TEST_MODE'] == 'YES')
   end
 
+  # Platform operator authentication is distinct from tenant password accounts.
+  def platform_auth_mode?
+    (Rails.env.production? && ENV['P0_PLATFORM_AUTH_ENABLE'] == 'YES') ||
+      (Rails.env.test? && ENV['P0_PLATFORM_AUTH_TEST_MODE'] == 'YES')
+  end
+
   def require_demo_session
     unless demo_enabled? || password_auth_mode?
       render plain: 'Authentication unavailable. Contact the system administrator.', status: :forbidden

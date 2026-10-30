@@ -28,7 +28,7 @@ class StaffMembersController < ApplicationController
       return redirect_to staff_members_path, alert: t('staff.existing'), status: :see_other
     end
     ActiveRecord::Base.transaction do
-      user = User.create!(email: email, display_name: name, active: true, system_admin: false)
+      user = User.create!(email: email, display_name: name, active: true)
       member = Membership.create!(organization: current_organization,
         user: user, role: role, active: false)
       audit!(action: 'staff.provisioned_inactive', metadata: {
@@ -47,8 +47,7 @@ class StaffMembersController < ApplicationController
     # Ownership transfers require a separate, protected procedure.
     if member.role == 'owner' || member.user_id == current_user.id ||
         !access_policy.may_manage_membership?(
-          target_role: member.role, new_role: desired_role) ||
-        (member.user.system_admin? && desired_active)
+          target_role: member.role, new_role: desired_role)
       return head :forbidden
     end
     ActiveRecord::Base.transaction do
