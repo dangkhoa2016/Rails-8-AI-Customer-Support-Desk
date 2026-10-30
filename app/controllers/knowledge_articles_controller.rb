@@ -101,11 +101,11 @@ class KnowledgeArticlesController < ApplicationController
   end
 
   def staff?
-    %w[owner admin agent].include?(current_membership.role)
+    can?(:kb_read) && can?(:ticket_internal_read)
   end
 
   def reviewer?
-    %w[owner admin].include?(current_membership.role)
+    can?(:kb_review)
   end
 
   def require_reviewer

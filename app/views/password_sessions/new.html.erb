@@ -1,0 +1,10 @@
+<section class="hero"><h1><%= t('p0_auth.title') %></h1><p class="intro"><%= t('p0_auth.subtitle') %></p></section>
+<section class="panel" style="max-width:620px">
+  <%= form_with url: password_sign_in_path, method: :post do %>
+    <div class="field"><%= label_tag :email, t('p0_auth.email') %><%= email_field_tag :email, nil, required: true, autocomplete: 'username', maxlength: 254 %></div>
+    <div class="field"><%= label_tag :password, t('p0_auth.password') %><%= password_field_tag :password, nil, required: true, autocomplete: 'current-password' %></div>
+    <div class="field"><%= label_tag :organization_slug, t('p0_auth.organization') %><%= text_field_tag :organization_slug, nil, autocomplete: 'off', maxlength: 100 %></div>
+    <p class="muted small"><%= t('p0_auth.platform_note') %></p>
+    <%= submit_tag t('p0_auth.submit') %>
+  <% end %>
+</section>

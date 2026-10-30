@@ -14,3 +14,6 @@ gem 'stimulus-rails'
 gem 'solid_queue', '~> 1.2'
 # Rails 8 ERB + Hotwire, no JavaScript build step required.
 # Active Storage remains out of scope; Modal inference is separately authenticated.
+
+# P0: password hashing for independently authenticated tenant users.
+gem 'bcrypt', '~> 3.1'

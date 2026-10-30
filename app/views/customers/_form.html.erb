@@ -1,0 +1,27 @@
+<%= link_to t('nav.customers'), customers_path, class: 'back' %>
+<div class="hero"><h1><%= @customer.persisted? ? t('customers.edit_profile') : t('customers.new_profile') %></h1>
+  <p class="intro"><%= current_organization.name %> · <%= t('customers.synthetic_profile_notice') %></p></div>
+<section class="panel">
+  <%= form_with model: @customer do |f| %>
+    <% if @customer.new_record? %>
+      <div class="field"><%= f.label :external_key, t('customers.key') %>
+        <%= f.text_field :external_key, maxlength: 64, required: true %></div>
+    <% else %>
+      <p><strong><%= t('customers.key') %>:</strong> <%= @customer.external_key %></p>
+    <% end %>
+    <div class="two">
+      <div class="field"><%= f.label :display_name, t('customers.name') %>
+        <%= f.text_field :display_name, maxlength: 120, required: true %></div>
+      <div class="field"><%= f.label :synthetic_email, t('customers.synthetic_email') %>
+        <%= f.email_field :synthetic_email, maxlength: 254, required: true, placeholder: 'customer@example.test' %></div>
+      <div class="field"><%= f.label :company_name, t('customers.company_name') %>
+        <%= f.text_field :company_name, maxlength: 120 %></div>
+      <div class="field"><%= f.label :contact_phone, t('customers.phone') %>
+        <%= f.telephone_field :contact_phone, maxlength: 24 %></div>
+      <div class="field"><%= f.label :locale, t('customers.locale') %>
+        <%= f.select :locale, [['Tiếng Việt', 'vi'], ['English', 'en']] %></div>
+    </div>
+    <p class="muted small"><%= t('customers.synthetic_profile_notice') %></p>
+    <%= f.submit t('customers.save_profile') %>
+  <% end %>
+</section>

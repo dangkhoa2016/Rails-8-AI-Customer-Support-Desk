@@ -1,0 +1,50 @@
+<section class="hero">
+  <h1><%= t('staff.title') %></h1>
+  <p class="intro"><%= t('staff.subtitle') %></p>
+  <span class="pill"><%= current_organization.name %> · <%= @members.size %></span>
+</section>
+<section class="panel">
+  <h2><%= t('staff.title') %></h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th><%= t('staff.name') %></th><th><%= t('staff.email') %></th><th><%= t('staff.role') %></th><th><%= t('staff.status') %></th><th><%= t('staff.actions') %></th></tr></thead>
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td><strong><%= member.user.display_name.presence || '—' %></strong></td>
+          <td><%= member.user.email %></td>
+          <td><%= member.role %></td>
+          <td><span class="pill <%= member.active? ? 'ok' : 'warn' %>"><%= t(member.active? ? 'staff.active' : 'staff.inactive') %></span></td>
+          <td>
+            <% if can?(:staff_manage) && member.user_id != current_user.id && member.role != 'owner' && access_policy.may_manage_membership?(target_role: member.role, new_role: member.role) %>
+              <%= form_with url: staff_member_path(member), method: :patch do %>
+                <div class="field">
+                  <%= select_tag :role, options_for_select(@creatable_roles.map { |r| [r, r] }, member.role), aria: { label: t('staff.role') } %>
+                </div>
+                <div class="field"><%= label_tag "active_#{member.id}", t('staff.active') %>
+                  <%= check_box_tag :active, '1', member.active?, id: "active_#{member.id}" %>
+                </div>
+                <%= submit_tag t('staff.save'), class: 'btn secondary' %>
+              <% end %>
+            <% else %>
+              <span class="tiny muted"><%= t('staff.owner_protected') %></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table></div>
+</section>
+<% if can?(:staff_manage) %>
+  <section class="panel">
+    <h2><%= t('staff.new') %></h2>
+    <%= form_with url: staff_members_path, method: :post do %>
+      <div class="two">
+        <div class="field"><%= label_tag :display_name, t('staff.name') %><%= text_field_tag :display_name, nil, maxlength: 100, required: true %></div>
+        <div class="field"><%= label_tag :email, t('staff.email') %><%= email_field_tag :email, nil, maxlength: 254, required: true %></div>
+      </div>
+      <div class="field"><%= label_tag :role, t('staff.role') %><%= select_tag :role, options_for_select(@creatable_roles.map { |r| [r, r] }) %></div>
+      <p class="muted small"><%= t('staff.subtitle') %></p>
+      <%= submit_tag t('staff.create') %>
+    <% end %>
+  </section>
+<% end %>

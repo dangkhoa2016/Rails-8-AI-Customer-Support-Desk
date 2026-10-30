@@ -104,7 +104,7 @@ class KnowledgeAISearchController < ApplicationController
   end
 
   def require_staff_member
-    head :forbidden unless current_membership && %w[owner admin agent].include?(current_membership.role)
+    require_permission(:ai_search)
   end
 
   def require_local_demo

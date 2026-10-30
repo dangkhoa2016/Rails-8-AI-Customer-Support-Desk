@@ -27,6 +27,6 @@ class DemoSessionsController < ApplicationController
   private
 
   def require_dev_mode
-    head :forbidden unless demo_enabled?
+    head :forbidden unless demo_enabled? && !password_auth_mode?
   end
 end

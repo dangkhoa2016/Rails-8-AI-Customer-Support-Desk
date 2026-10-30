@@ -1,5 +1,5 @@
 class TicketMessagesController < ApplicationController
-  before_action :require_writer
+  before_action -> { require_permission(:ticket_reply) }
 
   def create
     ticket = scoped_tickets.find(params[:ticket_id])

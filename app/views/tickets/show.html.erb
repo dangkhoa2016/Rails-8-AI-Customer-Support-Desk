@@ -20,6 +20,19 @@
         <p class="tiny muted"><%= t('tickets.relevance_only') %></p>
       <% end %>
     </section>
+    <% if can?(:ticket_assign) %>
+      <section class="panel">
+        <h2><%= t('tickets.assign_ticket') %></h2>
+        <%= form_with url: assign_ticket_path(@ticket), method: :patch do %>
+          <div class="field"><%= label_tag :assignee_user_id, t('tickets.assignee') %>
+            <%= select_tag :assignee_user_id, options_for_select(
+              [[t('tickets.unassigned'), '']] +
+              @available_assignees.map { |member| [member.user.display_name.presence || member.user.email, member.user_id.to_s] },
+              @ticket.assignee_id&.to_s) %></div>
+          <%= submit_tag t('tickets.assign_save'), class: 'btn secondary' %>
+        <% end %>
+      </section>
+    <% end %>
     <% if can_write? %>
       <%= render 'reply_form', ticket: @ticket %>
       <%= render 'status_controls', ticket: @ticket %>

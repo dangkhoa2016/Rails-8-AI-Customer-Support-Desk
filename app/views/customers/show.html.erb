@@ -1,5 +1,20 @@
 <%= link_to t('nav.customers'), customers_path, class:'back' %>
-<div class="hero"><span class="pill"><%= current_organization.name %></span><h1><%= @customer.external_key %></h1><p class="intro"><%= @customer.display_name %> · <%= @customer.locale %></p></div>
+<div class="hero"><span class="pill"><%= current_organization.name %></span><h1><%= @customer.external_key %></h1><p class="intro"><%= @customer.display_name %> · <%= @customer.locale %></p>
+<% if @customer.archived? %><span class="pill warn"><%= t('customers.archived_status') %></span><% end %>
+<% if can?(:customer_manage) && !@customer.archived? %>
+  <%= link_to t('customers.edit_profile'), edit_customer_path(@customer), class: 'btn secondary' %>
+  <%= button_to t('customers.archive_profile'), archive_customer_path(@customer), method: :patch,
+      class: 'btn secondary', form: {data: {turbo_confirm: t('customers.archive_profile')}} %>
+<% end %>
+</div>
+<section class="panel">
+<h2><%= t('customers.edit_profile') %></h2>
+<p><strong><%= t('customers.company_name') %>:</strong> <%= @customer.company_name.presence || '—' %></p>
+<% if can?(:business_read) %>
+<p><strong><%= t('customers.synthetic_email') %>:</strong> <%= @customer.synthetic_email %></p>
+<p><strong><%= t('customers.phone') %>:</strong> <%= @customer.contact_phone.presence || '—' %></p>
+<% end %>
+</section>
 <div class="two"><section class="panel"><h2><%= t('customers.references') %></h2>
   <% if @references.any? %><div class="table-wrap"><table><thead><tr><th><%= t('customers.reference') %></th><th><%= t('tickets.status') %></th><th><%= t('customers.view') %></th></tr></thead><tbody>
   <% @references.each do |record| %><tr><td class="mono"><%= current_organization.vertical == 'b2b_saas' ? record.invoice_number : record.order_number %></td><td><%= record.status %></td><td>

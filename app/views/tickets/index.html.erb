@@ -27,6 +27,14 @@
         <%= select_tag :customer_locale, options_for_select([[t('tickets.all'), ''], ['VI', 'vi'], ['EN', 'en']], @locale_filter) %>
       </div>
       <div class="field">
+        <%= label_tag :assignee_user_id, t('tickets.assignee') %>
+        <%= select_tag :assignee_user_id,
+          options_for_select([[t('tickets.all_assignees'), ''], [t('tickets.assigned_me'), 'me'],
+            [t('tickets.unassigned'), 'unassigned']] +
+            @available_assignees.map { |member| [member.user.display_name.presence || member.user.email, member.user_id.to_s] },
+            @assignee_filter) %>
+      </div>
+      <div class="field">
         <%= label_tag :category, t('tickets.category') %>
         <%= select_tag :category, options_for_select([[t('tickets.all'), '']] + TicketsController::CATEGORIES.fetch(current_organization.vertical).map { |category| [category, category] }, @category_filter) %>
       </div>
@@ -48,6 +56,7 @@
         <th><%= t('tickets.reference') %></th>
         <th><%= t('tickets.priority') %></th>
         <th><%= t('tickets.status') %></th>
+        <th><%= t('tickets.assignee') %></th>
       </tr></thead>
       <tbody>
         <% @tickets.each do |ticket| %>
@@ -59,6 +68,7 @@
             <td class="mono"><%= ticket.business_ref.presence || '—' %></td>
             <td><span class="pill"><%= ticket.priority %></span></td>
             <td><%= ticket.status %></td>
+            <td><%= @available_assignees.find { |m| m.user_id == ticket.assignee_id }&.user&.display_name.presence || t('tickets.unassigned') %></td>
           </tr>
         <% end %>
       </tbody>

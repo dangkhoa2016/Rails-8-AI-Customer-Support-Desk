@@ -59,9 +59,11 @@
           <%= nav_menu_link_to t('nav.overview'), root_path, section: :overview %>
           <%= nav_menu_link_to t('nav.tickets'), tickets_path, section: :tickets %>
           <%= nav_menu_link_to t('nav.customers'), customers_path, section: :customers %>
+          <% if can?(:staff_read) %><%= link_to t('staff.title'), staff_members_path, class: 'btn secondary' %><% end %>
+          <% if can?(:settings_read) %><%= link_to t('settings.title'), organization_settings_path, class: 'btn secondary' %><% end %>
           <%= nav_menu_link_to t('knowledge.nav'), knowledge_articles_path, section: :knowledge %>
-          <% if %w[owner admin agent].include?(current_membership.role) %><%= nav_menu_link_to t('ai_search.nav'), kb_ai_search_path, section: :ai_search %><% end %>
-          <%= button_to t('nav.sign_out'), demo_sign_out_path, method: :delete, class: 'secondary', form: { data: { turbo: false } } %>
+          <% if can?(:ai_search) %><%= nav_menu_link_to t('ai_search.nav'), kb_ai_search_path, section: :ai_search %><% end %>
+          <%= button_to t('nav.sign_out'), (password_auth_mode? ? password_sign_out_path : demo_sign_out_path), method: :delete, class: 'secondary', form: { data: { turbo: false } } %>
         <% end %>
         <%= link_to 'VI', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'vi')), lang: 'vi' %>
         <%= link_to 'EN', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'en')), lang: 'en' %>

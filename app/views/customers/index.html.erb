@@ -1,4 +1,6 @@
-<div class="hero"><h1><%= t('customers.heading') %></h1><p class="intro"><%= t('customers.subtitle') %></p></div>
+<div class="hero"><h1><%= t('customers.heading') %></h1><p class="intro"><%= t('customers.subtitle') %></p>
+  <% if can?(:customer_manage) %><%= link_to t('customers.new_profile'), new_customer_path, class: 'btn' %><% end %>
+</div>
 <%= turbo_frame_tag "customers_listing", data: { turbo_action: "advance" } do %>
   <section class="panel">
     <%= form_with url: customers_path, method: :get, local: true, data: { controller: "submit-state", action: "turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish" } do %>
@@ -6,6 +8,9 @@
         <%= label_tag :q, t('customers.search_hint') %>
         <%= text_field_tag :q, @query, maxlength: 80, placeholder: t('customers.search_hint') %>
       </div>
+      <% if can?(:customer_manage) %>
+        <label class="checkbox"><%= check_box_tag :include_archived, '1', @include_archived %><%= t('customers.include_archived') %></label>
+      <% end %>
       <div class="navlinks">
         <%= submit_tag t('customers.search_button'), class: 'btn' %>
         <%= link_to t('customers.clear_filters'), customers_path, class: 'btn secondary' %>
@@ -19,7 +24,9 @@
         <thead><tr><th><%= t('customers.key') %></th><th><%= t('customers.name') %></th><th><%= t('customers.locale') %></th></tr></thead>
         <tbody>
           <% @customers.each do |customer| %>
-            <tr><td><%= link_to customer.external_key, customer_path(customer), data: { turbo_frame: "_top" } %></td><td><%= customer.display_name %></td><td><%= customer.locale %></td></tr>
+            <tr><td><%= link_to customer.external_key, customer_path(customer), data: { turbo_frame: "_top" } %></td>
+              <td><%= customer.display_name %><% if customer.archived? %><span class="pill warn"><%= t('customers.archived_status') %></span><% end %></td>
+              <td><%= customer.locale %></td></tr>
           <% end %>
         </tbody>
       </table></div>
@@ -28,10 +35,10 @@
     <% end %>
     <nav class="navlinks" aria-label="<%= t('customers.page_count', page: @page, total: @total_pages, count: @filtered_count) %>" style="margin-top:20px">
       <% if @page > 1 %>
-        <%= link_to t('customers.previous'), customers_path(q: @query, page: @page - 1, locale: I18n.locale), class: 'btn secondary' %>
+        <%= link_to t('customers.previous'), customers_path(q: @query, page: @page - 1, include_archived: (@include_archived ? "1" : nil), locale: I18n.locale), class: 'btn secondary' %>
       <% end %>
       <% if @page < @total_pages %>
-        <%= link_to t('customers.next'), customers_path(q: @query, page: @page + 1, locale: I18n.locale), class: 'btn secondary' %>
+        <%= link_to t('customers.next'), customers_path(q: @query, page: @page + 1, include_archived: (@include_archived ? "1" : nil), locale: I18n.locale), class: 'btn secondary' %>
       <% end %>
     </nav>
   </section>

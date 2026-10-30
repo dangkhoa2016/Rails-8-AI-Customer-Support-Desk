@@ -1,0 +1,41 @@
+<section class="hero">
+  <h1><%= t('settings.title') %></h1>
+  <p class="intro"><%= t('settings.subtitle') %></p>
+</section>
+<section class="panel">
+  <%= form_with url: organization_settings_path, method: :patch do %>
+    <div class="two">
+      <div class="field">
+        <%= label_tag 'organization_name', t('settings.name') %>
+        <%= text_field_tag 'organization[name]', @organization.name,
+              id: 'organization_name', maxlength: 120, disabled: !can?(:settings_manage) %>
+      </div>
+      <div class="field">
+        <%= label_tag 'organization_timezone', t('settings.timezone') %>
+        <%= select_tag 'organization[timezone]',
+              options_for_select(OrganizationSettingsController::ALLOWED_TIMEZONES.map { |tz| [tz, tz] },
+                @organization.timezone),
+              id: 'organization_timezone', disabled: !can?(:settings_manage) %>
+      </div>
+      <div class="field">
+        <%= label_tag 'organization_locale', t('settings.locale') %>
+        <%= select_tag 'organization[default_locale]',
+              options_for_select([['Tiếng Việt', 'vi'], ['English', 'en']], @organization.default_locale),
+              id: 'organization_locale', disabled: !can?(:settings_manage) %>
+      </div>
+      <div class="field">
+        <span class="label"><%= t('settings.currency') %></span>
+        <p><%= @organization.currency %></p>
+      </div>
+      <div class="field">
+        <span class="label"><%= t('settings.vertical') %></span>
+        <p><%= @organization.vertical %></p>
+      </div>
+      <div class="field">
+        <span class="label"><%= t('settings.policy') %></span>
+        <p><%= @organization.policy_version %></p>
+      </div>
+    </div>
+    <% if can?(:settings_manage) %><%= submit_tag t('settings.save') %><% end %>
+  <% end %>
+</section>

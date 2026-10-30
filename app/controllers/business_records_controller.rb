@@ -1,5 +1,5 @@
 class BusinessRecordsController < ApplicationController
-  before_action :require_writer
+  before_action -> { require_permission(:business_read) }
 
   def teamflow_invoice
     @business_type = 'teamflow'
