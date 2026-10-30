@@ -1,1 +1,0 @@
-env KB_ORGANIZATION_SLUG=teamflow-cloud bin/rails runner script/m2_embed_approved.rb 

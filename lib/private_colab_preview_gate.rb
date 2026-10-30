@@ -14,11 +14,12 @@ class PrivateColabPreviewGate
   LEGACY_HOST = /\A[a-z0-9-]+-3068-colab\.googleusercontent\.com\z/
   FRAME_CSP = 'frame-ancestors https://colab.research.google.com https://*.googleusercontent.com https://*.colab.dev'
 
-  def initialize(app, password:, tunnel_host: nil, read_only_tunnel: false)
+  def initialize(app, password:, tunnel_host: nil, read_only_tunnel: false, allow_ai_search: true)
     raise 'Weak preview password' unless password.to_s.bytesize >= 30
     @app, @password = app, password
     @tunnel_host = tunnel_host.to_s
     @read_only_tunnel = !!read_only_tunnel
+    @allow_ai_search = !!allow_ai_search
     if @read_only_tunnel && !@tunnel_host.match?(/\A[a-z0-9-]+\.trycloudflare\.com\z/)
       raise 'Exact Cloudflare hostname missing for read-only tunnel'
     end
@@ -35,7 +36,10 @@ class PrivateColabPreviewGate
       allowed_logout = request.path == '/demo/sign_out' && (
         request.delete? || (request.post? && request.POST['_method'] == 'delete')
       )
-      allowed_write = (request.post? && %w[/demo/sign_in /kb/ai-search].include?(request.path)) ||
+      # Public interface preview must not queue jobs or call paid model endpoints
+      # unless explicitly enabled for a separately approved, bounded evaluation.
+      allowed_search = @allow_ai_search && request.path == '/kb/ai-search'
+      allowed_write = (request.post? && (request.path == '/demo/sign_in' || allowed_search)) ||
         allowed_logout
       if !%w[GET HEAD OPTIONS].include?(request.request_method) &&
           request.path != LOGIN_PATH && !allowed_write

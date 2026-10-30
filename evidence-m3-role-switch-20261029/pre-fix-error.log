@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/content/Rails-8-AI-Customer-Support-Desk/test/smoke_private_preview_role_switch.py", line 57, in <module>
-    assert response.status_code in (302, 303), "role switch logout is blocked"
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: role switch logout is blocked

@@ -8,8 +8,8 @@ require 'digest'
 # future, independently frozen acceptance run and a code-level review.
 class KnowledgeScopePreviewGate
   MANIFEST = 'review/m2_scope_sealed_challenge80_20261029.json'
-  EVIDENCE = 'evidence-m2-sealed80-20261029/sealed80-acceptance.json'
-  RESULTS = 'evidence-m2-sealed80-20261029/sealed80-live-results.jsonl'
+  EVIDENCE = 'data/security/sealed80-acceptance.json'
+  RESULTS = 'data/security/sealed80-live-results.jsonl'
 
   def self.eligible?
     report = JSON.parse(File.binread(Rails.root.join(EVIDENCE)))

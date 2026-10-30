@@ -1,1 +1,0 @@
-bin/rails runner script/m2_lexical_baseline.rb 

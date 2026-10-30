@@ -18,3 +18,8 @@ test:
 production:
   <<: *default
   database: <%= ENV.fetch('PGDATABASE', 'rails8_ai_support_desk_production') %>
+
+# P0.3: dedicated isolated DB/role, guarded by config/environments/sandbox.rb.
+sandbox:
+  <<: *default
+  database: <%= ENV.fetch('PGDATABASE', 'P03_SANDBOX_DATABASE_MISSING') %>

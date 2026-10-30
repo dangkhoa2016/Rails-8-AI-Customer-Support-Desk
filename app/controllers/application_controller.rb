@@ -18,7 +18,10 @@ class ApplicationController < ActionController::Base
 
   # Platform operator authentication is distinct from tenant password accounts.
   def platform_auth_mode?
-    (Rails.env.production? && ENV['P0_PLATFORM_AUTH_ENABLE'] == 'YES') ||
+    # Fail closed in production: the legacy password-only operator opt-in must
+    # not bypass sandbox MFA or enable a public admin console before approval.
+    (Rails.env.sandbox? && ENV['P0_PLATFORM_AUTH_ENABLE'] == 'YES' &&
+      ENV['P03_SANDBOX_LOCAL_ONLY'] == 'YES') ||
       (Rails.env.test? && ENV['P0_PLATFORM_AUTH_TEST_MODE'] == 'YES')
   end
 

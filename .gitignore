@@ -17,3 +17,12 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Historical checkpoints / transient evidence are stored in the external archive.
+# See docs/REPOSITORY_ARCHIVES_EN.md and docs/REPOSITORY_ARCHIVES_VI.md.
+/checkpoints/
+/evidence-m*/
+/*SHA256SUMS.txt
+/checksums.sha256
+/M2_PROGRESS_STATUS.json
+/RAILS8_AI_SUPPORT_DESK_M1_SEED_TIMESTAMP_HOTFIX_2026-10-29.zip

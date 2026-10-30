@@ -1,4 +1,11 @@
 vi:
+  platform_mfa:
+    title: "Xác minh hai bước"
+    instructions: "Nhập mã sáu chữ số từ ứng dụng xác thực. Mỗi mã chỉ được sử dụng một lần."
+    code: "Mã xác thực"
+    verify: "Xác minh và đăng nhập"
+    restart: "Đăng nhập lại"
+    invalid: "Mã không hợp lệ hoặc đã hết hạn."
   app:
     name: "Rails 8 AI Customer Support Desk"
     demo: "DEMO TỔNG HỢP"

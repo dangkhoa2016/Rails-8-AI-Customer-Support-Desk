@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/platform', to: 'platform_dashboard#index', as: :platform_dashboard
   get '/platform/sign_in', to: 'platform_sessions#new', as: :platform_sign_in
   post '/platform/sign_in', to: 'platform_sessions#create'
+  get '/platform/mfa', to: 'platform_sessions#mfa', as: :platform_mfa
+  post '/platform/mfa', to: 'platform_sessions#verify_mfa'
   delete '/platform/sign_out', to: 'platform_sessions#destroy', as: :platform_sign_out
   get '/platform/organizations', to: 'platform_organizations#index', as: :platform_organizations
   get '/platform/organizations/new', to: 'platform_organizations#new', as: :new_platform_organization

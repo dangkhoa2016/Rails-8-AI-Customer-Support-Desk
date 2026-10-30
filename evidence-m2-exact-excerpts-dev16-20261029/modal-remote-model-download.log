@@ -1,9 +1,0 @@
-
-[1AFetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]
-[1AFetching 3 files:  33%|███▎      | 1/3 [00:18<00:37, 18.85s/it]
-Task's current input(s) ["in-01M63N2SQMSZCP40KVQXEPY8AF:1793271621364-0"] cancelled because: Task's current input in-01M63N2SQMSZCP40KVQXEPY8AF:1793271621364-0 hit its timeout of 480s
-[1AFetching 3 files:  67%|██████▋   | 2/3 [00:48<00:24, 24.31s/it][modal-client] 2026-10-29T11:08:24+0000 Received a cancellation signal while processing input ('in-01M63N2SQMSZCP40KVQXEPY8AF:1793271621364-0',)
-Fetching 3 files:  67%|██████▋   | 2/3 [07:45<03:52, 232.99s/it]
-Stopping app - uncaught exception raised locally: FunctionTimeoutError("Task's current input in-01M63N2SQMSZCP40KVQXEPY8AF:1793271621364-0 hit its timeout of 480s").
-Cancellation requested; stopping current tasks.
-Runner terminated.

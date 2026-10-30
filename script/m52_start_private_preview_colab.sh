@@ -1,18 +1,36 @@
 #!/usr/bin/env bash
-# Run only with a fresh, exact Cloudflare Quick Tunnel hostname.
-# The externally protected preview is still business read-only.
+# Password-protected, business read-only Cloudflare Quick Tunnel preview on 3068.
+# Tunnel process and exact generated hostname must be prepared separately.
 set -euo pipefail
-source /content/rails8_restore_env_20261030.sh
+repo="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+source "$repo/script/rails8_runtime_ruby.sh"
+db_env="/root/.config/rails8-support-desk-modal/rails8-db.env"
+preview_env="/root/.config/rails8-support-desk-modal/rails-private-preview.env"
+if [[ ! -r "$db_env" || ! -r "$preview_env" ]]; then
+  echo 'PRIVATE_PREVIEW_ERROR: local database/preview environment missing' >&2
+  exit 1
+fi
 set -a
-source /root/.config/rails8-support-desk-modal/rails-private-preview.env
-source /root/.config/rails8-support-desk-modal/rails-client.env
+source "$db_env"
+source "$preview_env"
 set +a
-export RAILS_ENV=development RAILS_PRIVATE_PREVIEW=YES
-export RAILS_TUNNEL_READ_ONLY=YES M5_ASYNC_SEARCH_ENABLE=YES
-export M2_SEMANTIC_UI_ENABLE=YES M2_ANSWERABILITY_SCOPE_ENABLE=NO
+[[ "${PGDATABASE:-}" == rails8_ai_support_desk_development ]]
+[[ "${PGUSER:-}" == support_desk ]]
+[[ "${PGHOST:-}" == 127.0.0.1 ]]
 if [[ ! "${RAILS_PREVIEW_TUNNEL_HOST:-}" =~ ^[a-z0-9-]+\.trycloudflare\.com$ ]]; then
-  echo 'Provide exact RAILS_PREVIEW_TUNNEL_HOST for this runtime' >&2
+  echo 'PRIVATE_PREVIEW_ERROR: exact Cloudflare Quick Tunnel hostname required' >&2
   exit 2
 fi
-test -n "${RAILS_PRIVATE_PREVIEW_PASSWORD:-}"
-exec bin/rails server -b 127.0.0.1 -p 3068 -e development
+if (( ${#RAILS_PRIVATE_PREVIEW_PASSWORD} < 30 )); then
+  echo 'PRIVATE_PREVIEW_ERROR: password too short' >&2
+  exit 2
+fi
+# Explicitly prohibit model inference, GPU jobs, and mutable search runs on the public preview.
+export RAILS_ENV=development
+export RAILS_PRIVATE_PREVIEW=YES RAILS_TUNNEL_READ_ONLY=YES
+export RAILS_PREVIEW_AI_SEARCH_ALLOW=NO
+export M5_ASYNC_SEARCH_ENABLE=NO M2_SEMANTIC_UI_ENABLE=NO M2_ANSWERABILITY_SCOPE_ENABLE=NO
+unset MODAL_EMBEDDING_URL MODAL_EMBEDDING_TOKEN MODAL_RERANK_URL MODAL_RERANK_TOKEN \
+  MODAL_PROXY_KEY MODAL_PROXY_SECRET || true
+cd "$repo"
+exec bundle exec rails server --binding 127.0.0.1 --port 3068 --environment development

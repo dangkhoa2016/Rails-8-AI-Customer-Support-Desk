@@ -1,0 +1,13 @@
+<section>
+  <h1><%= t('platform_mfa.title') %></h1>
+  <p><%= t('platform_mfa.instructions') %></p>
+</section>
+<section class="platform-panel" style="max-width:580px">
+  <%= form_with url: platform_mfa_path, method: :post, data: {turbo: false} do %>
+    <%= label_tag :code, t('platform_mfa.code') %>
+    <%= text_field_tag :code, nil, required: true, inputmode: 'numeric',
+      autocomplete: 'one-time-code', pattern: '[0-9]{6}', maxlength: 6 %>
+    <%= submit_tag t('platform_mfa.verify') %>
+  <% end %>
+  <p><%= link_to t('platform_mfa.restart'), platform_sign_in_path %></p>
+</section>

@@ -39,10 +39,12 @@ for c in approved['implementation_clarifications']:
     assert c['en'].strip() and c['vi'].strip()
 assert approved['global']['default_ai_mode'] == 'human_approval_required'
 assert 'send_message' in approved['global']['no_ai_mutations']
-for lang in ('VI','EN'):
-    spec = root/f'RAILS8_AI_CUSTOMER_SUPPORT_DESK_BUSINESS_SPEC_{lang}_2026-10-28.md'
-    assert 'M0 POLICY APPROVAL UPDATE' in spec.read_text()
-    assert (root/f'M0_POLICY_APPROVAL_{lang}.md').exists()
+# Publication-safe validation relies on the canonical, content-addressed JSON
+# fixtures, not internal editorial approval/handoff documents.
+assert approved['policy_version'] == approved['global']['policy_version']
+assert source['status'] == 'design_blueprint_not_generated_dataset'
+assert approved['policy_approval']['status'] == 'approved_for_synthetic_demo'
+assert all(rule['id'] for org in approved['organizations'] for rule in org['rules'])
 print('PASS: M0 approved policy metadata, 20 policy IDs, 100 KB catalog titles, 20 reference cases, 2 planned fixtures')
 print('PASS: original business policies/prices/quotas were preserved; bilingual clarifications; AI human approval remains default')
 print('Status: OFFLINE STATIC VALIDATION ONLY; Rails/PostgreSQL/Modal NOT_RUN')

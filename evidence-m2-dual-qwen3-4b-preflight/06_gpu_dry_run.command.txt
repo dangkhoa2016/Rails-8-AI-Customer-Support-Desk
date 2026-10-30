@@ -1,1 +1,0 @@
-bin/rails runner script/m2_dual_4b_pilot.rb 

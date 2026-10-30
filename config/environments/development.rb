@@ -27,7 +27,8 @@ Rails.application.configure do
     end
     config.middleware.insert_before 0, PrivateColabPreviewGate,
       password: password, tunnel_host: tunnel_host,
-      read_only_tunnel: ENV['RAILS_TUNNEL_READ_ONLY'] == 'YES'
+      read_only_tunnel: ENV['RAILS_TUNNEL_READ_ONLY'] == 'YES',
+      allow_ai_search: ENV['RAILS_PREVIEW_AI_SEARCH_ALLOW'] == 'YES'
     # Colab port proxy hostname for port 3068 only, not arbitrary public domains.
     config.hosts << /\A[a-z0-9-]+-3068-colab\.googleusercontent\.com\z/
     # New Colab HTTPS port proxy: 3068-<session>.<region>.prod.r.colab.dev.

@@ -1,1 +1,0 @@
-python3 script/verify_m2_priority_proposals.py 

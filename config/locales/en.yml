@@ -1,4 +1,11 @@
 en:
+  platform_mfa:
+    title: "Two-factor verification"
+    instructions: "Enter the six-digit code from your authenticator app. Codes cannot be reused."
+    code: "Authenticator code"
+    verify: "Verify and sign in"
+    restart: "Start over"
+    invalid: "Invalid or expired code."
   app:
     name: "Rails 8 AI Customer Support Desk"
     demo: "SYNTHETIC DEMO"

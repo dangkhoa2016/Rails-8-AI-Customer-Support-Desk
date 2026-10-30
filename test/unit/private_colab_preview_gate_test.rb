@@ -88,6 +88,26 @@ class PrivateColabPreviewGateTest < ActiveSupport::TestCase
     assert_equal 200, ai.status
   end
 
+  test 'public view-only mode blocks AI search and business mutation while permitting demo sign-in' do
+    host = 'brief-mango-bridge.trycloudflare.com'
+    handler = ->(_env) { [200, {}, ['SAFE_DEMO']] }
+    gate = PrivateColabPreviewGate.new(handler, password: 'private-' + 'x' * 40,
+      tunnel_host: host, read_only_tunnel: true, allow_ai_search: false)
+    req = Rack::MockRequest.new(gate)
+    form = req.get(PrivateColabPreviewGate::LOGIN_PATH, 'HTTP_HOST' => host)
+    nonce = form.body[/name="nonce" value="([^"]+)"/, 1]
+    login = req.post(PrivateColabPreviewGate::LOGIN_PATH, 'HTTP_HOST' => host,
+      params: {nonce: nonce, preview_password: 'private-' + 'x' * 40})
+    assert_equal 303, login.status
+    cookie = login['set-cookie'].split(';').first
+    assert_equal 200, req.get('/demo/sign_in', 'HTTP_HOST' => host, 'HTTP_COOKIE' => cookie).status
+    assert_equal 200, req.post('/demo/sign_in', 'HTTP_HOST' => host, 'HTTP_COOKIE' => cookie).status
+    assert_equal 405, req.post('/kb/ai-search', 'HTTP_HOST' => host, 'HTTP_COOKIE' => cookie).status
+    assert_equal 405, req.post('/tickets', 'HTTP_HOST' => host, 'HTTP_COOKIE' => cookie).status
+    assert_equal 405, req.patch('/platform/organizations/1/lifecycle',
+      'HTTP_HOST' => host, 'HTTP_COOKIE' => cookie).status
+  end
+
   test 'Cloudflare preview GPU budget is global across cookie sessions' do
     host = 'brief-mango-bridge.trycloudflare.com'
     handler = ->(_env) { [200, {}, ['OK']] }

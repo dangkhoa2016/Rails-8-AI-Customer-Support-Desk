@@ -1,1 +1,0 @@
-{"origin_type": "private_cloudflare_https", "login_status": 302, "logout_real_http_method": "POST", "logout_rails_method_override": "delete", "logout_status": 405, "logout_location": "", "expected_redirect": false, "business_mutations": 0, "tokens_logged": false}

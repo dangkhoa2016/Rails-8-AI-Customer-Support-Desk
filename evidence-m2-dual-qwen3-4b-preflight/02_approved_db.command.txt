@@ -1,1 +1,0 @@
-bin/rails runner script/verify_m2_dual_4b_checkpoint.rb 

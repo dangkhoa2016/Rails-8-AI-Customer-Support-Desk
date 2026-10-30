@@ -1,7 +1,0 @@
-USING_EXISTING_PRIVATE_ACCESS_PASSWORD
-REVIEW_URL_IF_TUNNEL_READY:
-https://character-instrumentation-final-shed.trycloudflare.com
-USERNAME: review
-PASSWORD_IS_NOT_DISPLAYED; view it privately on Colab with:
-cat /root/.config/rails8-support-desk-private-review/preview-password.txt
-DO_NOT_SHARE_PASSWORD_OR_COMMIT_EPHEMERAL_TUNNEL_URL

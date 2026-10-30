@@ -1,1 +1,0 @@
-bin/rails runner db/seeds/m2_knowledge_base.rb 
