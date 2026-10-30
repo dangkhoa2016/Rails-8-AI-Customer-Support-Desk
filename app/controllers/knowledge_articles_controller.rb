@@ -25,10 +25,21 @@ class KnowledgeArticlesController < ApplicationController
     @published_count = KnowledgeArticleVersion.where(organization_id: current_organization.id,
       locale: I18n.locale.to_s, status: 'approved').count
     @priority_review_articles = []
+    @priority_review_statuses = {}
     if reviewer?
       proposals = JSON.parse(File.read(Rails.root.join('review/m2_priority_editorial_proposals_20261029.json')))
       keys = proposals.fetch('revisions').map { |v| v.fetch('article_key') }.uniq
-      @priority_review_articles = base.where(article_key: keys).order(:article_key).to_a
+      @priority_review_articles = base.where(article_key: keys)
+        .includes(:knowledge_article_versions).order(:article_key).to_a
+      @priority_review_statuses = @priority_review_articles.to_h do |article|
+        statuses = %w[vi en].to_h do |language|
+          latest = article.knowledge_article_versions
+            .select { |version| version.locale == language }.max_by(&:version_number)
+          approved = latest&.active_on? && latest.policy_version == current_organization.policy_version
+          [language, approved ? :approved : :pending]
+        end
+        [article.id, statuses]
+      end
     end
   end
 

@@ -1,5 +1,5 @@
 <section class="hero">
-  <span class="pill warn">M2 · EDITORIAL REVIEW · Modal NOT_RUN</span>
+  <span class="pill"><%= t('knowledge.hero_mode') %></span>
   <h1><%= t('knowledge.title') %></h1>
   <p class="intro"><%= t('knowledge.subtitle') %></p>
   <span class="pill"><%= t('knowledge.published') %>: <%= @published_count %> · <%= t('knowledge.records') %>: <%= @versions.length %></span>
@@ -7,17 +7,25 @@
 <% if @priority_review_articles.any? %>
 <section class="panel">
   <div class="panel-header">
-    <h2><%= t('knowledge.priority_review') %></h2>
-    <span class="pill warn"><%= @priority_review_articles.size %> <%= t('knowledge.records') %></span>
+    <h2><%= t('knowledge.priority_review', tenant: current_organization.name, count: @priority_review_articles.size) %></h2>
+    <span class="pill"><%= @priority_review_articles.size %> <%= t('knowledge.records') %></span>
   </div>
   <p class="muted"><%= t('knowledge.priority_explain') %></p>
   <div class="table-wrap"><table>
-    <thead><tr><th><%= t('knowledge.article') %></th><th><%= t('knowledge.category') %></th><th><%= t('knowledge.compare_link') %></th></tr></thead>
+    <thead><tr><th><%= t('knowledge.article') %></th><th><%= t('knowledge.category') %></th><th><%= t('knowledge.language_status') %></th><th><%= t('knowledge.compare_link') %></th></tr></thead>
     <tbody>
       <% @priority_review_articles.each do |article| %>
       <tr>
         <td><strong><%= article.article_key %></strong></td>
         <td><%= article.category %></td>
+        <td class="priority-language-status">
+          <% %w[vi en].each do |language| %>
+            <% state = @priority_review_statuses.fetch(article.id).fetch(language) %>
+            <span class="pill <%= state == :approved ? 'ok' : 'warn' %>" data-locale="<%= language %>">
+              <%= language.upcase %>: <%= t("knowledge.priority_state_#{state}") %>
+            </span>
+          <% end %>
+        </td>
         <td><%= link_to t('knowledge.compare_link'), compare_knowledge_article_path(article), class: 'btn secondary' %></td>
       </tr>
       <% end %>
