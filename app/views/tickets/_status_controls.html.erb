@@ -1,0 +1,13 @@
+<section id="ticket_status_controls" class="panel">
+  <h2><%= t('tickets.update_status') %></h2>
+  <div class="navlinks">
+    <% TicketsController::TRANSITIONS.fetch(ticket.status).each do |status| %>
+      <%= button_to status, status_ticket_path(ticket), method: :patch,
+          params: {status: status}, class: 'secondary',
+          form: { data: { controller: "submit-state", action: "turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish" } } %>
+    <% end %>
+    <% if TicketsController::TRANSITIONS.fetch(ticket.status).empty? %>
+      <p class="muted"><%= t('tickets.terminal') %></p>
+    <% end %>
+  </div>
+</section>

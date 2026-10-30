@@ -76,10 +76,10 @@ class KnowledgeArticlesController < ApplicationController
       locale: version.locale, version: version.version_number, sha256: version.sha256,
       editorial_attested: true, reviewer_notes: params[:reviewer_notes].to_s.strip })
     destination = params[:review_compare] == '1' ? compare_knowledge_article_path(@article) : knowledge_article_path(@article, locale: version.locale)
-    redirect_to destination, notice: t('knowledge.approved')
+    redirect_to destination, notice: t('knowledge.approved'), status: :see_other
   rescue ArgumentError => e
     destination = params[:review_compare] == '1' ? compare_knowledge_article_path(@article) : knowledge_article_path(@article)
-    redirect_to destination, alert: e.message
+    redirect_to destination, alert: e.message, status: :see_other
   end
 
   private

@@ -1,0 +1,19 @@
+<section id="ticket_conversation" class="panel">
+  <h2><%= t('tickets.conversation') %></h2>
+  <% if messages.any? %>
+    <div class="thread">
+      <% messages.each do |message| %>
+        <article class="message <%= 'internal' if message.visibility == 'internal' %>">
+          <div class="meta">
+            <strong><%= message.actor_type %></strong>
+            <span><%= message.visibility == 'internal' ? t('tickets.internal') : t('tickets.public') %></span>
+            <span><%= message.sent_at&.in_time_zone('Asia/Ho_Chi_Minh')&.strftime('%Y-%m-%d %H:%M') %></span>
+          </div>
+          <p><%= message.body %></p>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="muted"><%= t('tickets.empty') %></p>
+  <% end %>
+</section>

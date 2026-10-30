@@ -7,11 +7,11 @@ class TicketMessagesController < ApplicationController
     visibility = params.require(:visibility).to_s
     key = params.require(:idempotency_key).to_s
     unless %w[public internal].include?(visibility) && body.present? && body.length <= 10_000 && key.match?(/\A[0-9a-f-]{36}\z/)
-      redirect_to ticket_path(ticket), alert: t('tickets.invalid_input')
+      redirect_to ticket_path(ticket), alert: t('tickets.invalid_input'), status: :see_other
       return
     end
     if visibility == 'public' && params[:review_confirmed] != '1'
-      redirect_to ticket_path(ticket), alert: t('tickets.approval_required')
+      redirect_to ticket_path(ticket), alert: t('tickets.approval_required'), status: :see_other
       return
     end
     ActiveRecord::Base.transaction do
@@ -27,8 +27,24 @@ class TicketMessagesController < ApplicationController
           ticket: ticket, metadata: {message_id: message.id, review_confirmed: visibility == 'public'})
       end
     end
-    redirect_to ticket_path(ticket), notice: t('tickets.reply_saved')
+    respond_success(ticket)
   rescue ActiveRecord::RecordNotUnique
-    redirect_to ticket_path(ticket), notice: t('tickets.reply_saved')
+    respond_success(ticket)
+  end
+
+  private
+
+  def respond_success(ticket)
+    respond_to do |format|
+      format.html { redirect_to ticket_path(ticket), notice: t('tickets.reply_saved'), status: :see_other }
+      format.turbo_stream do
+        messages = TicketMessage.where(organization_id: current_organization.id, ticket_id: ticket.id).order(:created_at)
+        render turbo_stream: [
+          turbo_stream.replace('ticket_conversation', partial: 'tickets/conversation', locals: {messages: messages}),
+          turbo_stream.replace('ticket_reply_form', partial: 'tickets/reply_form', locals: {ticket: ticket}),
+          turbo_stream.update('flash_messages', helpers.content_tag(:div, t('tickets.reply_saved'), class: 'notice', role: 'status'))
+        ]
+      end
+    end
   end
 end

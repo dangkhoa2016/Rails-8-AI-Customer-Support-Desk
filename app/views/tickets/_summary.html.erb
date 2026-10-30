@@ -1,0 +1,6 @@
+<div id="ticket_summary" class="hero">
+  <span class="pill"><%= ticket.priority %></span>
+  <span class="pill"><%= ticket.status %></span>
+  <h1><%= ticket.number %></h1>
+  <p class="intro"><%= ticket.category %> · <%= link_to ticket.customer.external_key, customer_path(ticket.customer) %></p>
+</div>

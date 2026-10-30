@@ -45,7 +45,7 @@ class TicketsController < ApplicationController
     priority = params.require(:priority).to_s
     body = params.require(:initial_message).to_s.strip
     unless CATEGORIES.fetch(current_organization.vertical).include?(category) && %w[P1 P2 P3 P4].include?(priority) && body.present? && body.length <= 10_000
-      redirect_to new_ticket_path, alert: t('tickets.invalid_input')
+      redirect_to new_ticket_path, alert: t('tickets.invalid_input'), status: :see_other
       return
     end
     @ticket = nil
@@ -62,7 +62,7 @@ class TicketsController < ApplicationController
         body: body, sent_at: Time.current)
       audit!(action: 'ticket.created', ticket: @ticket, metadata: {category: category, priority: priority})
     end
-    redirect_to ticket_path(@ticket), notice: t('tickets.created')
+    redirect_to ticket_path(@ticket), notice: t('tickets.created'), status: :see_other
   end
 
   def show
@@ -75,7 +75,7 @@ class TicketsController < ApplicationController
     ticket = scoped_tickets.find(params[:id])
     desired = params.require(:status).to_s
     unless TRANSITIONS.fetch(ticket.status).include?(desired)
-      redirect_to ticket_path(ticket), alert: t('tickets.invalid_transition')
+      redirect_to ticket_path(ticket), alert: t('tickets.invalid_transition'), status: :see_other
       return
     end
     ActiveRecord::Base.transaction do
@@ -85,6 +85,15 @@ class TicketsController < ApplicationController
       ticket.update!(status: desired)
       audit!(action: 'ticket.status_changed', ticket: ticket, metadata: {from: old, to: desired})
     end
-    redirect_to ticket_path(ticket), notice: t('tickets.updated')
+    respond_to do |format|
+      format.html { redirect_to ticket_path(ticket), notice: t('tickets.updated'), status: :see_other }
+      format.turbo_stream do
+        render turbo_stream: [
+          turbo_stream.replace('ticket_summary', partial: 'tickets/summary', locals: {ticket: ticket}),
+          turbo_stream.replace('ticket_status_controls', partial: 'tickets/status_controls', locals: {ticket: ticket}),
+          turbo_stream.update('flash_messages', helpers.content_tag(:div, t('tickets.updated'), class: 'notice', role: 'status'))
+        ]
+      end
+    end
   end
 end

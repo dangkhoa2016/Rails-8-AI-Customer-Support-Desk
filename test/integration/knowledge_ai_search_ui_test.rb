@@ -71,7 +71,8 @@ class KnowledgeAiSearchUiTest < ActionDispatch::IntegrationTest
       assert_equal true, captured[:query_privacy_reviewed]
       assert_select 'article.ai-hit', 1
       assert_select 'a[href*="knowledge_articles"]', text: 'TF-AI-001'
-      assert_select 'script', 0
+      # Importmap and Turbo legitimately add script tags; reject only user-controlled script content.
+      assert_select 'script', text: /alert\(\"xss\"\)/, count: 0
       assert_includes response.body, '&lt;script&gt;'
       assert_includes response.headers['Cache-Control'], 'no-store'
     end

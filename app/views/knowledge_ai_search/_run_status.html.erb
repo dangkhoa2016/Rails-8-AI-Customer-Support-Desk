@@ -1,0 +1,47 @@
+<%= turbo_frame_tag "ai_search_run_#{run.public_id}",
+    src: (run.terminal? ? nil : kb_ai_search_run_path(run.public_id)),
+    data: { controller: "ai-search-poll",
+      action: "turbo:frame-load->ai-search-poll#loaded",
+      state: run.status } do %>
+  <section class="panel" aria-live="polite" data-ai-terminal="<%= run.terminal? %>">
+    <div class="panel-header">
+      <h2><%= t('ai_search.async_heading') %></h2>
+      <span class="pill <%= run.status == 'succeeded' ? 'ok' : 'warn' %>"><%= run.status %></span>
+    </div>
+    <% if run.status == 'succeeded' %>
+      <% hits = run.safe_hits %>
+      <p class="muted"><%= t('ai_search.async_completed', count: hits.size, elapsed: run.elapsed_ms) %></p>
+      <p class="small muted"><%= t('ai_search.results_notice') %></p>
+      <p class="small muted"><%= t('ai_search.scope_probe_inactive') %></p>
+      <% if hits.empty? %>
+        <p class="alert" role="status"><%= t('ai_search.no_relevant_evidence', tenant: current_organization.name) %></p>
+        <p class="muted"><%= t('ai_search.no_evidence_guidance') %></p>
+      <% end %>
+      <div class="stack">
+        <% hits.each_with_index do |hit, i| %>
+          <article class="ai-hit">
+            <div class="ai-hit-top">
+              <span class="pill"><%= t('ai_search.rank') %> <%= i + 1 %></span>
+              <strong><%= link_to hit.article_key,
+                knowledge_article_path(KnowledgeArticle.find_by!(organization_id: current_organization.id,
+                  article_key: hit.article_key), locale: run.locale), data: { turbo_frame: '_top' } %></strong>
+            </div>
+            <p class="kb-snippet"><%= hit.content %></p>
+            <div class="ai-source">
+              <span><%= t('ai_search.logit') %>: <%= number_with_precision(hit.rerank_score, precision: 3) %></span>
+              <span><%= t('ai_search.distance') %>: <%= number_with_precision(hit.cosine_distance, precision: 4) %></span>
+              <span><%= t('ai_search.citation') %>: <code><%= hit.citation %></code></span>
+              <span>SHA256: <code><%= hit.sha256.first(16) %>…</code></span>
+            </div>
+          </article>
+        <% end %>
+      </div>
+    <% elsif run.status == 'failed' %>
+      <p class="alert" role="status"><%= t('ai_search.async_failed') %></p>
+      <p class="small muted"><%= t('ai_search.async_error_code', code: run.error_code) %></p>
+    <% else %>
+      <p class="muted" role="status"><%= t('ai_search.async_pending') %></p>
+      <p class="small muted"><%= t('ai_search.async_note') %></p>
+    <% end %>
+  </section>
+<% end %>

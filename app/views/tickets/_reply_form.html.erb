@@ -1,0 +1,13 @@
+<section id="ticket_reply_form" class="panel">
+  <h2><%= t('tickets.reply_title') %></h2>
+  <p class="muted small"><%= t('tickets.reply_help') %></p>
+  <%= form_with url: ticket_ticket_messages_path(ticket), method: :post,
+      data: { controller: "submit-state", action: "turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish" } do |f| %>
+    <%= hidden_field_tag :idempotency_key, SecureRandom.uuid %>
+    <div class="field"><%= label_tag :visibility, t('tickets.visibility') %><%= select_tag :visibility, options_for_select([[t('tickets.internal'),'internal'],[t('tickets.public'),'public']]) %></div>
+    <div class="field"><%= label_tag :body, t('tickets.message') %><%= text_area_tag :body, nil, required:true, maxlength:10000 %></div>
+    <label class="checkbox"><%= check_box_tag :review_confirmed, '1', false %><span><%= t('tickets.confirm') %></span></label>
+    <p class="tiny muted"><%= t('tickets.no_external_send') %></p>
+    <%= f.submit t('tickets.save_reply') %>
+  <% end %>
+</section>

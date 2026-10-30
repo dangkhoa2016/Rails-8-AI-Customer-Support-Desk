@@ -5,6 +5,9 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.active_support.deprecation = :log
   config.active_record.verbose_query_logs = true
+  config.active_job.queue_adapter = :solid_queue if ENV['M5_ASYNC_SEARCH_ENABLE'] == 'YES'
+  # Single PostgreSQL database: the queue tables are in regular migrations.
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Quick Tunnel is permitted only by the exact hostname in the preview gate below.
   # Opt-in private demo gate for viewing via an authenticated Colab notebook.

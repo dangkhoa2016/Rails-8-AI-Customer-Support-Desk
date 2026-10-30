@@ -6,12 +6,13 @@
   </div>
   <% if can_write? %><%= link_to t('tickets.new'), new_ticket_path, class: 'btn' %><% end %>
 </div>
+<%= turbo_frame_tag "tickets_listing", data: { turbo_action: "advance" } do %>
 <section class="panel" aria-label="<%= t('tickets.filters') %>">
   <div class="panel-header">
     <h2><%= t('tickets.filters') %></h2>
     <span class="pill"><%= t('tickets.filtered_count', count: @filtered_count, total: @total_tickets) %></span>
   </div>
-  <%= form_with url: tickets_path, method: :get, local: true do %>
+  <%= form_with url: tickets_path, method: :get, local: true, data: { controller: "submit-state", action: "turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish" } do %>
     <div class="two">
       <div class="field">
         <%= label_tag :q, t('tickets.search') %>
@@ -51,7 +52,7 @@
       <tbody>
         <% @tickets.each do |ticket| %>
           <tr>
-            <td><%= link_to ticket.number, ticket_path(ticket) %></td>
+            <td><%= link_to ticket.number, ticket_path(ticket), data: { turbo_frame: "_top" } %></td>
             <td><%= ticket.customer.external_key %></td>
             <td><span class="pill"><%= ticket.customer.locale.upcase %></span></td>
             <td><%= ticket.category %></td>
@@ -69,3 +70,4 @@
     <p class="tiny muted"><%= t('tickets.page_limit') %></p>
   <% end %>
 </section>
+<% end %>

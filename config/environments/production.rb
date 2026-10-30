@@ -6,5 +6,6 @@ Rails.application.configure do
   config.log_level = :info
   config.active_support.report_deprecations = false
   config.require_master_key = false
+  # No production AI pilot/worker until production authentication is implemented.
   # Production login intentionally unavailable: synthetic-only local demo.
 end

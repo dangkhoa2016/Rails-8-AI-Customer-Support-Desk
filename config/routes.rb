@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   get '/kb/ai-search', to: 'knowledge_ai_search#show', as: :kb_ai_search
   post '/kb/ai-search', to: 'knowledge_ai_search#search'
+  get '/kb/ai-search/runs/:id', to: 'knowledge_ai_search#run_status', as: :kb_ai_search_run
   get '/records/teamflow/invoice', to: 'business_records#teamflow_invoice', as: :teamflow_invoice
   get '/records/novamart/order', to: 'business_records#novamart_order', as: :novamart_order
 end

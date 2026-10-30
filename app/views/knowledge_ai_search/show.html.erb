@@ -13,11 +13,11 @@
     <h2><%= t('ai_search.search_title') %></h2>
     <span class="pill <%= @ready ? 'ok' : 'warn' %>"><%= @ready ? t('ai_search.ready') : t('ai_search.disabled') %></span>
   </div>
-  <p class="muted"><strong><%= t('ai_search.tenant_scope', tenant: current_organization.name) %></strong> <%= t('ai_search.tenant_limit') %> <%= link_to t('ai_search.switch_tenant'), demo_sign_in_path(locale: @locale) %>.</p>
+  <p class="muted"><strong><%= t('ai_search.tenant_scope', tenant: current_organization.name) %></strong> <%= t('ai_search.tenant_limit') %> <%= link_to t('ai_search.switch_tenant'), demo_sign_in_path(locale: @locale), data: { turbo: false } %>.</p>
   <p class="muted"><%= t('ai_search.warning') %></p>
   <% unless @ready %><p class="alert"><%= t('ai_search.no_proxy_config') %></p><% end %>
   <% if @validation_error %><p class="alert" role="alert"><%= @validation_error %></p><% end %>
-  <%= form_with url: kb_ai_search_path, method: :post, local: true do |form| %>
+  <%= form_with url: kb_ai_search_path, method: :post, local: true, data: { controller: "submit-state", action: "turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish" } do |form| %>
     <div class="field">
       <%= form.label :query, t('ai_search.prompt') %>
       <%= form.text_area :query, value: @query_text, maxlength: 300, rows: 2, placeholder: @examples.first || t('ai_search.placeholder_neutral'), required: true, disabled: !@ready, autocomplete: 'off' %>
@@ -61,4 +61,8 @@
     <% end %>
   </div>
 </section>
+<% end %>
+
+<% if @run %>
+  <%= render partial: "knowledge_ai_search/run_status", locals: {run: @run} %>
 <% end %>

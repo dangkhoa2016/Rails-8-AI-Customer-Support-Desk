@@ -1,0 +1,8 @@
+# M5.2: development-only synthetic request cleanup and safe stale-worker recovery.
+development:
+  m52_maintain_ai_search_runs:
+    class: MaintainAISearchRunsJob
+    schedule: every 5 minutes
+
+test: {}
+production: {}

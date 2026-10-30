@@ -25,9 +25,10 @@
   </table></div>
 </section>
 <% end %>
+<%= turbo_frame_tag "kb_search_results", data: { turbo_action: "advance" } do %>
 <section class="panel">
   <h2><%= t('knowledge.search') %></h2>
-  <form action="<%= knowledge_articles_path %>" method="get">
+  <form action="<%= knowledge_articles_path %>" method="get" data-controller="submit-state" data-action="turbo:submit-start->submit-state#start turbo:submit-end->submit-state#finish">
     <div class="field"><%= text_field_tag :q, @query, maxlength: 300, placeholder: t('knowledge.search') %></div>
     <button type="submit"><%= t('knowledge.search_btn') %></button>
   </form>
@@ -41,6 +42,7 @@
     <% end %>
   <% end %>
 </section>
+<% end %>
 <section class="panel">
   <h2><%= t('knowledge.records') %></h2>
   <% if @versions.empty? %><div class="badge-empty"><%= t('knowledge.zero') %></div><% else %>

@@ -1,0 +1,106 @@
+{
+  "status": "PASS_ARCHIVED_DOCUMENT_VECTOR_SELF_RETRIEVAL_NO_GPU",
+  "source": "restored frozen M2 document embeddings",
+  "semantic_answerability_claim": false,
+  "new_query_embedding": false,
+  "model_inference": "NOT_RUN",
+  "checks": 12,
+  "results": [
+    {
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "article_key": "TF-KB-012",
+      "top1": "TF-KB-012@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "teamflow-cloud",
+      "locale": "en",
+      "article_key": "TF-KB-015",
+      "top1": "TF-KB-015@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "article_key": "TF-KB-012",
+      "top1": "TF-KB-012@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "teamflow-cloud",
+      "locale": "vi",
+      "article_key": "TF-KB-015",
+      "top1": "TF-KB-015@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-014",
+      "top1": "NM-KB-014@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-020",
+      "top1": "NM-KB-020@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-029",
+      "top1": "NM-KB-029@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "en",
+      "article_key": "NM-KB-030",
+      "top1": "NM-KB-030@en:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-014",
+      "top1": "NM-KB-014@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-020",
+      "top1": "NM-KB-020@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-029",
+      "top1": "NM-KB-029@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    },
+    {
+      "tenant": "novamart-store",
+      "locale": "vi",
+      "article_key": "NM-KB-030",
+      "top1": "NM-KB-030@vi:v2#chunk-0",
+      "self_cosine_distance": 0.0,
+      "hits": 5
+    }
+  ]
+}

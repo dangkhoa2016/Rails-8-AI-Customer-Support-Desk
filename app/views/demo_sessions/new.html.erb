@@ -3,25 +3,66 @@
   <h1><%= t('auth.headline') %></h1>
   <p class="intro"><%= t('auth.explain') %></p>
 </section>
+
 <section class="two">
   <div class="panel">
     <h2><%= t('auth.select_agent') %></h2>
+    <p class="small muted"><%= t('auth.select_intro') %></p>
     <% if @memberships.any? %>
-      <%= form_with url: demo_sign_in_path, method: :post do |f| %>
+      <%= form_with url: demo_sign_in_path, method: :post, data: { turbo: false } do |f| %>
+        <% role_order = %w[viewer agent owner] %>
+        <% account_groups = @memberships.group_by { |membership| membership.organization.name }.map do |organization_name, memberships| %>
+          <% options = memberships.sort_by { |membership| role_order.index(membership.role) || role_order.length }.map do |membership| %>
+            <% ["#{t("auth.role_names.#{membership.role}", default: membership.role)} · #{membership.user.display_name}", membership.id] %>
+          <% end %>
+          <% [organization_name, options] %>
+        <% end %>
         <div class="field">
-          <%= f.label :membership_id, t('auth.identity') %>
-          <%= select_tag :membership_id, options_from_collection_for_select(@memberships, :id, :display_label), required: true %>
+          <%= label_tag :membership_id, t('auth.identity') %>
+          <p class="small muted" id="demo-role-help"><%= t('auth.dropdown_help') %></p>
+          <%= select_tag :membership_id, grouped_options_for_select(account_groups), required: true, aria: { describedby: 'demo-role-help' } %>
         </div>
-        <div class="field"><%= label_tag :locale, t('auth.language') %><%= select_tag :locale, options_for_select([['Tiếng Việt','vi'], ['English','en']], I18n.locale.to_s) %></div>
+        <div class="field">
+          <%= label_tag :locale, t('auth.language') %>
+          <%= select_tag :locale, options_for_select([['Tiếng Việt','vi'], ['English','en']], I18n.locale.to_s) %>
+        </div>
         <%= f.submit t('auth.sign_in') %>
       <% end %>
+      <p class="small muted"><%= t('auth.switch_hint') %></p>
     <% else %>
       <div class="badge-empty"><%= t('auth.no_memberships') %></div>
     <% end %>
   </div>
-  <div class="panel">
+
+  <section class="panel" aria-labelledby="demo-role-guide-title">
+    <h2 id="demo-role-guide-title"><%= t('auth.roles_title') %></h2>
+    <p class="small muted"><%= t('auth.roles_intro') %></p>
+    <div class="demo-role-guide">
+      <% %w[viewer agent owner].each do |role| %>
+        <article class="demo-role-card">
+          <h3><span class="pill"><%= t("auth.role_names.#{role}") %></span></h3>
+          <p><%= t("auth.role_descriptions.#{role}") %></p>
+          <p class="tiny muted"><strong><%= t('auth.try_label') %></strong> <%= t("auth.role_tests.#{role}") %></p>
+        </article>
+      <% end %>
+    </div>
+  </section>
+</section>
+
+<section class="two">
+  <section class="panel" aria-labelledby="demo-steps-title">
+    <h2 id="demo-steps-title"><%= t('auth.steps_title') %></h2>
+    <ol class="demo-test-steps">
+      <% (1..3).each do |step| %>
+        <li><%= t("auth.step_#{step}") %></li>
+      <% end %>
+    </ol>
+  </section>
+  <section class="panel">
     <h2><%= t('auth.security_title') %></h2>
     <p class="muted"><%= t('auth.security_explain') %></p>
+    <p class="small"><%= t('auth.tunnel_read_only') %></p>
+    <p class="small muted"><%= t('auth.ai_limit') %></p>
     <span class="pill warn"><%= t('auth.dev_only') %></span>
-  </div>
+  </section>
 </section>

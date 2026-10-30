@@ -1,0 +1,62 @@
+{
+  "ai_business_writes": 0,
+  "answerability_gate": "BLOCKED",
+  "captured_utc": "2026-10-29T15:00:03.330263+00:00",
+  "colab_host": "d912002e2a9f",
+  "db_backup_private": {
+    "bytes": 1245445,
+    "modal_roundtrip": "PASS_BYTE_IDENTICAL_AND_PG_RESTORE_LIST",
+    "sha256": "391f8bb7970493fe75a7db9253213bef1e801cdd62d837213e25e803544704dc",
+    "volume_subpath": "20261029/m3-post-m2-84-vectors/"
+  },
+  "device_id": "d2536713-6975-49cb-8955-969067f3726f",
+  "dimensions": 2560,
+  "first_restore_inserted": 84,
+  "git_commit_push_by_this_stage": false,
+  "git_head_observed": "7220aa3",
+  "idempotent_existing_matching": 84,
+  "includes_tokens_or_ephemeral_urls": false,
+  "kind": "M3_M2_84_VECTOR_RESTORE_LIVE_DB_EVIDENCE_V1",
+  "m2_claim64_synthetic_approval_sha256": "f54bdd06b90af59331c4b9165e36a2b9dd19f740512be0fd413b2a0b3746cff9",
+  "m2_modal_apps": "DEPLOYED_TASKS_0_WHEN_CHECKED",
+  "m3_dataset_sha256": "398e3de1fe231eaa6baabded10183502ed8551f33869c188d534e16bfe2c81fd",
+  "m3_eval120": "HISTORICAL_CANDIDATES_NO_GOLD",
+  "model_id": "Qwen/Qwen3-Embedding-4B",
+  "model_revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+  "new_gpu_calls": 0,
+  "new_modal_http_inference": "NOT_RUN_MISSING_PRIVATE_CLIENT_CONFIG",
+  "pgvector_document_self_retrieval": {
+    "cases": 12,
+    "max_cosine_distance": 0.0,
+    "status": "PASS_ARCHIVED_DOCUMENT_VECTOR_SELF_RETRIEVAL_NO_GPU"
+  },
+  "post_restore_db_counts": {
+    "approved_kb_v2": 12,
+    "customers": 100,
+    "embeddings": 84,
+    "kb_articles": 100,
+    "kb_chunks": 1484,
+    "kb_versions": 212,
+    "m3_seed_audits": 240,
+    "messages": 440,
+    "nm_orders": 120,
+    "organizations": 2,
+    "tf_invoices": 80,
+    "tickets": 240
+  },
+  "rails_test_suite": {
+    "assertions": 4480,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests": 84
+  },
+  "read_only_m2_acceptance": "PASS_LIVE_EMBEDDED_DB_AND_FILTERED_RETRIEVAL",
+  "second_restore_inserted": 0,
+  "self_contained_restore_inserted": 0,
+  "source_dump_sha256": "9b6a218943b81d35ba61e60c92bfea6d171ca9c49517371e6ddedd18e6d0c4ae",
+  "tenant_count": {
+    "novamart-store": 56,
+    "teamflow-cloud": 28
+  }
+}

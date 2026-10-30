@@ -1,6 +1,16 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.where(organization_id: current_organization.id).order(:external_key).limit(120)
+    @query = params[:q].to_s.strip.first(80)
+    relation = Customer.where(organization_id: current_organization.id)
+    if @query.present?
+      pattern = "%#{ActiveRecord::Base.sanitize_sql_like(@query)}%"
+      relation = relation.where('external_key ILIKE :query OR display_name ILIKE :query', query: pattern)
+    end
+    @filtered_count = relation.count
+    @per_page = 20
+    @total_pages = [(@filtered_count.to_f / @per_page).ceil, 1].max
+    @page = params[:page].to_i.clamp(1, @total_pages)
+    @customers = relation.order(:external_key).offset((@page - 1) * @per_page).limit(@per_page)
   end
 
   def show

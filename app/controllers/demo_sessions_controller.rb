@@ -16,12 +16,12 @@ class DemoSessionsController < ApplicationController
     session[:demo_user_id] = membership.user_id
     session[:demo_organization_id] = membership.organization_id
     session[:locale] = params[:locale] == 'en' ? 'en' : 'vi'
-    redirect_to root_path, notice: t('auth.signed_in')
+    redirect_to root_path, notice: t('auth.signed_in'), status: :see_other
   end
 
   def destroy
     reset_session
-    redirect_to demo_sign_in_path, notice: t('auth.signed_out')
+    redirect_to demo_sign_in_path, notice: t('auth.signed_out'), status: :see_other
   end
 
   private

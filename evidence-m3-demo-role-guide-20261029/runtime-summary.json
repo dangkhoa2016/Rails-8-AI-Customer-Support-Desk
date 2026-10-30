@@ -1,0 +1,43 @@
+{
+  "ai_answerability_gate": "BLOCKED",
+  "captured_utc": "2026-10-29T15:15:32.435070+00:00",
+  "contains_credentials": false,
+  "device_id": "d2536713-6975-49cb-8955-969067f3726f",
+  "git_commit_push": false,
+  "git_head": "7220aa3",
+  "http_roles_tested": 6,
+  "i18n": [
+    "en",
+    "vi"
+  ],
+  "kind": "M3_DEMO_ROLE_GUIDE_VI_EN_ACCEPTANCE",
+  "local_http": "PASS_PRIVATE_DEMO_ROLE_GUIDE_HTTP",
+  "m2_approved_demo_claims_sha256": "f54bdd06b90af59331c4b9165e36a2b9dd19f740512be0fd413b2a0b3746cff9",
+  "m2_historical_dump_sha256": "9b6a218943b81d35ba61e60c92bfea6d171ca9c49517371e6ddedd18e6d0c4ae",
+  "m3_dataset_sha256": "398e3de1fe231eaa6baabded10183502ed8551f33869c188d534e16bfe2c81fd",
+  "modal_inference": "NOT_RUN",
+  "private_https": "PASS_PRIVATE_DEMO_ROLE_GUIDE_HTTP",
+  "private_preview_mutations": 0,
+  "rails_integration": {
+    "assertions": 58,
+    "errors": 0,
+    "failures": 0,
+    "tests": 3
+  },
+  "rails_regression": {
+    "assertions": 4538,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests": 87
+  },
+  "role_guide_names": [
+    "viewer",
+    "agent",
+    "owner"
+  ],
+  "tenants": [
+    "teamflow-cloud",
+    "novamart-store"
+  ]
+}

@@ -25,6 +25,9 @@ class KnowledgeAISearchController < ApplicationController
     end
     @results = nil
     @query_text = ''
+    @run = if params[:run].present? && ENV['M5_ASYNC_SEARCH_ENABLE'] == 'YES'
+      load_run!(params[:run])
+    end
   end
 
   def search
@@ -51,6 +54,18 @@ class KnowledgeAISearchController < ApplicationController
     session[:kb_ai_calls] = remaining + 1
     session[:kb_ai_last_call] = now
     @query_text = query
+    if ENV['M5_ASYNC_SEARCH_ENABLE'] == 'YES'
+      run = AISearchRun.create!(organization: current_organization,
+        membership: current_membership, request_role: current_membership.role,
+        locale: @locale, query_text: query, query_sha256: Digest::SHA256.hexdigest(query))
+      begin
+        KnowledgeAISearchJob.perform_later(run.id)
+      rescue StandardError
+        run.update!(status: 'failed', error_code: 'QUEUE_UNAVAILABLE', finished_at: Time.current)
+      end
+      redirect_to kb_ai_search_path(run: run.public_id, locale: @locale), status: :see_other
+      return
+    end
     @elapsed_ms = (Benchmark.realtime do
       @results = KnowledgeRerankedRetrieval.search(
         organization: current_organization, role: current_membership.role,
@@ -68,7 +83,25 @@ class KnowledgeAISearchController < ApplicationController
     render :show, status: :service_unavailable
   end
 
+  def run_status
+    @run = load_run!(params[:id])
+    @locale = @run.locale
+    @results = @run.safe_hits
+    @elapsed_ms = @run.elapsed_ms
+    if request.headers['Turbo-Frame'] == "ai_search_run_#{@run.public_id}"
+      render partial: 'knowledge_ai_search/run_status', locals: {run: @run}, layout: false
+    else
+      redirect_to kb_ai_search_path(run: @run.public_id, locale: @run.locale), status: :see_other
+    end
+  end
+
   private
+
+  def load_run!(public_id)
+    run = AISearchRun.visible_to(current_membership).find_by!(public_id: public_id)
+    raise ActiveRecord::RecordNotFound if run.expired?
+    run
+  end
 
   def require_staff_member
     head :forbidden unless current_membership && %w[owner admin agent].include?(current_membership.role)

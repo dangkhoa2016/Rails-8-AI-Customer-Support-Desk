@@ -8,18 +8,26 @@
   <title><%= t('app.name') %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <%# Do not cache cross-tenant/session snapshots or prefetch private synthetic pages. %>
+  <meta name="turbo-cache-control" content="no-cache">
+  <meta name="turbo-prefetch" content="false">
   <style>
     :root {font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:dark; background:#0b1020;color:#e8ecf6}
     *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% -20%,#1a3554 0%,transparent 45%),#0b1020}a{color:#92c3ff;text-decoration:none}a:hover{text-decoration:underline}
     .shell{max-width:1260px;margin:0 auto;padding:24px 28px 80px}.nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:34px;padding:16px 0;border-bottom:1px solid #30405c}
-    .brand{font-size:16px;font-weight:780;letter-spacing:-.02em;color:#fff}.brand small{font-weight:500;color:#9ab0cd}.navlinks{display:flex;gap:17px;align-items:center;flex-wrap:wrap}
+    .brand{font-size:16px;font-weight:780;letter-spacing:-.02em;color:#fff}.brand small{font-weight:500;color:#9ab0cd}.navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .navlinks .nav-menu-link{display:inline-flex;align-items:center;min-height:38px;padding:7px 11px;border:1px solid transparent;border-radius:9px;color:#a9c7e7;font-size:14px;font-weight:570;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+    .navlinks .nav-menu-link:hover{background:#1b304e;color:#fff;text-decoration:none}
+    .navlinks .nav-menu-link.is-active{background:#1d3d66;color:#fff;border-color:#638fc6;font-weight:720;box-shadow:inset 0 -2px #8fbeff;text-decoration:none}
+    .navlinks .nav-menu-link:focus-visible{outline:2px solid #9bc6ff;outline-offset:2px}
     .muted{color:#9eafc9}.tiny{font-size:12px}.small{font-size:14px}.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #38516c;border-radius:999px;padding:4px 10px;color:#a8c9ff;font-size:12px;background:#16243a}
     .pill.warn{color:#ffd69a;border-color:#795b36;background:#30251b}.pill.ok{color:#b3efd7;border-color:#3b695d;background:#16342b}
     h1{font-size:clamp(26px,4vw,40px);letter-spacing:-.04em;margin:8px 0 10px}h2{font-size:22px;margin:0 0 14px;letter-spacing:-.02em}h3{font-size:16px;margin:0 0 10px}p{line-height:1.6}.intro{max-width:800px;color:#9eafc9;margin:0 0 27px}
     .hero{margin-bottom:22px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card,.panel{background:linear-gradient(150deg,#19243b,#141e33);border:1px solid #30405c;border-radius:16px;padding:22px;box-shadow:0 12px 34px #00000020}
     .card .value{font-size:32px;font-weight:750;margin:14px 0 4px}.label{font-size:13px;color:#a9bad1}.panel{margin-top:19px}.panel-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:15px}
     .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.stack{display:grid;gap:15px}.field{display:grid;gap:7px;margin:15px 0}label{font-size:13px;font-weight:600;color:#cddcf0}input,select,textarea{background:#10182b;color:#f1f5ff;border:1px solid #3b4d69;border-radius:9px;padding:12px;width:100%;font:inherit}textarea{min-height:115px;resize:vertical}input:focus,select:focus,textarea:focus{outline:2px solid #6ca9fa}
-    .btn,button{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#3c80df;color:white;border:1px solid #5a93e6;border-radius:9px;padding:10px 16px;font:inherit;font-weight:650;cursor:pointer;text-decoration:none}.btn:hover,button:hover{background:#4b8ded;text-decoration:none}.btn.secondary,button.secondary{background:#1b2a44;border-color:#405776;color:#dce9ff}.btn.danger{background:#5b2b32;border-color:#8f404d}
+    .btn,button,input[type=submit],input[type=button],input[type=reset]{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#3c80df;color:#fff;border:1px solid #5a93e6;border-radius:9px;padding:10px 16px;font:inherit;font-weight:650;cursor:pointer;text-decoration:none}.btn:hover,button:hover,input[type=submit]:hover:not(:disabled),input[type=button]:hover:not(:disabled),input[type=reset]:hover:not(:disabled){background:#4b8ded;text-decoration:none}.btn.secondary,button.secondary{background:#1b2a44;border-color:#405776;color:#dce9ff}.btn.danger{background:#5b2b32;border-color:#8f404d}
+    button:disabled,input[type=submit]:disabled,input[type=button]:disabled,input[type=reset]:disabled,.btn[aria-disabled=true]{cursor:not-allowed;opacity:.55}.btn:focus-visible,button:focus-visible,input[type=submit]:focus-visible,input[type=button]:focus-visible,input[type=reset]:focus-visible{outline:2px solid #9bc6ff;outline-offset:2px}
     .table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:14px}th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#94a9c6;font-weight:600}th,td{padding:13px 12px;border-bottom:1px solid #30405c;vertical-align:top}tr:last-child td{border-bottom:0}
     .kb-body{white-space:pre-wrap;line-height:1.7;font:inherit;color:#dbe7f8;word-break:break-word} .kb-preview{max-height:460px;overflow:auto} .notice{padding:12px 17px;border:1px solid #386d60;background:#18372e;border-radius:10px;margin:15px 0}.alert{padding:12px 17px;border:1px solid #8d4b4b;background:#3a2027;border-radius:10px;margin:15px 0}
     .kb-rendered{white-space:normal}
@@ -35,9 +43,11 @@
     .ai-examples{display:grid;gap:8px;margin:10px 0 18px}.ai-examples code{font-size:13px;line-height:1.6;padding:10px 12px;background:#10182b;border-radius:9px;white-space:normal;color:#c4daf9}.ai-hit{background:#0f1d32;border:1px solid #334a68;border-radius:14px;padding:18px}.ai-hit-top{display:flex;align-items:center;gap:13px;flex-wrap:wrap}.ai-hit-top strong{font-size:16px}.kb-snippet{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;padding:12px 0;border-bottom:1px solid #30405c}.ai-source{display:flex;gap:11px 19px;flex-wrap:wrap;color:#a8bad3;font-size:12px}.ai-source code{color:#cae0ff;overflow-wrap:anywhere}
     @media(max-width:830px){.ai-metrics{grid-template-columns:1fr}}
     .thread{display:grid;gap:12px}.message{background:#121d31;border:1px solid #31415f;border-radius:12px;padding:16px}.message.internal{border-left:3px solid #dbad57;background:#282518}.message .meta{display:flex;gap:12px;color:#aab9d0;font-size:12px;margin-bottom:9px}.message p{white-space:pre-wrap;margin:0;overflow-wrap:anywhere}
-    .footer{border-top:1px solid #30405c;margin-top:42px;padding-top:18px;font-size:12px;color:#90a4c3}.inline{display:inline}.checkbox{display:flex;align-items:flex-start;gap:9px}.checkbox input{width:auto;margin-top:4px}.mono{font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;word-break:break-all}.back{margin:10px 0 23px;display:inline-block}.badge-empty{border:1px dashed #3c5170;border-radius:10px;padding:20px;color:#aab9d0}
+    .demo-role-guide{display:grid;gap:10px}.demo-role-card{padding:12px 14px;border:1px solid #344a68;border-radius:11px;background:#101b30}.demo-role-card h3{margin:0 0 6px}.demo-role-card p{margin:7px 0 0;font-size:13px;line-height:1.55}.demo-role-card .tiny{font-size:12px}.demo-test-steps{padding-left:24px;margin:13px 0 0}.demo-test-steps li{padding-left:4px;margin:0 0 13px;line-height:1.65}.demo-test-steps li::marker{color:#a3caff;font-weight:750}
+    turbo-frame[busy] {opacity:.7} .footer{border-top:1px solid #30405c;margin-top:42px;padding-top:18px;font-size:12px;color:#90a4c3}.inline{display:inline}.checkbox{display:flex;align-items:flex-start;gap:9px}.checkbox input{width:auto;margin-top:4px}.mono{font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px;word-break:break-all}.back{margin:10px 0 23px;display:inline-block}.badge-empty{border:1px dashed #3c5170;border-radius:10px;padding:20px;color:#aab9d0}
     @media(max-width:830px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.shell{padding:14px 16px 60px}}@media(max-width:430px){.cards{grid-template-columns:1fr}.card{padding:18px}}
   </style>
+  <%= javascript_importmap_tags %>
 </head>
 <body>
   <main class="shell">
@@ -46,19 +56,21 @@
       <div class="navlinks">
         <% if current_membership %>
           <span class="pill"><%= current_organization.name %> · <%= current_membership.role %></span>
-          <%= link_to t('nav.overview'), root_path %>
-          <%= link_to t('nav.tickets'), tickets_path %>
-          <%= link_to t('nav.customers'), customers_path %>
-          <%= link_to t('knowledge.nav'), knowledge_articles_path %>
-          <% if %w[owner admin agent].include?(current_membership.role) %><%= link_to t('ai_search.nav'), kb_ai_search_path %><% end %>
-          <%= button_to t('nav.sign_out'), demo_sign_out_path, method: :delete, class: 'secondary' %>
+          <%= nav_menu_link_to t('nav.overview'), root_path, section: :overview %>
+          <%= nav_menu_link_to t('nav.tickets'), tickets_path, section: :tickets %>
+          <%= nav_menu_link_to t('nav.customers'), customers_path, section: :customers %>
+          <%= nav_menu_link_to t('knowledge.nav'), knowledge_articles_path, section: :knowledge %>
+          <% if %w[owner admin agent].include?(current_membership.role) %><%= nav_menu_link_to t('ai_search.nav'), kb_ai_search_path, section: :ai_search %><% end %>
+          <%= button_to t('nav.sign_out'), demo_sign_out_path, method: :delete, class: 'secondary', form: { data: { turbo: false } } %>
         <% end %>
         <%= link_to 'VI', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'vi')), lang: 'vi' %>
         <%= link_to 'EN', url_for(params.permit(:controller, :action, :id).to_h.merge(locale: 'en')), lang: 'en' %>
       </div>
     </nav>
-    <% if notice.present? %><div class="notice" role="status"><%= notice %></div><% end %>
-    <% if alert.present? %><div class="alert" role="alert"><%= alert %></div><% end %>
+    <div id="flash_messages" aria-live="polite">
+      <% if notice.present? %><div class="notice" role="status"><%= notice %></div><% end %>
+      <% if alert.present? %><div class="alert" role="alert"><%= alert %></div><% end %>
+    </div>
     <%= yield %>
     <footer class="footer"><%= t('app.footer') %> · <strong>Modal AI:</strong> 4B/4B PILOT · <strong>KB:</strong> 12 APPROVED / 84 EMBEDDED</footer>
   </main>

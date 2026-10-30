@@ -30,8 +30,13 @@ class PrivateColabPreviewGate
     request = Rack::Request.new(env)
     return respond(403, 'Unrecognized preview host') unless allowed_host?(request.host)
     if tunnel?(request.host) && @read_only_tunnel
+      # Rails button_to(method: :delete) sends a POST form with _method=delete.
+      # This changes only the demo session, never tenant or business records.
+      allowed_logout = request.path == '/demo/sign_out' && (
+        request.delete? || (request.post? && request.POST['_method'] == 'delete')
+      )
       allowed_write = (request.post? && %w[/demo/sign_in /kb/ai-search].include?(request.path)) ||
-        (request.delete? && request.path == '/demo/sign_out')
+        allowed_logout
       if !%w[GET HEAD OPTIONS].include?(request.request_method) &&
           request.path != LOGIN_PATH && !allowed_write
         return respond(405, 'Public preview is read-only: changes disabled')

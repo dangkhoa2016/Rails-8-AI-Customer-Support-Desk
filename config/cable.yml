@@ -1,0 +1,8 @@
+# Used by Turbo Rails test helpers and optional future Turbo broadcast streams.
+# No external Redis or websocket broadcasting is enabled for the synthetic demo.
+test:
+  adapter: test
+development:
+  adapter: async
+production:
+  adapter: async

@@ -1,0 +1,26 @@
+{
+  "approved_kb_references": 12,
+  "case_count": 120,
+  "db_writes": 0,
+  "files": {
+    "APPROVED_KB_REFERENCE_ONLY.json": "1bee6e808814fd40a14d89da10553ded8ec9c77ffc1a71f6111ba2ee2ad17df2",
+    "BLINDED_REVIEW_TEMPLATE_NOT_GOLD.json": "4a478f948d3de08ebab2c47746d6f2eef0f04e9cb4edb4bc8606be0350c943c7",
+    "BLINDED_REVIEW_WORKSHEET_NOT_GOLD.csv": "71cd9a779e0d2fa0ecbfff9dbdeeed8a757852ae9354a04ddeebd5c9c87eb19e"
+  },
+  "gpu_calls": 0,
+  "human_gold_cases": 0,
+  "independent_human_reviews": 0,
+  "kind": "M5_REVIEW_INPUT_MANIFEST",
+  "language_counts": {
+    "novamart-store:en": 40,
+    "novamart-store:vi": 40,
+    "teamflow-cloud:en": 20,
+    "teamflow-cloud:vi": 20
+  },
+  "sealed80": "BLOCKED",
+  "shuffle_seed": 20261030,
+  "source_approved_kb_sha256": "12cb87609c5de1c082e692648e55615785b31f5faf84c280bfaaa1fd0a15695f",
+  "source_candidate_sha256": "d6353a42696b622fa89dbf2254bb61e23277e12aa62acc80020724218c0a4b1c",
+  "source_manifest_sha256": "dfca3eb6424ef95af625ddff735151fd4ea96182b53feb3ba23a21221425fb31",
+  "status": "PREPARED_NOT_REVIEWED"
+}
