@@ -1,0 +1,24 @@
+name: "Đề xuất tính năng (Tiếng Việt)"
+description: "Đề xuất cải thiện có phạm vi rõ ràng"
+title: "[Tính năng] "
+body:
+  - type: markdown
+    attributes:
+      value: "🌐 [English](https://github.com/dangkhoa2016/Rails-8-AI-Customer-Support-Desk/issues/new/choose) · Tiếng Việt."
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Vấn đề người dùng và kết quả mong muốn
+      description: "Giải thích quy trình chăm sóc khách hàng cần cải thiện."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Giải pháp đề xuất
+      description: "Nêu ảnh hưởng đến tenant isolation, human review và API."
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Tiêu chí nghiệm thu
+      description: "Làm thế nào để kiểm thử bằng dữ liệu giả lập?"

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security reporting / Báo cáo bảo mật
+    url: https://github.com/dangkhoa2016/Rails-8-AI-Customer-Support-Desk/blob/main/.github/SECURITY.md
+    about: "Use private reporting guidance; never publish credentials / Vui lòng báo cáo riêng, không công khai token."
+  - name: Documentation / Tài liệu
+    url: https://github.com/dangkhoa2016/Rails-8-AI-Customer-Support-Desk/blob/main/README.md
+    about: "Read the setup and project scope first / Đọc hướng dẫn cài đặt và phạm vi dự án trước."
