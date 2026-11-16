@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 P = ROOT / 'review/m2_priority_editorial_proposals_20261029.json'
 S = ROOT / 'data/m2/knowledge_drafts.json'
-C = ROOT / 'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json'
+C = ROOT / 'data/policy/canonical_blueprint.json'
 hash_bytes = lambda b: hashlib.sha256(b).hexdigest()
 obj = json.loads(P.read_text(encoding='utf-8'))
 original = json.loads(S.read_text(encoding='utf-8'))

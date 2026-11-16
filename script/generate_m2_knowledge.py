@@ -6,7 +6,7 @@ import argparse, hashlib, json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BLUEPRINT = ROOT / 'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json'
+BLUEPRINT = ROOT / 'data/policy/canonical_blueprint.json'
 NOTES = ROOT / 'script/m2/author_notes.tsv'
 DEFAULT_OUTPUT = ROOT / 'data/m2/knowledge_drafts.json'
 AGENT_ONLY = {'TF-KB-018', 'TF-KB-025', 'TF-KB-034', 'TF-KB-042', 'TF-KB-048', 'NM-KB-050'}

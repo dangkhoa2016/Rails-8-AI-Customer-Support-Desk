@@ -7,7 +7,7 @@ require 'digest'
 root = Rails.root
 path = root.join('data/m2/knowledge_drafts.json')
 payload = JSON.parse(File.read(path))
-blueprint_sha = Digest::SHA256.file(root.join('docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json')).hexdigest
+blueprint_sha = Digest::SHA256.file(root.join('data/policy/canonical_blueprint.json')).hexdigest
 raise 'Source blueprint hash mismatch' unless payload.fetch('source_blueprint_sha256') == blueprint_sha
 raise 'KB seed must contain only drafts' unless payload.fetch('publication_status') == 'PENDING_HUMAN_EDITORIAL_APPROVAL'
 

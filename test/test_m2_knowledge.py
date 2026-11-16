@@ -9,7 +9,7 @@ from verify_m2_knowledge import validate
 class KnowledgeOfflineTest(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.bpbytes=(ROOT/'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json').read_bytes()
+  cls.bpbytes=(ROOT/'data/policy/canonical_blueprint.json').read_bytes()
   cls.bp=json.loads(cls.bpbytes)
   cls.notes=(ROOT/'script/m2/author_notes.tsv').read_bytes()
   cls.data=generate()

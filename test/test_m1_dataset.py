@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BLUEPRINT = ROOT / 'docs' / 'RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json'
+BLUEPRINT = ROOT / 'data' / 'policy' / 'canonical_blueprint.json'
 sys.path.insert(0, str(ROOT / 'script'))
 from generate_m1_dataset import generate, stable_json  # noqa: E402
 from verify_m1_dataset import check  # noqa: E402

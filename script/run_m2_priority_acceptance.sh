@@ -30,7 +30,7 @@ out=Path(sys.argv[1]); root=Path.cwd()
 codes={f.name.removesuffix('.exit_code.txt'):int(f.read_text()) for f in sorted(out.glob('*.exit_code.txt'))}
 checks={f:hashlib.sha256((root/f).read_bytes()).hexdigest() for f in [
   'data/m2/knowledge_drafts.json',
-  'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json',
+  'data/policy/canonical_blueprint.json',
   'review/m2_priority_editorial_proposals_20261029.json',
   'preview/m2_priority_editorial/index.html',
 ]}

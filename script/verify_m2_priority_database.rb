@@ -6,7 +6,7 @@ root = Rails.root
 base = JSON.parse(File.read(root.join('data/m2/knowledge_drafts.json')))
 proposals = JSON.parse(File.read(root.join('review/m2_priority_editorial_proposals_20261029.json')))
 raise 'canonical source drift' unless proposals.fetch('canonical_sha256') ==
-  Digest::SHA256.file(root.join('docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json')).hexdigest
+  Digest::SHA256.file(root.join('data/policy/canonical_blueprint.json')).hexdigest
 raise 'base source drift' unless proposals.fetch('source_m2_sha256') ==
   Digest::SHA256.file(root.join('data/m2/knowledge_drafts.json')).hexdigest
 errors = []

@@ -65,7 +65,7 @@ def validate(payload, blueprint, blueprint_bytes, notes_bytes):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--dataset',default=str(ROOT/'data/m2/knowledge_drafts.json'))
     ap.add_argument('--report',default=str(ROOT/'evidence/m2/knowledge-offline-validation.json'))
-    args=ap.parse_args(); bp=ROOT/'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json'
+    args=ap.parse_args(); bp=ROOT/'data/policy/canonical_blueprint.json'
     bs=bp.read_bytes();ns=(ROOT/'script/m2/author_notes.tsv').read_bytes()
     report=validate(json.loads(Path(args.dataset).read_text(encoding='utf8')),json.loads(bs),bs,ns)
     Path(args.report).parent.mkdir(parents=True,exist_ok=True)

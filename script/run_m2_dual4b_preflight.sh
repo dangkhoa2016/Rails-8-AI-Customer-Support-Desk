@@ -31,7 +31,7 @@ import datetime,hashlib,json,sys
 out=Path(sys.argv[1]);base=Path.cwd()
 exit_codes={f.name.replace('.exit_code.txt',''):int(f.read_text()) for f in sorted(out.glob('*.exit_code.txt'))}
 checks={name:hashlib.sha256((base/name).read_bytes()).hexdigest() for name in [
-  'data/m2/knowledge_drafts.json', 'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json',
+  'data/m2/knowledge_drafts.json', 'data/policy/canonical_blueprint.json',
   'review/m2_priority_editorial_proposals_20261029.json', 'review/m2_dual_qwen3_4b_pilot_queries.json',
   'modal_app/qwen3_embedding_service.py','modal_app/qwen3_reranker_service.py']}
 meta={'status':'PASS_PREFLIGHT_ONLY_NO_GPU' if len(exit_codes)==9 and all(x==0 for x in exit_codes.values()) else 'FAIL',

@@ -11,7 +11,7 @@ raise 'Synthetic development only' unless Rails.env.development? &&
 root = Rails.root
 source_path = root.join('data/m2/knowledge_drafts.json')
 proposal = JSON.parse(File.read(root.join('review/m2_priority_editorial_proposals_20261029.json')))
-canonical_path = root.join('docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json')
+canonical_path = root.join('data/policy/canonical_blueprint.json')
 raise 'source mismatch' unless proposal.fetch('source_m2_sha256') == Digest::SHA256.file(source_path).hexdigest
 raise 'policy source mismatch' unless proposal.fetch('canonical_sha256') == Digest::SHA256.file(canonical_path).hexdigest
 raise 'wrong policy version' unless proposal.fetch('policy_version') == '1.0.0'

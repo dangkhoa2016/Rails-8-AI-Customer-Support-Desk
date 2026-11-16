@@ -120,7 +120,7 @@ DETAILS = {
 def sha(s): return hashlib.sha256(s.encode('utf-8')).hexdigest()
 
 def build():
-  blueprint_path = ROOT / 'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json'
+  blueprint_path = ROOT / 'data/policy/canonical_blueprint.json'
   canonical = json.loads(blueprint_path.read_text(encoding='utf-8'))
   kb_path = ROOT / 'data/m2/knowledge_drafts.json'
   kb = json.loads(kb_path.read_text(encoding='utf-8'))

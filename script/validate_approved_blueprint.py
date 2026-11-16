@@ -4,9 +4,9 @@ import json
 import sys
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1] / "docs"
-source = json.loads((root/'source_snapshot'/'RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json').read_text())
-approved = json.loads((root/'RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json').read_text())
+root = Path(__file__).resolve().parents[1]
+source = json.loads((root/'data'/'policy'/'source_blueprint.json').read_text())
+approved = json.loads((root/'data'/'policy'/'canonical_blueprint.json').read_text())
 assert approved['policy_approval']['status'] == 'approved_for_synthetic_demo'
 assert approved['policy_version'] == approved['global']['policy_version'] == '1.0.0'
 assert approved['status'] == 'design_blueprint_not_generated_dataset'

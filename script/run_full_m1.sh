@@ -25,7 +25,7 @@ run() {
 run 00_ruby_version ruby --version
 run 01_rails_version bin/rails --version
 run 02_blueprint python3 script/validate_approved_blueprint.py
-run 03_offline_dataset python3 script/verify_m1_dataset.py --blueprint docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json --dataset data/m1_business_records.json --report "$OUTPUT/offline-relational-report.json"
+run 03_offline_dataset python3 script/verify_m1_dataset.py --blueprint data/policy/canonical_blueprint.json --dataset data/m1_business_records.json --report "$OUTPUT/offline-relational-report.json"
 run 04_policy_tests ruby test/policy_rules_test.rb
 run 05_db_create bin/rails db:create
 run 06_db_migrate bin/rails db:migrate

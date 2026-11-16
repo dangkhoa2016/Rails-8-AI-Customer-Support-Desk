@@ -9,7 +9,7 @@ root = Rails.root
 source = root.join('review/m2_priority_editorial_proposals_20261029.json')
 proposal = JSON.parse(File.read(source))
 raise 'invalid source checksum' unless proposal.fetch('source_m2_sha256') == Digest::SHA256.file(root.join('data/m2/knowledge_drafts.json')).hexdigest
-raise 'policy baseline drift' unless proposal.fetch('canonical_sha256') == Digest::SHA256.file(root.join('docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json')).hexdigest
+raise 'policy baseline drift' unless proposal.fetch('canonical_sha256') == Digest::SHA256.file(root.join('data/policy/canonical_blueprint.json')).hexdigest
 versions = proposal.fetch('revisions')
 raise 'expected exactly 12 VI/EN versions' unless versions.length == 12 && versions.map { |v| [v['article_key'], v['locale']] }.uniq.size == 12
 prepared = versions.map do |row|

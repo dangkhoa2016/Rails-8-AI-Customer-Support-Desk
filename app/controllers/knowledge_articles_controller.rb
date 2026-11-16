@@ -69,7 +69,7 @@ class KnowledgeArticlesController < ApplicationController
     @canonical_policies = []
     @canonical_clarifications = []
     canonical = JSON.parse(File.read(Rails.root.join(
-      'docs/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json')))
+      'data/policy/canonical_blueprint.json')))
     org = canonical.fetch('organizations').find { |entry| entry.fetch('slug') == current_organization.slug }
     if org
       @canonical_policies = org.fetch('rules').select { |rule| @article.policy_refs.include?(rule.fetch('id')) }
