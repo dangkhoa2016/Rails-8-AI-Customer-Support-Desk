@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    name: Documentation and fixtures
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Check documentation languages, links, and public safety
+        run: python3 script/check_public_docs.py
+      - name: Validate approved synthetic policy baseline
+        run: python3 script/validate_approved_blueprint.py
+      - name: Run offline knowledge fixture tests
+        run: python3 -m unittest discover -s test -p 'test_m2_knowledge.py' -v
+
+  rails:
+    name: Rails / PostgreSQL / pgvector
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: rails8_ai_support_desk_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d rails8_ai_support_desk_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      RAILS_ENV: test
+      PGHOST: 127.0.0.1
+      PGPORT: 5432
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGTESTDATABASE: rails8_ai_support_desk_test
+      PGDATABASE: rails8_ai_support_desk_test
+      SECRET_KEY_BASE: ci-only-disposable-test-value-not-for-production
+      M1_SYNTHETIC_DEMO: YES
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Ruby and install locked dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Prepare isolated PostgreSQL test schema
+        run: bundle exec rails db:prepare
+      - name: Verify Rails autoloading
+        run: bundle exec rails zeitwerk:check
+      - name: Run Rails regression suite
+        run: bundle exec rails test
