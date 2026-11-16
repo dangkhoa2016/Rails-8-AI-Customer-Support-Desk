@@ -1,0 +1,39 @@
+name: "Báo lỗi (Tiếng Việt)"
+description: "Báo lỗi có thể tái lập bằng dữ liệu giả lập"
+title: "[Lỗi] "
+body:
+  - type: markdown
+    attributes:
+      value: "🌐 [English](https://github.com/dangkhoa2016/Rails-8-AI-Customer-Support-Desk/issues/new/choose) · Tiếng Việt. Không gửi secret hoặc dữ liệu khách hàng thật."
+  - type: input
+    id: revision
+    attributes:
+      label: Commit hoặc phiên bản
+      placeholder: "Git SHA / nhánh"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Các bước tái hiện
+      description: "Chỉ dùng tài khoản, doanh nghiệp và dữ liệu giả lập."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi và thực tế
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Môi trường
+      description: "Ruby, Rails, PostgreSQL, browser và log đã ẩn thông tin nhạy cảm."
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Kiểm tra riêng tư
+      options:
+        - label: "Tôi đã loại bỏ credential và dữ liệu khách hàng thật."
+          required: true

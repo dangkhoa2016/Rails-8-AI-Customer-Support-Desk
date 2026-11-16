@@ -1,0 +1,24 @@
+name: "Feature request (English)"
+description: "Propose a scoped improvement to the support desk"
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: "🌐 English form · [Tiếng Việt](https://github.com/dangkhoa2016/Rails-8-AI-Customer-Support-Desk/issues/new/choose)."
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User problem and expected outcome
+      description: "Explain the support workflow this improves."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: "Mention tenant isolation, AI human review and API compatibility."
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: "How could this be tested with synthetic data?"
