@@ -16,7 +16,7 @@ def pair(path: pathlib.Path) -> pathlib.Path:
     return path.with_name(path.name.removesuffix(".md") + ".vi.md")
 
 def md_links(text: str) -> list[str]:
-    return re.findall(r"!?(?:\\[[^\\]]*\\])\\(([^)]+)\\)", text)
+    return re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", text)
 
 def main() -> int:
     readmes = [ROOT / "README.md", ROOT / "README.vi.md"]
@@ -35,7 +35,7 @@ def main() -> int:
         re.compile(r"ghp_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{25,}"),
         re.compile(r"sk-[A-Za-z0-9_-]{25,}|hf_[A-Za-z0-9]{25,}"),
         re.compile(r"-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-        re.compile(r"/root/\\.config/|/content/krw-workspace|/content/\\.rails8-private"),
+        re.compile(r"/root/\.config/|/content/krw-workspace|/content/\.rails8-private"),
     )
     for path in checked:
         text = path.read_text(encoding="utf-8")
