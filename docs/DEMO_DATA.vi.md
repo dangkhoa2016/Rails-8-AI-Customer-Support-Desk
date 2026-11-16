@@ -1,6 +1,6 @@
 # Doanh nghiệp và dữ liệu giả lập
 
-[English](DEMO_DATA_EN.md) · [Tiếng Việt](DEMO_DATA_VI.md) · [README](../README_VI.md)
+[English](DEMO_DATA.md) · [Tiếng Việt](DEMO_DATA.vi.md) · [README](../README.vi.md)
 
 ## Giới thiệu bộ dữ liệu
 
@@ -52,8 +52,8 @@ Dữ liệu nguồn nằm trong `data/`, script seed/import ở `db/seeds/`; cá
 
 Hai JSON fixture chuẩn vẫn giữ trong `docs/` vì các script validation/seed hiện tham chiếu trực tiếp:
 
-- `RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json`
-- `source_snapshot/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json`
+- `../data/policy/canonical_blueprint.json`
+- `../data/policy/source_blueprint.json`
 
 Hai file chứa **đặc tả dữ liệu giả lập**, không chứa khóa runtime, credential khách hàng hay hướng dẫn triển khai nội bộ.
 

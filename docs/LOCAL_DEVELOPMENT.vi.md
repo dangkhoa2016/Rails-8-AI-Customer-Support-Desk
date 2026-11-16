@@ -1,6 +1,6 @@
 # Cài đặt và kiểm thử trên máy phát triển
 
-[English](LOCAL_DEVELOPMENT_EN.md) · [Tiếng Việt](LOCAL_DEVELOPMENT_VI.md) · [README](../README_VI.md)
+[English](LOCAL_DEVELOPMENT.md) · [Tiếng Việt](LOCAL_DEVELOPMENT.vi.md) · [README](../README.vi.md)
 
 Tài liệu này hướng dẫn chạy **demo local với dữ liệu giả lập**. Đây không phải hướng dẫn triển khai Platform Console production hay cấu hình GPU inference công khai.
 
@@ -92,4 +92,4 @@ Không ghi khóa API vào Git, notebook công khai, browser response hoặc READ
 - Không coi gợi ý AI là chính sách đã duyệt hoặc quyền sửa dữ liệu.
 - Không đưa dữ liệu khách hàng thật vào fixture giả lập nếu chưa có thiết kế bảo mật/quyền riêng tư riêng.
 
-Đọc [Bảo mật](SECURITY_VI.md), [Kiến trúc](ARCHITECTURE_VI.md) và [Dữ liệu demo](DEMO_DATA_VI.md).
+Đọc [Bảo mật](SECURITY.vi.md), [Kiến trúc](ARCHITECTURE.vi.md) và [Dữ liệu demo](DEMO_DATA.vi.md).

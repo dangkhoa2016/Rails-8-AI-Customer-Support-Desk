@@ -1,6 +1,6 @@
 # Security model and responsible evaluation
 
-[English](SECURITY_EN.md) · [Tiếng Việt](SECURITY_VI.md) · [Back to README](../README_EN.md)
+[English](SECURITY.md) · [Tiếng Việt](SECURITY.vi.md) · [Back to README](../README.md)
 
 This document describes **security boundaries implemented or exercised in the source**, not a certification of production readiness. The included users and organizations are synthetic. Real-world deployment needs a separate security review and infrastructure design.
 
@@ -49,4 +49,4 @@ The project is **not represented as penetration-tested, certified, SOC 2 complia
 
 If you discover a vulnerability, use a private reporting channel to contact the maintainer rather than publishing working exploit details or credentials in an issue.
 
-See [Architecture](ARCHITECTURE_EN.md) for technical relationships and [Local development](LOCAL_DEVELOPMENT_EN.md) for the safe demo setup.
+See [Architecture](ARCHITECTURE.md) for technical relationships and [Local development](LOCAL_DEVELOPMENT.md) for the safe demo setup.

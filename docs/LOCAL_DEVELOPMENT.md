@@ -1,6 +1,6 @@
 # Local development and verification
 
-[English](LOCAL_DEVELOPMENT_EN.md) · [Tiếng Việt](LOCAL_DEVELOPMENT_VI.md) · [Back to README](../README_EN.md)
+[English](LOCAL_DEVELOPMENT.md) · [Tiếng Việt](LOCAL_DEVELOPMENT.vi.md) · [Back to README](../README.md)
 
 This guide sets up a **disposable local demo**. It does not deploy a production operator console or configure external GPU inference.
 
@@ -92,4 +92,4 @@ Never put keys in source control, a public notebook, a browser response or a REA
 - Do not treat an AI candidate as a verified policy or permission to change business records.
 - Do not import real customer data into the synthetic fixtures without a separate privacy and security design.
 
-Refer to [Security](SECURITY_EN.md), [Architecture](ARCHITECTURE_EN.md) and [Demo data](DEMO_DATA_EN.md) for additional context.
+Refer to [Security](SECURITY.md), [Architecture](ARCHITECTURE.md) and [Demo data](DEMO_DATA.md) for additional context.

@@ -1,6 +1,6 @@
 # Synthetic business data and evaluation fixtures
 
-[English](DEMO_DATA_EN.md) · [Tiếng Việt](DEMO_DATA_VI.md) · [Back to README](../README_EN.md)
+[English](DEMO_DATA.md) · [Tiếng Việt](DEMO_DATA.vi.md) · [Back to README](../README.md)
 
 ## About the dataset
 
@@ -52,8 +52,8 @@ The project contains versioned source data in `data/`, seed/import scripts under
 
 Two canonical fixture JSONs are retained under `docs/` because current validation and seed tooling reference them directly:
 
-- `RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json`
-- `source_snapshot/RAILS8_AI_SUPPORT_DESK_CANONICAL_BLUEPRINT_2026-10-28.json`
+- `../data/policy/canonical_blueprint.json`
+- `../data/policy/source_blueprint.json`
 
 They contain **synthetic reference specifications**, not runtime keys, customer credentials or private deployment instructions.
 

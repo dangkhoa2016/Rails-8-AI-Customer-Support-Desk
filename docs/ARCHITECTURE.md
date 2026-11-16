@@ -1,6 +1,6 @@
 # Architecture — Rails 8 AI Customer Support Desk
 
-[English](ARCHITECTURE_EN.md) · [Tiếng Việt](ARCHITECTURE_VI.md) · [Back to README](../README_EN.md)
+[English](ARCHITECTURE.md) · [Tiếng Việt](ARCHITECTURE.vi.md) · [Back to README](../README.md)
 
 ## Architectural approach
 
@@ -101,4 +101,4 @@ Model endpoints and credentials must be configured separately. A local Rails boo
 
 ## What remains outside the demonstrated scope
 
-Production perimeter networking, real operator enrollment, cross-service delivery channels, infrastructure key management, broader model-quality acceptance and external penetration testing have not been established by these source tests. See [Security](SECURITY_EN.md) and [Local development](LOCAL_DEVELOPMENT_EN.md).
+Production perimeter networking, real operator enrollment, cross-service delivery channels, infrastructure key management, broader model-quality acceptance and external penetration testing have not been established by these source tests. See [Security](SECURITY.md) and [Local development](LOCAL_DEVELOPMENT.md).

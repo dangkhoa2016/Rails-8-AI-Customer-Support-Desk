@@ -1,6 +1,6 @@
 # Bảo mật và nguyên tắc đánh giá
 
-[English](SECURITY_EN.md) · [Tiếng Việt](SECURITY_VI.md) · [README](../README_VI.md)
+[English](SECURITY.md) · [Tiếng Việt](SECURITY.vi.md) · [README](../README.vi.md)
 
 Tài liệu mô tả **các ranh giới bảo mật đã triển khai hoặc kiểm thử trong mã nguồn**, không phải chứng nhận hệ thống đã sẵn sàng production. Tenant và tài khoản mẫu đều là giả lập. Triển khai thực tế cần thiết kế hạ tầng và kiểm toán bảo mật độc lập.
 
@@ -49,4 +49,4 @@ Repository **không tự nhận đã pentest, chứng nhận bảo mật, đạt
 
 Nếu phát hiện lỗ hổng, hãy liên hệ maintainer bằng kênh riêng thay vì công khai mã khai thác hoặc credentials trong issue.
 
-Đọc [Kiến trúc](ARCHITECTURE_VI.md) và [Cài đặt local](LOCAL_DEVELOPMENT_VI.md) để hiểu thêm.
+Đọc [Kiến trúc](ARCHITECTURE.vi.md) và [Cài đặt local](LOCAL_DEVELOPMENT.vi.md) để hiểu thêm.

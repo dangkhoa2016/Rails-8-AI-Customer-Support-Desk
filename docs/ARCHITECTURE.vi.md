@@ -1,6 +1,6 @@
 # Kiến trúc — Rails 8 AI Customer Support Desk
 
-[English](ARCHITECTURE_EN.md) · [Tiếng Việt](ARCHITECTURE_VI.md) · [README](../README_VI.md)
+[English](ARCHITECTURE.md) · [Tiếng Việt](ARCHITECTURE.vi.md) · [README](../README.vi.md)
 
 ## Tư duy kiến trúc
 
@@ -99,4 +99,4 @@ Endpoint và credential inference được cấu hình riêng. Rails chạy đư
 
 ## Ngoài phạm vi minh chứng
 
-Thiết kế mạng production, cấp phát tài khoản operator thật, giao tiếp outbound, quản lý khóa hạ tầng, đánh giá AI ở quy mô lớn và pentest bên ngoài chưa được chứng minh bằng những kiểm thử hiện có. Xem [Bảo mật](SECURITY_VI.md) và [Cài đặt local](LOCAL_DEVELOPMENT_VI.md).
+Thiết kế mạng production, cấp phát tài khoản operator thật, giao tiếp outbound, quản lý khóa hạ tầng, đánh giá AI ở quy mô lớn và pentest bên ngoài chưa được chứng minh bằng những kiểm thử hiện có. Xem [Bảo mật](SECURITY.vi.md) và [Cài đặt local](LOCAL_DEVELOPMENT.vi.md).
