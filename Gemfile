@@ -11,7 +11,7 @@ gem 'importmap-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
 # M5.2 PostgreSQL-backed persistent Active Job worker.
-gem 'solid_queue', '~> 1.2'
+gem 'solid_queue', '~> 1.7'
 # Rails 8 ERB + Hotwire, no JavaScript build step required.
 # Active Storage remains out of scope; Modal inference is separately authenticated.
 
