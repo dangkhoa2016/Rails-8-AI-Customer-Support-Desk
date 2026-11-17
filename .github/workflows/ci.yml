@@ -58,8 +58,8 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-      - name: Prepare isolated PostgreSQL test schema
-        run: bundle exec rails db:prepare
+      - name: Migrate isolated PostgreSQL test schema (without development-only seeds)
+        run: bundle exec rails db:migrate
       - name: Verify Rails autoloading
         run: bundle exec rails zeitwerk:check
       - name: Run Rails regression suite
