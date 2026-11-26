@@ -4,7 +4,7 @@ ruby '>= 3.2.0'
 
 gem 'rails', '~> 8.1.4'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 8.0.3'
+gem 'puma', '~> 8.1.2'
 # Rails 8 Hotwire, no Node bundler: importmaps + Propshaft assets.
 gem 'propshaft'
 gem 'importmap-rails'
